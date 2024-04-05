@@ -10,7 +10,7 @@
     <p>
       Variables can be used to display content depending on the condition to which a participant was assigned. For example:
     </p>
-    <p style="stroke: black">
+    <p >
       <?php 
           switch ($condition){
             case 0:

@@ -7,6 +7,54 @@
     "start_page" : true,
     "save_page" : false
   },
+  "introduction" : {
+  "id" : "introduction",
+  "button_text" : "Congratulations! Now let's move on to the next stage!",
+  "page_path" : "pages/default/introduction.php",
+  "disabled" : false,
+  "start_page" : false,
+  "save_page" : false
+},
+  "gender-stereotyped-explanation" : {
+  "id" : "gender-stereotyped-explanation",
+  "button_text" : "I understand. Let's start task training.",
+  "page_path" : "pages/default/gender-stereotyped-explanation.php",
+  "disabled" : false,
+  "start_page" : false,
+  "save_page" : false
+},
+  "task-training": {
+    "id" : "task-training",
+    "button_text" : "Next",
+    "page_path" : "pages/default/task-training.php",
+    "disabled" : false,
+    "start_page" : false,
+    "save_page" : false
+  },
+  "task-training-v2": {
+    "id" : "task-training-v2",
+    "button_text" : "Next",
+    "page_path" : "pages/default/task-training-v2.php",
+    "disabled" : false,
+    "start_page" : false,
+    "save_page" : false
+  },
+  "task-training-v3": {
+  "id" : "task-training-v3",
+  "button_text" : "Go to the task!",
+  "page_path" : "pages/default/task-training-v3.php",
+  "disabled" : false,
+  "start_page" : false,
+  "save_page" : false
+},
+  "test-decision-making-study" : {
+    "id" : "test-decision-making-study",
+    "button_text" : "Next",
+    "page_path" : "pages/default/test-decision-making-study.php",
+    "disabled" : false,
+    "start_page" : false,
+    "save_page" : false
+  },
   "consent" : {
     "id" : "consent",
     "button_text" : "I agree. Start the experiment.",

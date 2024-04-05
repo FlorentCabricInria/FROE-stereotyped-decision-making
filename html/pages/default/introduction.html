@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:style="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to the task</title>
+  <script src="https://d3js.org/d3.v6.js"></script>
+  <!-- Load revisit-communicate to be able to send data to reVISit -->
+    <!-- <script src="../../../../testRevisitFCInria/public/js/revisit-communicate.js"></script> -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"> </script>
+     <!--<script type="text/javascript" src="scatterplot-dots-interaction.js"></script> -->
+
+</head>
+<body>
+<div id="firstStage" style="text-align: left">
+
+    <h1> Background Explanation</h1>
+    <p><b>Imagine the following scenario</b></p>
+    You are the person in charge of the company's annual salary review. The CEO give you 60 000 euros to increase the salary the employees -- your colleagues.
+    The CEO told you to distribute the 60,000 as you want between two strategies:
+    <ul>
+        <li>
+            reducing the gender pay gap (whether it's in favor of men or women)</li>
+        <li>
+            increasing people’s salaries based on their last year's performance.</li>
+    </ul>
+
+    <!-- Each colleague has been categorized into 3 grade groups*: 1, 2 and 3. The performance is represented in the chart by the
+    _size of the dot _and the Y position corresponds to their salary. The performance metric is considered highly robust in your company. <br>
+
+    Moving the sliders will update your employees' salary according to the strategy chosen. You can distribute the money as you wish between the two strategies
+    (i.e., you can focus on just one), but all the money must be spent. <br>
+
+    *grade groups= grouping job positions with similar skills, knowledge and experience and establishing job duties and levels of authority for that group
+    <br> -->
+    <button id="firstStageButton"> Do you understand ? If so, click on this button </button>
+</div>
+<div id="secondStage" style="text-align: left" hidden="true">
+    <h1> Background Explanation</h1>
+    To make your choice you will see a visual representation of your colleagues.
+    In the following chart, each circle represents one of your colleague.
+    The y-axis represents the salary of this colleague. In other words, the highest colleagues are in the chart, the more they are paid.
+    <svg id="firstChart"> </svg>
+    <button id="secondStageButton">  Click to see an example</button>
+</div>
+<div id="thirdStage" style="text-align: left" hidden="true">
+    <h1> Background Explanation</h1>
+    <p>
+    Here <span style="font-weight: bold; color: #0096c9;">Charlie</span>
+    is represented in <span style="font-weight: bold; color: #0096c9;"> blue </span> and
+    <span style="font-weight: bold; color: #a8542b;"> Sam </span> is represented in
+    <span style="font-weight: bold; color: #a8542b;"> orange </span>
+    </p>
+    <ul>
+        <li> <span style="font-weight: bold; color: #0096c9;">Charlie</span> is paid  <span style="font-weight: bold; color: #0096c9;"> a bit less than 75,000</span></li>
+        <li> <span style="font-weight: bold; color: #a8542b;"> Sam </span> is paid <span style="font-weight: bold; color: #a8542b;"> a bit less than 40,000 </span></li>
+        </ul>
+    <svg id="secondChart"> </svg> <br>
+    <button id="thirdStageButton"> Did you understand? </button>
+</div>
+<div id="fourthStage" style="text-align: left" hidden="true">
+    <br>
+    If you think you did understand, please enter the approximate salary of<span style="font-weight: bold; color: #059804;"> Robin </span> (&#177; 2000) and click on next:
+    <input id="inputTestRobin" type="text"> </input>
+    <button id="fourthStageButton">  Next</button>
+    <br>
+    <span id="checkingValue" style="font-weight: bold; color: #f80b0b;"></span>
+</div>
+<div id="fifthStage" style="text-align: left" hidden="true">
+    <h1> Excellent!</h1>
+    <p>But to make a decision about salaries, you need more information about your colleagues than just their salaries. <br>
+    In your company, employees are also categorized according to other attributes:
+        <ul>
+        <li> <b>Their last year's performance </b>: The high performers, medium performers and low performers</li>
+        <li> <b>Their grade groups</b>: Grade group 3, Grade group 4 and Grade group 5 . "Grade groups" categorize employees with similar skills, knowledge and experience and establishing job duties and levels of authority for that group</li>
+        </ul>
+    </p>
+
+    <button id="fifthStageButton">  Next</button>
+</div>
+<div id="sixthStage" style="text-align: center" hidden="true">
+    <h1> Grade Groups:</h1>
+    <p>In our visualization, grade groups are represented at different positions <br>
+        Remember this chart and our two colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and <span style="font-weight: bold; color: #a8542b;"> Sam </span>:
+    </p>
+    <svg id="chartGradeGroups"> </svg> <br>
+    The employees who belong to the same grade group will be grouped together. The grade group 3 will be on the left of the chart, the grade group 4 will be in the center and the grade group 5 will be on the right.
+    <button id="sixthStageButton">  Adding grade groups to our visualization</button>
+</div>
+<div id="seventhStage" style="text-align: center" hidden="true">
+    <br>
+    As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #0096c9;">Grade Group 5</span> and  <span style="font-weight: bold; color: #a8542b;"> Sam </span>
+    belongs to  <span style="font-weight: bold; color: #a8542b;"> Grade Group 4 </span>. <br>
+    To be able to distinguish the employees — who are still your colleagues – we will add some "jitter". That means that the x-position of each dot will be moved slightly to the left or to the right.
+    <button id="seventhStageButton">  Add Jitter</button>
+</div>
+<div id="eighthStage" style="text-align: center" hidden="true">
+    <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #f80b0b;">red rectangle </span> belong to <span style="font-weight: bold; color: #f80b0b;"> Grade Group 3 </span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #0045da;">blue rectangle </span> belong to <span style="font-weight: bold; color: #0045da;"> Grade Group 4</span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #054f04;">green rectangle </span> belong to <span style="font-weight: bold; color: #054f04;"> Grade Group 5 </span> <br>
+    <button id="eighthStageButton">  Next </button>
+</div>
+<script type="text/javascript" src="FROE-stereotyped-decision-making/html/js/visualizations/buttonbehaviours.js"></script>
+</body>
+</html>

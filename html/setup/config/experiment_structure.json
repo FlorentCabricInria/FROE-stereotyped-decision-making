@@ -1,6 +1,12 @@
 [
   "welcome",
   "consent",
+  "introduction",
+  "gender-stereotyped-explanation",
+  "task-training",
+  "task-training-v2",
+  "task-training-v3",
+  "test-decision-making-study",
   "description",
   "main_stimulus",
   "attention_check",
