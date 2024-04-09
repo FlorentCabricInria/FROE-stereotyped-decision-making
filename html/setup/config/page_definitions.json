@@ -49,8 +49,16 @@
 },
   "test-decision-making-study" : {
     "id" : "test-decision-making-study",
-    "button_text" : "Next",
+    "button_text" : "You still have money to allocate!",
     "page_path" : "pages/default/test-decision-making-study.php",
+    "disabled" : false,
+    "start_page" : false,
+    "save_page" : false
+  },
+  "ambivalent-sexism-theory" :{
+    "id" : "ambivalent-sexism-theory",
+    "button_text" : "Validate your answers",
+    "page_path" : "pages/default/ambivalent-sexism-theory.php",
     "disabled" : false,
     "start_page" : false,
     "save_page" : false

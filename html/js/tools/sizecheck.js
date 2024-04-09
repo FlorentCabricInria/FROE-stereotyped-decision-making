@@ -2,6 +2,11 @@
 import { MIN_WINDOW_WIDTH, MIN_WINDOW_HEIGHT } from '../../setup/constants.js';
 import {getZoom} from '../lib/zoom.js';
 
+/****
+ *
+ *
+ * 1024 IS THE LOWEST ACCEPTED IN MY STUDY :D
+ */
 function drawDimensionChart() {
   var c = document.getElementById("windowsize");
   var ctx = c.getContext("2d");

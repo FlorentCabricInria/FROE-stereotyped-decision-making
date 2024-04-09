@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col">
-    <h2>Important information</h2>
+    <h2>Important information — Under construction</h2>
+      <p> Please go to the next page :)</p>
+      <!--
     <ol>
       <li>You cannot navigate back to previous pages</li>
 
@@ -14,5 +16,6 @@
     </ol>
 
     <p>Click "Next" to proceed to the informed consent.</p>
+    -->
   </div>
 </div>

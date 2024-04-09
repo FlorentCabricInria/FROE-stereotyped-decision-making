@@ -11,14 +11,14 @@
           $mod = $cond % 4;
           switch ($mod){
             case 0: case 1:?>
-    <li> <span style="font-weight: bold; color: #f040ef;" > Women </span>are represented in <span style="font-weight: bold; color: #f040ef;">Pink </span> </li>
+    <li> <span style="font-weight: bold; color: #ff33c9;" > Women </span>are represented in <span style="font-weight: bold; color: #ff33c9;">Pink </span> </li>
     <li> <span style="font-weight: bold; color: #0096c9;" > Men </span>are represented in <span style="font-weight: bold; color: #0096c9;">Blue</span>  </li>
     <?php
     break;
     case 2: case 3:
     ?>
-    <li> <span style="font-weight: bold; color: #c9ae00;" > Women </span>are represented in <span style="font-weight: bold; color: #c9ae00;"> Yellow </span> </li>
-    <li> <span style="font-weight: bold; color: #059804;" > Men </span>are represented in <span style="font-weight: bold; color: #059804;"> Green </span> </li>
+    <li> <span style="font-weight: bold; color: #BFBD30;" > Women </span>are represented in <span style="font-weight: bold; color: #BFBD30;"> Yellow </span> </li>
+    <li> <span style="font-weight: bold; color: #3EBF30;" > Men </span>are represented in <span style="font-weight: bold; color: #3EBF30;"> Green </span> </li>
     <?php
     break;
     }

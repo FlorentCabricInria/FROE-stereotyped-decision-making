@@ -9,10 +9,17 @@
   "num_conditions" : 2,
   "factors" : [
     {
-      "name" : "visualization_presence",
+      "name" : "color",
       "levels" : [
-        "text_only",
-        "visualization"
+        "stereotyped",
+        "notstereotyped"
+      ]
+    },
+    {
+      "name" : "equity",
+      "levels" : [
+        "womenlower",
+        "menlower"
       ]
     }
   ],

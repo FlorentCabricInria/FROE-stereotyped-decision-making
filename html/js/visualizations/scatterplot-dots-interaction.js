@@ -108,10 +108,10 @@
              .on("end", (event, d) => circle.filter(p => p === d).attr("stroke", null))*/
         const color = d3.scaleOrdinal()
             .domain(["M", "W"])
-            .range(["#266DF0FF", "#F040EFFF"]);
+            .range(["#3a33ffFF", "#ff33c9"]);
 
         const gender = d3.scaleOrdinal()
-            .domain(["#266DF0FF", "#F040EFFF"])
+            .domain(["#3a33ffFF", "#ff33c9"])
             .range(["M", "W"]);
 
         function dragstarted(event, d) {

@@ -118,7 +118,7 @@ function createSteoreotypedVisualizationWomenLower2(){
 
     const color = d3.scaleOrdinal()
       .domain(['1', '2'])
-      .range(['#266DF0FF', '#F040EFFF']);
+      .range(['#3a33ffFF', '#ff33c9']);
 
     const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
@@ -127,9 +127,9 @@ function createSteoreotypedVisualizationWomenLower2(){
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#266DF0FF');
+      .style('fill', '#3a33ffFF');
     svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
-      .style('fill', '#F040EFFF');
+      .style('fill', '#ff33c9');
     svg.append('text').attr('x', width - 80).attr('y', 130).text('Men')
       .style('font-size', '15px')
       .attr('alignment-baseline', 'middle');
@@ -285,7 +285,7 @@ function createSteoreotypedVisualizationMenLower() {
 
     const color = d3.scaleOrdinal()
       .domain(['1', '2'])
-      .range(['#F040EFFF','#266DF0FF']);
+      .range(['#ff33c9','#3a33ffFF']);
 
     const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
@@ -294,9 +294,9 @@ function createSteoreotypedVisualizationMenLower() {
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#F040EFFF');
+      .style('fill', '#ff33c9');
     svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
-      .style('fill', '#266DF0FF');
+      .style('fill', '#3a33ffFF');
     svg.append('text').attr('x', width - 80).attr('y', 130).text('Men')
       .style('font-size', '15px')
       .attr('alignment-baseline', 'middle');
@@ -432,7 +432,7 @@ function createnonSteoreotypedVisualizationWomenLower(){
 
     const color = d3.scaleOrdinal()
       .domain(['1', '2'])
-      .range(['#059804','#c9ae00']);
+      .range(['#3EBF30','#BFBD30']);
 
     const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
@@ -441,9 +441,9 @@ function createnonSteoreotypedVisualizationWomenLower(){
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#059804');
+      .style('fill', '#3EBF30');
     svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
-      .style('fill', '#c9ae00');
+      .style('fill', '#BFBD30');
     svg.append('text').attr('x', width - 80).attr('y', 130).text('Men')
       .style('font-size', '15px')
       .attr('alignment-baseline', 'middle');
@@ -571,7 +571,7 @@ function createnonSteoreotypedVisualizationMenLower() {
 
     const color = d3.scaleOrdinal()
       .domain(['1', '2'])
-      .range(['#c9ae00','#059804']);
+      .range(['#BFBD30','#3EBF30']);
 
     const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
@@ -580,9 +580,9 @@ function createnonSteoreotypedVisualizationMenLower() {
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#c9ae00');
+      .style('fill', '#BFBD30');
     svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
-      .style('fill', '#059804');
+      .style('fill', '#3EBF30');
     svg.append('text').attr('x', width - 80).attr('y', 130).text('Men')
       .style('font-size', '15px')
       .attr('alignment-baseline', 'middle');
@@ -678,22 +678,23 @@ function maxReached2(e) {
     ALTslider.innerHTML = parseInt(ALTslider);
     if(state == "first" && parseInt(PEslider.value) == 25000) {
       state = "second"
-      document.getElementById("slidersLabelsTask").innerHTML = "Please allocate 25,000 for \"Performance-based\""
+      document.getElementById("slidersLabelsTask").innerHTML = "Task 2: Allocate 25,000 for \"Performance-based\""
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! now can you try to allocate 25,000 for \"Performance-based\""
 
     }
     else if(state =="second" && parseInt(ALTslider.value) == 25000) {
       state = "third"
-      document.getElementById("slidersLabelsTask").innerHTML = "Please allocate, 12,500 for \"Performance-based\" and 12,500 for \"Reducing equal gender pay gap\""
+      document.getElementById("slidersLabelsTask").innerHTML = "Task 3: Allocate, 12,500 for \"Performance-based\" and 12,500 for \"addressing pay equity\""
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! now can you try to allocate 12,500 for \"Performance-based\" and 12,500 for \"Reducing equal gender pay gap\""
     }
     else if(state == "third" && parseInt(ALTslider.value) == 12500 && parseInt(PEslider.value) == 12500){
       document.getElementById("slidersLabelsTask").innerHTML = "Congratulations!! You can move on to the next part"
-      document.getElementById("sliderTrainingText").innerHTML = "Congratulations!! You can move in to the next part"
+      document.getElementById("sliderTrainingText").innerHTML = "Congratulations!! You can move on to the next part"
       document.getElementById("btn_task-training_5").hidden=false;
     }
     else {
       document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."
+      document.getElementById("sliderTrainingText").style.color = "#f80b0b";
     }
     //document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."
 
@@ -702,6 +703,8 @@ function maxReached2(e) {
   }
 
   document.getElementById("sliderTrainingText").innerHTML = ""
+  document.getElementById("sliderTrainingText").style.color = "#0b9d0b";
+
   // next line is just for demonstrational purposes
   // document.getElementById('total').innerHTML = parseInt(PEslider.value) + parseInt(ALTslider.value);
   document.getElementById('PEoutputtraining').innerHTML = parseInt(PEslider.value);

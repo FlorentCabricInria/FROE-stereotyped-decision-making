@@ -2,7 +2,7 @@
 <html lang="en">
   <?php 
   require_once "html/setup/functions.php";
-  global $config, $condition, $factor1;
+  global $config, $condition, $factor1, $cond_factors;
   loadConfig();
   ?>
 <head>
@@ -110,14 +110,15 @@ if ($is_debug  || $is_pilot){
 <?php
   if(isset($config['stimuli_order_files']['read_stimuli_order_from_files'])){
     if ($config['stimuli_order_files']['read_stimuli_order_from_files']){
+
       randomAssignmentFromFiles();
     }
   } else {
     randomAssignment();
   }
 
-
   $condition = $factor1;
+  //associate name to condition (which is a filename for now)
 
   if (is_null($condition)){
     ?>
@@ -128,6 +129,24 @@ if ($is_debug  || $is_pilot){
     <?php
     exit();
   }
+   $extension = array(".csv");
+   $subs   = array("");
+   $cond = str_replace($extension,$subs,$condition);
+   $mod = $cond % 4;
+   switch ($mod){
+      case 0:
+         $cond_factors =  "MenLower-Stereotyped";
+      break;
+      case 1:
+         $cond_factors =  "WomenLower-Stereotyped";
+      break;
+      case 2:
+         $cond_factors =  "MenLower-NonStereotyped";
+      break;
+      case 3:
+          $cond_factors =  "WomenLower-NonStereotyped";
+      break;
+      }
 
 
   // The following lines create a log file name "requested.csv" which contains a timestamp and participants id for all people who requested the page. This is mainly useful for debugging purposes to figure where something went wrong. It can also be used to detect if someone reloaded the page.
@@ -163,6 +182,7 @@ if ($is_debug  || $is_pilot){
   echo '<input type="hidden" id="condition" value="' . "" . $condition .  '"</input>';
   echo '<input type="hidden" id="is_debug" value="' . "" . (($is_debug) ? 'true' : 'false') .  '"</input>';
   echo '<input type="hidden" id="exclude_reloaders" value="' . "" . $config["exclude_reloaders"] .  '"</input>';
+  echo '<input type="hidden" id="condition-for-this-participant" value="' . "" . $cond_factors .  '"</input>';
 
 ?>
 </div>

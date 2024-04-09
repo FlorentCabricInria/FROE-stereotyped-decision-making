@@ -123,7 +123,6 @@ function randomAssignmentFromFiles($basedir = 'html/setup') {
   } else {
     $factor1 = $file; // we store the name of the file in the factor variable. That way it will be saved as the 'condition' assigned to the participant.
     $stimuli_order = explode(',', rtrim(file_get_contents($directory . '/in_use/' . $file)));
-
   }
 }
 

@@ -5,7 +5,8 @@
         $warning_text='<strong>You need to scroll</strong> the page to see the remaining content.';
         include 'html/components/warning.php';
       ?>
-      <div class="consent">
+      <h2> Not finished yet, please go to the next page</h2>
+     <!-- <div class="consent">
         <p>
           <b>Project title:</b>
         </p>
@@ -86,6 +87,7 @@
         <p>
           You must speak English and be 18 years of age or older to take part in this research study. By clicking on the "I agree. Start the experiment." button below, you certify that you have read and understood the above information, and that you are free to withdraw your consent or withdraw from the research at any time.
         </p>
-      </div>
+      </div>-->
     </div>
+
 </div>

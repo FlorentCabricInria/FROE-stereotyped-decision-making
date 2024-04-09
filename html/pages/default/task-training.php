@@ -1,16 +1,17 @@
 
 <div id="row">
-    <h1>Task Training</h1>
-    <p>You are the person in charge of the company&#39;s annual salary review. The CEO gives you 25 000 <em>customcurrency</em> to increase the salary of company's employees — your colleagues. <br>
-        The CEO told you to distribute the 25,000 as you want between two strategies: </p>
+    <h1>Training</h1>
+    <p>You are the person in charge of the company&#39;s annual salary review. The CEO has budgeted 25,000 <em>StudyCoin</em> to increase employees' salaries — your colleagues. <br>
+        The CEO has tasked you with allocating the 25,000 as you want between two objectfs: </p>
     <ul>
-        <li>reducing the gender pay gap (whether it&#39;s in favor of men or women)</li>
-        <li>increasing people’s salaries based on their last year&#39;s performance.</li>
+        <li>reducing pay inequity focusing on gender differences </li>
+        <li>allocating merit raises based on last year’s individual performance.</li>
     </ul>
-    <p> To help you in making the visualization you will see a data visualization similar to the one below (but the underpinning data will change) <br>
-    Employees are still represented according to their salary (y-axis) and the 3 categories : Grade group (x-axis), gender (color) and performance level (size of dots) <br> </p>
-    The decision must be entered using the two sliders you'll find below the visualization (framed in red).  <br>
-    I will ask you to try the sliders and follow the instructions written above the sliders in the red box.
+    <p> To assist you in your decisions you will see a data visualization similar to the one below (but the underpinning data will change) <br>
+    Employees are still represented according to their salary (vertical axis) and the 3 categories : Grade group (horizontal axis), gender (color) and performance level (size of dots) <br> </p>
+    The allocation must be indicated using the two sliders you will find next to the visualization (framed in grey).  <br>
+    We next ask you to complete three different allocations using the sliders.
+    Please try out the sliders now and follow the instructions (written above the sliders in the grey box).
     <strong> Be careful! You must spend the entire 25,000</strong> <br>
     <div>
     <?php
@@ -46,11 +47,11 @@
           }
 
       ?>
-        <div style="border: 2px solid #f80b0b;display: inline-block;width: 30%;float: left;padding: 20px " >
+        <div style="border: 2px solid #5e5e5e;display: inline-block;width: 30%;float: left;padding: 20px " >
             <span id="slidersLabelsTask"> <strong> Please allocate 25,000 for Reducing Equal Gender Pay Gap" </strong></span> <br>
-            Reducing equal gender pay gap: <input type="range" id="PayEquityTraining" name="PayEquityTraining" min="0" max="25000" value="0" step="100"> <output id="PEoutputtraining">0</output><br>
-            Performance-based: <input type="range" id="NotEquityTraining" name="NotEquityTraining" min="0" max="25000"  value="0" step="100" ><output id="ALToutputtraining">0</output> <br>
-            <span id="sliderTrainingText" style="font-weight: bold; color: #f80b0b;"></span>
+            Reducing pay equity: <input type="range" id="PayEquityTraining" name="PayEquityTraining" min="0" max="25000" value="0" step="100"> <br><output id="PEoutputtraining">0</output><br> <br>
+            Performance-based merit raises: <input type="range" id="NotEquityTraining" name="NotEquityTraining" min="0" max="25000"  value="0" step="100" ><br> <output id="ALToutputtraining">0</output> <br>
+            <span id="sliderTrainingText" style="font-weight: bold; color: #0b9d0b;"></span>
         </div>
 
     </div>
