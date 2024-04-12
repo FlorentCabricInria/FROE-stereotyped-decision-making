@@ -1,8 +1,8 @@
 
 <div id="row">
     <h1>Training</h1>
-    <p>You are the person in charge of the company&#39;s annual salary review. The CEO has budgeted 25,000 <em>StudyCoin</em> to increase employees' salaries — your colleagues. <br>
-        The CEO has tasked you with allocating the 25,000 as you want between two objectfs: </p>
+    <p>You are the person in charge of the company&#39;s annual salary review. The CEO has budgeted 25,000 <em>StudyCoin</em> to increase employee salaries — your colleagues. <br>
+        The CEO has tasked you with allocating the 25,000 as you want between two objectives: </p>
     <ul>
         <li>reducing pay inequity focusing on gender differences </li>
         <li>allocating merit raises based on last year’s individual performance.</li>

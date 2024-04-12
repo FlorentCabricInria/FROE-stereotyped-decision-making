@@ -1,23 +1,32 @@
 
 let CGPGBtn = document.getElementById("addCurrentGenderPayGap");
-let allocationBtn = document.getElementById("addAllocation");
-let moneyLeftBtn = document.getElementById("addMoneyLeft");
+//let allocationBtn = document.getElementById("addAllocation");
+//let moneyLeftBtn = document.getElementById("addMoneyLeft");
 CGPGBtn.addEventListener('click', displayCurrentGenderPayGap, false);
-allocationBtn.addEventListener('click', displayAllocation, false);
-moneyLeftBtn.addEventListener('click', displayMoneyLeft, false);
+//allocationBtn.addEventListener('click', displayAllocation, false);
+//moneyLeftBtn.addEventListener('click', displayMoneyLeft, false);
 console.log('Hey I am here');
 let state3 = "first";
 var random = new Math.seedrandom(seed);
 
+let dfPeople_3WLS = []
 const sliderEquity = document.getElementById('PayEquityTraining3');
 const sliderAlt = document.getElementById('NotEquityTraining3');
 sliderEquity.addEventListener('input', maxReached, false);
+sliderEquity.addEventListener("mousedown", () => {
 
+});
+sliderEquity.addEventListener("mousemove", () => {
+});
+sliderEquity.addEventListener("mouseup", () => {
+  changeSalary3WLS()
+  calculateNewPayGap()
+});
 sliderAlt.addEventListener('input', maxReached, false);
 createSteoreotypedVisualization()
 ticks = d3.selectAll('.tick').style("font-size","1.5em");
-
-function changeSalary() {
+/*
+function changeSalary3WLS() {
     const test = d3.selectAll('dot');
     d3.selectAll('.dot')
       // .data(data)
@@ -25,14 +34,15 @@ function changeSalary() {
         let valuePE = parseInt(d3.select('#PayEquity').node().value);
         let valueNE = parseInt(d3.select('#NotEquity ').node().value);
         let new_salary = (((valuePE / 60000) * d.sugg_raise) + ((valueNE / 60000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-        dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
+        dfPeople_3WLS[parseInt(d.key) - 1].total_comp = new_salary;
         //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
         return y(new_salary);
       });
-  }
+  }*/
 
 function calculateNewPayGap() {
-  let GPG = ((Math.exp(lm('log(total_comp) ~ gender_w + performance_f1 + performance_f2 + grade_group_f4 + grade_group_f5', dfPeople).coefficients[1]) - 1) * 100.0).toFixed(2);
+  console.log(dfPeople_3WLS[1].total_comp);
+  let GPG = ((Math.exp(lm('log(total_comp_3WLS) ~ gender_w + performance_f1 + performance_f2 + grade_group_f4 + grade_group_f5', dfPeople_3WLS).coefficients[1]) - 1) * 100.0).toFixed(2);
   if (GPG > 0) {
     d3.select('#TestGenderPG').text(`${GPG}% (men lower)`);
   } else {
@@ -65,8 +75,9 @@ function createSteoreotypedVisualization(){
         performance: parseInt(d.performance),
         grade_group: parseInt(d.grade_group),
         total_comp: parseInt(d.total_comp),
+        total_comp_3WLS: parseInt(d.total_comp)
       };
-      dfPeople[id] = person;
+      dfPeople_3WLS[id] = person;
       id++;
     });
 
@@ -85,7 +96,9 @@ function createSteoreotypedVisualization(){
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1 || x == 2 || x == 3) return "Grade Group " + (x + 2);
+        if (x == 1) return "Grade Group A";
+        else if (x == 2)return "Grade Group B";
+        else if (x == 3)return "Grade Group C ";
       }));
 
     //
@@ -147,14 +160,26 @@ function createSteoreotypedVisualization(){
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#3a33ff');
+      .style('fill', '#3a33ffFF');
     svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
       .style('fill', '#ff33c9');
-    svg.append('text').attr('x', width - 80).attr('y', 130).text('Men')
-      .style('font-size', '15px')
+    svg.append('text').attr('x', width - 80).attr('y', 135).text('Men')
+      .style('font-size', '1em')
       .attr('alignment-baseline', 'middle');
-    svg.append('text').attr('x', width - 80).attr('y', 160).text('Women')
-      .style('font-size', '15px')
+    svg.append('text').attr('x', width - 80).attr('y', 165).text('Women')
+      .style('font-size', '1em')
+      .attr('alignment-baseline', 'middle');
+    svg.append('circle').attr('cx', width - 100).attr('cy', 190).attr('r', 2.75 *coefSize)
+    svg.append('text').attr('x', width - 80).attr('y', 195).text('Low')
+      .style('font-size', '1em')
+      .attr('alignment-baseline', 'middle');
+    svg.append('circle').attr('cx', width - 100).attr('cy', 220).attr('r', 3.75 *coefSize);
+    svg.append('text').attr('x', width - 80).attr('y', 225).text('Medium')
+      .style('font-size', '1em')
+      .attr('alignment-baseline', 'middle');
+    svg.append('circle').attr('cx', width - 100).attr('cy', 250).attr('r', 4.75 *coefSize);
+    svg.append('text').attr('x', width - 80).attr('y', 255).text('High')
+      .style('font-size', '1em')
       .attr('alignment-baseline', 'middle');
 
 
@@ -175,7 +200,7 @@ function createSteoreotypedVisualization(){
           .attr('r', (d) =>
               (parseInt(d.performance) + 1.75) * coefSize,
           )
-          .attr('class', (d) => `dot ${d.gender}`),
+          .attr('class', (d) => `dot3WLS`),
       );
 
   });
@@ -192,9 +217,9 @@ function maxReached(e) {
     target.value -= (sum - max);
     document.getElementById('PEoutputTraining3').innerHTML = parseInt(PEslider.value);
     document.getElementById('ALToutputTraining3').innerHTML = parseInt(ALTslider.value);
-    document.getElementById('AllocationGPG').innerHTML = parseInt(PEslider.value);
+    /*document.getElementById('AllocationGPG').innerHTML = parseInt(PEslider.value);
     document.getElementById('AllocationNotGPG').innerHTML = parseInt(ALTslider.value);
-     document.getElementById('Leftovers').innerHTML = sum-max
+     document.getElementById('Leftovers').innerHTML = sum-max*/
     PEslider.innerHTML = parseInt(PEslider.value);
     ALTslider.innerHTML = parseInt(ALTslider);
     e.preventDefault();
@@ -205,11 +230,10 @@ function maxReached(e) {
   // document.getElementById('total').innerHTML = parseInt(PEslider.value) + parseInt(ALTslider.value);
   document.getElementById('PEoutputTraining3').innerHTML = parseInt(PEslider.value);
   document.getElementById('ALToutputTraining3').innerHTML = parseInt(ALTslider.value);
-  document.getElementById('AllocationGPG').innerHTML = parseInt(PEslider.value);
+ /* document.getElementById('AllocationGPG').innerHTML = parseInt(PEslider.value);
   document.getElementById('AllocationNotGPG').innerHTML = parseInt(ALTslider.value);
-  document.getElementById('Leftovers').innerHTML = sum-max;
-  changeSalary();
-  calculateNewPayGap();
+  document.getElementById('Leftovers').innerHTML = sum-max;*/
+  changeSalary3WLS();
   return true;
 }
 
@@ -297,10 +321,16 @@ function displayFeatures () {
   sliderAlt.addEventListener('input', maxReached, false);
 }
 function displayCurrentGenderPayGap () {
+  /* document.getElementById("addCurrentGenderPayGap").hidden = true;
+   document.getElementById("addAllocation").hidden = false;
+   document.getElementById("instrPG").hidden = false;*/
   document.getElementById("addCurrentGenderPayGap").hidden = true;
   document.getElementById("LineGenderPG").hidden = false;
-  document.getElementById("addAllocation").hidden = false;
-  document.getElementById("instrPG").hidden = false;
+ // document.getElementById("instrleft").hidden = false;
+  document.getElementById("btn_task-training-v3_7").hidden = false;
+  // <!--<br> <button id="addAllocation" hidden="true"> Add the next piece of information : the distribution of the allocations </button> <span id="LineSummaryAllocation" hidden="true">You have allocated <span id="AllocationGPG"> 0 </span> for reducing equal gender pay gap and <span id="AllocationNotGPG"> 0 </span> for rewarding the performance. <span id="instrAlloc" style="color: darkred"> The distribution of allocation are updated in real time!</span>
+  //       <br>  <button id="addMoneyLeft" hidden="true"> Add the third piece of information : the amount of money left  </button> <span id="LineMoneyLeft" hidden="true">You have <span id="Leftovers"> 0</span> left to allocate. <span id="instrleft" style="color: darkred"> This text tells you how much money you have left to allocate</span>
+  //     -->
 }
 function displayAllocation () {
   document.getElementById("addAllocation").hidden = true;
@@ -314,18 +344,21 @@ function displayMoneyLeft(){
   document.getElementById("instrleft").hidden = false;
   document.getElementById("btn_task-training-v3_7").hidden = false;
 }
-function changeSalary() {
+function changeSalary3WLS() {
   const test = d3.selectAll('dot');
-  d3.selectAll('.dot')
+  d3.selectAll('.dot3WLS')
     // .data(data)
     .attr('cy', (d, i) => {
       // console.log(equityslider)
       //  console.log(notequityslider)
       const valuePE = parseInt(d3.select('#PayEquityTraining3').node().value);
       const valueNE = parseInt(d3.select('#NotEquityTraining3 ').node().value);
-      const new_salary = (((valuePE / 25000) * d.sugg_raise) + ((valueNE / 25000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-      dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
+      let new_salary = (((valuePE / 25000) * d.sugg_raise) + ((valueNE / 25000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
+      dfPeople_3WLS[parseInt(d.key) - 1].total_comp = new_salary;
+      dfPeople_3WLS[parseInt(d.key) - 1].total_comp_3WLS = new_salary;
+      //console.log(new_salary + " --> " + typeof new_salary + "  " + dfPeople_3WLS[parseInt(d.key) - 1].total_comp + "   " + typeof dfPeople_3WLS[parseInt(d.key) - 1].total_comp)
       //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
       return y(new_salary);
     });
+  calculateNewPayGap();
 }

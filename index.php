@@ -41,7 +41,6 @@
   </div>
   <script src="html/setup/min_browser_versions.js"></script>
   <script src='html/js/tools/browser-detection.js'></script>
-  <script src='html/js/tools/linear-models.esm@50.js'</script>
 
 
 

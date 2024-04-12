@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Introduction to the task</title>
   <!-- Load revisit-communicate to be able to send data to reVISit -->
-  <script src="../../../../testRevisitFCInria/public/js/revisit-communicate.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"> </script>
 
     <script src="html/js/lib/linear-models.esm@50.js"> </script>
@@ -14,7 +13,7 @@
 <body>
 <div id="firstStage" style="text-align: left">
 
-    <h1 style="text-align: center"> Background Explanation</h1>
+    <h1 > Background Explanation</h1>
     <p><b>Imagine the following scenario</b></p>
     You are the person in charge of your company's annual salary review. The CEO has allocated 25,000 StudyCoin (a currency created for this study) to increase the employees salaries — your colleagues.
     The CEO instructed you to allocate the 25,000 as you want between two objectives:

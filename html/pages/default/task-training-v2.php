@@ -1,8 +1,10 @@
 
 <div id="row">
-    <h1>Task Training part 2.</h1>
-    <p>Task instruction remains the same, but we will add two features to help you make what you consider to be the best decision. These features will help you to explore the full range of decisions you can make.</p>
-    <p>Look at the visualization and read the instructions below</p>
+    <h1>Training part 2.</h1>
+    <p>We will now add two features to support your decision-making: a grey line to see potential evolution of the employee salariess and
+        interactivity to be able to visualize the effects of your decision in real time. These features will help you explore the full range of possible decisions.
+        <br>
+    Click on the button below to explore these two features.</p>
 
     <?php
           $extension = array(".csv");
@@ -44,16 +46,21 @@
     <br>
     <button id="wantToSeeTheFeatures"> Click here to see the new features: </button>
     <div id="point1" hidden="true">
-        <h3> Visualize decision results with gray lines</h3>
-    <span> By allocating money to one strategy or the other, you'll increase the salaries of some of your employees. We're going to represent the maximum salary a person can achieve by a thin gray line.
-        The maximum limit of this line represents the maximum salary that this person can reach among all the decisions you'll be making.  </span> <br>
+        <h3> Possible impact on salaries </h3>
+    <span> By allocating the budget to each objective you will increase the salaries of some of the employees. We will represent the maximum salary a person can achieve (by either objective) by a thin gray line.
+        The maximum limit of each employee’s line represents the maximum salary that this person can achieve among all the possible decisions.
+ </span> <br>
         <button id="forecastVisBtn" >  Add the gray lines</button><br>
     </div>
     <div id="point2" hidden="true">
-        <h3> Visualization of decision results with real-time updates</h3>
-        <span> Moving the sliders will attribute money to employees according to the strategy you will use. This modification of employees' salary will be visualized in real time by moving the dots vertically according to their new salary.
-            For instance, if you choose to allocate all the money for rewarding last year performance, the high performers (i.e., large dots) will be raised more than the medium performers (i.e., medium dots) etc.
-            If you choose to reduce equal gender pay gap, the dots representing the people who belong to the underpaid group (either men or women) will move accordingly.</span> <br>
+        <h3>Visualization of decision results with real-time updates
+        </h3>
+        <span> Moving the sliders will allocate the budget to employees according to the objective (or combination of objectives).
+            The modification of employee salaries will be visualized in real time, you will observe the dots moving vertically according to their allocated raise.</span> <br>
+        <ul>
+            <li> Merit raises: Merit raises allocate salary increases based on last year’s performance evaluation; high performance will be awarded higher raises than medium performance.</li>
+            <li> Pay equity: Pay equity raises allocate raises to reduce the equal gender pay gap (equal pay for equal work), the dots representing the individuals from the underpaid group (either men or women) will move accordingly</li>
+        </ul>
         <button id="interactionVisBtn">  Add Interactivity</button><br>
     </div>
 

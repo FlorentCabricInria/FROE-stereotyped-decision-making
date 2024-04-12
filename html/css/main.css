@@ -14,7 +14,18 @@
   margin: auto;
   margin-top: auto;
 }
-
+input[type=range]{
+    pointer-events: none;
+}
+input[type=range]::-webkit-slider-thumb{/*Webkit Browsers like Chrome and Safari*/
+    pointer-events: auto;
+}
+input[type=range]::-moz-range-thumb{/*Firefox*/
+    pointer-events: auto;
+}
+input[type=range]::-ms-thumb{/*Internet Explorer*/
+    pointer-events: auto;
+}
 .tick{
     font-size: 1.5em;
 }
@@ -49,7 +60,6 @@ form .likert {
 }
 form .likert:last-of-type {border-bottom:0;}
 form .likert:before {
-    content: '';
     position:relative;
     top:11px;
     left:9.5%;
@@ -138,8 +148,13 @@ form .buttons .submit:hover {background-color: #14892c;}
 	background-color: white;
 }
 
-
-
+h1 {
+    text-align: center;
+}
+.statement {
+    font-size: 1.2em;
+    font-family: Roboto;
+}
 h2 {
 	margin-top: 20px;
 	margin-bottom: 20px;

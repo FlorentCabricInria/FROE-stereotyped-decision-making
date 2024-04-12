@@ -112,7 +112,9 @@ function createSteoreotypedVisualizationWomenLower(){
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1 || x == 2 || x == 3) return "Grade Group " + (x + 2);
+        if (x == 1) return "Grade Group A";
+        else if (x == 2)return "Grade Group B";
+        else if (x == 3)return "Grade Group C ";
       }));
 
     //
@@ -279,7 +281,9 @@ function createSteoreotypedVisualizationMenLower() {
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1 || x == 2 || x == 3) return "Grade Group " + (x + 2);
+        if (x == 1) return "Grade Group A";
+        else if (x == 2)return "Grade Group B";
+        else if (x == 3)return "Grade Group C ";
       }));
 
     //
@@ -426,9 +430,10 @@ function createnonSteoreotypedVisualizationWomenLower(){
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1 || x == 2 || x == 3) return "Grade Group " + (x + 2);
+        if (x == 1) return "Grade Group A";
+        else if (x == 2)return "Grade Group B";
+        else if (x == 3)return "Grade Group C ";
       }));
-
     //
 
     const color = d3.scaleOrdinal()
@@ -565,7 +570,9 @@ function createnonSteoreotypedVisualizationMenLower() {
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1 || x == 2 || x == 3) return "Grade Group " + (x + 2);
+        if (x == 1) return "Grade Group A";
+        else if (x == 2)return "Grade Group B";
+        else if (x == 3)return "Grade Group C ";
       }));
 
     //
