@@ -332,8 +332,8 @@
         </li>
     </ul>
     <div class="buttons">
-        <button class="clear">Clear</button>
-        <button class="submit">Submit</button>
+        <button id="submitScaleButton" class="submit">Submit</button> <br>
+        <span id="ErrorMessageScale" style="color: darkred"></span>
     </div>
 </form>
 
@@ -428,29 +428,40 @@
         else {
           answ12= parseInt(document.querySelector('input[name="likert12"]:checked').value);
         }
+        if(mistakes == ""){
+          console.log("mistage == 0")
+          measurements['answ1'] = answ1;
+          measurements['answ2'] = answ2;
+          measurements['answ3'] = answ3;
+          measurements['answ4'] = answ4;
+          measurements['answ5'] = answ5;
+          measurements['answ6'] = answ6;
+          measurements['answ7'] = answ7;
+          measurements['answ8'] = answ8;
+          measurements['answ9'] = answ9;
+          measurements['answ10'] = answ10;
+          measurements['answ11'] = answ11;
+          measurements['answ12'] = answ12;
+          var totalScale = (answ1 + answ2 + answ3 + answ4 + answ5 + answ6 + answ7 + answ8 + answ9 + answ10 + answ11 + answ12) / 12.0
+          var hostileSexism = (answ3 + answ6 + answ7 + answ8 + answ9 + answ12) / 6.0
+          var benevolentSexism = (answ1 + answ2 + answ4 + answ5 +  answ10 + answ11) / 6.0
 
-          console.log("You forgot to input answers : " + mistakes)
-        measurements['answ1'] = answ1;
-        measurements['answ2'] = answ2;
-        measurements['answ3'] = answ3;
-        measurements['answ4'] = answ4;
-        measurements['answ5'] = answ5;
-        measurements['answ6'] = answ6;
-        measurements['answ7'] = answ7;
-        measurements['answ8'] = answ8;
-        measurements['answ9'] = answ9;
-        measurements['answ10'] = answ10;
-        measurements['answ11'] = answ11;
-        measurements['answ12'] = answ12;
-        var totalScale = (answ1 + answ2 + answ3 + answ4 + answ5 + answ6 + answ7 + answ8 + answ9 + answ10 + answ11 + answ12) / 12.0
-        var hostileSexism = (answ3 + answ6 + answ7 + answ8 + answ9 + answ12) / 6.0
-        var benevolentSexism = (answ1 + answ2 + answ4 + answ5 +  answ10 + answ11) / 6.0
+          measurements['totalScale'] = totalScale;
+          measurements['hostileSexism'] = hostileSexism;
+          measurements['benevolentSexism'] = benevolentSexism;
+          document.getElementById("ErrorMessageScale").innerHTML = "";
 
-        measurements['totalScale'] = totalScale;
-        measurements['hostileSexism'] = hostileSexism;
-        measurements['benevolentSexism'] = benevolentSexism;
+          document.getElementById("submitScaleButton").hidden = true;
+          document.getElementById('btn_ambivalent-sexism-theory_9').hidden = false;
+        }
+        else {
+          console.log('eles')
+          document.getElementById("ErrorMessageScale").innerHTML = "You forget to answer questions : " + mistakes + "<br>" + "Please, reply to all questions before proceed to the next stage";
+        }
+        /*  console.log("You forgot to input answers : " + mistakes)
 
-        console.log(measurements);
+
+        console.log(measurements);*/
 
         /*Scoring:
     Hostile Sexism = average of items 3, 6, 7, 8, 9, 12

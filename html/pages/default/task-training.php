@@ -7,7 +7,7 @@
         <li>reducing pay inequity focusing on gender differences </li>
         <li>allocating merit raises based on last year’s individual performance.</li>
     </ul>
-    <p> To assist you in your decisions you will see a data visualization similar to the one below (but the underpinning data will change) <br>
+    <p> To assist you in your decisions you will see a data visualization similar to the one below (but the underlying data will change) <br>
     Employees are still represented according to their salary (vertical axis) and the 3 categories : Grade group (horizontal axis), gender (color) and performance level (size of dots) <br> </p>
     The allocation must be indicated using the two sliders you will find next to the visualization (framed in grey).  <br>
     We next ask you to complete three different allocations using the sliders.

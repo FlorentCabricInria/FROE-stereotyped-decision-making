@@ -112,9 +112,9 @@ function createSteoreotypedVisualizationWomenLower(){
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade Group A";
-        else if (x == 2)return "Grade Group B";
-        else if (x == 3)return "Grade Group C ";
+        if (x == 1) return "Grade group  A";
+        else if (x == 2)return "Grade group  B";
+        else if (x == 3)return "Grade group  C ";
       }));
 
     //
@@ -281,9 +281,9 @@ function createSteoreotypedVisualizationMenLower() {
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade Group A";
-        else if (x == 2)return "Grade Group B";
-        else if (x == 3)return "Grade Group C ";
+        if (x == 1) return "Grade group  A";
+        else if (x == 2)return "Grade group  B";
+        else if (x == 3)return "Grade group  C ";
       }));
 
     //
@@ -430,9 +430,9 @@ function createnonSteoreotypedVisualizationWomenLower(){
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade Group A";
-        else if (x == 2)return "Grade Group B";
-        else if (x == 3)return "Grade Group C ";
+        if (x == 1) return "Grade group  A";
+        else if (x == 2)return "Grade group  B";
+        else if (x == 3)return "Grade group  C ";
       }));
     //
 
@@ -570,9 +570,9 @@ function createnonSteoreotypedVisualizationMenLower() {
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade Group A";
-        else if (x == 2)return "Grade Group B";
-        else if (x == 3)return "Grade Group C ";
+        if (x == 1) return "Grade group  A";
+        else if (x == 2)return "Grade group  B";
+        else if (x == 3)return "Grade group  C ";
       }));
 
     //

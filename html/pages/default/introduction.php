@@ -40,7 +40,7 @@
     In the chart below, each circle represents a person. The y-axis represents their salaries.
     In other words, the higher the colleagues are in the figure, the more they are paid.
     <svg id="firstChart"> </svg> <br>
-    <button id="secondStageButton">  Click to see an example</button>
+    <button id="secondStageButton"> Next</button>
 </div>
 <div id="thirdStage" style="text-align: left" hidden="true">
     <h1> Background Explanation</h1>
@@ -59,8 +59,8 @@
 </div>
 <div id="fourthStage" style="text-align: left" hidden="true">
     <br>
-    Please, approximate <span style="font-weight: bold; color: #3EBF30;"> Robin </span>'s salary (&#177; 2000) (the <span style="font-weight: bold; color: #3EBF30;">  green dot </span>) and click on next:
-    <input id="inputTestRobin" type="text"> </input>
+    Please, approximate <span style="font-weight: bold; color: #3EBF30;"> Robin </span>'s salary (&#177; 2K) (the <span style="font-weight: bold; color: #3EBF30;">  green dot </span>) and click on next:
+    <input id="inputTestRobin" type="text" placeholder="digits only" /> </input>
     <button id="fourthStageButton">  Next</button>
     <br>
     <span id="checkingValue" style="font-weight: bold; color: #f80b0b;"></span>
@@ -72,7 +72,7 @@
 
     <ul>
         <li> <b>Their last year's performance </b>: Individual performance was categorized as high, medium and low.</li>
-        <li> <b>Their grade groups</b>: The company uses a detailed grading system, based on employees skills, knowledge, job duties and levels of authority. For simplicity we assume we have grade groups 3, 4 and5. </li>
+        <li> <b>Their grade groups</b>: The company uses a detailed grading system, based on employees skills, knowledge, job duties and levels of authority. For simplicity we assume we have grade groups A, B and C. </li>
         <li> <b>Their gender</b>: Woman or Man&#42; <br>
     <br>
     <br>
@@ -84,28 +84,25 @@
     <button id="fifthStageButton">  Next</button>
 </div>
 <div id="sixthStage" style="text-align: left" hidden="true">
-    <h1> Grade Groups:</h1>
-    <p>In our visualization, grade groups will be at different positions. <br>
-        Recall this chart and your two colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and <span style="font-weight: bold; color: #F2B93F;"> Sam </span>:
+    <h1> Grade groups:</h1>
+    <p>
+        Recall the chart below and your two colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and <span style="font-weight: bold; color: #F2B93F;"> Sam </span>. <br>
+        The employees who belong to the same grade group will be grouped together. Grade group A will be on the left of the chart, Grade group B will be in the center and Grade group B will be on the right.
     </p>
     <svg id="chartGradeGroups"> </svg> <br>
-    The employees who belong to the same grade group will be grouped together. Grade group 3 will be on the left of the chart, Grade group 4 will be in the center and Grade group 5 will be on the right.
-    <br>
-    <button id="sixthStageButton">  Adding grade groups to our visualization</button>
+    <button id="sixthStageButton">  Add grade groups to our visualization</button>
 </div>
 <div id="seventhStage" style="text-align: left" hidden="true">
-    <br>
-    As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #0096c9;">Grade Group 5</span> and  <span style="font-weight: bold; color: #F2B93F;"> Sam </span>
-    belongs to  <span style="font-weight: bold; color: #F2B93F;"> Grade Group 4 </span>. <br>
+    As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #0096c9;">Grade group C</span> and  <span style="font-weight: bold; color: #F2B93F;"> Sam </span>
+    belongs to  <span style="font-weight: bold; color: #F2B93F;"> Grade group B</span>. <br>
     To be able to distinguish between employees with very similar salaries, we will add some "jitter". That means that the horizontal position of each employee will be moved slightly, to the left or to the right.
     <button id="seventhStageButton">  Add Jitter</button>
 </div>
 <div id="eighthStage" style="text-align: left" hidden="true">
-    <br>
-    All the employees that are inside the <span style="font-weight: bold; color: #f80b0b;">red rectangle </span> belong to <span style="font-weight: bold; color: #f80b0b;"> Grade Group 3 </span> <br>
-    All the employees that are inside the <span style="font-weight: bold; color: #3a33ff;">blue rectangle </span> belong to <span style="font-weight: bold; color: #3a33ff;"> Grade Group 4</span> <br>
-    All the employees that are inside the <span style="font-weight: bold; color: #054f04;">green rectangle </span> belong to <span style="font-weight: bold; color: #054f04;"> Grade Group 5 </span> <br>
-  <br>  <button id="eighthStageButton">  Next </button>
+    All the employees that are inside the <span style="font-weight: bold; color: #f2593f;">red rectangle </span> belong to <span style="font-weight: bold; color: #f2593f;"> Grade group A </span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #3f7ef2;">blue rectangle </span> belong to <span style="font-weight: bold; color: #3f7ef2;"> Grade group B</span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #799453FF;">green rectangle </span> belong to <span style="font-weight: bold; color: #799453FF;"> Grade group C</span> <br>
+    <button id="eighthStageButton">  Next </button>
 </div>
 <div id="ninethStage" style="text-align: left" hidden="true">
     <br>
@@ -113,16 +110,16 @@
     <fieldset>
         <legend style="font-size: medium">Select a grade group :</legend>
         <div>
-            <input type="radio" id="gg3" name="grade-group-test" value="3" checked />
-            <label for="gg3">3</label>
+            <input type="radio" id="gg3" name="grade-group-test" value="3" />
+            <label for="gg3">A</label>
         </div>
         <div>
             <input type="radio" id="gg4" name="grade-group-test" value="4" />
-            <label for="gg4">4</label>
+            <label for="gg4">B</label>
         </div>
         <div>
             <input type="radio" id="gg5" name="grade-group-test" value="5" />
-            <label for="gg5">5</label>
+            <label for="gg5">C</label>
         </div>
     </fieldset>
     <br>
@@ -135,8 +132,8 @@
     <p> Performance has been evaluated using rigorous, tried-and-tested methodologies. Performance is split into three levels: low performers, medium performers and high performers. <br>
         In the visualization, performance is visualized by the size of dots<br>
         Recall this chart and your two colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and <span style="font-weight: bold; color: #F2B93F;"> Sam </span>. <br>
-        <span style="font-weight: bold; color: #0096c9;">Charlie</span> earns <span style="font-weight: bold; color: #0096c9;">74,000</span> and belongs to <span style="font-weight: bold; color: #0096c9;">grade group 5</span>
-        <br><span style="font-weight: bold; color: #F2B93F;">Sam</span> earns <span style="font-weight: bold; color: #F2B93F;">38,500</span> and belongs to <span style="font-weight: bold; color: #F2B93F;">grade group 4</span><br>
+        <span style="font-weight: bold; color: #0096c9;">Charlie</span> earns <span style="font-weight: bold; color: #0096c9;">74,000</span> and belongs to <span style="font-weight: bold; color: #0096c9;">grade group C</span>
+        <br><span style="font-weight: bold; color: #F2B93F;">Sam</span> earns <span style="font-weight: bold; color: #F2B93F;">38,500</span> and belongs to <span style="font-weight: bold; color: #F2B93F;">grade group B</span><br>
     </p>
     <svg id="chartPerformance"> </svg> <br>
     Employees’ performance category will be represented by the dots' size.
@@ -145,7 +142,7 @@
     <span style='font-size:30px;'>&#9679;</span>  Medium performance will be represented by a medium-sized circle.<br>
     <span style='font-size:45px;'>&#9679;</span>  High performance will be represented by a large circle.
 
-    <button id="tenthStageButton">  Adding the performance to our visualization</button>
+    <button id="tenthStageButton">  Add the performance to our visualization</button>
 </div>
 <div id="eleventhStage" style="text-align: left" hidden="true">
     <span style="font-weight: bold; color: #0096c9;">Charlie</span> is represented by the largest size of circle and therefore Charlie's performance is categorized as <span style="font-weight: bold; color: #0096c9;">high</span>
@@ -187,15 +184,15 @@
             <legend>What is <span style="font-weight: bold; color: #BFBD30;">Jamie's </span>grade group ?</legend> <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>
             <div>
                 <input type="radio" id="ggJamie3" name="grade-group-test-jamie" value="3" />
-                <label for="ggJamie3">3</label>
+                <label for="ggJamie3">A</label>
             </div>
             <div>
                 <input type="radio" id="ggJamie4" name="grade-group-test-jamie" value="4" />
-                <label for="ggJamie4">4</label>
+                <label for="ggJamie4">B</label>
             </div>
             <div>
                 <input type="radio" id="ggJamie5" name="grade-group-test-jamie" value="5" />
-                <label for="ggJamie5">5</label>
+                <label for="ggJamie5">C</label>
             </div>
         </fieldset>
         <fieldset style="width: 33%;float: left;padding: 20px">

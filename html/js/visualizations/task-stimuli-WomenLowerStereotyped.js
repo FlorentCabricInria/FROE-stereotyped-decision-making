@@ -55,8 +55,13 @@ d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
     }
   });
 
+  let posX = [568.6810569737894 , 268.1109477126755 , 391.6875405775466 , 288.61496459196434 , 460.812279705711 , 373.6216488795456 ,
+    451.58312561597336 , 610.1726486750082 , 203.85129796596527 , 550 , 236.98794871169048 , 261.7787621363155 , 547.516544665867 ,
+    574.9064553446289 , 600.267494978694 , 630.4580511400769 , 420 , 388.92436705065137 , 220 , 633.938791430464 , 622.6702740421755 ,
+    283.3699571533981 , 260.58899871113363 , 430.3455797341415 , 371.5902249580465 , 424.35747435630356 , 270.12082595392803 , 273.7790428043915 ,
+    570.5714540014341 , 538.7865735722019]
   // Create the container SVG.
-  const svg = d3.select('#svg-stimuli')
+  const svg = d3.select('#task-stimuli-women-lower-stereotyped')
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', [0, 0, width, height])
@@ -126,7 +131,7 @@ d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
         .attr('id', (d) => d.key)
         .attr('class', "ghost")
         .attr("hidden","true")
-        .attr('cx', (d) => (x(d.grade_group - 2) + (taskRandomGhost.double() * (100)) - 50))
+        .attr('cx', (d) => (posX[parseInt(d.key)-1]))
         .attr('cy', (d) => y2(d.total_comp)),
     )
     .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
@@ -145,8 +150,8 @@ d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
     .join(
       (enter) => enter
         .append('line')
-        .attr('x1', (d) => (x(d.grade_group - 2) + (taskRandomLine1.double() * (100)) - 50))
-        .attr('x2', (d) => (x(d.grade_group - 2) + (taskRandomLine2.double() * (100)) - 50))
+        .attr('x1', (d) => (posX[parseInt(d.key)-1]))
+        .attr('x2', (d) => (posX[parseInt(d.key)-1]))
         .attr('y1', (d) => y2(d.total_comp))
         .attr('y2', (d) => {
           const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
@@ -167,7 +172,8 @@ d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
       (enter) => enter
         .append('circle')
         .attr('id', (d) => d.key)
-        .attr('cx', (d) => (x(d.grade_group - 2) + (randomDots.double() * (100)) - 50))
+        // .attr('cx', (d) => (x(d.grade_group - 2) + (randomDots.double() * (100)) - 50))
+        .attr('cx', (d) => (posX[parseInt(d.key)-1]))
         .attr('cy', (d, i) => {
           const valuePE = parseInt(d3.select('#taskPayEquity').node().value);
           const valueNE = parseInt(d3.select('#taskNotEquity ').node().value);
