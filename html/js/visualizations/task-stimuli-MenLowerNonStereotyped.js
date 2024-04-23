@@ -1,21 +1,10 @@
 /* eslint-disable */
 console.log('Hey I am here');
-/*
-const taskID = 'scatterplot2';
-const loc = 'belowStimulus';
-
-const coefSize = 2.5;
-const perfVisual = 'size';
-const dfPeopleTask = [];
-const seed = '45457';*/
 var randomDots = new Math.seedrandom(seed);
 let coefLow;
 let coefMid;
 let coefHigh;
-// if(nbElem=="30"){
-//   var data= structuredClone(data30)
 let y2 = d3.scaleLinear()
-  // .domain(d3.extent(genderData, d => d.salary)).nice()
   .domain([28000 , 10000])
   .range([0 + marginBottom, height - marginTop]);
 let btnFinal =  document.getElementById('btn_test-decision-making-study_8')
@@ -224,6 +213,42 @@ d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
     d3.selectAll('.ghost').attr("hidden","true")
   });
 
+  let plusBtnEquityTask = document.getElementById('PayEquityPlusBtn');
+  let minusBtnEquityTask= document.getElementById('PayEquityMinusBtn');
+  let plusBtnNotEquityTask= document.getElementById('NotEquityPlusBtn');
+  let minusBtnNotEquityTask= document.getElementById('NotEquityMinusBtn');
+ 
+  plusBtnEquityTask.addEventListener('mouseover', () => {
+    d3.selectAll('.ghost ').attr("hidden", null)
+  });
+  plusBtnEquityTask.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghost ').attr("hidden", "true")
+  });
+  plusBtnEquityTask.addEventListener('click', onPlusEquityTask);
+  minusBtnEquityTask.addEventListener('mouseover', () => {
+    d3.selectAll('.ghost ').attr("hidden", null)
+  });
+  minusBtnEquityTask.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghost ').attr("hidden", "true")
+  });
+
+  minusBtnEquityTask.addEventListener('click', onMinusEquityTask);
+  plusBtnNotEquityTask.addEventListener('mouseover', () => {
+    d3.selectAll('.ghost ').attr("hidden", null)
+  });
+  plusBtnNotEquityTask.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghost ').attr("hidden", "true")
+  });
+  plusBtnNotEquityTask.addEventListener('click', onPlusNotEquityTask);
+
+
+  minusBtnNotEquityTask.addEventListener('mouseover', () => {
+    d3.selectAll('.ghost ').attr("hidden", null)
+  });
+  minusBtnNotEquityTask.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghost ').attr("hidden", "true")
+  });
+  minusBtnNotEquityTask.addEventListener('click', onMinusNotEquityTask);
 });
 function maxReachedTask(e) {
 
@@ -234,7 +259,7 @@ function maxReachedTask(e) {
     target;
   // console.log(sum)
   const max = 15000;
-  e.currentTarget.innerHTML = e.currentTarget.value;
+  //e.currentTarget.innerHTML = e.currentTarget.value;
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);
@@ -257,6 +282,7 @@ function maxReachedTask(e) {
     document.getElementById('taskLowPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefLow).toFixed(2);
     document.getElementById('taskMidPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefMid).toFixed(2);
     document.getElementById('taskHighPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefHigh).toFixed(2);
+
     btnFinal.style.color = "rgba(0,0,0,0.9)"
     e.preventDefault();
     return false;
@@ -307,4 +333,21 @@ function calculateNewPayGapTask() {
   } else {
     d3.select('#taskCurrentPayGap').text(`${GPG * -1}% (men lower)`);
   }
+}
+
+function onPlusEquityTask(e){
+  document.getElementById("taskPayEquity").value = parseInt(document.getElementById("taskPayEquity").value) +100
+  maxReachedTask(e)
+}
+function onMinusEquityTask(e){
+  document.getElementById("taskPayEquity").value = parseInt(document.getElementById("taskPayEquity").value) -100
+  maxReachedTask(e)
+}
+function onPlusNotEquityTask(e){
+  document.getElementById("taskNotEquity").value = parseInt(document.getElementById("taskNotEquity").value) +100
+  maxReachedTask(e)
+}
+function onMinusNotEquityTask(e){
+  document.getElementById("taskNotEquity").value = parseInt(document.getElementById("taskNotEquity").value) -100
+  maxReachedTask(e)
 }

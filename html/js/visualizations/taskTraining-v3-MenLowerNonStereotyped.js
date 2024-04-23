@@ -1,14 +1,18 @@
 
 
 let CGPGBtn = document.getElementById("addCurrentGenderPayGap");
+let perfBtn = document.getElementById("addPerformance");
 //let allocationBtn = document.getElementById("addAllocation");
 //let moneyLeftBtn = document.getElementById("addMoneyLeft");
 CGPGBtn.addEventListener('click', displayCurrentGenderPayGap, false);
+perfBtn.addEventListener('click', displayPerformance, false);
 //allocationBtn.addEventListener('click', displayAllocation, false);
 //moneyLeftBtn.addEventListener('click', displayMoneyLeft, false);
 console.log('Hey I am here');
 let state3 = "first";
-
+let coefLowTraining;
+let coefMidTraining;
+let coefHighTraining;
 let dfPeople3MLNS = []
 var random = new Math.seedrandom(seed);
 const sliderEquity = document.getElementById('PayEquityTraining3');
@@ -124,6 +128,15 @@ function createSteoreotypedVisualization(){
       };
       dfPeople3MLNS[id] = person;
       id++;
+      if(d.performance == 1){
+        coefLowTraining = d.raise_perf_perc;
+      }
+      else if(d.performance == 2){
+        coefMidTraining = d.raise_perf_perc;
+      }
+      else if(d.performance == 3){
+        coefHighTraining = d.raise_perf_perc;
+      }
     });
 
     // Create the container SVG.
@@ -265,10 +278,15 @@ function maxReached(e) {
     document.getElementById('ALToutputTraining3').innerHTML = parseInt(ALTslider.value);
     PEslider.innerHTML = parseInt(PEslider.value);
     ALTslider.innerHTML = parseInt(ALTslider);
+    document.getElementById('taskLowPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefLowTraining).toFixed(2);
+    document.getElementById('taskMidPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefMidTraining).toFixed(2);
+    document.getElementById('taskHighPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefHighTraining).toFixed(2);
     e.preventDefault();
     return false;
   }
-
+  document.getElementById('taskLowPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefLowTraining).toFixed(2);
+  document.getElementById('taskMidPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefMidTraining).toFixed(2);
+  document.getElementById('taskHighPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefHighTraining).toFixed(2);
   document.getElementById('PEoutputTraining3').innerHTML = parseInt(PEslider.value);
   document.getElementById('ALToutputTraining3').innerHTML = parseInt(ALTslider.value);
   changeSalary3MLNS();
@@ -278,11 +296,18 @@ function maxReached(e) {
 function displayCurrentGenderPayGap () {
   document.getElementById("addCurrentGenderPayGap").hidden = true;
   document.getElementById("LineGenderPG").hidden = false;
-
-  document.getElementById("btn_task-training-v3_7").hidden = false;
-
+//  document.getElementById("btn_task-training-v3_7").hidden = false;
+  document.getElementById("addPerformance").hidden = false;
 }
 
+function displayPerformance(){
+  document.getElementById("performanceText").hidden = false;
+//smallTextPerformance
+  document.getElementById("smallTextPayGap").hidden=true;
+  document.getElementById("addPerformance").hidden = true;
+   document.getElementById("btn_task-training-v3_7").hidden = false;
+
+}
 function changeSalary3MLNS() {
   const test = d3.selectAll('dot');
   d3.selectAll('.dotMLNS')

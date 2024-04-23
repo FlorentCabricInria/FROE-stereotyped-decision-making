@@ -2,10 +2,17 @@
 <div id="row">
     <h1>Training part 3 (final).</h1>
     <p>We will now add two features to support your decision making. These features will help you to explore the impact of the decisions you make.
-        <br> Three piece of information will be available for you:</p>
+        <br> Two pieces of information will be available for you:</p>
     <div>
-        <button id="addCurrentGenderPayGap"> Add the first piece of information: Equal gender pay gap</button> <span id="LineGenderPG" hidden="true">The current gender pay gap is <span id="TestGenderPG"> 5% (women lower)</span> !<span id="" style="color: darkred"> <-- Move the first slider and see what's happening! This value is updated in real time!</span>
-        <!--<br> <button id="addAllocation" hidden="true"> Add the next piece of information : the distribution of the allocations </button>
+        <button id="addCurrentGenderPayGap"> Add the first piece of information: Equal gender pay gap</button> <span id="LineGenderPG" hidden="true">The current gender pay gap is <span id="TestGenderPG"> 5% (women lower)</span> !
+        <span id="smallTextPayGap" style="color: darkred"> <-- Move the first slider and see what's happening! This value is updated in real time!</span>
+        <button id="addPerformance" hidden="true"> Add the second piece of information: The merit-based raises for each performance groups </button>
+        <div id="performanceText" hidden="true">  The low performers got a <span id="taskLowPerfTraining" style="display: inline-block"> .... </span>% raise.
+        The medium performers got a <span id="taskMidPerfTraining" style="display: inline-block"> .... </span>% raise.
+        The high performers got a <span id="taskHighPerfTraining" style="display: inline-block"> .... </span>% raise.
+            <span id="smallTextPerformance" style="color: darkred"> <-- Move the second slider and see what's happening! The values are updated in real time!</span>
+        </div>
+            <!--<br> <button id="addAllocation" hidden="true"> Add the next piece of information : the distribution of the allocations </button>
         <span id="LineSummaryAllocation" hidden="true">You have allocated <span id="AllocationGPG"> 0 </span> for reducing equal gender pay gap and <span id="AllocationNotGPG"> 0 </span> for rewarding the performance. <span id="instrAlloc" style="color: darkred"> The distribution of allocation are updated in real time!</span>
 
       <br>  <button id="addMoneyLeft" hidden="true"> Add the third piece of information : the amount of money left  </button>

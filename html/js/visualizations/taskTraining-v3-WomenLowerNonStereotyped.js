@@ -1,10 +1,14 @@
 
+
 let CGPGBtn = document.getElementById("addCurrentGenderPayGap");
+let perfBtn = document.getElementById("addPerformance");
 //let allocationBtn = document.getElementById("addAllocation");
 //let moneyLeftBtn = document.getElementById("addMoneyLeft");
 CGPGBtn.addEventListener('click', displayCurrentGenderPayGap, false);
-//allocationBtn.addEventListener('click', displayAllocation, false);
-//moneyLeftBtn.addEventListener('click', displayMoneyLeft, false);
+perfBtn.addEventListener('click', displayPerformance, false);
+let coefLowTraining;
+let coefMidTraining;
+let coefHighTraining;
 console.log('Hey I am here');
 let state3 = "first";
 let dfPeople_3WLNS = []
@@ -133,6 +137,15 @@ function createSteoreotypedVisualization(){
       };
       dfPeople_3WLNS[id] = person;
       id++;
+      if(d.performance == 1){
+        coefLowTraining = d.raise_perf_perc;
+      }
+      else if(d.performance == 2){
+        coefMidTraining = d.raise_perf_perc;
+      }
+      else if(d.performance == 3){
+        coefHighTraining = d.raise_perf_perc;
+      }
     });
 
     // Create the container SVG.
@@ -270,9 +283,9 @@ function maxReached(e) {
     target.value -= (sum - max);
     document.getElementById('PEoutputTraining3').innerHTML = parseInt(PEslider.value);
     document.getElementById('ALToutputTraining3').innerHTML = parseInt(ALTslider.value);
-   /* document.getElementById('AllocationGPG').innerHTML = parseInt(PEslider.value);
-    document.getElementById('AllocationNotGPG').innerHTML = parseInt(ALTslider.value);
-    document.getElementById('Leftovers').innerHTML = sum-max;*/
+    document.getElementById('taskLowPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefLowTraining).toFixed(2);
+    document.getElementById('taskMidPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefMidTraining).toFixed(2);
+    document.getElementById('taskHighPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefHighTraining).toFixed(2);
     PEslider.innerHTML = parseInt(PEslider.value);
     ALTslider.innerHTML = parseInt(ALTslider);
     e.preventDefault();
@@ -283,9 +296,9 @@ function maxReached(e) {
   // document.getElementById('total').innerHTML = parseInt(PEslider.value) + parseInt(ALTslider.value);
   document.getElementById('PEoutputTraining3').innerHTML = parseInt(PEslider.value);
   document.getElementById('ALToutputTraining3').innerHTML = parseInt(ALTslider.value);
-  /*document.getElementById('AllocationGPG').innerHTML = parseInt(PEslider.value);
-  document.getElementById('AllocationNotGPG').innerHTML = parseInt(ALTslider.value);
-   document.getElementById('Leftovers').innerHTML = sum-max;*/
+  document.getElementById('taskLowPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefLowTraining).toFixed(2);
+  document.getElementById('taskMidPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefMidTraining).toFixed(2);
+  document.getElementById('taskHighPerfTraining').innerHTML = ((parseInt(ALTslider.value)/25000) * coefHighTraining).toFixed(2);
   changeSalary3WLNS();
   return true;
 }
@@ -374,30 +387,21 @@ function displayFeatures () {
 
   sliderAlt.addEventListener('input', maxReached, false);
 }
-function displayCurrentGenderPayGap () {
-  /* document.getElementById("addCurrentGenderPayGap").hidden = true;
-   document.getElementById("addAllocation").hidden = false;
-   document.getElementById("instrPG").hidden = false;*/
 
-  document.getElementById("LineGenderPG").hidden = false;
+function displayCurrentGenderPayGap () {
   document.getElementById("addCurrentGenderPayGap").hidden = true;
-  //document.getElementById("instrleft").hidden = false;
-  document.getElementById("btn_task-training-v3_7").hidden = false;
-  // <!--<br> <button id="addAllocation" hidden="true"> Add the next piece of information : the distribution of the allocations </button> <span id="LineSummaryAllocation" hidden="true">You have allocated <span id="AllocationGPG"> 0 </span> for reducing equal gender pay gap and <span id="AllocationNotGPG"> 0 </span> for rewarding the performance. <span id="instrAlloc" style="color: darkred"> The distribution of allocation are updated in real time!</span>
-  //       <br>  <button id="addMoneyLeft" hidden="true"> Add the third piece of information : the amount of money left  </button> <span id="LineMoneyLeft" hidden="true">You have <span id="Leftovers"> 0</span> left to allocate. <span id="instrleft" style="color: darkred"> This text tells you how much money you have left to allocate</span>
-  //     -->
+  document.getElementById("LineGenderPG").hidden = false;
+
+//  document.getElementById("btn_task-training-v3_7").hidden = false;
+  document.getElementById("addPerformance").hidden = false;
 }
-function displayAllocation () {
-  document.getElementById("addAllocation").hidden = true;
-  document.getElementById("LineSummaryAllocation").hidden = false;
-  document.getElementById("addMoneyLeft").hidden = false;
-  document.getElementById("instrAlloc").hidden = false;
-}
-function displayMoneyLeft(){
-  document.getElementById("addMoneyLeft").hidden = true;
-  document.getElementById("LineMoneyLeft").hidden = false;
-  document.getElementById("instrleft").hidden = false;
+
+function displayPerformance(){
+  document.getElementById("smallTextPayGap").hidden=true;
+  document.getElementById("performanceText").hidden = false;
+  document.getElementById("addPerformance").hidden = true;
   document.getElementById("btn_task-training-v3_7").hidden = false;
+
 }
 function changeSalary3WLNS() {
   const test = d3.selectAll('dot');

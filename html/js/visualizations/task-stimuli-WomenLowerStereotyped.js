@@ -225,6 +225,42 @@ d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
     d3.selectAll('.ghost').attr("hidden","true")
   });
 
+  let plusBtnEquityTask = document.getElementById('PayEquityPlusBtn');
+  let minusBtnEquityTask= document.getElementById('PayEquityMinusBtn');
+  let plusBtnNotEquityTask= document.getElementById('NotEquityPlusBtn');
+  let minusBtnNotEquityTask= document.getElementById('NotEquityMinusBtn');
+
+  plusBtnEquityTask.addEventListener('mouseover', () => {
+    d3.selectAll('.ghost ').attr("hidden", null)
+  });
+  plusBtnEquityTask.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghost ').attr("hidden", "true")
+  });
+  plusBtnEquityTask.addEventListener('click', onPlusEquityTask);
+  minusBtnEquityTask.addEventListener('mouseover', () => {
+    d3.selectAll('.ghost ').attr("hidden", null)
+  });
+  minusBtnEquityTask.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghost ').attr("hidden", "true")
+  });
+
+  minusBtnEquityTask.addEventListener('click', onMinusEquityTask);
+  plusBtnNotEquityTask.addEventListener('mouseover', () => {
+    d3.selectAll('.ghost ').attr("hidden", null)
+  });
+  plusBtnNotEquityTask.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghost ').attr("hidden", "true")
+  });
+  plusBtnNotEquityTask.addEventListener('click', onPlusNotEquityTask);
+
+
+  minusBtnNotEquityTask.addEventListener('mouseover', () => {
+    d3.selectAll('.ghost ').attr("hidden", null)
+  });
+  minusBtnNotEquityTask.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghost ').attr("hidden", "true")
+  });
+  minusBtnNotEquityTask.addEventListener('click', onMinusNotEquityTask);
 });
 function maxReachedTask(e) {
 
@@ -308,4 +344,21 @@ function calculateNewPayGapTask() {
   } else {
     d3.select('#taskCurrentPayGap').text(`${GPG * -1}% (women lower)`);
   }
+}
+
+function onPlusEquityTask(e){
+  document.getElementById("taskPayEquity").value = parseInt(document.getElementById("taskPayEquity").value) +100
+  maxReachedTask(e)
+}
+function onMinusEquityTask(e){
+  document.getElementById("taskPayEquity").value = parseInt(document.getElementById("taskPayEquity").value) -100
+  maxReachedTask(e)
+}
+function onPlusNotEquityTask(e){
+  document.getElementById("taskNotEquity").value = parseInt(document.getElementById("taskNotEquity").value) +100
+  maxReachedTask(e)
+}
+function onMinusNotEquityTask(e){
+  document.getElementById("taskNotEquity").value = parseInt(document.getElementById("taskNotEquity").value) -100
+  maxReachedTask(e)
 }
