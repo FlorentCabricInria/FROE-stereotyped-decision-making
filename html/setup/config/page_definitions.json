@@ -61,7 +61,7 @@
     "page_path" : "pages/default/ambivalent-sexism-theory.php",
     "disabled" : false,
     "start_page" : false,
-    "save_page" : false
+    "save_page" : true
   },
   "consent" : {
     "id" : "consent",
@@ -104,13 +104,13 @@
     "start_page" : false,
     "save_page" : false
   },
-  "feedback" : {
-    "id" : "feedback",
-    "button_text" : "Finish",
+  "feedback-about-decision" : {
+    "id" : "feedback-about-decision",
+    "button_text" : "Proceed",
     "page_path" : "pages/default/feedback.php",
     "disabled" : false,
     "start_page" : false,
-    "save_page" : true
+    "save_page" : false
   },
   "end" : {
     "id" : "end",

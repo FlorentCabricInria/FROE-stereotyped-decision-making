@@ -12,7 +12,7 @@
           switch ($mod){
             case 0: case 1:?>
     <li> <span style="font-weight: bold; color: #ff33c9;" > Women </span>are represented in <span style="font-weight: bold; color: #ff33c9;">Pink </span> </li>
-    <li> <span style="font-weight: bold; color: #0096c9;" > Men </span>are represented in <span style="font-weight: bold; color: #0096c9;">Blue</span>  </li>
+    <li> <span style="font-weight: bold; color: #3a33ff;" > Men </span>are represented in <span style="font-weight: bold; color: #3a33ff;">Blue</span>  </li>
     <?php
     break;
     case 2: case 3:

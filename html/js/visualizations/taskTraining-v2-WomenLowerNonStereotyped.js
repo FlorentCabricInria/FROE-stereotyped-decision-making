@@ -10,6 +10,35 @@ let state2 = "first";
 var random = new Math.seedrandom(seed);
 createSteoreotypedVisualization()
 ticks = d3.selectAll('.tick').style("font-size","1.5em");
+
+let plusBtnEquity2 = document.getElementById("PayEquityTraining2PlusBtn")
+let minusBtnEquity2 = document.getElementById("PayEquityTraining2MinusBtn")
+plusBtnEquity2.addEventListener('click', onPlusEquity2);
+minusBtnEquity2.addEventListener('click', onMinusEquity2);
+
+function onPlusEquity2(e){
+  document.getElementById("PayEquityTraining2").value = parseInt(document.getElementById("PayEquityTraining2").value) +100
+  maxReachedV0(e)
+}
+function onMinusEquity2(e){
+  document.getElementById("PayEquityTraining2").value = parseInt(document.getElementById("PayEquityTraining2").value) -100
+  maxReachedV0(e)
+}
+
+
+let plusBtnNotEquity2 = document.getElementById("NotEquityTraining2PlusBtn")
+let minusBtnNotEquity2 = document.getElementById("NotEquityTraining2MinusBtn")
+plusBtnNotEquity2.addEventListener('click', onPlusNotEquity2);
+minusBtnNotEquity2.addEventListener('click', onMinusNotEquity2);
+
+function onPlusNotEquity2(e){
+  document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) +100
+  maxReachedV0(e)
+}
+function onMinusNotEquity2(e){
+  document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) -100
+  maxReachedV0(e)
+}
 function changeSalaryV0() {
     const test = d3.selectAll('dot');
     d3.selectAll('.dot')
@@ -88,7 +117,6 @@ function createSteoreotypedVisualization(){
       .domain(['1', '2'])
       .range(['#3EBF30', '#BFBD30']);
 
-    const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
      *          #########################################################
      *          ########### LEGEND
@@ -125,7 +153,7 @@ function createSteoreotypedVisualization(){
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (randomTrainingV2.double() * (100)) - 50))
+          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
           const ys = y(parseFloat(d.total_comp));
             return y(parseFloat(d.total_comp));
@@ -146,7 +174,7 @@ function maxReachedV0(e) {
   let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
   // console.log(sum)
   let max = 25000;
-  e.currentTarget.innerHTML = e.currentTarget.value;
+//  e.currentTarget.innerHTML = e.currentTarget.value;
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);
@@ -205,8 +233,9 @@ function addForecast () {
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
+          .attr('class','ghostTraining')
           //          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
-          .attr('cx', (d) => (x(d.grade_group - 2) + (randomGhost.double() * (100)) - 50))
+          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d) => y(d.total_comp)),
       )
       .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
@@ -223,9 +252,10 @@ function addForecast () {
       .join(
         (enter) => enter
           .append('line')
-          .attr('x1', (d) => (x(d.grade_group - 2) + (randomLineTop.double() * (100)) - 50))
-          .attr('x2', (d) => (x(d.grade_group - 2) + (randomLineBot.double() * (100)) - 50))
+          .attr('x1', (d) => (PosXTraining[parseInt(d.key)-1]))
+          .attr('x2', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('y1', (d) => y(d.total_comp))
+          .attr('class','ghostTraining')
           .attr('y2', (d) => {
             const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
             const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
@@ -252,6 +282,58 @@ function addInteraction () {
   sliderEquity.addEventListener('input', maxReachedV0, false);
 
   sliderAlt.addEventListener('input', maxReachedV0, false);
+  sliderEquity.addEventListener("mousedown", () => {
+
+  });
+  sliderEquity.addEventListener("mouseover", () => {
+    d3.selectAll('.ghostTraining').attr("hidden",null)
+  });
+  sliderEquity.addEventListener("mouseleave", () => {
+    d3.selectAll('.ghostTraining').attr("hidden","true")
+  });
+  sliderEquity.addEventListener("mousemove", () => {
+  });
+  sliderEquity.addEventListener("mouseup", () => {
+    changeSalaryV0()
+  });
+  sliderAlt.addEventListener("mousedown", () => {
+
+  });
+  sliderAlt.addEventListener("mousemove", () => {
+  });
+  sliderAlt.addEventListener("mouseup", () => {
+    changeSalaryV0()
+  });
+  sliderAlt.addEventListener("mouseover", () => {
+    d3.selectAll('.ghostTraining').attr("hidden",null)
+  });
+  sliderAlt.addEventListener("mouseleave", () => {
+    d3.selectAll('.ghostTraining').attr("hidden","true")
+  });
+  plusBtnEquity2.addEventListener('mouseover', () => {
+    d3.selectAll('.ghostTraining').attr("hidden",null)
+  });
+  plusBtnEquity2.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghostTraining').attr("hidden", "true")
+  });
+  minusBtnEquity2.addEventListener('mouseover', () => {
+    d3.selectAll('.ghostTraining').attr("hidden", null)
+  });
+  minusBtnEquity2.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghostTraining').attr("hidden", "true")
+  });
+  plusBtnNotEquity2.addEventListener('mouseover', () => {
+    d3.selectAll('.ghostTraining').attr("hidden", null)
+  });
+  plusBtnNotEquity2.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghostTraining').attr("hidden", "true")
+  });
+  minusBtnNotEquity2.addEventListener('mouseover', () => {
+    d3.selectAll('.ghostTraining').attr("hidden",null)
+  });
+  minusBtnNotEquity2.addEventListener('mouseleave', () => {
+    d3.selectAll('.ghostTraining').attr("hidden", "true")
+  });
 }
 function displayFeatures () {
   document.getElementById("wantToSeeTheFeatures").hidden = true;

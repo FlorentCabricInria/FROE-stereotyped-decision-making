@@ -452,7 +452,7 @@
           document.getElementById("ErrorMessageScale").innerHTML = "";
 
           document.getElementById("submitScaleButton").hidden = true;
-          document.getElementById('btn_ambivalent-sexism-theory_9').hidden = false;
+          document.getElementById('btn_ambivalent-sexism-theory_10').hidden = false;
         }
         else {
           console.log('eles')

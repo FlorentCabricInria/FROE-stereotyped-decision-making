@@ -90,7 +90,7 @@
         The employees who belong to the same grade group will be grouped together. Grade group A will be on the left of the chart, Grade group B will be in the center and Grade group B will be on the right.
     </p>
     <svg id="chartGradeGroups"> </svg> <br>
-    <button id="sixthStageButton">  Add grade groups to our visualization</button>
+    <button id="sixthStageButton">  Add grade groups</button>
 </div>
 <div id="seventhStage" style="text-align: left" hidden="true">
     As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #0096c9;">Grade group C</span> and  <span style="font-weight: bold; color: #F2B93F;"> Sam </span>
@@ -142,7 +142,7 @@
     <span style='font-size:30px;'>&#9679;</span>  Medium performance will be represented by a medium-sized circle.<br>
     <span style='font-size:45px;'>&#9679;</span>  High performance will be represented by a large circle.
 
-    <button id="tenthStageButton">  Add the performance to our visualization</button>
+    <button id="tenthStageButton">  Add the performance</button>
 </div>
 <div id="eleventhStage" style="text-align: left" hidden="true">
     <span style="font-weight: bold; color: #0096c9;">Charlie</span> is represented by the largest size of circle and therefore Charlie's performance is categorized as <span style="font-weight: bold; color: #0096c9;">high</span>
@@ -164,7 +164,7 @@
             <label for="medP">Medium performance</label>
         </div>
         <div>
-            <input type="radio" id="highP" name="performance-test" value="highperformers" checked />
+            <input type="radio" id="highP" name="performance-test" value="highperformers" />
             <label for="highP">High performance</label>
         </div>
     </fieldset>
@@ -173,15 +173,15 @@
     <button id="twelvethStageButton"> Go to the next stage! </button>
 </div>
 <div id="thirteenthStage" style="text-align: left" hidden="true">
-    <h1>Last questions regarding salary, grade group and performance!</h1>
+    <h2>Last questions regarding salary, grade group and performance!</h2>
     After, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span style="font-weight: bold; color: #F2B93F;">Sam</span> and <span style="font-weight: bold; color: #45f145;">Robin</span>. Can you answer to the following questions for <span style="font-weight: bold; color: #BFBD30;">Jamie</span> ?
     <svg id="chartFinalTest"></svg> <br>
 
     <div>
         <p style="width: 33%;float: left;padding: 20px"> Approximate salary of<span style="font-weight: bold; color: #BFBD30;"> Jamie </span> (&#177; 2500) <br> <input id="inputJamieSalary" type="text">  <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
         </p>
-        <fieldset style="width: 33%;float: left;padding: 20px">
-            <legend>What is <span style="font-weight: bold; color: #BFBD30;">Jamie's </span>grade group ?</legend> <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <fieldset style="width: 33%;float: left;padding: 0px">
+            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #BFBD30;">Jamie's </span>grade group ?</legend> <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>
             <div>
                 <input type="radio" id="ggJamie3" name="grade-group-test-jamie" value="3" />
                 <label for="ggJamie3">A</label>
@@ -195,8 +195,8 @@
                 <label for="ggJamie5">C</label>
             </div>
         </fieldset>
-        <fieldset style="width: 33%;float: left;padding: 20px">
-        <legend>What is <span style="font-weight: bold; color: #BFBD30;">Jamie's </span>performance ?</legend> <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <fieldset style="width: 33%;float: left;padding: 0px">
+        <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #BFBD30;">Jamie's </span>performance ?</legend> <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
         <div>
             <input type="radio" id="lowJamieP" name="performance-test-jamie" value="lowperformers" />
             <label for="lowJamieP">Low</label>

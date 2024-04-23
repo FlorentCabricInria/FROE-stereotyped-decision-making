@@ -12,6 +12,10 @@ var random = new Math.seedrandom(seed);
 let dfPeople_3WLS = []
 const sliderEquity = document.getElementById('PayEquityTraining3');
 const sliderAlt = document.getElementById('NotEquityTraining3');
+let plusBtnEquity3 = document.getElementById('PayEquityTraining3PlusBtn');
+let minusBtnEquity3= document.getElementById('PayEquityTraining3MinusBtn');
+let plusBtnNotEquity3= document.getElementById('NotEquityTraining3PlusBtn');
+let  minusBtnNotEquity3= document.getElementById('NotEquityTraining3MinusBtn');
 sliderEquity.addEventListener('input', maxReached, false);
 sliderEquity.addEventListener("mousedown", () => {
 
@@ -22,23 +26,59 @@ sliderEquity.addEventListener("mouseup", () => {
   changeSalary3WLS()
   calculateNewPayGap()
 });
+sliderEquity.addEventListener("mouseover", () => {
+  d3.selectAll('.ghostTraining3').attr("hidden",null)
+});
+sliderEquity.addEventListener("mouseleave", () => {
+  d3.selectAll('.ghostTraining3').attr("hidden","true")
+});
 sliderAlt.addEventListener('input', maxReached, false);
+sliderAlt.addEventListener("mousedown", () => {
+});
+sliderAlt.addEventListener("mousemove", () => {
+});
+sliderAlt.addEventListener("mouseup", () => {
+  changeSalaryV0()
+});
+sliderAlt.addEventListener("mouseover", () => {
+  d3.selectAll('.ghostTraining3').attr("hidden",null)
+});
+sliderAlt.addEventListener("mouseleave", () => {
+  d3.selectAll('.ghostTraining3').attr("hidden","true")
+});
+plusBtnEquity3.addEventListener('mouseover', () => {
+  d3.selectAll('.ghostTraining3').attr("hidden", null)
+});
+plusBtnEquity3.addEventListener('mouseleave', () => {
+  d3.selectAll('.ghostTraining3').attr("hidden", "true")
+});
+plusBtnEquity3.addEventListener('click', onPlusEquity3);
+minusBtnEquity3.addEventListener('mouseover', () => {
+  d3.selectAll('.ghostTraining3').attr("hidden", null)
+});
+minusBtnEquity3.addEventListener('mouseleave', () => {
+  d3.selectAll('.ghostTraining3').attr("hidden", "true")
+});
+
+minusBtnEquity3.addEventListener('click', onMinusEquity3);
+plusBtnNotEquity3.addEventListener('mouseover', () => {
+  d3.selectAll('.ghostTraining3').attr("hidden", null)
+});
+plusBtnNotEquity3.addEventListener('mouseleave', () => {
+  d3.selectAll('.ghostTraining3').attr("hidden", "true")
+});
+plusBtnNotEquity3.addEventListener('click', onPlusNotEquity3);
+
+
+minusBtnNotEquity3.addEventListener('mouseover', () => {
+  d3.selectAll('.ghostTraining3').attr("hidden", null)
+});
+minusBtnNotEquity3.addEventListener('mouseleave', () => {
+  d3.selectAll('.ghostTraining3').attr("hidden", "true")
+});
+minusBtnNotEquity3.addEventListener('click', onMinusNotEquity3);
 createSteoreotypedVisualization()
 ticks = d3.selectAll('.tick').style("font-size","1.5em");
-/*
-function changeSalary3WLS() {
-    const test = d3.selectAll('dot');
-    d3.selectAll('.dot')
-      // .data(data)
-      .attr('cy', (d, i) => {
-        let valuePE = parseInt(d3.select('#PayEquity').node().value);
-        let valueNE = parseInt(d3.select('#NotEquity ').node().value);
-        let new_salary = (((valuePE / 60000) * d.sugg_raise) + ((valueNE / 60000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-        dfPeople_3WLS[parseInt(d.key) - 1].total_comp = new_salary;
-        //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
-        return y(new_salary);
-      });
-  }*/
 
 function calculateNewPayGap() {
   console.log(dfPeople_3WLS[1].total_comp);
@@ -119,7 +159,8 @@ function createSteoreotypedVisualization(){
           .append('circle')
           .attr('id', (d) => d.key)
           //          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
-          .attr('cx', (d) => (x(d.grade_group - 2) + (randomGhost.double() * (100)) - 50))
+          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
+          .attr('class','ghostTraining3')
           .attr('cy', (d) => y(d.total_comp)),
       )
       .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
@@ -136,8 +177,9 @@ function createSteoreotypedVisualization(){
       .join(
         (enter) => enter
           .append('line')
-          .attr('x1', (d) => (x(d.grade_group - 2) + (randomLineTop.double() * (100)) - 50))
-          .attr('x2', (d) => (x(d.grade_group - 2) + (randomLineBot.double() * (100)) - 50))
+          .attr('x1', (d) => (PosXTraining[parseInt(d.key)-1]))
+          .attr('x2', (d) => (PosXTraining[parseInt(d.key)-1]))
+          .attr('class','ghostTraining3')
           .attr('y1', (d) => y(d.total_comp))
           .attr('y2', (d) => {
             const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
@@ -190,7 +232,7 @@ function createSteoreotypedVisualization(){
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (randomTrainingV2.double() * (100)) - 50))
+          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
           const ys = y(parseFloat(d.total_comp));
             return y(parseFloat(d.total_comp));
@@ -211,7 +253,7 @@ function maxReached(e) {
   let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
   // console.log(sum)
   let max = 25000;
-  e.currentTarget.innerHTML = e.currentTarget.value;
+  //e.currentTarget.innerHTML = e.currentTarget.value;
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);
@@ -298,28 +340,6 @@ function addForecast () {
   });
 }
 
-function addInteraction () {
-  document.getElementById("interactionVisBtn").hidden = true;
-  document.getElementById("interactionVisBtn").hidden = true;
-document.getElementById("btn_task-training-v2_6").hidden= false;
-
-  const sliderEquity = document.getElementById('PayEquityTraining3');
-  const sliderAlt = document.getElementById('NotEquityTraining3');
-  sliderEquity.addEventListener('input', maxReached, false);
-
-  sliderAlt.addEventListener('input', maxReached, false);
-}
-function displayFeatures () {
-  document.getElementById("wantToSeeTheFeatures").hidden = true;
-  document.getElementById("forecastVisBtn").hidden = false;
-  //document.getElementById("point2").hidden = true;
-  document.getElementById("point1").hidden = false;
-  const sliderEquity = document.getElementById('PayEquityTraining3');
-  const sliderAlt = document.getElementById('NotEquityTraining3');
-  sliderEquity.addEventListener('input', maxReached, false);
-
-  sliderAlt.addEventListener('input', maxReached, false);
-}
 function displayCurrentGenderPayGap () {
   /* document.getElementById("addCurrentGenderPayGap").hidden = true;
    document.getElementById("addAllocation").hidden = false;
@@ -361,4 +381,22 @@ function changeSalary3WLS() {
       return y(new_salary);
     });
   calculateNewPayGap();
+}
+
+
+function onPlusEquity3(e){
+  document.getElementById("PayEquityTraining3").value = parseInt(document.getElementById("PayEquityTraining3").value) +100
+  maxReached(e)
+}
+function onMinusEquity3(e){
+  document.getElementById("PayEquityTraining3").value = parseInt(document.getElementById("PayEquityTraining3").value) -100
+  maxReached(e)
+}
+function onPlusNotEquity3(e){
+  document.getElementById("NotEquityTraining3").value = parseInt(document.getElementById("NotEquityTraining3").value) +100
+  maxReached(e)
+}
+function onMinusNotEquity3(e){
+  document.getElementById("NotEquityTraining3").value = parseInt(document.getElementById("NotEquityTraining3").value) -100
+  maxReached(e)
 }

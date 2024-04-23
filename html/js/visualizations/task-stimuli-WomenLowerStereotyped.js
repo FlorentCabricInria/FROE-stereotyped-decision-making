@@ -293,9 +293,9 @@ function changeSalaryTask() {
     .attr('cy', (d, i) => {
       // console.log(equityslider)
       //  console.log(taskNotEquityslider)
-      const valuePE = parseInt(d3.select('#taskPayEquity').node().value);
-      const valueNE = parseInt(d3.select('#taskNotEquity ').node().value);
-      const new_salary = (((valuePE / 15000) * d.sugg_raise) + ((valueNE / 15000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
+      const valuePEtask = parseInt(d3.select('#taskPayEquity').node().value);
+      const valueNEtask = parseInt(d3.select('#taskNotEquity ').node().value);
+      const new_salary = (((valuePEtask / 15000) * d.sugg_raise) + ((valueNEtask / 15000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
       dfPeopleTask[parseInt(d.key) - 1].total_comp = new_salary;
       //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
       return y2(new_salary);

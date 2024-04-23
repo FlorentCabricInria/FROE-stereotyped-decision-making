@@ -8,30 +8,34 @@ let state = "first";
 var random = new Math.seedrandom(seed);
 createSteoreotypedVisualization()
 ticks = d3.selectAll('.tick').style("font-size","1.5em");
-function changeSalary() {
-    const test = d3.selectAll('dot');
-    d3.selectAll('.dot')
-      // .data(data)
-      .attr('cy', (d, i) => {
-        let valuePE = parseInt(d3.select('#PayEquity').node().value);
-        let valueNE = parseInt(d3.select('#NotEquity ').node().value);
-        let new_salary = (((valuePE / 60000) * d.sugg_raise) + ((valueNE / 60000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-        dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
-        //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
-        return y(new_salary);
-      });
-  }
 
-function calculateNewPayGap() {
-  const GPG = ((Math.exp(lm('log(total_comp) ~ gender_f1 + performance_f1 + performance_f2 + performance_f3 + grade_group_f4 + grade_group_f5', dfPeople).coefficients[1]) - 1) * 100.0).toFixed(2);
-  if (GPG > 0) {
-   // d3.select('#currentPayGap').text(`${GPG}% (women lower)`);
-  } else {
-   // d3.select('#currentPayGap').text(`${GPG * -1}% (men lower)`);
-  }
+
+let plusBtnEquity = document.getElementById("PayEquityTrainingPlusBtn")
+let minusBtnEquity = document.getElementById("PayEquityTrainingMinusBtn")
+plusBtnEquity.addEventListener('click', onPlusEquity);
+minusBtnEquity.addEventListener('click', onMinusEquity);
+
+function onPlusEquity(e){
+  document.getElementById("PayEquityTraining").value = parseInt(document.getElementById("PayEquityTraining").value) +100
+  maxReached2(e)
 }
+function onMinusEquity(e){
+  document.getElementById("PayEquityTraining").value = parseInt(document.getElementById("PayEquityTraining").value) -100
+  maxReached2(e)
+}
+let plusBtnNotEquity = document.getElementById("NotEquityTrainingPlusBtn")
+let minusBtnNotEquity = document.getElementById("NotEquityTrainingMinusBtn")
+plusBtnNotEquity.addEventListener('click', onPlusNotEquity);
+minusBtnNotEquity.addEventListener('click', onMinusNotEquity);
 
-
+function onPlusNotEquity(e){
+  document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) +100
+  maxReached2(e)
+}
+function onMinusNotEquity(e){
+  document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) -100
+  maxReached2(e)
+}
 function createSteoreotypedVisualization(){
 
   d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
@@ -114,7 +118,13 @@ function createSteoreotypedVisualization(){
       .style('font-size', '1em')
       .attr('alignment-baseline', 'middle');
 
-
+    /*   let PosXTraining = [
+            377.43105697378934 , 610.6109477126755 , 220.4375405775466 , 631.1149645919644 , 289.562279705711 , 202.3716488795456 , 451.58312561597336 ,
+            438.9226486750082 , 255 , 242 , 408.2379487116905 , 261.7787621363155 , 376.26654466586695 , 574.9064553446289 , 460.017494978694 ,
+            459.2080511400769 , 225 , 388.92436705065137 , 285.40892014970495 , 633.938791430464 , 622.6702740421755 , 600 , 228.58899871113363 ,
+            375 , 200.34022495804655 , 424.35747435630356 , 238.12082595392803 , 400 , 594.5714540014341 , 367.53657357220186
+          ]*/
+    //    .attr('cx', (d) => PosXTraining[parseInt(d.key)-1])
     /** CREATE SALARIES MARK * */
     const theCircles = svg.append('g').selectAll('circle')
       .data(data)
@@ -122,7 +132,7 @@ function createSteoreotypedVisualization(){
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
+          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
             const ys = y(parseFloat(d.total_comp));
             return y(parseFloat(d.total_comp));
@@ -152,7 +162,7 @@ function createSteoreotypedVisualization(){
   let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
   // console.log(sum)
   let max = 25000;
-  e.currentTarget.innerHTML = e.currentTarget.value;
+  //e.currentTarget.innerHTML = e.currentTarget.value;
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);

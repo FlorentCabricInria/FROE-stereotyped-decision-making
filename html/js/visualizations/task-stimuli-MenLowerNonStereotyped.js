@@ -174,9 +174,9 @@ d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
         // .attr('cx', (d) => (x(d.grade_group - 2) + (randomDots.double() * (100)) - 50))
         .attr('cx', (d) => (posX[parseInt(d.key)-1]))
         .attr('cy', (d, i) => {
-          const valuePE = parseInt(d3.select('#taskPayEquity').node().value);
-          const valueNE = parseInt(d3.select('#taskNotEquity ').node().value);
-          const new_salary = (((valuePE / 15000) * d.sugg_raise) + ((valueNE / 15000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
+          let valuePEtask = parseInt(d3.select('#taskPayEquity').node().value);
+          let valueNEtask = parseInt(d3.select('#taskNotEquity ').node().value);
+          const new_salary = (((valuePEtask / 15000) * d.sugg_raise) + ((valueNEtask / 15000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
           dfPeopleTask[parseInt(d.key) - 1].total_comp = new_salary;
           const ys = y2(new_salary);
           return y2(new_salary);

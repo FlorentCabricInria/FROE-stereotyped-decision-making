@@ -28,6 +28,13 @@ const dfPeople = [];
 const seed = '45457';
 var random = new Math.seedrandom(seed);
 const structForModel = [];
+
+let PosXTraining = [
+  377.43105697378934 , 610.6109477126755 , 220.4375405775466 , 631.1149645919644 , 289.562279705711 , 202.3716488795456 , 451.58312561597336 ,
+  438.9226486750082 , 255 , 242 , 408.2379487116905 , 261.7787621363155 , 376.26654466586695 , 574.9064553446289 , 460.017494978694 ,
+  459.2080511400769 , 225 , 388.92436705065137 , 285.40892014970495 , 633.938791430464 , 622.6702740421755 , 600 , 228.58899871113363 ,
+  375 , 200.34022495804655 , 424.35747435630356 , 238.12082595392803 , 400 , 594.5714540014341 , 367.53657357220186
+]
 // if(nbElem=="30"){
 //   var data= structuredClone(data30)
 createSteoreotypedVisualizationWomenLower()
@@ -140,49 +147,12 @@ function createSteoreotypedVisualizationWomenLower(){
       .style('font-size', '15px')
       .attr('alignment-baseline', 'middle');
 
-    /**
-     #########################################################
-     CREAT GHOST DOTS
-     #########################################################
-     * */
-/*
-    svg.append('g')
-      .selectAll('circle')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('circle')
-          .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random5.double() * (100)) - 50))
-          .attr('cy', (d) => y(d.total_comp)),
-      )
-      .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
-      .style('fill', '#AAAAAA88');
-*/
-    /**
-     * #########################################################
-     * CREATE GHOST LINE
-     * #########################################################         *
-     * * */
-    /*svg.append('g')
-      .selectAll('line')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('line')
-          .attr('x1', (d) => (x(d.grade_group - 2) + (random3.double() * (100)) - 50))
-          .attr('x2', (d) => (x(d.grade_group - 2) + (random4.double() * (100)) - 50))
-          .attr('y1', (d) => y(d.total_comp))
-          .attr('y2', (d) => {
-            const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
-            const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
-            return y(Math.max(perf2, gp));
-          }),
-      )
-      .style('stroke', '#AAAAAAAA')
-      .style('stroke-linecap', 'round')
-      .style('stroke-width', (d) => `${parseInt(3)}px`);*/
-
+ /*   let PosXTraining = [
+      377.43105697378934 , 610.6109477126755 , 220.4375405775466 , 631.1149645919644 , 289.562279705711 , 202.3716488795456 , 451.58312561597336 ,
+      438.9226486750082 , 255 , 242 , 408.2379487116905 , 261.7787621363155 , 376.26654466586695 , 574.9064553446289 , 460.017494978694 ,
+      459.2080511400769 , 225 , 388.92436705065137 , 285.40892014970495 , 633.938791430464 , 622.6702740421755 , 600 , 228.58899871113363 ,
+      375 , 200.34022495804655 , 424.35747435630356 , 238.12082595392803 , 400 , 594.5714540014341 , 367.53657357220186
+    ]*/
     /** CREATE SALARIES MARK * */
     const theCircles = svg.append('g').selectAll('circle')
       .data(data)
@@ -190,15 +160,8 @@ function createSteoreotypedVisualizationWomenLower(){
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
+          .attr('cx', (d) => PosXTraining[parseInt(d.key)-1])
           .attr('cy', (d, i) => {
-            // console.log(equityslider)
-            //  console.log(notequityslider)
-           // const valuePE = parseInt(d3.select('#PayEquity').node().value);
-           // const valueNE = parseInt(d3.select('#NotEquity ').node().value);
-           // const new_salary = (((valuePE / 50000) * d.sugg_raise) + ((valueNE / 50000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-           // dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
-            //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
             const ys = y(parseFloat(d.total_comp));
             return y(parseFloat(d.total_comp));
           })
@@ -309,49 +272,6 @@ function createSteoreotypedVisualizationMenLower() {
       .style('font-size', '15px')
       .attr('alignment-baseline', 'middle');
 
-    /**
-     #########################################################
-     CREAT GHOST DOTS
-     #########################################################
-     * */
-
-  /*  svg.append('g')
-      .selectAll('circle')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('circle')
-          .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random5.double() * (100)) - 50))
-          .attr('cy', (d) => y(d.total_comp)),
-      )
-      .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
-      .style('fill', '#AAAAAA88');
-
-    /**
-     * #########################################################
-     * CREATE GHOST LINE
-     * #########################################################         *
-     * * */
-  /*  svg.append('g')
-      .selectAll('line')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('line')
-          .attr('x1', (d) => (x(d.grade_group - 2) + (random3.double() * (100)) - 50))
-          .attr('x2', (d) => (x(d.grade_group - 2) + (random4.double() * (100)) - 50))
-          .attr('y1', (d) => y(d.total_comp))
-          .attr('y2', (d) => {
-            const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
-            const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
-            return y(Math.max(perf2, gp));
-          }),
-      )
-      .style('stroke', '#AAAAAAAA')
-      .style('stroke-linecap', 'round')
-      .style('stroke-width', (d) => `${parseInt(3)}px`);
-*/
     /** CREATE SALARIES MARK * */
     const theCircles = svg.append('g').selectAll('circle')
       .data(data)
@@ -359,15 +279,8 @@ function createSteoreotypedVisualizationMenLower() {
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
+          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
-            // console.log(equityslider)
-            //  console.log(notequityslider)
-            //const valuePE = parseInt(d3.select('#PayEquity').node().value);
-            //const valueNE = parseInt(d3.select('#NotEquity ').node().value);
-            //const new_salary = (((valuePE / 50000) * d.sugg_raise) + ((valueNE / 50000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-           // dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
-            //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
             const ys = y(parseFloat(d.total_comp));
             return y(parseFloat(d.total_comp));
           })
@@ -463,43 +376,7 @@ function createnonSteoreotypedVisualizationWomenLower(){
      #########################################################
      * */
 
-   /* svg.append('g')
-      .selectAll('circle')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('circle')
-          .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random5.double() * (100)) - 50))
-          .attr('cy', (d) => y(d.total_comp)),
-      )
-      .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
-      .style('fill', '#AAAAAA88');
-*/
-    /**
-     * #########################################################
-     * CREATE GHOST LINE
-     * #########################################################         *
-     * * */
-   /* svg.append('g')
-      .selectAll('line')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('line')
-          .attr('x1', (d) => (x(d.grade_group - 2) + (random3.double() * (100)) - 50))
-          .attr('x2', (d) => (x(d.grade_group - 2) + (random4.double() * (100)) - 50))
-          .attr('y1', (d) => y(d.total_comp))
-          .attr('y2', (d) => {
-            const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
-            const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
-            return y(Math.max(perf2, gp));
-          }),
-      )
-      .style('stroke', '#AAAAAAAA')
-      .style('stroke-linecap', 'round')
-      .style('stroke-width', (d) => `${parseInt(3)}px`);
-*/
+
     /** CREATE SALARIES MARK * */
     const theCircles = svg.append('g').selectAll('circle')
       .data(data)
@@ -507,15 +384,8 @@ function createnonSteoreotypedVisualizationWomenLower(){
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
+          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
-            // console.log(equityslider)
-            //  console.log(notequityslider)
-            //const valuePE = parseInt(d3.select('#PayEquity').node().value);
-          //  const valueNE = parseInt(d3.select('#NotEquity ').node().value);
-          //  const new_salary = (((valuePE / 50000) * d.sugg_raise) + ((valueNE / 50000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-          //  dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
-            //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
             const ys = y(parseFloat(d.total_comp));
             return y(parseFloat(d.total_comp));
           })
@@ -603,44 +473,6 @@ function createnonSteoreotypedVisualizationMenLower() {
      CREAT GHOST DOTS
      #########################################################
      * */
-/*
-    svg.append('g')
-      .selectAll('circle')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('circle')
-          .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random5.double() * (100)) - 50))
-          .attr('cy', (d) => y(d.total_comp)),
-      )
-      .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
-      .style('fill', '#AAAAAA88');
-
-    /**
-     * #########################################################
-     * CREATE GHOST LINE
-     * #########################################################         *
-     * * *//*
-    svg.append('g')
-      .selectAll('line')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('line')
-          .attr('x1', (d) => (x(d.grade_group - 2) + (random3.double() * (100)) - 50))
-          .attr('x2', (d) => (x(d.grade_group - 2) + (random4.double() * (100)) - 50))
-          .attr('y1', (d) => y(d.total_comp))
-          .attr('y2', (d) => {
-            const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
-            const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
-            return y(Math.max(perf2, gp));
-          }),
-      )
-      .style('stroke', '#AAAAAAAA')
-      .style('stroke-linecap', 'round')
-      .style('stroke-width', (d) => `${parseInt(3)}px`);
-*/
     /** CREATE SALARIES MARK * */
     const theCircles = svg.append('g').selectAll('circle')
       .data(data)
@@ -648,7 +480,7 @@ function createnonSteoreotypedVisualizationMenLower() {
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
-          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
+          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
             // console.log(equityslider)
             //  console.log(notequityslider)
