@@ -58,7 +58,7 @@
            <output id="PEoutputTraining3">0</output><br>
        </div>
         <div>
-        Performance-based: <input type="range" id="NotEquityTraining3" name="NotEquityTraining3" min="0" max="25000"  value="0" step="100" >
+        Performance-based merit raises: <input type="range" id="NotEquityTraining3" name="NotEquityTraining3" min="0" max="25000"  value="0" step="100" >
             <button id="NotEquityTraining3MinusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>
             <button id="NotEquityTraining3PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>
             <output id="ALToutputTraining3">0</output> <br>
@@ -96,8 +96,16 @@
     <script type="text/javascript">
 
       $('body').on('next', function(e, type){
+        if(type==="task-training-v3_7"){
 // The if clause below ensures that this specific instance of a next button press is only triggered when the id of the element corresponds to the one being defined above.
         changeSalaryTask()
+          let btntoValidate = document.getElementById("btn_test-decision-making-study_8")
+          btntoValidate.disabled = true;
+
+          btntoValidate.innerHTML = "You still have money to allocate!";
+          btntoValidate.style.backgroundColor = "rgba(115,115,115,0.9)"
+          btntoValidate.style.color = "rgba(255,255,255,0.9)"
+        }
       });
     </script>
 </div>

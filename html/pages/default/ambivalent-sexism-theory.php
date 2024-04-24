@@ -2,12 +2,12 @@
 -->
 
 <div id="row">
-<h1>Quick questionnaire</h1>
-<p> To end this study, we will ask you to answer 12 questions. For each statement, indicate whether you "Strongly Disagree", "Somewhat Disagree", Slightly Disagree",
+<h1>Questionnaire</h1>
+<p style="font-size: 1.25rem"><strong>Instructions:</strong>  To end this study, we will ask you to answer 12 questions. For each statement, indicate whether you "Strongly Disagree", "Somewhat Disagree", Slightly Disagree",
 "Slightly Agree", "Somewhat Agree", "Strongly Agree" </p>
 <hr style="height: 0.5em; background-color: lightgrey"/>
 <form action="javascript:processScaleResults()">
-    <label class="statement">Many women have a quality of purity that few men possess.</label>
+    <label class="statement">1. Many women have a quality of purity that few men possess.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert1" value="0" >
@@ -34,7 +34,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Women should be cherished and protected by men.</label>
+    <label class="statement">2. Women should be cherished and protected by men.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert2" value="0">
@@ -61,7 +61,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Women seek to gain power by getting control over men.</label>
+    <label class="statement">3. Women seek to gain power by getting control over men.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert3" value="0">
@@ -88,7 +88,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Every man ought to have a woman whom he adores.</label>
+    <label class="statement">4. Every man ought to have a woman whom he adores.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert4" value="0">
@@ -115,7 +115,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Men are incomplete without women.</label>
+    <label class="statement">5. Men are incomplete without women.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert5" value="0">
@@ -142,7 +142,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Women exaggerate problems they have at work.</label>
+    <label class="statement">6. Women exaggerate problems they have at work.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert6" value="0">
@@ -169,7 +169,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Once a woman gets a man to commit to her, she usually tries to put him on a tight leash.</label>
+    <label class="statement">7. Once a woman gets a man to commit to her, she usually tries to put him on a tight leash.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert7" value="0">
@@ -196,7 +196,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">When women lose to men in a fair competition, they typically complain about being discriminated against.</label>
+    <label class="statement">8. When women lose to men in a fair competition, they typically complain about being discriminated against.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert8" value="0">
@@ -223,7 +223,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Many women get a kick out of teasing men by seeming sexually available and then refusing male advances.</label>
+    <label class="statement">9. Many women get a kick out of teasing men by seeming sexually available and then refusing male advances.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert9" value="0">
@@ -250,7 +250,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Men should be willing to sacrifice their own well being in order to provide financially for the women in their lives.</label>
+    <label class="statement">10. Men should be willing to sacrifice their own well being in order to provide financially for the women in their lives.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert10" value="0">
@@ -277,7 +277,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Once a woman gets a man to commit to her, she usually tries to put him on a tight leash.</label>
+    <label class="statement">11. Once a woman gets a man to commit to her, she usually tries to put him on a tight leash.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert11" value="0">
@@ -304,7 +304,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <label class="statement">Feminists are making unreasonable demands of men.</label>
+    <label class="statement">12. Feminists are making unreasonable demands of men.</label>
     <ul class='likert'>
         <li>
             <input type="radio" name="likert12" value="0">

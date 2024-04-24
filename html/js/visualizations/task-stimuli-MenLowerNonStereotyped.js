@@ -60,7 +60,7 @@ d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
   //  var a = d3.group(data, d => d.gender)
   svg.append('g')
     .attr('transform', `translate(${marginLeft},0)`)
-    .call(d3.axisLeft(y));
+    .call(d3.axisLeft(y2));
 
   svg.append('g')
     .attr('transform', `translate(0,${height - marginBottom})`)

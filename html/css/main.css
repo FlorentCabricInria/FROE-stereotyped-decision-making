@@ -54,9 +54,9 @@ form .likert {
     list-style:none;
     width:100%;
     margin:0;
-    padding:0 0 35px;
+    padding:0 0 0px 35px;
     display:block;
-    border-bottom:2px solid #efefef;
+    border-bottom:2px solid #a6a6a6;
 }
 form .likert:last-of-type {border-bottom:0;}
 form .likert:before {

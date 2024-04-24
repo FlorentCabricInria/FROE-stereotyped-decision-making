@@ -8,7 +8,7 @@ interactionBtn.addEventListener('click', addInteraction, false);
 console.log('Hey I am here');
 let state2 = "first";
 var random = new Math.seedrandom(seed);
-createSteoreotypedVisualization()
+createSteoreotypedVisualization2MLS()
 ticks = d3.selectAll('.tick').style("font-size","1.5em");
 
 let plusBtnEquity2 = document.getElementById("PayEquityTraining2PlusBtn")
@@ -32,11 +32,11 @@ plusBtnNotEquity2.addEventListener('click', onPlusNotEquity2);
 minusBtnNotEquity2.addEventListener('click', onMinusNotEquity2);
 
 function onPlusNotEquity2(e){
-  document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) +100
+  document.getElementById("NotEquityTraining2").value = parseInt(document.getElementById("NotEquityTraining2").value) +100
   maxReachedV0(e)
 }
 function onMinusNotEquity2(e){
-  document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) -100
+  document.getElementById("NotEquityTraining2").value = parseInt(document.getElementById("NotEquityTraining2").value) -100
   maxReachedV0(e)
 }
 function changeSalaryV0() {
@@ -49,7 +49,9 @@ function changeSalaryV0() {
         let new_salary = (((valuePE / 25000) * d.sugg_raise) + ((valueNE / 25000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
         dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
         //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
-        return y(new_salary);
+        let t = yTraining(new_salary);
+
+        return yTraining(new_salary);
       });
   }
 
@@ -63,7 +65,7 @@ function calculateNewPayGap() {
 }
 
 
-function createSteoreotypedVisualization(){
+function createSteoreotypedVisualization2MLS(){
 
   d3.csv('./html/js/visualizations/men-lower-v2.csv').then((data) => {
     let storedData = structuredClone(data);
@@ -101,7 +103,7 @@ function createSteoreotypedVisualization(){
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(yTraining));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
@@ -155,8 +157,8 @@ function createSteoreotypedVisualization(){
           .attr('id', (d) => d.key)
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
-          const ys = y(parseFloat(d.total_comp));
-            return y(parseFloat(d.total_comp));
+            let ys = yTraining(parseFloat(d.total_comp));
+            return yTraining(parseFloat(d.total_comp));
           })
           .style('fill', (d) => color(d.gender))
 
@@ -236,7 +238,7 @@ function addForecast () {
           .attr('class','ghostTraining')
           //          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
-          .attr('cy', (d) => y(d.total_comp)),
+          .attr('cy', (d) => yTraining(d.total_comp)),
       )
       .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
       .style('fill', '#AAAAAA88');
@@ -254,12 +256,12 @@ function addForecast () {
           .append('line')
           .attr('x1', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('x2', (d) => (PosXTraining[parseInt(d.key)-1]))
-          .attr('y1', (d) => y(d.total_comp))
+          .attr('y1', (d) => yTraining(d.total_comp))
           .attr('class','ghostTraining')
           .attr('y2', (d) => {
             const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
             const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
-            return y(Math.max(perf2, gp));
+            return yTraining(Math.max(perf2, gp));
           }),
       )
       .style('stroke', '#AAAAAAAA')

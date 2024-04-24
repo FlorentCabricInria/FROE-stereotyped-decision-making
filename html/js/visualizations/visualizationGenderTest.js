@@ -11,10 +11,7 @@ const marginBottom = 40;
 const marginLeft = 75;
 const radius = 2;
 
-const y = d3.scaleLinear()
-// .domain(d3.extent(genderData, d => d.salary)).nice()
-  .domain([30000, 15000])
-  .range([0 + marginBottom, height - marginTop]);
+
 
 const x = d3.scaleLinear()
 // .domain(d3.extent(genderData, d => d.salary)).nice()
@@ -36,37 +33,12 @@ let PosXTraining = [
   375 , 200.34022495804655 , 424.35747435630356 , 238.12082595392803 , 400 , 594.5714540014341 , 367.53657357220186
 ]
 // if(nbElem=="30"){
-//   var data= structuredClone(data30)
-createSteoreotypedVisualizationWomenLower()
+//   var data= structuredClone(data30)/*
+/*createSteoreotypedVisualizationWomenLower()
 createSteoreotypedVisualizationMenLower()
 createnonSteoreotypedVisualizationWomenLower()
-createnonSteoreotypedVisualizationMenLower()
-function changeSalary() {
-    const test = d3.selectAll('dot');
-    d3.selectAll('.dot')
-      // .data(data)
-      .attr('cy', (d, i) => {
-        const valuePE = parseInt(d3.select('#PayEquity').node().value);
-        const valueNE = parseInt(d3.select('#NotEquity ').node().value);
-        const new_salary = (((valuePE / 60000) * d.sugg_raise) + ((valueNE / 60000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-        dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
-        //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
-        return y(new_salary);
-      });
-  }
-
-function calculateNewPayGap() {
-  const GPG = ((Math.exp(lm('log(total_comp) ~ gender_f1 + performance_f1 + performance_f2 + performance_f3 + grade_group_f4 + grade_group_f5', dfPeople).coefficients[1]) - 1) * 100.0).toFixed(2);
-  if (GPG > 0) {
-   // d3.select('#currentPayGap').text(`${GPG}% (women lower)`);
-  } else {
-   // d3.select('#currentPayGap').text(`${GPG * -1}% (men lower)`);
-  }
-}
-
-
+createnonSteoreotypedVisualizationMenLower()*/
 function createSteoreotypedVisualizationWomenLower(){
-
   d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
     const storedData = structuredClone(data);
 
@@ -80,18 +52,6 @@ function createSteoreotypedVisualizationWomenLower(){
     /** PREPARATION FOR REGRESSION * */
     data.forEach((d) => {
       const person = {
-        /*  gender: parseInt(d.gender),
-          gender_f1: parseInt(d.gender) === 1 ? 1 : 0, // special case where men are "1" and women are "2"
-          gender_f2: parseInt(d.gender) === 2 ? 1 : 0, // special case where men are "1" and women are "2"*/
-        // performance_f1: parseInt(d.performance) === 0 ? 1 : 0,
-        // performance_f1: parseInt(d.performance) === 1 ? 1 : 0,
-        // performance_f2: parseInt(d.performance) === 2 ? 1 : 0,
-        // performance_f3: parseInt(d.performance) === 3 ? 1 : 0,
-        // grade_group_f3: parseInt(d.performance) === 3 ? 1 : 0,
-        //  grade_group_f4: parseInt(d.performance) === 4 ? 1 : 0,
-        // grade_group_f5: parseInt(d.performance) === 5 ? 1 : 0,
-        // grade_group: parseInt(d.grade_group),
-        // total_comp: parseInt(d.total_comp),
         gender_f2: parseInt(d.gender_w),// special case where men are "1" and women are "2"
         performance_f2: parseInt(d.performance_f1) === 2 ? 1 : 0,
         performance_f3: parseInt(d.performance_f2) === 3 ? 1 : 0,
@@ -111,10 +71,15 @@ function createSteoreotypedVisualizationWomenLower(){
       .attr('viewBox', [0, 0, width, height])
       .attr('style', 'max-width: 100%; height: auto;');
 
+    let yGenderTestB = d3.scaleLinear()
+      // .domain(d3.extent(genderData, d => d.salary)).nice()
+      .domain([30000, 15000])
+      .range([0 + marginBottom, height - marginTop]);
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(yGenderTestB).tickArguments([15]).tickFormat((x) => { return x/1000 + "K";
+      }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
@@ -154,16 +119,15 @@ function createSteoreotypedVisualizationWomenLower(){
       375 , 200.34022495804655 , 424.35747435630356 , 238.12082595392803 , 400 , 594.5714540014341 , 367.53657357220186
     ]*/
     /** CREATE SALARIES MARK * */
-    const theCircles = svg.append('g').selectAll('circle')
+   svg.append('g').selectAll('circle')
       .data(data)
       .join(
         (enter) => enter
           .append('circle')
-          .attr('id', (d) => d.key)
+          .attr('id', (d) => d.key + 'gender')
           .attr('cx', (d) => PosXTraining[parseInt(d.key)-1])
           .attr('cy', (d, i) => {
-            const ys = y(parseFloat(d.total_comp));
-            return y(parseFloat(d.total_comp));
+            return yGenderTestB(parseFloat(d.total_comp));
           })
           .style('fill', (d) => color(d.gender))
 
@@ -174,21 +138,8 @@ function createSteoreotypedVisualizationWomenLower(){
               (parseInt(d.performance) + 1.75) * coefSize,
             // }
           )
-          .attr('class', (d) => `dot ${d.gender}`),
+          .attr('class', (d) => `dot ${d.gender} gender`),
       );
-/*
-    calculateNewPayGap();
-    // Listen to the slider?
-    /* d3.select("#PayEquity").on("change", function(d){
-              selectedValue = this.value
-              changeSalary(selectedValue)
-              calculateNewPayGap()
-          }) */
-  /*  const sliderEquity = document.getElementById('PayEquity');
-    const sliderAlt = document.getElementById('NotEquity');
-    sliderEquity.addEventListener('input', maxReached, false);
-
-    sliderAlt.addEventListener('input', maxReached, false);*/
   });
 }
 function createSteoreotypedVisualizationMenLower() {
@@ -205,18 +156,6 @@ function createSteoreotypedVisualizationMenLower() {
     /** PREPARATION FOR REGRESSION * */
     data.forEach((d) => {
       const person = {
-        /*  gender: parseInt(d.gender),
-          gender_f1: parseInt(d.gender) === 1 ? 1 : 0, // special case where men are "1" and women are "2"
-          gender_f2: parseInt(d.gender) === 2 ? 1 : 0, // special case where men are "1" and women are "2"*/
-        // performance_f1: parseInt(d.performance) === 0 ? 1 : 0,
-        // performance_f1: parseInt(d.performance) === 1 ? 1 : 0,
-        // performance_f2: parseInt(d.performance) === 2 ? 1 : 0,
-        // performance_f3: parseInt(d.performance) === 3 ? 1 : 0,
-        // grade_group_f3: parseInt(d.performance) === 3 ? 1 : 0,
-        //  grade_group_f4: parseInt(d.performance) === 4 ? 1 : 0,
-        // grade_group_f5: parseInt(d.performance) === 5 ? 1 : 0,
-        // grade_group: parseInt(d.grade_group),
-        // total_comp: parseInt(d.total_comp),
         gender_f2: parseInt(d.gender_m),// special case where men are "1" and women are "2"
         performance_f2: parseInt(d.performance_f1) === 2 ? 1 : 0,
         performance_f3: parseInt(d.performance_f2) === 3 ? 1 : 0,
@@ -236,10 +175,15 @@ function createSteoreotypedVisualizationMenLower() {
       .attr('viewBox', [0, 0, width, height])
       .attr('style', 'max-width: 100%; height: auto;');
 
+    let yGenderTestK = d3.scaleLinear()
+      // .domain(d3.extent(genderData, d => d.salary)).nice()
+      .domain([30000, 15000])
+      .range([0 + marginBottom, height - marginTop]);
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(yGenderTestK).tickArguments([15]).tickFormat((x) => { return x/1000 + "K";
+      }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
@@ -273,23 +217,22 @@ function createSteoreotypedVisualizationMenLower() {
       .attr('alignment-baseline', 'middle');
 
     /** CREATE SALARIES MARK * */
-    const theCircles = svg.append('g').selectAll('circle')
+    svg.append('g').selectAll('circle')
       .data(data)
       .join(
         (enter) => enter
           .append('circle')
-          .attr('id', (d) => d.key)
+          .attr('id', (d) => d.key + 'gender')
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
-            const ys = y(parseFloat(d.total_comp));
-            return y(parseFloat(d.total_comp));
+            return yGenderTestK(parseFloat(d.total_comp));
           })
           .style('fill', (d) => color(d.gender))
           .attr('r', (d) =>
               (parseInt(d.performance) + 1.75) * coefSize,
             // }
           )
-          .attr('class', (d) => `dot ${d.gender}`),
+          .attr('class', (d) => `dot ${d.gender} gender`),
       );
 /*
     calculateNewPayGap();
@@ -303,6 +246,10 @@ function createSteoreotypedVisualizationMenLower() {
 
 }
 function createnonSteoreotypedVisualizationWomenLower(){
+  let yGenderTest = d3.scaleLinear()
+    // .domain(d3.extent(genderData, d => d.salary)).nice()
+    .domain([30000, 15000])
+    .range([0 + marginBottom, height - marginTop]);
   d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
     const storedData = structuredClone(data);
 
@@ -335,10 +282,15 @@ function createnonSteoreotypedVisualizationWomenLower(){
       .attr('viewBox', [0, 0, width, height])
       .attr('style', 'max-width: 100%; height: auto;');
 
+    let yGenderTestC = d3.scaleLinear()
+      // .domain(d3.extent(genderData, d => d.salary)).nice()
+      .domain([30000, 15000])
+      .range([0 + marginBottom, height - marginTop]);
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(yGenderTestC).tickArguments([15]).tickFormat((x) => { return x/1000 + "K";
+      }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
@@ -378,23 +330,22 @@ function createnonSteoreotypedVisualizationWomenLower(){
 
 
     /** CREATE SALARIES MARK * */
-    const theCircles = svg.append('g').selectAll('circle')
+    svg.append('g').selectAll('circle')
       .data(data)
       .join(
         (enter) => enter
           .append('circle')
-          .attr('id', (d) => d.key)
+          .attr('id', (d) => d.key + 'gender')
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
-            const ys = y(parseFloat(d.total_comp));
-            return y(parseFloat(d.total_comp));
+            return yGenderTestC(parseFloat(d.total_comp));
           })
           .style('fill', (d) => color(d.gender))
           .attr('r', (d) =>
               (parseInt(d.performance) + 1.75) * coefSize,
             // }
           )
-          .attr('class', (d) => `dot ${d.gender}`),
+          .attr('class', (d) => `dot ${d.gender} gender`),
       );
   });
 
@@ -432,10 +383,16 @@ function createnonSteoreotypedVisualizationMenLower() {
       .attr('viewBox', [0, 0, width, height])
       .attr('style', 'max-width: 100%; height: auto;');
 
+    let yGenderTestA = d3.scaleLinear()
+      // .domain(d3.extent(genderData, d => d.salary)).nice()
+      .domain([30000, 15000])
+      .range([0 + marginBottom, height - marginTop]);
+
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(yGenderTestA).tickArguments([15]).tickFormat((x) => { return x/1000 + "K";
+      }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
@@ -474,30 +431,22 @@ function createnonSteoreotypedVisualizationMenLower() {
      #########################################################
      * */
     /** CREATE SALARIES MARK * */
-    const theCircles = svg.append('g').selectAll('circle')
+    svg.append('g').selectAll('circle')
       .data(data)
       .join(
         (enter) => enter
           .append('circle')
-          .attr('id', (d) => d.key)
+          .attr('id', (d) => d.key + 'gender')
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
-            // console.log(equityslider)
-            //  console.log(notequityslider)
-           // const valuePE = parseInt(d3.select('#PayEquity').node().value);
-           // const valueNE = parseInt(d3.select('#NotEquity ').node().value);
-            //const new_salary = (((valuePE / 25000) * d.sugg_raise) + ((valueNE / 25000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
-            //dfPeople[parseInt(d.key) - 1].total_comp = new_salary;
-            //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
-            //const ys = y(parseFloat(d.total_comp));
-            return y(parseFloat(d.total_comp));
+            return yGenderTestA(parseFloat(d.total_comp));
           })
           .style('fill', (d) => color(d.gender))
           .attr('r', (d) =>
               (parseInt(d.performance) + 1.75) * coefSize,
             // }
           )
-          .attr('class', (d) => `dot ${d.gender}`),
+          .attr('class', (d) => `dot ${d.gender} gender`),
       );
   });
 }

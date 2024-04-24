@@ -50,7 +50,8 @@
       ?>
       </p>    
   </div>
+
+    <script type="text/javascript" src="./html/js/visualizations/visualizationGenderTest.js"></script>
 </div>
 
-<script type="text/javascript" src="./html/js/visualizations/visualizationGenderTest.js"></script>
 

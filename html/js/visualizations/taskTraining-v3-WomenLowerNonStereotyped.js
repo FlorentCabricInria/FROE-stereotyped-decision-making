@@ -81,7 +81,7 @@ minusBtnNotEquity3.addEventListener('mouseleave', () => {
 });
 minusBtnNotEquity3.addEventListener('click', onMinusNotEquity3);
 
-createSteoreotypedVisualization()
+createSteoreotypedVisualization3WLNS()
 
 ticks = d3.selectAll('.tick').style("font-size","1.5em");
 /*function changeSalary3WLNS() {
@@ -108,7 +108,7 @@ function calculateNewPayGap() {
   }
 }
 
-function createSteoreotypedVisualization(){
+function createSteoreotypedVisualization3WLNS(){
 
   d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
     let storedData = structuredClone(data);
@@ -158,7 +158,7 @@ function createSteoreotypedVisualization(){
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(yTraining));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
@@ -186,7 +186,7 @@ function createSteoreotypedVisualization(){
           //          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
           .attr('cx', (d) =>(PosXTraining[parseInt(d.key)-1]))
           .attr('class','ghostTraining3')
-          .attr('cy', (d) => y(d.total_comp)),
+          .attr('cy', (d) => yTraining(d.total_comp)),
       )
       .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
       .style('fill', '#AAAAAA88');
@@ -205,11 +205,11 @@ function createSteoreotypedVisualization(){
           .attr('x1', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('x2', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('class','ghostTraining3')
-          .attr('y1', (d) => y(d.total_comp))
+          .attr('y1', (d) => yTraining(d.total_comp))
           .attr('y2', (d) => {
             const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
             const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
-            return y(Math.max(perf2, gp));
+            return yTraining(Math.max(perf2, gp));
           }),
       )
       .style('stroke', '#AAAAAAAA')
@@ -258,8 +258,8 @@ function createSteoreotypedVisualization(){
           .attr('id', (d) => d.key)
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
-          const ys = y(parseFloat(d.total_comp));
-            return y(parseFloat(d.total_comp));
+          const ys = yTraining(parseFloat(d.total_comp));
+            return yTraining(parseFloat(d.total_comp));
           })
           .style('fill', (d) => color(d.gender))
 
@@ -333,7 +333,7 @@ function addForecast () {
           .attr('id', (d) => d.key)
           //          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
           .attr('cx', (d) => (x(d.grade_group - 2) + (randomGhost.double() * (100)) - 50))
-          .attr('cy', (d) => y(d.total_comp)),
+          .attr('cy', (d) => yTraining(d.total_comp)),
       )
       .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
       .style('fill', '#AAAAAA88');
@@ -351,11 +351,11 @@ function addForecast () {
           .append('line')
           .attr('x1', (d) => (x(d.grade_group - 2) + (randomLineTop.double() * (100)) - 50))
           .attr('x2', (d) => (x(d.grade_group - 2) + (randomLineBot.double() * (100)) - 50))
-          .attr('y1', (d) => y(d.total_comp))
+          .attr('y1', (d) => yTraining(d.total_comp))
           .attr('y2', (d) => {
             const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
             const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
-            return y(Math.max(perf2, gp));
+            return yTraining(Math.max(perf2, gp));
           }),
       )
       .style('stroke', '#AAAAAAAA')
@@ -417,7 +417,7 @@ function changeSalary3WLNS() {
       dfPeople_3WLNS[parseInt(d.key) - 1].total_comp_3WLNS = new_salary;
     //  console.log(new_salary + " --> " + typeof new_salary + "  " + dfPeople_3WLNS[parseInt(d.key) - 1].total_comp + "   " + typeof dfPeople_3WLNS[parseInt(d.key) - 1].total_comp)
       //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
-      return y(new_salary);
+      return yTraining(new_salary);
     });
 
   calculateNewPayGap();

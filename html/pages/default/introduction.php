@@ -36,7 +36,7 @@
 </div>
 <div id="secondStage" style="text-align: left" hidden="true">
     <h1> Background Explanation</h1>
-    To aid in your decisions you will be provided a visualization of your colleagues and their salaries.
+    To aid in your dec799453FFisions you will be provided a visualization of your colleagues and their salaries.
     In the chart below, each circle represents a person. The y-axis represents their salaries.
     In other words, the higher the colleagues are in the figure, the more they are paid.
     <svg id="firstChart"> </svg> <br>
@@ -174,14 +174,14 @@
 </div>
 <div id="thirteenthStage" style="text-align: left" hidden="true">
     <h2>Last questions regarding salary, grade group and performance!</h2>
-    After, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span style="font-weight: bold; color: #F2B93F;">Sam</span> and <span style="font-weight: bold; color: #45f145;">Robin</span>. Can you answer to the following questions for <span style="font-weight: bold; color: #BFBD30;">Jamie</span> ?
+    After, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span style="font-weight: bold; color: #F2B93F;">Sam</span> and <span style="font-weight: bold; color: #3ebf30;">Robin</span>. Can you answer to the following questions for <span style="font-weight: bold; color: #f2593f;">Jamie</span> ?
     <svg id="chartFinalTest"></svg> <br>
 
     <div>
-        <p style="width: 33%;float: left;padding: 20px"> Approximate salary of<span style="font-weight: bold; color: #BFBD30;"> Jamie </span> (&#177; 2500) <br> <input id="inputJamieSalary" type="text">  <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <p style="width: 33%;float: left;padding: 20px"> Approximate salary of<span style="font-weight: bold; color: #f2593f;"> Jamie </span> (&#177; 2500) <br> <input id="inputJamieSalary" type="text">  <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
         </p>
         <fieldset style="width: 33%;float: left;padding: 0px">
-            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #BFBD30;">Jamie's </span>grade group ?</legend> <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>
+            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #f2593f;">Jamie's </span>grade group ?</legend> <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>
             <div>
                 <input type="radio" id="ggJamie3" name="grade-group-test-jamie" value="3" />
                 <label for="ggJamie3">A</label>
@@ -196,7 +196,7 @@
             </div>
         </fieldset>
         <fieldset style="width: 33%;float: left;padding: 0px">
-        <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #BFBD30;">Jamie's </span>performance ?</legend> <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #f2593f;">Jamie's </span>performance ?</legend> <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
         <div>
             <input type="radio" id="lowJamieP" name="performance-test-jamie" value="lowperformers" />
             <label for="lowJamieP">Low</label>
@@ -226,6 +226,19 @@
 </div>
 <script type="text/javascript" src="./html/js/visualizations/buttonbehaviours.js"></script>
 
+<script type="text/javascript">
 
+  $('body').on('next', function(e, type) {
+// The if clause below ensures that this specific instance of a next button press is only triggered when the id of the element corresponds to the one being defined above.
+
+    if (type === "introduction_3") {
+    createSteoreotypedVisualizationWomenLower()
+    createSteoreotypedVisualizationMenLower()
+    createnonSteoreotypedVisualizationWomenLower()
+    createnonSteoreotypedVisualizationMenLower()
+  }
+
+  });
+</script>
 </body>
 </html>

@@ -5,9 +5,10 @@ var random = new Math.seedrandom('0.45454');
 console.log('Hey I am here');
 let state = "first";
 var random = new Math.seedrandom(seed);
-//const structForModel = [];
-// if(nbElem=="30"){
-//   var data= structuredClone(data30)
+const yTraining = d3.scaleLinear()
+  // .domain(d3.extent(genderData, d => d.salary)).nice()
+  .domain([30000, 16000])
+  .range([0 + marginBottom, height - marginTop]);
 createSteoreotypedVisualization()
 ticks = d3.selectAll('.tick').style("font-size","1.5em");
 
@@ -88,7 +89,7 @@ function createSteoreotypedVisualization(){
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(yTraining));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
@@ -150,8 +151,7 @@ function createSteoreotypedVisualization(){
           .attr('id', (d) => d.key)
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d, i) => {
-              const ys = y(parseFloat(d.total_comp));
-            return y(parseFloat(d.total_comp));
+            return yTraining(parseFloat(d.total_comp));
           })
           .style('fill', (d) => color(d.gender))
 
