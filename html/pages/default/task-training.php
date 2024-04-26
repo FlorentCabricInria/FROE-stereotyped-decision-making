@@ -8,7 +8,7 @@
         <li>allocating merit raises based on last year’s individual performance.</li>
     </ul>
     <p> To assist you in your decisions you will see a data visualization similar to the one below (but the underlying data will change) <br>
-    Employees are still represented according to their salary (vertical axis) and the 3 categories : Grade group (horizontal axis), gender (color) and performance level (size of dots) <br> </p>
+    Employees are still represented according to their salary (vertical axis) and the 3 categories : grade group (horizontal axis), gender (color) and performance level (size of dots) <br> </p>
     The allocation must be indicated using the two sliders you will find next to the visualization (framed in grey). You can increase or decrease the value using the - and + buttons next to the sliders. <br>
     We next ask you to complete three different allocations using the sliders.
     Please try out the sliders now and follow the instructions (written above the sliders in the grey box).

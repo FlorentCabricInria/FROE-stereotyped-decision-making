@@ -2,16 +2,8 @@
 <div id="row">
     <h1>Training part 3 (final).</h1>
     <p>We will now add two features to support your decision making. These features will help you to explore the impact of the decisions you make.
-        <br> Two pieces of information will be available for you:</p>
-    <div>
-        <button id="addCurrentGenderPayGap"> Add the first piece of information: Equal gender pay gap</button> <span id="LineGenderPG" hidden="true">The current gender pay gap is <span id="TestGenderPG"> 5% (women lower)</span> !
-        <span id="smallTextPayGap" style="color: darkred"> <-- Move the first slider and see what's happening! This value is updated in real time!</span>
-        <button id="addPerformance" hidden="true"> Add the second piece of information: The merit-based raises for each performance groups </button>
-        <div id="performanceText" hidden="true">  The low performers got a <span id="taskLowPerfTraining" style="display: inline-block"> .... </span>% raise.
-        The medium performers got a <span id="taskMidPerfTraining" style="display: inline-block"> .... </span>% raise.
-        The high performers got a <span id="taskHighPerfTraining" style="display: inline-block"> .... </span>% raise.
-            <span id="smallTextPerformance" style="color: darkred"> <-- Move the second slider and see what's happening! The values are updated in real time!</span>
-        </div>
+        <br> Two pieces of information will be available for you. Click on the button in the grey area next to the chart.</p>
+
             <!--<br> <button id="addAllocation" hidden="true"> Add the next piece of information : the distribution of the allocations </button>
         <span id="LineSummaryAllocation" hidden="true">You have allocated <span id="AllocationGPG"> 0 </span> for reducing equal gender pay gap and <span id="AllocationNotGPG"> 0 </span> for rewarding the performance. <span id="instrAlloc" style="color: darkred"> The distribution of allocation are updated in real time!</span>
 
@@ -62,6 +54,15 @@
             <button id="NotEquityTraining3MinusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>
             <button id="NotEquityTraining3PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>
             <output id="ALToutputTraining3">0</output> <br>
+        </div>
+        <div>
+            <button id="addCurrentGenderPayGap"> Add the equal gender pay gap</button> <span id="LineGenderPG" hidden="true">The current gender pay gap is <span id="TestGenderPG"> 5% (women lower)</span> !
+        <span id="smallTextPayGap" style="color: darkred"> <br> Move the first slider and see what's happening! This value is updated in real time!</span>
+        <button id="addPerformance" hidden="true"> Add the merit-based raises</button>
+        <div id="performanceText" hidden="true">  The low performers got a <span id="taskLowPerfTraining" style="display: inline-block"> .... </span>% raise. <br>
+        The medium performers got a <span id="taskMidPerfTraining" style="display: inline-block"> .... </span>% raise.<br>
+        The high performers got a <span id="taskHighPerfTraining" style="display: inline-block"> .... </span>% raise.<br>
+            <span id="smallTextPerformance" style="color: darkred"> Move the second slider and see what's happening! The values are updated in real time!</span>
         </div>
     </div> <br>
       <?php

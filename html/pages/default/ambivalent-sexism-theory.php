@@ -331,7 +331,7 @@
             <label>Strongly agree</label>
         </li>
     </ul>
-    <div class="buttons">
+    <div class="buttons" id="buttonForm">
         <button id="submitScaleButton" class="submit">Submit</button> <br>
         <span id="ErrorMessageScale" style="color: darkred"></span>
     </div>
@@ -450,7 +450,7 @@
           measurements['hostileSexism'] = hostileSexism;
           measurements['benevolentSexism'] = benevolentSexism;
           document.getElementById("ErrorMessageScale").innerHTML = "";
-
+          document.getElementById("buttonForm").style.display ="none";
           document.getElementById("submitScaleButton").hidden = true;
           document.getElementById('btn_ambivalent-sexism-theory_10').hidden = false;
         }

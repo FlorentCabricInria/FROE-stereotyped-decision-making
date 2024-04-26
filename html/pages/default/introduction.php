@@ -16,12 +16,13 @@
     <h1 > Background Explanation</h1>
     <p><b>Imagine the following scenario</b></p>
     You are the person in charge of your company's annual salary review. The CEO has allocated 25,000 StudyCoin (a currency created for this study) to increase the employees salaries — your colleagues.
-    The CEO instructed you to allocate the 25,000 as you want between two objectives:
+    The CEO instructed you to allocate the 25,000 as you want. You can consider that everyone gets paid fairly based on balancing:
     <ul>
         <li>
-            reducing pay inequity focusing on gender differences.</li>
+            differences between men and women's pay (= the gender pay gap)
+        </li>
         <li>
-            allocating merit raises based on last year’s individual performance.</li>
+            deciding who gets a raise based on how well they did their job in the past (=merit raises based on performance)</li>
     </ul>
 
     <!-- Each colleague has been categorized into 3 grade groups*: 1, 2 and 3. The performance is represented in the chart by the
@@ -36,23 +37,21 @@
 </div>
 <div id="secondStage" style="text-align: left" hidden="true">
     <h1> Background Explanation</h1>
-    To aid in your dec799453FFisions you will be provided a visualization of your colleagues and their salaries.
-    In the chart below, each circle represents a person. The y-axis represents their salaries.
-    In other words, the higher the colleagues are in the figure, the more they are paid.
+    To aid in your decisions you will see a visualization of your colleagues and their salaries.
+    In the chart below, each circle represents a colleague. The y-axis represents their salaries.
+    The higher a circle is in the visualization, the more the colleague is paid.
     <svg id="firstChart"> </svg> <br>
     <button id="secondStageButton"> Next</button>
 </div>
 <div id="thirdStage" style="text-align: left" hidden="true">
     <h1> Background Explanation</h1>
     <p>
-    Here <span style="font-weight: bold; color: #0096c9;">Charlie</span>
-    is represented in <span style="font-weight: bold; color: #0096c9;"> blue </span> and
-    <span style="font-weight: bold; color: #F2B93F;"> Sam </span> is represented in
-    <span style="font-weight: bold; color: #F2B93F;"> orange </span>
+        In the visualization below, we now highlighted <span style="font-weight: bold; color: #0096c9;">Charlie</span> in <span style="font-weight: bold; color: #0096c9;"> blue </span>
+        and <span style="font-weight: bold; color: #F2B93F;"> Sam </span> in <span style="font-weight: bold; color: #F2B93F;"> orange </span>
     </p>
     <ul>
-        <li> <span style="font-weight: bold; color: #0096c9;">Charlie</span> is paid  <span style="font-weight: bold; color: #0096c9;"> just below 75,000</span></li>
-        <li> <span style="font-weight: bold; color: #F2B93F;"> Sam </span> is paid <span style="font-weight: bold; color: #F2B93F;"> a little less than 40,000 </span></li>
+        <li> <span style="font-weight: bold; color: #0096c9;">Charlie</span> is paid  <span style="font-weight: bold; color: #0096c9;"> just below 75k</span></li>
+        <li> <span style="font-weight: bold; color: #F2B93F;"> Sam </span> is paid <span style="font-weight: bold; color: #F2B93F;"> a little less than 40k </span></li>
         </ul>
     <svg id="secondChart"> </svg> <br>
     <button id="thirdStageButton"> Next </button>
@@ -67,13 +66,13 @@
 </div>
 <div id="fifthStage" style="text-align: left" hidden="true">
     <h1> Excellent!</h1>
-    <p>To make good salary decisions you need more information. <br>
+    <!--<p>To make good salary decisions you need more information. <br> -->
         In your company, the following information is available:
 
     <ul>
-        <li> <b>Their last year's performance </b>: Individual performance was categorized as high, medium and low.</li>
-        <li> <b>Their grade groups</b>: The company uses a detailed grading system, based on employees skills, knowledge, job duties and levels of authority. For simplicity we assume we have grade groups A, B and C. </li>
-        <li> <b>Their gender</b>: Woman or Man&#42; <br>
+        <li> <b>Performance </b>: each employee's performance from last year is categorized as either high, medium, or low.</li>
+        <li> <b>Grade groups</b>: employees are grouped together with other employees based on how similar their skills, knowledge, job duties, and levels of authority are.  The company has three grade groups named A, B and C.  </li>
+        <li> <b>Gender</b>: employee's gender, either woman or man&#42; <br>
     <br>
     <br>
        <span> &#42;: For simplicity we will focus on binary gender definitions while acknowledging that gender is far from binary. </span>
@@ -87,21 +86,22 @@
     <h1> Grade groups:</h1>
     <p>
         Recall the chart below and your two colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and <span style="font-weight: bold; color: #F2B93F;"> Sam </span>. <br>
-        The employees who belong to the same grade group will be grouped together. Grade group A will be on the left of the chart, Grade group B will be in the center and Grade group B will be on the right.
+        Currently, employees are initially positioned randomly. Once you click the "add grade groups" button below, the visualization will change to move each employee into a grade group.
+        Grade group A will be on the left, grade group B will be in the center and grade group C will be on the right.
     </p>
     <svg id="chartGradeGroups"> </svg> <br>
     <button id="sixthStageButton">  Add grade groups</button>
 </div>
 <div id="seventhStage" style="text-align: left" hidden="true">
-    As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #0096c9;">Grade group C</span> and  <span style="font-weight: bold; color: #F2B93F;"> Sam </span>
-    belongs to  <span style="font-weight: bold; color: #F2B93F;"> Grade group B</span>. <br>
+    As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #0096c9;">grade group C</span> and  <span style="font-weight: bold; color: #F2B93F;"> Sam </span>
+    belongs to  <span style="font-weight: bold; color: #F2B93F;"> grade group B</span>. <br>
     To be able to distinguish between employees with very similar salaries, we will add some "jitter". That means that the horizontal position of each employee will be moved slightly, to the left or to the right.
-    <button id="seventhStageButton">  Add Jitter</button>
+    <button id="seventhStageButton">Add Jitter</button>
 </div>
 <div id="eighthStage" style="text-align: left" hidden="true">
-    All the employees that are inside the <span style="font-weight: bold; color: #f2593f;">red rectangle </span> belong to <span style="font-weight: bold; color: #f2593f;"> Grade group A </span> <br>
-    All the employees that are inside the <span style="font-weight: bold; color: #3f7ef2;">blue rectangle </span> belong to <span style="font-weight: bold; color: #3f7ef2;"> Grade group B</span> <br>
-    All the employees that are inside the <span style="font-weight: bold; color: #799453FF;">green rectangle </span> belong to <span style="font-weight: bold; color: #799453FF;"> Grade group C</span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #f2593f;">red rectangle </span> belong to <span style="font-weight: bold; color: #f2593f;"> grade group A </span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #3f7ef2;">blue rectangle </span> belong to <span style="font-weight: bold; color: #3f7ef2;"> grade group B</span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #799453FF;">green rectangle </span> belong to <span style="font-weight: bold; color: #799453FF;"> grade group C</span> <br>
     <button id="eighthStageButton">  Next </button>
 </div>
 <div id="ninethStage" style="text-align: left" hidden="true">
@@ -129,25 +129,24 @@
 <div id="tenthStage" style="text-align: left" hidden="true">
     <br>
     <h1>Excellent! Now the <b>performance</b></h1>
-    <p> Performance has been evaluated using rigorous, tried-and-tested methodologies. Performance is split into three levels: low performers, medium performers and high performers. <br>
-        In the visualization, performance is visualized by the size of dots<br>
+    <p> The company evaluates performance using rigorous and trustworthy methods. Each employee can have one of three performance levels: low performance, medium performance, or high performance.<br>
         Recall this chart and your two colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and <span style="font-weight: bold; color: #F2B93F;"> Sam </span>. <br>
         <span style="font-weight: bold; color: #0096c9;">Charlie</span> earns <span style="font-weight: bold; color: #0096c9;">74,000</span> and belongs to <span style="font-weight: bold; color: #0096c9;">grade group C</span>
         <br><span style="font-weight: bold; color: #F2B93F;">Sam</span> earns <span style="font-weight: bold; color: #F2B93F;">38,500</span> and belongs to <span style="font-weight: bold; color: #F2B93F;">grade group B</span><br>
     </p>
+    <p>In the visualization, performance is visualized by the size of dots</p>
     <svg id="chartPerformance"> </svg> <br>
-    Employees’ performance category will be represented by the dots' size.
-    Employees in the same category will be represented by dots of the same size:<br>
-    <span style='font-size:20px;'>&#9679;</span> Low performance will be represented by a small circle. <br>
-    <span style='font-size:30px;'>&#9679;</span>  Medium performance will be represented by a medium-sized circle.<br>
-    <span style='font-size:45px;'>&#9679;</span>  High performance will be represented by a large circle.
+    For each employee we will show their performance by the circle size. Employees with the same size will have a circle of the same size:<br>
+    <!--<span style='font-size:20px;'>&#9679;</span> --> <svg style="max-width: 100%; height: auto;" width="20" viewBox="0,0,20,20" height="20"><g><circle cx="10" cy="10" r="4.375"></circle></g></svg> Low performance will be represented by a small circle. <br>
+    <!--<span style='font-size:30px;'>&#9679;</span>  --><svg style="max-width: 100%; height: auto;" width="20" viewBox="0,0,20,20" height="20"><g><circle cx="10" cy="10" r="6.875"></circle></g></svg> Medium performance will be represented by a medium-sized circle.<br>
+    <!--<span style='font-size:45px;'>&#9679;</span>  --> <svg style="max-width: 100%; height: auto;" width="20" viewBox="0,0,20,20" height="20"><g><circle cx="10" cy="10" r="9.375"></circle></g></svg> High performance will be represented by a large circle.
 
     <button id="tenthStageButton">  Add the performance</button>
 </div>
 <div id="eleventhStage" style="text-align: left" hidden="true">
-    <span style="font-weight: bold; color: #0096c9;">Charlie</span> is represented by the largest size of circle and therefore Charlie's performance is categorized as <span style="font-weight: bold; color: #0096c9;">high</span>
+    <span style="font-weight: bold; color: #0096c9;">Charlie</span> is represented by the largest size of circle and therefore Charlie's performance is <span style="font-weight: bold; color: #0096c9;">high</span>
     <br>
-    <span style="font-weight: bold; color: #F2B93F;">Sam</span> is represented by the smallest size of circle and therefore Sam's performance is categorized as <span style="font-weight: bold; color: #F2B93F;">low</span>
+    <span style="font-weight: bold; color: #F2B93F;">Sam</span> is represented by the smallest size of circle and therefore Sam's performance is <span style="font-weight: bold; color: #F2B93F;">low</span>
     <button id="eleventhStageButton">Proceed to next stage</button>
 </div>
 <div id="twelvethStage" style="text-align: left" hidden="true">
@@ -178,7 +177,7 @@
     <svg id="chartFinalTest"></svg> <br>
 
     <div>
-        <p style="width: 33%;float: left;padding: 20px"> Approximate salary of<span style="font-weight: bold; color: #f2593f;"> Jamie </span> (&#177; 2500) <br> <input id="inputJamieSalary" type="text">  <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <p style="width: 33%;float: left;padding: 20px"> Approximate salary of<span style="font-weight: bold; color: #f2593f;"> Jamie </span> (&#177; 2.5k) <br> <input id="inputJamieSalary" type="text">  <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
         </p>
         <fieldset style="width: 33%;float: left;padding: 0px">
             <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #f2593f;">Jamie's </span>grade group ?</legend> <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>

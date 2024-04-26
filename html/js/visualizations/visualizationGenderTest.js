@@ -78,15 +78,15 @@ function createSteoreotypedVisualizationWomenLower(){
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(yGenderTestB).tickArguments([15]).tickFormat((x) => { return x/1000 + "K";
+      .call(d3.axisLeft(yGenderTestB).tickArguments([15]).tickFormat((x) => { return x/1000 + "k";
       }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade group  A";
-        else if (x == 2)return "Grade group  B";
-        else if (x == 3)return "Grade group  C ";
+        if (x == 1) return "grade group  A";
+        else if (x == 2)return "grade group  B";
+        else if (x == 3)return "grade group  C ";
       }));
 
     //
@@ -182,15 +182,15 @@ function createSteoreotypedVisualizationMenLower() {
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(yGenderTestK).tickArguments([15]).tickFormat((x) => { return x/1000 + "K";
+      .call(d3.axisLeft(yGenderTestK).tickArguments([15]).tickFormat((x) => { return x/1000 + "k";
       }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade group  A";
-        else if (x == 2)return "Grade group  B";
-        else if (x == 3)return "Grade group  C ";
+        if (x == 1) return "grade group  A";
+        else if (x == 2)return "grade group  B";
+        else if (x == 3)return "grade group  C ";
       }));
 
     //
@@ -289,15 +289,15 @@ function createnonSteoreotypedVisualizationWomenLower(){
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(yGenderTestC).tickArguments([15]).tickFormat((x) => { return x/1000 + "K";
+      .call(d3.axisLeft(yGenderTestC).tickArguments([15]).tickFormat((x) => { return x/1000 + "k";
       }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade group  A";
-        else if (x == 2)return "Grade group  B";
-        else if (x == 3)return "Grade group  C ";
+        if (x == 1) return "grade group  A";
+        else if (x == 2)return "grade group  B";
+        else if (x == 3)return "grade group  C ";
       }));
     //
 
@@ -391,15 +391,15 @@ function createnonSteoreotypedVisualizationMenLower() {
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(yGenderTestA).tickArguments([15]).tickFormat((x) => { return x/1000 + "K";
+      .call(d3.axisLeft(yGenderTestA).tickArguments([15]).tickFormat((x) => { return x/1000 + "k";
       }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade group  A";
-        else if (x == 2)return "Grade group  B";
-        else if (x == 3)return "Grade group  C ";
+        if (x == 1) return "grade group  A";
+        else if (x == 2)return "grade group  B";
+        else if (x == 3)return "grade group  C ";
       }));
 
     //

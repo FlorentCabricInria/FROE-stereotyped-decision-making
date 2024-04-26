@@ -149,14 +149,15 @@ function createSteoreotypedVisualization3MLNS(){
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
-      .call(d3.axisLeft(yTraining));
+      .call(d3.axisLeft(yTraining).tickArguments([15]).tickFormat((x) => { return x/1000 + "k";
+      }));
 
     svg.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
       .call(d3.axisBottom(x).tickArguments([5]).tickFormat((x) => {
-        if (x == 1) return "Grade group  A";
-        else if (x == 2)return "Grade group  B";
-        else if (x == 3)return "Grade group  C ";
+        if (x == 1) return "grade group  A";
+        else if (x == 2)return "grade group  B";
+        else if (x == 3)return "grade group  C ";
       }));
 
     let randomGhost = new Math.seedrandom(seed);
@@ -178,6 +179,7 @@ function createSteoreotypedVisualization3MLNS(){
           //          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('class','ghostTraining3')
+          .attr("hidden","true")
           .attr('cy', (d) => yTraining(d.total_comp)),
       )
       .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
@@ -197,6 +199,7 @@ function createSteoreotypedVisualization3MLNS(){
           .attr('x1', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('x2', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('class','ghostTraining3')
+          .attr("hidden","true")
           .attr('y1', (d) => yTraining(d.total_comp))
           .attr('y2', (d) => {
             const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
