@@ -62,7 +62,8 @@
     $missing_parameters = false;
   }  else if (isset($_GET["PILOT"]) || isset($_GET["pilot"])) {
     $is_pilot = true;
-    $participant_id = '_' . base_convert(mt_rand() / mt_getrandmax(), 10, 36); // generating a random but unique ID
+    $cleanNumber = preg_replace( '/[^0-9]/', '', microtime(false));
+    $participant_id = '_' . base_convert($cleanNumber, 12, 16); // generating a random but unique ID
     $study_id = "pilot";
     $session_id = 0;
     $missing_parameters = false;
@@ -183,6 +184,7 @@ if ($is_debug  || $is_pilot){
   echo '<input type="hidden" id="is_debug" value="' . "" . (($is_debug) ? 'true' : 'false') .  '"</input>';
   echo '<input type="hidden" id="exclude_reloaders" value="' . "" . $config["exclude_reloaders"] .  '"</input>';
   echo '<input type="hidden" id="condition-for-this-participant" value="' . "" . $cond_factors .  '"</input>';
+  echo '<input type="hidden" id="attention-test-check" value="0"</input>';
 
 ?>
 </div>

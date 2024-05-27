@@ -43,8 +43,8 @@
 
       ?>
         <div style="border: 2px solid #5e5e5e;display: inline-block;width: 30%;float: left;padding: 20px " >
-            <span id="slidersLabelsTask"> <strong> Please allocate 25,000 for Reducing Equal Gender Pay Gap" </strong></span> <br>
-            Reducing pay equity:
+            <span id="slidersLabelsTask"> <strong> Please allocate 25,000 for 'Reducing gender pay inequity'" </strong></span> <br>
+            Reducing gender pay inequity:
             <div style="display: inline-block;"><input type="range" id="PayEquityTraining" name="PayEquityTraining" min="0" max="25000" value="0" step="100">
                 <button id="PayEquityTrainingPlusBtn" style="width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>
                 <button id="PayEquityTrainingMinusBtn" style="width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>
@@ -57,6 +57,7 @@
                 <br> <output id="ALToutputtraining">0</output> <br>
             <span id="sliderTrainingText" style="font-weight: bold; color: #0b9d0b;"></span>
         </div>
+
             <?php
           $extension = array(".csv");
           $subs   = array("");

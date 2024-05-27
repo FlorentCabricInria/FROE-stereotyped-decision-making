@@ -20,7 +20,7 @@
 		$data['browser_name']   . ',' .
 		$data["browser_version"]. ',' .
 		$data["os"],
-		($data["reloaded"] ? ",0,1" : ",1,0"); // tests whether the user reloaded or didnt pass the att. check
+		($data["reloaded"] ? ",0,1" : ",1,0") // tests whether the user reloaded or didnt pass the att. check
 	);
 
 	fclose($excluded_file);

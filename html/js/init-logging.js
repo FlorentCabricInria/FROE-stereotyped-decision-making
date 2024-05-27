@@ -48,7 +48,7 @@ $('body').on('next', function(e, type){
       data: JSON.stringify(measurements),
       contentType: 'application/json',
       success: function (data) {
-        // console.log("The participant agreed.");
+         console.log("The participant agreed.");
         // console.log(measurements);
       }
     });
@@ -60,6 +60,7 @@ $('body').on('next', function(e, type){
       save_trial_log = true;
     }
   }
+  console.log("before ajax logging: ", trial_log )
   $.ajax({
     url: 'html/ajax/log.php',
     type: 'POST',
@@ -72,6 +73,8 @@ $('body').on('next', function(e, type){
       
     }
   });
+
+  console.log("after ajax logging")
 
 });
 

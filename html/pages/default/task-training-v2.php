@@ -69,7 +69,7 @@
 
             <!--   <span id="slidersLabelsTask2"> -->
             <h5> Please, give it a try</h5>
-            <div> Reducing equal gender pay gap: <input type="range" id="PayEquityTraining2" name="PayEquityTraining2" min="0" max="25000" value="0" step="100">
+            <div> Reducing gender pay inequity: <input type="range" id="PayEquityTraining2" name="PayEquityTraining2" min="0" max="25000" value="0" step="100">
             <button id="PayEquityTraining2MinusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>
                 <button id="PayEquityTraining2PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>
                 <output id="PEoutputtraining2">0</output><br>
@@ -80,7 +80,6 @@
                 <output id="ALToutputtraining2">0</output> <br>
             </div>
         </div> <br>
-
     <!--  <script type="text/javascript" src="./html/js/visualizations/taskTraining-v2.js"></script> -->
 
       <?php

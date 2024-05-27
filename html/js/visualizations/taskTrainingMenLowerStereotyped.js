@@ -180,6 +180,10 @@ function maxReached2(e) {
   // console.log(sum)
   let max = 25000;
 //  e.currentTarget.innerHTML = e.currentTarget.value;
+  if(sum>max && (e.currentTarget.id == "PayEquityTrainingPlusBtn" || e.currentTarget.id == "NotEquityTrainingPlusBtn")) {
+    if(e.currentTarget.id == "PayEquityTrainingPlusBtn") {document.getElementById("PayEquityTraining").value = parseInt(document.getElementById("PayEquityTraining").value) - 100}
+    else if (e.currentTarget.id =="NotEquityTrainingPlusBtn") {document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) -100 }
+  }
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);
@@ -196,8 +200,8 @@ function maxReached2(e) {
     }
     else if(state =="second" && parseInt(ALTslider.value) == 25000) {
       state = "third"
-      document.getElementById("slidersLabelsTask").innerHTML = "Please allocate, 12,500 for \"Performance-based\" and 12,500 for \"Reducing equal gender pay gap\""
-      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! now can you try to allocate 12,500 for \"Performance-based\" and 12,500 for \"Reducing equal gender pay gap\""
+      document.getElementById("slidersLabelsTask").innerHTML = "Please allocate, 12,500 for \"Performance-based\" and 12,500 for \"Reducing gender pay inequity\""
+      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! now can you try to allocate 12,500 for \"Performance-based\" and 12,500 for \"Reducing gender pay inequity\""
     }
     else if(state == "third" && parseInt(ALTslider.value) == 12500 && parseInt(PEslider.value) == 12500){
       document.getElementById("slidersLabelsTask").innerHTML = "Congratulations!! You can move on to the next part"

@@ -78,7 +78,7 @@
 <script type="text/javascript">
   function countChar(val) {
     var len = val.value.length;
-    if (len <= 150) {
+    if (len <= 149) {
       $('#charNum').text(150 - len + "  characters remaining");
       document.getElementById('btn_feedback-about-decision_9').hidden=true;
     } else {

@@ -11,6 +11,20 @@
 
 </head>
 <body>
+<script type="text/javascript">
+
+  var parent = document.getElementById("btn_consent_2").parentElement;
+  var child = document.createElement("button");
+  child.innerText = "No, I disagree.";
+    child.id = "noconsent"
+  child.onclick = function () {
+    $("#consent_2").hide().promise().done(() => $("#endDisagreement_12").show())
+
+  }
+  parent.append(child)
+
+  //child.innerHTML("BONJOURURURUR");
+</script>
 <div id="firstStage" style="text-align: left">
 
     <h1 > Background Explanation</h1>
@@ -58,7 +72,7 @@
 </div>
 <div id="fourthStage" style="text-align: left" hidden="true">
     <br>
-    Please, approximate <span style="font-weight: bold; color: #3EBF30;"> Robin </span>'s salary (&#177; 2K) (the <span style="font-weight: bold; color: #3EBF30;">  green dot </span>) and click on next:
+    Please, approximate <span style="font-weight: bold; color: #98D462;"> Robin </span>'s salary (&#177; 2K) (the <span style="font-weight: bold; color: #98D462;">  green dot </span>) and click on next:
     <input id="inputTestRobin" type="text" placeholder="digits only" /> </input>
     <button id="fourthStageButton">  Next</button>
     <br>
@@ -93,20 +107,20 @@
     <button id="sixthStageButton">  Add grade groups</button>
 </div>
 <div id="seventhStage" style="text-align: left" hidden="true">
-    As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #0096c9;">grade group C</span> and  <span style="font-weight: bold; color: #F2B93F;"> Sam </span>
-    belongs to  <span style="font-weight: bold; color: #F2B93F;"> grade group B</span>. <br>
+    As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #1b9e77;">grade group C</span> and  <span style="font-weight: bold; color: #F2B93F;"> Sam </span>
+    belongs to  <span style="font-weight: bold; color: #7570b3;"> grade group B</span>. <br>
     To be able to distinguish between employees with very similar salaries, we will add some "jitter". That means that the horizontal position of each employee will be moved slightly, to the left or to the right.
     <button id="seventhStageButton">Add Jitter</button>
 </div>
 <div id="eighthStage" style="text-align: left" hidden="true">
-    All the employees that are inside the <span style="font-weight: bold; color: #f2593f;">red rectangle </span> belong to <span style="font-weight: bold; color: #f2593f;"> grade group A </span> <br>
-    All the employees that are inside the <span style="font-weight: bold; color: #3f7ef2;">blue rectangle </span> belong to <span style="font-weight: bold; color: #3f7ef2;"> grade group B</span> <br>
-    All the employees that are inside the <span style="font-weight: bold; color: #799453FF;">green rectangle </span> belong to <span style="font-weight: bold; color: #799453FF;"> grade group C</span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #D95F02;">red rectangle </span> belong to <span style="font-weight: bold; color: #D95F02;"> grade group A </span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #7570B3;">purple rectangle </span> belong to <span style="font-weight: bold; color: #7570B3;"> grade group B</span> <br>
+    All the employees that are inside the <span style="font-weight: bold; color: #1B9E77;">green rectangle </span> belong to <span style="font-weight: bold; color: #1B9E77;"> grade group C</span> <br>
     <button id="eighthStageButton">  Next </button>
 </div>
 <div id="ninethStage" style="text-align: left" hidden="true">
     <br>
-    To confirm your understanding, please select the grade group <span style="font-weight: bold; color: #3EBF30;"> Robin </span> belongs and click on next
+    To confirm your understanding, please select the grade group <span style="font-weight: bold; color: #98D462;"> Robin </span> belongs and click on next
     <fieldset>
         <legend style="font-size: medium">Select a grade group :</legend>
         <div>
@@ -131,8 +145,8 @@
     <h1>Excellent! Now the <b>performance</b></h1>
     <p> The company evaluates performance using rigorous and trustworthy methods. Each employee can have one of three performance levels: low performance, medium performance, or high performance.<br>
         Recall this chart and your two colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and <span style="font-weight: bold; color: #F2B93F;"> Sam </span>. <br>
-        <span style="font-weight: bold; color: #0096c9;">Charlie</span> earns <span style="font-weight: bold; color: #0096c9;">74,000</span> and belongs to <span style="font-weight: bold; color: #0096c9;">grade group C</span>
-        <br><span style="font-weight: bold; color: #F2B93F;">Sam</span> earns <span style="font-weight: bold; color: #F2B93F;">38,500</span> and belongs to <span style="font-weight: bold; color: #F2B93F;">grade group B</span><br>
+        <span style="font-weight: bold; color: #0096c9;">Charlie</span> earns a bit less than <span style="font-weight: bold; color: #0096c9;">75k</span> and belongs to <span style="font-weight: bold; color: #0096c9;">grade group C</span>
+        <br><span style="font-weight: bold; color: #F2B93F;">Sam</span> earns between <span style="font-weight: bold; color: #F2B93F;">35k and 40k</span> and belongs to <span style="font-weight: bold; color: #F2B93F;">grade group B</span><br>
     </p>
     <p>In the visualization, performance is visualized by the size of dots</p>
     <svg id="chartPerformance"> </svg> <br>
@@ -151,7 +165,7 @@
 </div>
 <div id="twelvethStage" style="text-align: left" hidden="true">
     <br>
-    Select in which group <span style="font-weight: bold; color: #3EBF30;"> Robin </span> belongs to and click on next:
+    Select in which group <span style="font-weight: bold; color: #98D462;"> Robin </span> belongs to and click on next:
     <fieldset>
         <legend style="font-size: medium">Select a performance :</legend>
          <div>
@@ -173,14 +187,14 @@
 </div>
 <div id="thirteenthStage" style="text-align: left" hidden="true">
     <h2>Last questions regarding salary, grade group and performance!</h2>
-    After, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span style="font-weight: bold; color: #F2B93F;">Sam</span> and <span style="font-weight: bold; color: #3ebf30;">Robin</span>. Can you answer to the following questions for <span style="font-weight: bold; color: #f2593f;">Jamie</span> ?
+    After, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span style="font-weight: bold; color: #F2B93F;">Sam</span> and <span style="font-weight: bold; color: #98D462;">Robin</span>. Can you answer to the following questions for <span style="font-weight: bold; color: #D95F02;">Jamie</span> ?
     <svg id="chartFinalTest"></svg> <br>
 
     <div>
-        <p style="width: 33%;float: left;padding: 20px"> Approximate salary of<span style="font-weight: bold; color: #f2593f;"> Jamie </span> (&#177; 2.5k) <br> <input id="inputJamieSalary" type="text">  <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <p style="width: 33%;float: left;padding: 20px"> Estimate <span style="font-weight: bold; color: #D95F02;"> Jamie's</span> salary(&#177; 2.5k) <br> <input id="inputJamieSalary" type="text">  <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
         </p>
         <fieldset style="width: 33%;float: left;padding: 0px">
-            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #f2593f;">Jamie's </span>grade group ?</legend> <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>
+            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>grade group ?</legend> <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>
             <div>
                 <input type="radio" id="ggJamie3" name="grade-group-test-jamie" value="3" />
                 <label for="ggJamie3">A</label>
@@ -195,7 +209,7 @@
             </div>
         </fieldset>
         <fieldset style="width: 33%;float: left;padding: 0px">
-        <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #f2593f;">Jamie's </span>performance ?</legend> <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>performance ?</legend> <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
         <div>
             <input type="radio" id="lowJamieP" name="performance-test-jamie" value="lowperformers" />
             <label for="lowJamieP">Low</label>

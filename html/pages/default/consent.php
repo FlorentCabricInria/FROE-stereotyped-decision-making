@@ -11,51 +11,49 @@
             <p>After agreeing to the terms below, you will first answer a few demographic questions, then you will follow a training session that will teach you how to read the data visualizations we will show you.
                 This will require around nine (9) minutes to complete.</p>
 
-            <h2>1. Privacy policy</h2>
+           <!-- <h2>1. Privacy policy</h2>
 
             <p>In accordance with Article 13 of the Regulation on the protection of individuals with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC (General Data Protection Regulation or GDPR), please find below some information concerning this data collection: </p>
 
             <ol>
                 <li>The controller's representative is the CEO of Inria. </li>
-                <li>The Data Protection Officer (DPO) appointed by Inria can be contacted via <a href="mailto:dpo@inria.fr?subject=Readability%20scale%20study%20-%20Aviz%20team">dpo@inria.fr</a> or via her postal address: The Data Protection Officer, Inria, 2004 route des lucioles, BP 93, 06902 Sophia-Antipolis cedex. </li>
+                <li>The Data Protection Officer (DPO) appointed by Inria can be contacted via <a href="mailto:dpo@inria.fr?subject=Decision-making%20%20study%20for%20reducing%20gender%20pay%20gap—%20Aviz%20team">dpo@inria.fr</a>
+                    or via her postal address: The Data Protection Officer, Inria, 2004 route des lucioles, BP 93, 06902 Sophia-Antipolis cedex. </li>
                 <li>The purpose of this study <b>is to understand the use of visualization in a salary adjustment decision. </b></li>
                 <li>The legal basis of the processing is the execution of a public interest mission</li>
-                <li>The recipients of your data are members of AVIZ team (Inria) </li>
-                <li>Your data will be stored for a maximum period of one year. </li>
+                <li>The recipients of your data are the researchers listed in the consent form </li>
+                <li>Your data will be stored for a maximum period of three (3) years. </li>
                 <li>You may access your personal data or request that it be deleted. You also have a right of opposition, a right of rectification and a right to limit the processing of your data (see <a href="https://www.cnil.fr" target="_blank">https://www.cnil.fr</a> for more information on your rights).
                     <p>For any question about the processing of your data in this system, you can contact the DPO: <br />- Contact our DPO electronically: dpo@inria.fr  <br />- Contact our DPO by post:  The Data Protection Officer Inria, 2004 route des Lucioles, BP 93, 06902 Sophia-Antipolis Cedex, France </p>
                 </li>
                 <li>If, you consider that the processing does not comply with data protection rules, you can file a complaint with the CNIL. </li>
                 <li>This data collection is done on a voluntary basis. Under no circumstances are you required by regulation, contract or other means to provide your data. </li>
             </ol>
-
-            <h2>2. Consent form</h2>
+ -->
+            <h2>Consent form</h2>
 
             <h3>PART I/  INFORMATION</h3>
 
             <p><em><strong>Acknowledgements: </strong></em></p>
 
-            <p><em>Your input is essential to our project and the research team would like to thank you for that.<br />Before giving your informed consent, it is important that you understand why the research is being done, what it involves and what your rights and obligations are.</em></p>
+            <p><em>Your input is essential to our project and the researchers involved in this study would like to thank you for that.<br />Before giving your informed consent, it is important that you understand why the research is being done, what it involves and what your rights and obligations are.</em></p>
 
 
             <h4>IDENTIFICATION</h4>
 
-            <p><strong>Project manager(s):</strong> <a href="http://petra.isenberg.cc/wiki/pmwiki.php" target="_blank">Petra Isenberg</a> (Senior Research Scientist, Aviz Team, Inria Saclay)</p><br />
+            <p><strong>Project manager(s):</strong> <a href="http://petra.isenberg.cc/wiki/pmwiki.php" target="_blank">Petra Isenberg</a> (Senior Research Scientist, Aviz Team, Inria Saclay)<br />
                 <strong>Other scientists involved: </strong>
-<a href="https://florentcabric.com/" target="_blank">Florent Cabric</a> (Postdoctoral researcher, Aviz Team, Inria Saclay, Université Paris-Saclay)  </ul>
+<a href="https://florentcabric.com/" target="_blank">Florent Cabric</a> (Postdoctoral researcher, Aviz Team, Inria Saclay, Université Paris-Saclay)<br />
 
-            <p><strong>Project team and Inria Research Centre:</strong> Aviz Team - Inria Saclay<br /><strong>Project name:</strong> Comparison of visualization-aided decision-making processes</p>
+           <strong>Project team and Inria Research Centre:</strong> Aviz Team - Inria Saclay<br /><strong>Project name:</strong> Comparison of visualization-aided decision-making processes</p>
 
-            <p>You are invited to take part in this project, whose the purpose is to understand how visualizations help people make decisions. The Aviz team conducts
+            You are invited to take part in this project, whose the purpose is to understand how visualizations help people make decisions. The Aviz team conducts
                 research in the field of visualization and the results of these experiments will help us to improve visualization design and research in this field more generally.</p>
 
             <p>This study will take place <strong>online</strong>. </p>
 
-            <p style="color: darkred">The expected benefits of the project are the following:
-                readability of a visualization has a considerable impact on a visualization’s use. Researchers investigating usability, effectiveness, and acceptability
-                of visualizations can seek to evaluate participants’ perception of readability. To do so, they presently pick their own survey terms, for example “I am utterly confused”,
-                “symbols were easy to read”, “I am confident in my answers”, “the visualization facilitates data understanding”, and so on. We currently lack a validated tool to evaluate the
-                perceived readability of visual representations among study participants. The aim of this project is to build and validate a consistent scale to measure perceived readability.</p>
+            <p > The expected benefits of the project are the following: we study how people make decisions with visual representations of data.
+                Based on our results we will be able to recommend guidelines to design visualizations that help users make the best possible decisions. </p>
 
             <p>This project has received a favorable opinion from Inria's Operational Committee for the Assessment of legal and ethical risks. For more information: <br /><a href="https://www.inria.fr/en/operational-committee-assesment-legal-and-ethical-risks" target="_blank" title="OCELER">https://www.inria.fr/en/operational-committee-assesment-legal-and-ethical-risks</a></p>
 
@@ -66,10 +64,8 @@
             <p><strong>Requirements</strong><br />Anyone who is a fluent speaker of English, is of legal age (18 years in most countries),
                 have normal or corrected-to-normal vision, and do not suffer for colorblindness can participate in this study.</p>
 
-            <p style="color: darkred"><strong>Procedure</strong><br />After clicking the experiment link, you will first answer this consent form.
-               <!-- Then you will answer one question about you color vision, followed by thirty-nine (39) questions in total, about three (3) visual representations of data.
-                This will require around sixteen (16) minutes to complete. -->
-                Then you will follow a training session that will teach you how to read the data visualizations we will show you.
+            <p><strong>Procedure</strong><br />First, you will have to give your informed consent at the bottom of this page.
+                Then you can proceed to the study and  follow a training session that will teach you how to read the data visualizations we will show you.
                 During this training, you will have to answer two attention tests. If you failed of both tests, the experiment will end.
             </p>
 
@@ -96,11 +92,7 @@
 
             <h5><strong>Request for information during the project</strong></h5>
 
-            <p>If you have any additional questions about the project or about your rights as a participant in this research, please do not hesitate to get in touch with the contact persons mentioned below.</p>
-
-            <h5><strong>Information concerning the principal results of the research</strong></h5>
-
-            <p>If you would like a written summary about the principal results of this research and their use, please ask the contact persons.</p>
+            <p>If you have any additional questions about the project, about your rights as a participant in this research or a written summary about the principal results of this research and their use, please do not hesitate to get in touch with the contact persons mentioned below.</p></p>
 
             <h5><strong>Publication on a public platform for Open Science of the principal results of the research</strong></h5>
 
@@ -128,29 +120,20 @@
             <p>In accordance with Article 13 of the Regulation (EU) 2016/679 of the European Parliament and of the council of
                 27 April 2016 on the protection of natural persons with regard to the processing of personal data and the free movement of such data, please find below some information about this data collection:</p>
 
-            <ul>
-                <li>The representative of the data controller is the Director of the Inria Saclay Center, Jean-Yves Berthou</li>
-                <li>It is understood that the personal data collected during the project are confidential and that only the members of the research team, listed below, will have access to these data:
-                    <ul>
-                        <li>Dr. Petra Isenberg, senior research scientist from the research team AVIZ</li>
-                        <li>Dr. Florent Cabric, postdoctoral researcher from the research team AVIZ</li>
-                    </ul>
+            <ol>
+                <li>The controller's representative is the CEO of Inria. </li>
+                <li>The Data Protection Officer (DPO) appointed by Inria can be contacted via <a href="mailto:dpo@inria.fr?subject=Decision-making%20%20study%20for%20reducing%20gender%20pay%20gap—%20Aviz%20team">dpo@inria.fr</a>
+                    or via her postal address: The Data Protection Officer, Inria, 2004 route des lucioles, BP 93, 06902 Sophia-Antipolis cedex. </li>
+                <li>The purpose of this study <b>is to understand the use of visualization in a salary adjustment decision. </b></li>
+                <li>The legal basis of the processing is the execution of a public interest mission</li>
+                <li>The recipients of your data are the researchers listed in the consent form </li>
+                <li>Your data will be stored for a maximum period of three (3) years. </li>
+                <li>You may access your personal data or request that it be deleted. You also have a right of opposition, a right of rectification and a right to limit the processing of your data (see <a href="https://www.cnil.fr" target="_blank">https://www.cnil.fr</a> for more information on your rights).
+                    <p>For any question about the processing of your data in this system, you can contact the DPO: <br />- Contact our DPO electronically: dpo@inria.fr  <br />- Contact our DPO by post:  The Data Protection Officer Inria, 2004 route des Lucioles, BP 93, 06902 Sophia-Antipolis Cedex, France </p>
                 </li>
-                <li>Each processing of personal data within Inria must be reported to the Inria DPO;</li>
-                <li>Your data will be kept for a maximum of 3 years;</li>
-                <li>Transfer of your data: your data, once anonymized, may be deposited on an open data platform or used as a dataset to be reproduced or allow the results to be reproduced or in future scientific research or for the purposes of publishing the work resulting from this research.</li>
-                <li>In accordance with the French “Data Protection Act” of 6 January 1978, as amended, you are entitled to access and correct information about you;</li>
-                <li>You can access any data concerning you or request that it be erased until December 31st 2024;</li>
-                <li>You also have a right of opposition, a right of rectification, and a right to limit the processing of your data (see cnil.fr for more information about your rights) until December 31st 2024;</li>
-                <li>If you wish to exercise these rights or should you have any questions about the processing of your data in this system, you can contact the Inria DPO:
-                    <ul>
-                        <li>You can contact the DPO by email: dpo@inria.fr or by post by writing to:<br />The Data Protection Officer<br />Inria, <br />2004 route des Lucioles,<br />BP 93,<br />06902 Sophia-Antipolis Cedex, France</li>
-                    </ul>
-                </li>
-                <li>If you consider, after having contacted us, that your privacy and personal data rights have been infringed or that the study does not comply with data protection rules, you may send a complaint to the CNIL;</li>
-                <li>This data collection is done on a voluntary basis. Under no circumstances are you required either by regulations, or contractually or by other means to provide your data;</li>
-                <li>This processing does not entail any profiling or automated decision-making about you, based on your data and the processing of such data.</li>
-            </ul>
+                <li>If, you consider that the processing does not comply with data protection rules, you can file a complaint with the CNIL. </li>
+                <li>This data collection is done on a voluntary basis. Under no circumstances are you required by regulation, contract or other means to provide your data. </li>
+            </ol>
 
             <p>This form for requesting information and for collecting informed consent is a confidential and sensitive document, and as such it must be given special treatment both in the way that it is kept and archived.</p>
 
@@ -158,17 +141,14 @@
 
             <h3>PART II/ COLLECTION OF INFORMED CONSENT</h3>
 
-            <p>I acknowledge that I have read and understood this form for requesting information concerning the project "Validated Scale for Perceived Readability in Visualization" of which the purpose is to build and validate a consistent scale to measure perceived readability in visualization and that I voluntarily agree to participate in this research project in this context. </p>
-
-            <p>I acknowledge that I have been informed that I can terminate my participation in the project at any time without having to give any reason, by simply contacting the contacts mentioned above.</p>
-
-            <p>I acknowledge having been informed about the purpose and conditions of the project, as well as the pros, risks and cons of the project.</p>
-
-            <p>I acknowledge having received clear and precise answers to my questions.</p>
-
-            <p>Finally, I recognize that I have the option of asking additional questions about the project or about my rights, at any time during the project, via the contact persons.</p>
-
-            <p dir="ltr"><b>Contact details </b><br />Please feel free to contact one of the four researchers below if you wish to know more about the study, or if you have any questions: </p>
+            <p>I acknowledge that I have read and understood this form for requesting information concerning the project "Comparison of visualization-aided decision-making processes" of which the purpose
+                is to study how you will use visualisation to make decisions and that I voluntarily agree to participate in this research project in this context.
+                <br>
+                I acknowledge that I have been informed that I can terminate my participation in the project at any time without having to give any reason, by simply contacting the contacts mentioned above.
+                <br> I acknowledge having been informed about the purpose and conditions of the project, as well as the pros, risks and cons of the project.
+                <br> I acknowledge having received clear and precise answers to my questions.
+                <br> Finally, I recognize that I have the option of asking additional questions about the project or about my rights, at any time during the project, via the contact persons.
+                <br> <span dir="ltr"><b>Contact details </b><br />Please feel free to contact one of the four researchers below if you wish to know more about the study, or if you have any questions: </span></p>
 
             <div align="justify" style="max-width: 100%; display: flex; margin-left: auto; margin-right: auto;">
                 <div align="left" style="max-width: 50%; display: block; margin-left: 0; margin-right: auto; padding-right: 10px">

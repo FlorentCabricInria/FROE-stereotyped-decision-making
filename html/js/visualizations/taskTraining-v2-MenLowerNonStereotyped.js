@@ -167,6 +167,13 @@ function maxReachedV0(e) {
   // console.log(sum)
   let max = 25000;
  // e.currentTarget.innerHTML = e.currentTarget.value;
+
+
+
+  if(sum>max && (e.currentTarget.id == "PayEquityTraining2PlusBtn" || e.currentTarget.id == "NotEquityTraining2PlusBtn")) {
+    if(e.currentTarget.id == "PayEquityTraining2PlusBtn") {document.getElementById("PayEquityTraining2").value = parseInt(document.getElementById("PayEquityTraining2").value) - 100}
+    else if (e.currentTarget.id =="NotEquityTraining2PlusBtn") {document.getElementById("NotEquityTraining2").value = parseInt(document.getElementById("NotEquityTraining2").value) -100 }
+  }
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);

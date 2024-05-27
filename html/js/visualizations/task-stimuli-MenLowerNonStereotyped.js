@@ -261,6 +261,10 @@ function maxReachedTask(e) {
   // console.log(sum)
   const max = 15000;
   //e.currentTarget.innerHTML = e.currentTarget.value;
+  if(sum>max && (e.currentTarget.id == "PayEquityPlusBtn" || e.currentTarget.id == "NotEquityPlusBtn")) {
+    if(e.currentTarget.id == "PayEquityPlusBtn") {document.getElementById("taskPayEquity").value = parseInt(document.getElementById("taskPayEquity").value) - 100}
+    else if (e.currentTarget.id =="NotEquityPlusBtn") {document.getElementById("taskNotEquity").value = parseInt(document.getElementById("taskNotEquity").value) -100 }
+  }
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);

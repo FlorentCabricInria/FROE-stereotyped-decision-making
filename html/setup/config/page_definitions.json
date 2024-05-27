@@ -119,5 +119,21 @@
     "disabled" : true,
     "start_page" : false,
     "save_page" : false
+  },
+  "endDisagreement" : {
+    "id" : "end",
+    "button_text" : " ",
+    "page_path" : "pages/default/endDisagreement.php",
+    "disabled" : true,
+    "start_page" : false,
+    "save_page" : false
+  },
+  "endAttentionFailure" : {
+    "id" : "end",
+    "button_text" : " ",
+    "page_path" : "pages/default/endAttentionFailure.php",
+    "disabled" : true,
+    "start_page" : false,
+    "save_page" : false
   }
 }

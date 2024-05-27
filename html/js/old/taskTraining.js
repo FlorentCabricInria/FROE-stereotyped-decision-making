@@ -257,7 +257,7 @@ function maxReached2(e) {
     else if(state =="second" && parseInt(ALTslider.value) == 25000) {
       state = "third"
       document.getElementById("slidersLabelsTask").innerHTML = "Task 3: Allocate, 12,500 for \"Performance-based\" and 12,500 for \"addressing pay equity\""
-      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! now can you try to allocate 12,500 for \"Performance-based\" and 12,500 for \"Reducing equal gender pay gap\""
+      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! now can you try to allocate 12,500 for \"Performance-based\" and 12,500 for \"Reducing gender pay inequity\""
     }
     else if(state == "third" && parseInt(ALTslider.value) == 12500 && parseInt(PEslider.value) == 12500){
       document.getElementById("slidersLabelsTask").innerHTML = "Congratulations!! You can move on to the next part"

@@ -14,7 +14,7 @@
       }?>
         $('#<?php echo $hide ?>').hide().promise().done(() => {if (!excluded) $('#<?php echo $show ?>').show()});"
 
-      <?php if ($id =='introduction_3' || $id =='task-training-v2_6' || $id =='task-training_5' || $id =='task-training-v3_7' || $id == 'feedback-about-decision_9' || $id == 'ambivalent-sexism-theory_10') {?>
+      <?php if ($id =='introduction_3' || $id =='task-training-v2_6' || $id =='task-training_5' || $id =='task-training-v3_7' || $id == 'feedback-about-decision_9' || $id == 'ambivalent-sexism-theory_10' || $id == 'endDisagreement_12') {?>
         hidden
        <?php }?>
       <?php if($disabled) echo ' disabled';?> >
