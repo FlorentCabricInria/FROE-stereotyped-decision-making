@@ -20,7 +20,7 @@
   <script src="html/js/lib/bootstrap.min.js"></script>
   <script src="html/js/lib/bowser-2.4.0-es5.js"></script>
   <script src="html/js/tools/helper.js"></script>
-
+  <script src="https://kit.fontawesome.com/157f600431.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -53,7 +53,7 @@
 
   $is_pilot = false;
   $is_debug = false;
-
+  $test_condition;
   if (isset($_GET["DEBUG"]) || isset($_GET["debug"])) {
     $is_debug = true;
     $participant_id = 'DEBUG'; 
@@ -90,6 +90,18 @@
 if ($is_debug  || $is_pilot){
   if (isset($_GET["condition"])) {
     $order_value = $_GET["condition"];
+    if($_GET["condition"] == "1") {
+      $test_condition = "1.csv";
+    }
+    else if($_GET["condition"] == "2") {
+      $test_condition = "2.csv";
+    }
+    else if($_GET["condition"] == "3") {
+      $test_condition = "3.csv";
+    }
+    else if($_GET["condition"] == "4") {
+      $test_condition = "4.csv";
+    }
   }
   if (isset($_GET["page"])) {
     $start_page = max(1, intval($_GET["page"]));
@@ -119,6 +131,9 @@ if ($is_debug  || $is_pilot){
   }
 
   $condition = $factor1;
+  if(isset($test_condition)){
+    $condition = $test_condition;
+  }
   //associate name to condition (which is a filename for now)
 
   if (is_null($condition)){

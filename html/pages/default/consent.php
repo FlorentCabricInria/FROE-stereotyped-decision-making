@@ -47,13 +47,10 @@
 
            <strong>Project team and Inria Research Centre:</strong> Aviz Team - Inria Saclay<br /><strong>Project name:</strong> Comparison of visualization-aided decision-making processes</p>
 
-            You are invited to take part in this project, whose the purpose is to understand how visualizations help people make decisions. The Aviz team conducts
+            You are invited to take part in this project, whose purpose is to understand how visualizations help people make decisions. The Aviz team conducts
                 research in the field of visualization and the results of these experiments will help us to improve visualization design and research in this field more generally.</p>
 
             <p>This study will take place <strong>online</strong>. </p>
-
-            <p > The expected benefits of the project are the following: we study how people make decisions with visual representations of data.
-                Based on our results we will be able to recommend guidelines to design visualizations that help users make the best possible decisions. </p>
 
             <p>This project has received a favorable opinion from Inria's Operational Committee for the Assessment of legal and ethical risks. For more information: <br /><a href="https://www.inria.fr/en/operational-committee-assesment-legal-and-ethical-risks" target="_blank" title="OCELER">https://www.inria.fr/en/operational-committee-assesment-legal-and-ethical-risks</a></p>
 
@@ -62,11 +59,11 @@
             <h5><strong>Conditions of your participation: </strong></h5>
 
             <p><strong>Requirements</strong><br />Anyone who is a fluent speaker of English, is of legal age (18 years in most countries),
-                have normal or corrected-to-normal vision, and do not suffer for colorblindness can participate in this study.</p>
+                have normal or corrected-to-normal vision, and do not suffer from color blindness can participate in this study.</p>
 
             <p><strong>Procedure</strong><br />First, you will have to give your informed consent at the bottom of this page.
                 Then you can proceed to the study and  follow a training session that will teach you how to read the data visualizations we will show you.
-                During this training, you will have to answer two attention tests. If you failed of both tests, the experiment will end.
+                During this training, you will have to answer two attention tests. If you fail both tests, the experiment will end.
             </p>
 
             <p><strong>Benefits</strong><br />This research will contribute to research in visualization-aided decision-making process.</p>
@@ -81,8 +78,7 @@
 
             <h5><strong>Withdrawal from the project at any time</strong></h5>
 
-            <p>You are completely free to end your participation in the project at any time before the completion of the study.
-                All you have to do is let the contact persons know (below). You don’t have to provide any reasons for your withdrawal.</p>
+            <p>You are completely free to end your participation in the project at any time before the completion of the study. You don’t have to provide any reasons for your withdrawal.</p>
 
             <h5><strong>Following your withdrawal from the project</strong></h5>
 

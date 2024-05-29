@@ -98,7 +98,7 @@ function createSteoreotypedVisualization2WLS(){
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', [0, 0, width, height])
-      .attr('style', 'max-width: 100%; height: auto;');
+      .attr('style', 'max-width: 70%; height: auto;width: 70%;float: left;padding: 20px');
 
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
@@ -234,6 +234,10 @@ function addForecast () {
      #########################################################
      * */
     let svg = d3.select('#TrainingTaskChart2WomenLowerStereotypedTraining1')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('viewBox', [0, 0, width, height])
+      .attr('style', 'max-width: 70%; height: auto;width: 70%;float: left;padding: 20px');
     svg.insert('g', ":first-child")
       .selectAll('circle')
       .data(data)

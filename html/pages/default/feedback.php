@@ -3,9 +3,9 @@
         <h2>Explanation of your decisions</h2>
         <div> With your decision, the final gender pay gap is <span id="taskCurrentPayGapStimuli">
          </span> and you allocated merit-based raises in the following manner: <br>
-          The low performers got a <span id="taskLowPerfStimuli" style="display: inline-block"> .... </span>% raise.
-          The medium performers got a <span id="taskMidPerfStimuli" style="display: inline-block"> .... </span>% raise.
-          The high performers got a <span id="taskHighPerfStimuli" style="display: inline-block"> .... </span>% raise.
+          The low performers get a <span id="taskLowPerfStimuli" style="display: inline-block"> .... </span>% raise.
+          The medium performers get a <span id="taskMidPerfStimuli" style="display: inline-block"> .... </span>% raise.
+          The high performers get a <span id="taskHighPerfStimuli" style="display: inline-block"> .... </span>% raise.
             <p style="font-weight: bold"> Explain your decision in, at least, 150 characters in the text area below the chart.</p>
       <!--  <svg id="final-decision-feedback-chart"> </svg> -->
             <?php

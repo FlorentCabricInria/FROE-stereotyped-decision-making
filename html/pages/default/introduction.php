@@ -29,16 +29,17 @@
 
     <h1 > Background Explanation</h1>
     <p><b>Imagine the following scenario</b></p>
-    You are the person in charge of your company's annual salary review. The CEO has allocated 25,000 StudyCoin (a currency created for this study) to increase the employees salaries — your colleagues.
-    The CEO instructed you to allocate the 25,000 as you want. You can consider that everyone gets paid fairly based on balancing:
+    You are the person in charge of your company's annual salary review. The CEO has allocated 25,000 StudyCoin (a fictitious currency) to increase the employees salaries — your colleagues.
+    <br>
+    <!-- The CEO instructed you to allocate the 25,000 as you want. There are two main factors for you to consider and balance that ensure fair pay in a different manner:
     <ul>
         <li>
-            differences between men and women's pay (= the gender pay gap)
+            a) differences between men and women's pay (= the gender pay gap)
         </li>
         <li>
-            deciding who gets a raise based on how well they did their job in the past (=merit raises based on performance)</li>
+           b) differences in how well employees did their job in the past (=their performance) </li>
     </ul>
-
+    -->
     <!-- Each colleague has been categorized into 3 grade groups*: 1, 2 and 3. The performance is represented in the chart by the
     _size of the dot _and the Y position corresponds to their salary. The performance metric is considered highly robust in your company. <br>
 
@@ -107,8 +108,8 @@
     <button id="sixthStageButton">  Add grade groups</button>
 </div>
 <div id="seventhStage" style="text-align: left" hidden="true">
-    As you can see <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #1b9e77;">grade group C</span> and  <span style="font-weight: bold; color: #F2B93F;"> Sam </span>
-    belongs to  <span style="font-weight: bold; color: #7570b3;"> grade group B</span>. <br>
+    As you can see <span style="font-weight: bold; color: #F2B93F;"> Sam </span>    belongs to  <span style="font-weight: bold; color: #7570b3;"> grade group B</span> and
+    <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span style="font-weight: bold; color: #1b9e77;">grade group C</span>.<br>
     To be able to distinguish between employees with very similar salaries, we will add some "jitter". That means that the horizontal position of each employee will be moved slightly, to the left or to the right.
     <button id="seventhStageButton">Add Jitter</button>
 </div>
@@ -144,7 +145,7 @@
     <br>
     <h1>Excellent! Now the <b>performance</b></h1>
     <p> The company evaluates performance using rigorous and trustworthy methods. Each employee can have one of three performance levels: low performance, medium performance, or high performance.<br>
-        Recall this chart and your two colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and <span style="font-weight: bold; color: #F2B93F;"> Sam </span>. <br>
+        Recall this chart and your two colleagues <span style="font-weight: bold; color: #F2B93F;"> Sam </span> and <span style="font-weight: bold; color: #0096c9;">Charlie</span>. <br>
         <span style="font-weight: bold; color: #0096c9;">Charlie</span> earns a bit less than <span style="font-weight: bold; color: #0096c9;">75k</span> and belongs to <span style="font-weight: bold; color: #0096c9;">grade group C</span>
         <br><span style="font-weight: bold; color: #F2B93F;">Sam</span> earns between <span style="font-weight: bold; color: #F2B93F;">35k and 40k</span> and belongs to <span style="font-weight: bold; color: #F2B93F;">grade group B</span><br>
     </p>

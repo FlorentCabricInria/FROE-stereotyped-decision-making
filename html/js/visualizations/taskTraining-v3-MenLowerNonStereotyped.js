@@ -301,6 +301,7 @@ function maxReached(e) {
 }
 
 function displayCurrentGenderPayGap () {
+  document.getElementById("divfordata").style.background = "#f9f9f9"
   document.getElementById("addCurrentGenderPayGap").hidden = true;
   document.getElementById("LineGenderPG").hidden = false;
 //  document.getElementById("btn_task-training-v3_7").hidden = false;

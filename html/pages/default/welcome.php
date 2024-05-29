@@ -1,14 +1,14 @@
 <div class="row">
   <div class="col">
     <h2>A study on visual decision-making for salary adjustments in a company</h2>
-    <p>You are invited to participate in our study, "<strong>A study on visual decision-making for salary adjustments in a company.</strong>"<br>The study will take around 10 minutes.</p>
+    <p>You are invited to participate in our study called "<strong>A study on visual decision-making for salary adjustments in a company.</strong>"<br>The study will take around 10 minutes.</p>
     <p>Our goal is to understand how the use of interactive data visualization can impact the decisions in a context of salary adjustments. The results from this experiment will help inform the design
       of visualizations that are better suited to help decision-makers. </p>
     <p>Please respond to this survey only if you:</p>
     <ul>
       <li style="margin: 0px">are a fluent speaker of English,</li>
       <li style="margin: 0px">are of legal age (18 years in most countries),</li>
-      <li style="margin: 0px">don't have low vision or impaired vision, including any form of color deficiency, and</li>
+      <li style="margin: 0px">don't have low vision or impaired vision, <b> including any form of color deficiency </b>, and</li>
       <li style="margin: 0px">are currently viewing this survey from a computer screen.</li>
     </ul>
     <p><strong>You can only participate using a computer screen, as a mobile phone's screen is too small to display the visualizations correctly.</strong></p>

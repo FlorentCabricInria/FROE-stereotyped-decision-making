@@ -3,7 +3,7 @@
 
 <div id="row">
 <h1>Questionnaire</h1>
-<p style="font-size: 1.25rem"><strong>Instructions:</strong>  To end this study, we will ask you to answer 12 questions. For each statement, indicate whether you "Strongly Disagree", "Somewhat Disagree", Slightly Disagree",
+<p style="font-size: 1em"><strong>Instructions:</strong>  To end this study, we will ask you to answer 12 questions. For each statement, indicate whether you "Strongly Disagree", "Somewhat Disagree", Slightly Disagree",
 "Slightly Agree", "Somewhat Agree", "Strongly Agree" </p>
 <hr style="height: 0.5em; background-color: lightgrey"/>
 <form action="javascript:processScaleResults()">
@@ -93,7 +93,7 @@
             <td style="text-align:center;"><input type="radio" name="likert9" value="4"></td>
             <td style="text-align:center;"><input type="radio" name="likert9" value="5"></td>
         </tr>
-        <tr style="height:4em;background-color: #f9f5f5;"role="row" class="even shiny-input-radiogroup shiny-bound-input" id="likert10">		<td> 10. Men should be willing to sacrifice their own well being in order to provide financially for the women in their lives. </td>
+        <tr style="height:4em;background-color: #f9f5f5;"role="row" class="even shiny-input-radiogroup shiny-bound-input" id="likert10">		<td> 10. Women, compared to men, tend to have a superior moral sensibility. </td>
             <td style="text-align:center;"><input type="radio" name="likert10" value="0"></td>
             <td style="text-align:center;"><input type="radio" name="likert10" value="1"></td>
             <td style="text-align:center;"><input type="radio" name="likert10" value="2"></td>
@@ -101,7 +101,7 @@
             <td style="text-align:center;"><input type="radio" name="likert10" value="4"></td>
             <td style="text-align:center;"><input type="radio" name="likert10" value="5"></td>
         </tr>
-        <tr style="height:4em;"role="row" class="odd shiny-input-radiogroup shiny-bound-input" id="likert11">		<td> 11. Once a woman gets a man to commit to her, she usually tries to put him on a tight leash. </td>
+        <tr style="height:4em;"role="row" class="odd shiny-input-radiogroup shiny-bound-input" id="likert11">		<td> 11. Men should be willing to sacrifice their own well being in order to provide financially for the women in their lives. </td>
             <td style="text-align:center;"><input type="radio" name="likert11" value="0"></td>
             <td style="text-align:center;"><input type="radio" name="likert11" value="1"></td>
             <td style="text-align:center;"><input type="radio" name="likert11" value="2"></td>

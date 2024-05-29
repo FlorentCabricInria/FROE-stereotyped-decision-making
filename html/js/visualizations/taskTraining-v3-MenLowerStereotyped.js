@@ -389,6 +389,7 @@ document.getElementById("btn_task-training-v2_6").hidden= false;
 }
 
 function displayCurrentGenderPayGap () {
+  document.getElementById("divfordata").style.background = "#f9f9f9"
   document.getElementById("addCurrentGenderPayGap").hidden = true;
   document.getElementById("LineGenderPG").hidden = false;
 

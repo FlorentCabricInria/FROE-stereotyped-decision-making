@@ -9,7 +9,7 @@
 
       <br>  <button id="addMoneyLeft" hidden="true"> Add the third piece of information : the amount of money left  </button>
       <span id="LineMoneyLeft" hidden="true">You have <span id="Leftovers"> 0</span> left to allocate. <span id="instrleft" style="color: darkred"> This text tells you how much money you have left to allocate</span>
-    --></div>
+    -->
     <br>
     <?php
           $extension = array(".csv");
@@ -18,23 +18,23 @@
           $mod = $cond % 4;
           switch ($mod){
             case 0:
-              ?> <span> </span>  <svg id="TrainingTaskChart3MenLowerStereotypedTraining1" > </svg>
+              ?>   <svg id="TrainingTaskChart3MenLowerStereotypedTraining1" > </svg>
     <?php
               break;
             case 1:
             ?>
-    <span></span><svg id="TrainingTaskChart3WomenLowerStereotypedTraining1"> </svg>
+  <svg id="TrainingTaskChart3WomenLowerStereotypedTraining1"> </svg>
 
     <?php
               break;
             case 2:
             ?>
-    <span> </span> <svg id="TrainingTaskChart3MenLowerNonStereotypedTraining1"> </svg>
+   <svg id="TrainingTaskChart3MenLowerNonStereotypedTraining1"> </svg>
 
     <?php
               break;
             case 3:
-              ?> <span> </span>  <svg id="TrainingTaskChart3WomenLowerNonStereotypedTraining1"> </svg>
+              ?> <svg id="TrainingTaskChart3WomenLowerNonStereotypedTraining1"> </svg>
     <?php
               break;
           }
@@ -42,28 +42,90 @@
       ?>
     <br>
 
-    <div id="slidersForTest">
+    <div id="slidersForTest" style="max-width: 100%; height: auto;width: 30%;float: right;padding: 0px">
         <!--   <span id="slidersLabelsTask2"> -->
-       <div>
-           Reducing gender pay inequity: <input type="range" id="PayEquityTraining3" name="PayEquityTraining3" min="0" max="25000" value="0" step="100">
-           <button id="PayEquityTraining3MinusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>
-           <button id="PayEquityTraining3PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>
-           <output id="PEoutputTraining3">0</output><br>
-       </div>
-        <div>
-        Performance-based merit raises: <input type="range" id="NotEquityTraining3" name="NotEquityTraining3" min="0" max="25000"  value="0" step="100" >
-            <button id="NotEquityTraining3MinusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>
-            <button id="NotEquityTraining3PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>
-            <output id="ALToutputTraining3">0</output> <br>
+<!--       <div>-->
+<!--           <button id="PayEquityTraining3MinusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>    &nbsp;-->
+<!--           <button id="PayEquityTraining3PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>    &nbsp;-->
+<!--           <output id="PEoutputTraining3">0</output><br>-->
+<!--       </div>-->
+        <div style="display: inline-block">
+
+            <div class="input-group plus-minus-input">
+                Reducing gender pay inequity: <input type="range" id="PayEquityTraining3" name="PayEquityTraining3" min="0" max="25000" value="0" step="100">   &nbsp; &nbsp; &nbsp;
+
+                <div class="input-group-button">
+                    <button  id="PayEquityTraining3MinusBtn"type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                &nbsp;
+                <!--                <input class="input-group-field" type="number" name="quantity" value="0">-->
+                <div  id="PayEquityTraining3PlusBtn" class="input-group-button">
+                    <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </div>&nbsp; &nbsp;
+                <output id="PEoutputTraining3">0</output> <br>
+
+            </div>
         </div>
-        <div>
-            <button id="addCurrentGenderPayGap"> Add the equal gender pay gap</button> <span id="LineGenderPG" hidden="true">The current gender pay gap is <span id="TestGenderPG"> 5% (women lower)</span> !
-        <span id="smallTextPayGap" style="color: darkred"> <br> Move the first slider and see what's happening! This value is updated in real time!</span>
+        <div style="display: inline-block">
+            <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
+
+            <div class="input-group plus-minus-input">
+                Performance-based merit raises: <input type="range" id="NotEquityTraining3" name="NotEquityTraining3" min="0" max="25000"  value="0" step="100" >    &nbsp; &nbsp; &nbsp;
+                <div class="input-group-button">
+                    <button  id="NotEquityTraining3MinusBtn"type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                &nbsp;
+<!--                <input class="input-group-field" type="number" name="quantity" value="0">-->
+                <div  id="NotEquityTraining3PlusBtn" class="input-group-button">
+                    <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </div>&nbsp;
+                &nbsp;
+                <output id="ALToutputTraining3">0</output> <br>
+
+            </div>
+
+
+<!--            <button id="NotEquityTraining3MinusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>    &nbsp;-->
+<!--            <button id="NotEquityTraining3PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>    &nbsp;-->
+        </div>
+        <div id="divfordata" style="background: #ffffff;border-radius: 9px;padding: 15px;margin-top: 15px">
+            <button id="addCurrentGenderPayGap"> Add the equal gender pay gap</button> <span id="LineGenderPG" hidden="true">The current gender pay gap is: <br> <b><span id="TestGenderPG"> 5% (women lower)</span></b>.
+            <span id="smallTextPayGap" style="color: darkred"> <br> Move the first slider and see what's happening! This value is updated in real time!</span> </span>
+            <hr>
         <button id="addPerformance" hidden="true"> Add the merit-based raises</button>
-        <div id="performanceText" hidden="true">  The low performers got a <span id="taskLowPerfTraining" style="display: inline-block"> .... </span>% raise. <br>
-        The medium performers got a <span id="taskMidPerfTraining" style="display: inline-block"> .... </span>% raise.<br>
-        The high performers got a <span id="taskHighPerfTraining" style="display: inline-block"> .... </span>% raise.<br>
+            <div id="performanceText" hidden="true"> <span> Raises based on performance levels:</span>
+            <table>
+            <tbody>
+            <tr>
+            <td>Low</td>&nbsp;
+                <td>=</td>
+            <td>  &nbsp;  &nbsp; <b> <span id="taskLowPerfTraining" style="display: inline-block">...</span>%</b></td>
+            </tr>
+            <tr>
+            <td>Medium</td>&nbsp;
+                <td>=</td>
+            <td> &nbsp;  &nbsp;<b> <span id="taskMidPerfTraining" style="display: inline-block">...</span>%</b></td>
+            </tr>
+            <tr>
+            <td >High</td>&nbsp;
+                <td>=</td>
+            <td> &nbsp;  &nbsp; <b> <span id="taskHighPerfTraining" style="display: inline-block">...</span>%</b></td>
+            </tr>
+            </tbody>
+            </table>
+          <!--  — Low performers <span id="taskLowPerfTraining" style="display: inline-block"> .... </span>% raise. <br>
+        — Medium performers got a <span id="taskMidPerfTraining" style="display: inline-block"> .... </span>% raise.<br>
+        got a <span id="taskHighPerfTraining" style="display: inline-block"> .... </span>% raise.<br> -->
             <span id="smallTextPerformance" style="color: darkred"> Move the second slider and see what's happening! The values are updated in real time!</span>
+        </div>
         </div>
     </div> <br>
       <?php

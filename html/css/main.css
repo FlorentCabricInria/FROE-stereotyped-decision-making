@@ -14,17 +14,63 @@
   margin: auto;
   margin-top: auto;
 }
+
+.plus-minus-input {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.button.hollow {
+    border: 2px solid #bbbbbb;
+    color: #0060DF;
+    background-color: #ffffff;
+
+
+}
+.button.hollow:hover{
+
+    background-color: #0060DF;
+    color: #fefefe;
+    border: 2px solid #ffffff;
+
+}
+
+.plus-minus-input .input-group-field {
+    text-align: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 1rem;
+}
+
+.plus-minus-input .input-group-field::-webkit-inner-spin-button,
+.plus-minus-input .input-group-field ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.plus-minus-input .input-group-button .circle {
+    border-radius: 50%;
+    padding: 0.0em 0.0em;
+    height: 2rem;
+    width:2rem;
+}
+
+
 input[type=range]{
     pointer-events: none;
+    width: 50%;
 }
 input[type=range]::-webkit-slider-thumb{/*Webkit Browsers like Chrome and Safari*/
     pointer-events: auto;
+    width: 50%;
 }
 input[type=range]::-moz-range-thumb{/*Firefox*/
     pointer-events: auto;
+    width: 50%;
 }
 input[type=range]::-ms-thumb{/*Internet Explorer*/
     pointer-events: auto;
+    width: 50%;
 }
 .tick{
     font-size: 1.5em;
