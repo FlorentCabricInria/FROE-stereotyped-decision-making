@@ -1,8 +1,9 @@
 
 <div id="row">
     <h1>Training part 3 (final).</h1>
-    <p>We will now add two features to support your decision making. These features will help you to explore the impact of the decisions you make.
-        <br> Two pieces of information will be available for you. Click on the button in the grey area next to the chart.</p>
+    <p>We will now add two additional features to support your decision-making. These features will help you to explore the impact of the decisions you make.
+        <br> Click on the button to add the equal gender pay gap
+    </p>
 
             <!--<br> <button id="addAllocation" hidden="true"> Add the next piece of information : the distribution of the allocations </button>
         <span id="LineSummaryAllocation" hidden="true">You have allocated <span id="AllocationGPG"> 0 </span> for reducing equal gender pay gap and <span id="AllocationNotGPG"> 0 </span> for rewarding the performance. <span id="instrAlloc" style="color: darkred"> The distribution of allocation are updated in real time!</span>
@@ -97,9 +98,9 @@
 <!--            <button id="NotEquityTraining3PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>    &nbsp;-->
         </div>
         <div id="divfordata" style="background: #ffffff;border-radius: 9px;padding: 15px;margin-top: 15px">
-            <button id="addCurrentGenderPayGap"> Add the equal gender pay gap</button> <span id="LineGenderPG" hidden="true">The current gender pay gap is: <br> <b><span id="TestGenderPG"> 5% (women lower)</span></b>.
+            <button id="addCurrentGenderPayGap"> Add the equal gender pay gap</button> <span id="LineGenderPG" hidden="true">The current gender pay gap is: <br> <b><span id="TestGenderPG"> 5% </span></b>.
             <span id="smallTextPayGap" style="color: darkred"> <br> Move the first slider and see what's happening! This value is updated in real time!</span> </span>
-            <hr>
+            <hr id="lineTo" hidden="true">
         <button id="addPerformance" hidden="true"> Add the merit-based raises</button>
             <div id="performanceText" hidden="true"> <span> Raises based on performance levels:</span>
             <table>
@@ -169,6 +170,42 @@
           btntoValidate.innerHTML = "You still have money to allocate!";
           btntoValidate.style.backgroundColor = "rgba(115,115,115,0.9)"
           btntoValidate.style.color = "rgba(255,255,255,0.9)"
+
+          var textTimerCountdown = document.createElement("span");
+          textTimerCountdown.id = "textTimerCountdown";
+          var textTimer = document.createElement("span");
+          textTimer.style.float = "right";
+          var node1 = document.createTextNode("Wait ");
+          var node2 = document.createTextNode(" seconds before validating your decision.");
+          textTimer.append(node1)
+          textTimer.append(textTimerCountdown)
+          textTimer.append(node2)
+          btntoValidate.parentElement.append(textTimer)
+          btntoValidate.parentElement.style.paddingLeft = "745px"
+          var start = Date.now();
+          setInterval(function() {
+            var delta = Date.now() - start; // milliseconds elapsed since start
+            if (Math.floor(delta / 1000) > 30) {
+              textTimerCountdown.innerHTML = ""
+              textTimer.innerHTML = ""
+              btntoValidate.disabled = false
+              PEslider = document.getElementById('taskPayEquity');
+              ALTslider = document.getElementById('taskNotEquity');
+              let sum = parseInt(PEslider.value) + parseInt(ALTslider.value);
+              if(sum >= 15000){
+                btntoValidate.disabled = false;
+                btntoValidate.innerHTML = "Click, when you want to validate the decision!";
+                btntoValidate.style.backgroundColor = "rgba(69,241,69,0.34)"
+                btntoValidate.style.color = "rgba(0,0,0,0.9)"
+
+              }
+            }
+            else {
+              //document.getElementById('btn_test-decision-making-study_8').innerText = (30- Math.floor(delta / 1000)) + ""
+              textTimerCountdown.innerHTML = (30- Math.floor(delta / 1000)) + ""
+              console.log((30- Math.floor(delta / 1000)))
+            }
+          }, 1000)
         }
       });
     </script>

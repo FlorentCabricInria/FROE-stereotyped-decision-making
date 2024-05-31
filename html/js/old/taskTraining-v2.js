@@ -26,9 +26,9 @@ function changeSalary() {
 function calculateNewPayGap() {
   const GPG = ((Math.exp(lm('log(total_comp) ~ gender_f1 + performance_f1 + performance_f2 + performance_f3 + grade_group_f4 + grade_group_f5', dfPeople).coefficients[1]) - 1) * 100.0).toFixed(2);
   if (GPG > 0) {
-   // d3.select('#currentPayGap').text(`${GPG}% (women lower)`);
+   // d3.select('#currentPayGap').text(`${GPG}% `);
   } else {
-   // d3.select('#currentPayGap').text(`${GPG * -1}% (men lower)`);
+   // d3.select('#currentPayGap').text(`${GPG * -1}% `);
   }
 }
 

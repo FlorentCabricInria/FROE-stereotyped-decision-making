@@ -16,11 +16,11 @@ let coefHigh;
 //   var data= structuredClone(data30)
 let y2 = d3.scaleLinear()
   // .domain(d3.extent(genderData, d => d.salary)).nice()
-  .domain([28000 , 10000])
+  .domain([32000 , 15000])
   .range([0 + marginBottom, height - marginTop]);
 let btnFinal =  document.getElementById('btn_test-decision-making-study_8')
 const dfPeopleTask = [];
-d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
+d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
   const storedData = structuredClone(data);
 
   let random2 = new Math.seedrandom(seed);
@@ -291,14 +291,19 @@ function maxReachedTask(e) {
    // document.getElementById('taskTextRemaining').innerHTML = (max) - (parseInt(PEslider.value) + parseInt(ALTslider.value));
     changeSalaryTask();
     calculateNewPayGapTask();
-    btnFinal.disabled = false;
-    btnFinal.innerHTML = "Click, when you want to validate the decision!";
-    btnFinal.style.backgroundColor = "rgba(69,241,69,0.34)"
+    let textTimerCountdown = document.getElementById("textTimerCountdown")
+    if(textTimerCountdown == null){
+      btnFinal.disabled = false;
+      btnFinal.innerHTML = "Click, when you want to validate the decision!";
+      btnFinal.style.backgroundColor = "rgba(69,241,69,0.34)"
+      btnFinal.style.color = "rgba(0,0,0,0.9)"
+
+    }
+
 
     document.getElementById('taskLowPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefLow).toFixed(2);
     document.getElementById('taskMidPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefMid).toFixed(2);
     document.getElementById('taskHighPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefHigh).toFixed(2);
-    btnFinal.style.color = "rgba(0,0,0,0.9)"
     e.preventDefault();
     return false;
   }
@@ -344,9 +349,9 @@ function changeSalaryTask() {
 function calculateNewPayGapTask() {
   let GPG = ((Math.exp(lm('log(total_comp) ~ gender_w + performance_f1 + performance_f2 + grade_group_f4 + grade_group_f5', dfPeopleTask).coefficients[1]) - 1) * 100.0).toFixed(2);
   if (GPG > 0) {
-    d3.select('#taskCurrentPayGap').text(`${GPG}% (men lower)`);
+    d3.select('#taskCurrentPayGap').text(`${GPG}% `);
   } else {
-    d3.select('#taskCurrentPayGap').text(`${GPG * -1}% (women lower)`);
+    d3.select('#taskCurrentPayGap').text(`${GPG * -1}% `);
   }
 }
 

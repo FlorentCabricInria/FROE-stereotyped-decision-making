@@ -58,9 +58,9 @@ function changeSalaryV0() {
 function calculateNewPayGap() {
   const GPG = ((Math.exp(lm('log(total_comp) ~ gender_f1 + performance_f1 + performance_f2 + performance_f3 + grade_group_f4 + grade_group_f5', dfPeople).coefficients[1]) - 1) * 100.0).toFixed(2);
   if (GPG > 0) {
-   // d3.select('#currentPayGap').text(`${GPG}% (women lower)`);
+   // d3.select('#currentPayGap').text(`${GPG}% `);
   } else {
-   // d3.select('#currentPayGap').text(`${GPG * -1}% (men lower)`);
+   // d3.select('#currentPayGap').text(`${GPG * -1}% `);
   }
 }
 
@@ -217,7 +217,7 @@ function addForecast () {
   document.getElementById("forecastVisBtn").hidden = true;
   document.getElementById("point2").hidden = false;
   document.getElementById("point1").hidden = true;
-  document.getElementById("slidersForTest").hidden = true;
+  //document.getElementById("slidersForTest").hidden = true;
   d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
     const storedData = structuredClone(data);
 

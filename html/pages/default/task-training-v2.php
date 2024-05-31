@@ -40,7 +40,7 @@
           }
 
       ?>
-    <div id="slidersForTest" hidden="true" style="max-width: 100%; height: auto;width: 30%;float: right;padding: 0px">
+    <div id="slidersForTest" style="max-width: 100%; height: auto;width: 30%;float: right;padding: 0px">
 
         <div style="display: inline-block">
             <div class="input-group plus-minus-input">

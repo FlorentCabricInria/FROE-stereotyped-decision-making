@@ -169,7 +169,7 @@ function createSteoreotypedVisualizationMenLower() {
     });
 
     // Create the container SVG.
-    const svg = d3.select('#chartStereotypedMenLower')
+      const svg = d3.select('#chartStereotypedMenLower')
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', [0, 0, width, height])
@@ -206,9 +206,9 @@ function createSteoreotypedVisualizationMenLower() {
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#ff33c9');
-    svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
       .style('fill', '#3a33ffFF');
+    svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
+      .style('fill', '#ff33c9' );
     svg.append('text').attr('x', width - 80).attr('y', 130).text('Men')
       .style('font-size', '15px')
       .attr('alignment-baseline', 'middle');

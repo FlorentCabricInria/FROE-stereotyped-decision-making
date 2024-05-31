@@ -166,9 +166,8 @@
 </div>
 <div id="twelvethStage" style="text-align: left" hidden="true">
     <br>
-    Select in which group <span style="font-weight: bold; color: #98D462;"> Robin </span> belongs to and click on next:
     <fieldset>
-        <legend style="font-size: medium">Select a performance :</legend>
+        <legend style="font-size: medium">Select <span style="font-weight: bold; color: #98D462;"> Robin’s </span> performance evaluation and click next</legend>
          <div>
             <input type="radio" id="lowP" name="performance-test" value="lowperformers" />
             <label for="lowP">Low performance</label>
@@ -188,7 +187,7 @@
 </div>
 <div id="thirteenthStage" style="text-align: left" hidden="true">
     <h2>Last questions regarding salary, grade group and performance!</h2>
-    After, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span style="font-weight: bold; color: #F2B93F;">Sam</span> and <span style="font-weight: bold; color: #98D462;">Robin</span>. Can you answer to the following questions for <span style="font-weight: bold; color: #D95F02;">Jamie</span> ?
+    After studying, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span style="font-weight: bold; color: #F2B93F;">Sam</span> and <span style="font-weight: bold; color: #98D462;">Robin</span>. Can you answer to the following questions for <span style="font-weight: bold; color: #D95F02;">Jamie</span> ?
     <svg id="chartFinalTest"></svg> <br>
 
     <div>

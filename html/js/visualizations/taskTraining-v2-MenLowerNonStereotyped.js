@@ -208,7 +208,7 @@ function addForecast () {
   document.getElementById("forecastVisBtn").hidden = true;
   document.getElementById("point2").hidden = false;
   document.getElementById("point1").hidden = true;
-  document.getElementById("slidersForTest").hidden = true;
+ // document.getElementById("slidersForTest").hidden = true;
   d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
     const storedData = structuredClone(data);
 

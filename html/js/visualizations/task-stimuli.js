@@ -20,7 +20,7 @@ let y2 = d3.scaleLinear()
   .range([0 + marginBottom, height - marginTop]);
 let btnFinal =  document.getElementById('btn_test-decision-making-study_8')
 const dfPeopleTask = [];
-d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
+d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
   const storedData = structuredClone(data);
 
   let random2 = new Math.seedrandom(seed);
@@ -299,8 +299,8 @@ function changeSalaryTask() {
 function calculateNewPayGapTask() {
   let GPG = ((Math.exp(lm('log(total_comp) ~ gender_w + performance_f1 + performance_f2 + grade_group_f4 + grade_group_f5', dfPeopleTask).coefficients[1]) - 1) * 100.0).toFixed(2);
   if (GPG > 0) {
-    d3.select('#taskCurrentPayGap').text(`${GPG}% (men lower)`);
+    d3.select('#taskCurrentPayGap').text(`${GPG}% `);
   } else {
-    d3.select('#taskCurrentPayGap').text(`${GPG * -1}% (women lower)`);
+    d3.select('#taskCurrentPayGap').text(`${GPG * -1}% `);
   }
 }

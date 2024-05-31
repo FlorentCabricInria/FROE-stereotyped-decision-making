@@ -18,7 +18,12 @@
         hidden
        <?php }?>
       <?php if($disabled) echo ' disabled';?> >
-        <?php echo $text; ?>
+        <?php
+        if($id == 'test-decision-making-study_8') { ?>
+          <span id="countdownText">  </span>
+    <?php }
+        echo $text;
+?>
     </button>
   </div>
 </div>

@@ -3,7 +3,7 @@
   574.9064553446289 , 600.267494978694 , 630.4580511400769 , 420 , 388.92436705065137 , 220 , 633.938791430464 , 622.6702740421755 ,
   283.3699571533981 , 260.58899871113363 , 430.3455797341415 , 371.5902249580465 , 424.35747435630356 , 270.12082595392803 , 273.7790428043915 ,
   570.5714540014341 , 538.7865735722019]
-d3.csv('./html/js/visualizations/women-lower-v3.csv').then((data) => {
+d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
   const storedData = structuredClone(data);
 
   let random2 = new Math.seedrandom(seed);

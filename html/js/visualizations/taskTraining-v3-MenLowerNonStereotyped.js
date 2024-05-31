@@ -90,9 +90,9 @@ function calculateNewPayGap() {
   console.log(dfPeople3MLNS[1].total_comp);
   let GPG = ((Math.exp(lm('log(total_comp_3MLST) ~ gender_w + performance_f1 + performance_f2 + grade_group_f4 + grade_group_f5', dfPeople3MLNS).coefficients[1]) - 1) * 100.0).toFixed(2);
   if (GPG > 0) {
-    d3.select('#TestGenderPG').text(`${GPG}% (men lower)`);
+    d3.select('#TestGenderPG').text(`${GPG}% `);
   } else {
-    d3.select('#TestGenderPG').text(`${GPG * -1}% (women lower)`);
+    d3.select('#TestGenderPG').text(`${GPG * -1}% `);
   }
 }
 
@@ -306,6 +306,8 @@ function displayCurrentGenderPayGap () {
   document.getElementById("LineGenderPG").hidden = false;
 //  document.getElementById("btn_task-training-v3_7").hidden = false;
   document.getElementById("addPerformance").hidden = false;
+
+  document.getElementById("lineTo").hidden = false;
 }
 
 function displayPerformance(){
