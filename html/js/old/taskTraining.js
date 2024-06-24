@@ -251,13 +251,13 @@ function maxReached2(e) {
     if(state == "first" && parseInt(PEslider.value) == 25000) {
       state = "second"
       document.getElementById("slidersLabelsTask").innerHTML = "Task 2: Allocate 25,000 for \"Performance-based\""
-      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! now can you try to allocate 25,000 for \"Performance-based\""
+      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Please, allocate 25,000 for \"Performance-based\""
 
     }
     else if(state =="second" && parseInt(ALTslider.value) == 25000) {
       state = "third"
-      document.getElementById("slidersLabelsTask").innerHTML = "Task 3: Allocate, 12,500 for \"Performance-based\" and 12,500 for \"addressing pay equity\""
-      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! now can you try to allocate 12,500 for \"Performance-based\" and 12,500 for \"Reducing gender pay inequity\""
+      document.getElementById("slidersLabelsTask").innerHTML = "Task 3: Allocate,12,500 for \"Performance-based\" and  \n 12,500 for \"addressing pay equity\""
+      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Please, allocate 12,500 for \"Performance-based\" and 12,500 for \"Reducing gender pay inequity\""
     }
     else if(state == "third" && parseInt(ALTslider.value) == 12500 && parseInt(PEslider.value) == 12500){
       document.getElementById("slidersLabelsTask").innerHTML = "Congratulations!! You can move on to the next part"
@@ -266,7 +266,7 @@ function maxReached2(e) {
     }
     else {
       document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."
-      document.getElementById("sliderTrainingText").style.color = "#f80b0b";
+        document.getElementById("sliderTrainingText").style.color = "#f80b0b";
     }
     //document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."
 

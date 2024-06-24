@@ -1,24 +1,3 @@
 participant_id,study_id,session_id,condition,is_debug,exclude_reloaders,condition-for-this-participant,attention-test-check,timestamp_0,browser_name,browser_version,os,timestamp_1,timestamp_2,timestamp_3,timestamp_4,timestamp_5,timestamp_6,timestamp_7,valueEquity,PayGap,valueNotEquity,LowPerfPercentage,MediumPerfPercentage,HighPerfPercentage,PercentageForEquity,timestamp_8,explanation,roleInDecisions,criteria,timestamp_9,answ1,answ2,answ3,answ4,answ5,answ6,answ7,answ8,answ9,answ10,answ11,answ12,totalScale,hostileSexism,benevolentSexism,lastClick
-_6866bb808646253,pilot,0,98.csv,false,1,MenLower-NonStereotyped,0,1717417383394,Firefox,126.0,Windows,1717417384984,1717417387855,1717417417290,1717417418206,1717417426603,1717417435181,1717417440974,0,"4.97% ",15000,0.91,1.82,3.64,0,1717417510927,http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7http://localhost/FROE-stereotyped-decision-making/?debug&page=7,http://localhost/FROE-stereotyped-decision-making/?debug&page=7,http://localhost/FROE-stereotyped-decision-making/?debug&page=7,1717417520895,1,1,1,1,2,1,1,1,1,1,1,1,1.0833333333333,1,1.1666666666667,1717417526671
-_bc8ad767b0646000,pilot,0,226.csv,false,1,MenLower-NonStereotyped,0,1717417856251,Firefox,126.0,Windows,1717417857559,1717417865437,1717417887596,1717417888563,1717417914993,1717417923085,1717417927222,9900,"2.31% ",5100,0.31,0.62,1.24,0.66,1717417976386,"With you""r decision, the final gender pay gap is 2.31% and you allocated merit-based raises in the following manner:
-The low perfor'mers get a 0.31% raise. T'he medium performe""rs get a 0.62% raise. The high ,,perform","HEllo ""Iam a CSV""","
 
-
-'f'f'f
-
-'f
-f''f",1717418019597,3,1,3,2,1,1,1,2,1,2,3,1,1.75,1.5,2,1717418029911
-_6ee6e17d82646e03,pilot,0,137.csv,false,1,WomenLower-Stereotyped,0,1717419057614,Firefox,126.0,Windows,1717419058920,1717419062357,1717419089421,1717419090060,1717419101025,1717419104377,1717419107170,0,"4.97% ",15000,0.91,1.82,3.64,0,1717419184964,"With your decision  the final gender pay gap is 4.97% and you allocated  With your decision, the final gender pay gap is 4.97% and you allocated 
-
-With your decision, the final gender pay gap is 4.97% and you allocated 
-\r\n
-\t
-\t
-\r
-\n
-; ; ; l l ; , 
- ., "," 
-; '
-'.  
-+ ""1""=""1""",,1717419229301,2,2,2,1,3,1,1,1,1,1,1,1,1.4166666666667,1.1666666666667,1.6666666666667,1717419235895
-_18e72ec1566471b7,pilot,0,293.csv,false,1,WomenLower-Stereotyped,0,1717419707413,Firefox,126.0,Windows,1717419712404,1717419716558,1717419759415,1717419760043,1717419778114,1717419781451,1717419783555,11800,"1.79% ",3200,0.19,0.39,0.78,0.78666666666667,1717419815063,"With your decision  the final gender pay gap is 1.79% and you allocated merit-based raises in the following manner: The low performers get a 0.19% raise. The medium performers get a 0.39% raise. The high performers get a 0.78% raise.  Explain your decision in  at least  150 characters in the text area below the chart.","L      : "," i i i ii ii  i i  i i      i i i i  i ",1717419851021,1,1,2,1,1,2,1,1,1,1,2,3,1.4166666666667,1.6666666666667,1.1666666666667,1717419857753
+DEBUG,DEBUG,0,2.csv,true,1,MenLower-NonStereotyped,0,1718616943900,Firefox,127.0,Windows,1718617009785,1718617010639,1718617034952,1718617044072,1718617060588,15000,"0.91% ",0,0.00,0.00,0.00,1,1718617131009,marginBottom,marginBottom,marginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottommarginBottom,1718617140111,2,1,2,1,1,1,2,1,1,1,1,1,1.25,1.3333333333333,1.1666666666667,1718617157546

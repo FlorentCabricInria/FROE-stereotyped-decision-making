@@ -57,20 +57,20 @@
 
 
 input[type=range]{
-    pointer-events: none;
-    width: 50%;
+    pointer-events: auto;
+    width: calc(100% - 150px);
 }
 input[type=range]::-webkit-slider-thumb{/*Webkit Browsers like Chrome and Safari*/
     pointer-events: auto;
-    width: 50%;
+    width: calc(100% - 150px);
 }
 input[type=range]::-moz-range-thumb{/*Firefox*/
     pointer-events: auto;
-    width: 50%;
+    width: calc(100% - 150px);
 }
 input[type=range]::-ms-thumb{/*Internet Explorer*/
     pointer-events: auto;
-    width: 50%;
+    width: calc(100% - 150px);
 }
 .tick{
     font-size: 1.5em;

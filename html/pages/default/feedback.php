@@ -7,7 +7,7 @@
         The medium performers get a <span id="taskMidPerfStimuli" style="display: inline-block"> .... </span>% raise.
         The high performers get a <span id="taskHighPerfStimuli" style="display: inline-block"> .... </span>% raise. <br>
         The chart shows the salaries of the company's employees after applying the decision you have made.
-        <p style="font-weight: bold"> Please, answer to the three questions you will find the below the charts.</p>
+        <p style="font-weight: bold"> Please, answer to the three questions you will find the below the chart.</p>
         <!--  <svg id="final-decision-feedback-chart"> </svg> -->
         <?php
           $extension = array(".csv");

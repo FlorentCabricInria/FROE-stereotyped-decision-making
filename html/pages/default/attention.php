@@ -51,7 +51,7 @@ $('body').on('next', function(e, type){
       excluded = true;
       $('body').trigger('excluded');
       // console.log("failed on attention check --> exclude");
-      $('#<?php echo $next ?>').hide().promise().done(() => $('#attention_check_failed').show());
+      $('#<?php echo $next ?>').hide().promise().done(() => $('# attention_check_failed').show());
       $(":button").hide();
     } else {
       // console.log("passed on attention check");

@@ -41,7 +41,7 @@
 
             <h4>IDENTIFICATION</h4>
 
-            <p><strong>Project manager(s):</strong> <a href="http://petra.isenberg.cc/wiki/pmwiki.php" target="_blank">Petra Isenberg</a> (Senior Research Scientist, Aviz Team, Inria Saclay)<br />
+            <p><strong>Project manager(s):</strong> <a href="http://petra.isenberg.cc/wiki/pmwiki.php" target="_blank">Dr. Petra Isenberg</a> (Senior Research Scientist, Aviz Team, Inria Saclay)<br />
                 <strong>Other scientists involved: </strong>
 <a href="https://florentcabric.com/" target="_blank">Florent Cabric</a> (Postdoctoral researcher, Aviz Team, Inria Saclay, Université Paris-Saclay)<br />
 
@@ -159,7 +159,7 @@
                     <p><a href="mailto:florent.cabric@inria.fr?cc=petra.isenberg@inria.fr&amp;subject=Question%20about%20the%20following%20study%20%20Comparison%20of%20visualization-aided%20decision-making%20processes%20">florent.cabric@inria.fr</a></p>
                 </div>
                 <div align="left" style="max-width: 50%; display: block; margin-left: 0; margin-right: auto; padding-right: 10px">
-                    <p><strong>Petra Isenberg</strong></p>
+                    <p><strong>Dr. Petra Isenberg</strong></p>
 
                     <p>Senior Research Scientist</p>
 

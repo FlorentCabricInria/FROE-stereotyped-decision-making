@@ -1,4 +1,6 @@
 
+const sliderEquity = document.getElementById('PayEquityTraining2');
+const sliderAlt = document.getElementById('NotEquityTraining2');
 let forecastBtn = document.getElementById("forecastVisBtn");
 let interactionBtn = document.getElementById("interactionVisBtn");
 let seeFeatures = document.getElementById("wantToSeeTheFeatures");
@@ -98,7 +100,7 @@ function createSteoreotypedVisualization2WLNS(){
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', [0, 0, width, height])
-      .attr('style', 'max-width: 70%; height: auto;width: 70%;float: left;padding: 20px');
+      .attr('style', 'float: left;padding-right: 10px');
 
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
@@ -233,10 +235,7 @@ function addForecast () {
      #########################################################
      * */
     let svg = d3.select('#TrainingTaskChart2WomenLowerNonStereotypedTraining1')
-      .attr('width', width)
-      .attr('height', height)
-      .attr('viewBox', [0, 0, width, height])
-      .attr('style', 'max-width: 70%; height: auto;width: 70%;float: left;padding: 20px');
+
     svg.insert('g', ":first-child")
       .selectAll('circle')
       .data(data)
@@ -245,6 +244,7 @@ function addForecast () {
           .append('circle')
           .attr('id', (d) => d.key)
           .attr('class','ghostTraining')
+          .attr("hidden","true")
           //          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
           .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('cy', (d) => yTraining(d.total_comp)),
@@ -267,6 +267,7 @@ function addForecast () {
           .attr('x2', (d) => (PosXTraining[parseInt(d.key)-1]))
           .attr('y1', (d) => yTraining(d.total_comp))
           .attr('class','ghostTraining')
+          .attr("hidden","true")
           .attr('y2', (d) => {
             const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
             const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
@@ -278,42 +279,12 @@ function addForecast () {
       .style('stroke-width', (d) => `${parseInt(3)}px`);
   });
   //           .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
-}
 
-function addInteraction () {
-  document.getElementById("interactionVisBtn").hidden = true;
-  document.getElementById("interactionVisBtn").hidden = true;
-  document.getElementById("btn_task-training-v2_6").hidden= false;
-
-  document.getElementById("point1").hidden = true;
-  document.getElementById("point2").hidden = true;
-  document.getElementById("slidersForTest").hidden = false;
-  const sliderEquity = document.getElementById('PayEquityTraining2');
-  const sliderAlt = document.getElementById('NotEquityTraining2');
-  sliderEquity.addEventListener('input', maxReachedV0, false);
-
-  sliderAlt.addEventListener('input', maxReachedV0, false);
-  sliderEquity.addEventListener("mousedown", () => {
-
-  });
   sliderEquity.addEventListener("mouseover", () => {
     d3.selectAll('.ghostTraining').attr("hidden",null)
   });
   sliderEquity.addEventListener("mouseleave", () => {
     d3.selectAll('.ghostTraining').attr("hidden","true")
-  });
-  sliderEquity.addEventListener("mousemove", () => {
-  });
-  sliderEquity.addEventListener("mouseup", () => {
-    changeSalaryV0()
-  });
-  sliderAlt.addEventListener("mousedown", () => {
-
-  });
-  sliderAlt.addEventListener("mousemove", () => {
-  });
-  sliderAlt.addEventListener("mouseup", () => {
-    changeSalaryV0()
   });
   sliderAlt.addEventListener("mouseover", () => {
     d3.selectAll('.ghostTraining').attr("hidden",null)
@@ -345,6 +316,37 @@ function addInteraction () {
   minusBtnNotEquity2.addEventListener('mouseleave', () => {
     d3.selectAll('.ghostTraining').attr("hidden", "true")
   });
+}
+
+function addInteraction () {
+  document.getElementById("interactionVisBtn").hidden = true;
+  document.getElementById("interactionVisBtn").hidden = true;
+  document.getElementById("btn_task-training-v2_6").hidden= false;
+
+  document.getElementById("point1").hidden = true;
+  document.getElementById("point2").hidden = true;
+  document.getElementById("slidersForTest").hidden = false;
+  sliderEquity.addEventListener('input', maxReachedV0, false);
+
+  sliderAlt.addEventListener('input', maxReachedV0, false);
+  sliderEquity.addEventListener("mousedown", () => {
+
+  });
+
+  sliderEquity.addEventListener("mousemove", () => {
+  });
+  sliderEquity.addEventListener("mouseup", () => {
+    changeSalaryV0()
+  });
+  sliderAlt.addEventListener("mousedown", () => {
+
+  });
+  sliderAlt.addEventListener("mousemove", () => {
+  });
+  sliderAlt.addEventListener("mouseup", () => {
+    changeSalaryV0()
+  });
+
 }
 function displayFeatures () {
   document.getElementById("wantToSeeTheFeatures").hidden = true;

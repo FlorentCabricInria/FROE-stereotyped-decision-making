@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col">
     <h2>Gender</h2>
-    <p><br/>
       The last piece of data that distinguishes employees in your company is their gender:
       <ul>
     <?php
@@ -11,14 +10,14 @@
           $mod = $cond % 4;
           switch ($mod){
             case 0: case 1:?>
-    <li> <span style="font-weight: bold; color: #ff33c9;" > Women </span>are represented in <span style="font-weight: bold; color: #ff33c9;">Pink </span> </li>
-    <li> <span style="font-weight: bold; color: #3a33ff;" > Men </span>are represented in <span style="font-weight: bold; color: #3a33ff;">Blue</span>  </li>
+    <li style=" margin:0px"> <span style="font-weight: bold; color: #ff33c9;" > Women </span>are represented in <span style="font-weight: bold; color: #ff33c9;">Pink </span> </li>
+    <li style=" margin:0px"> <span style="font-weight: bold; color: #3a33ff; " > Men </span>are represented in <span style="font-weight: bold; color: #3a33ff;">Blue</span>  </li>
     <?php
     break;
     case 2: case 3:
     ?>
-    <li> <span style="font-weight: bold; color: #BFBD30;" > Women </span>are represented in <span style="font-weight: bold; color: #BFBD30;"> Yellow </span> </li>
-    <li> <span style="font-weight: bold; color: #3EBF30;" > Men </span>are represented in <span style="font-weight: bold; color: #3EBF30;"> Green </span> </li>
+    <li style=" margin:0px"> <span style="font-weight: bold; color: #BFBD30;" > Women </span>are represented in <span style="font-weight: bold; color: #BFBD30;"> Yellow </span> </li>
+    <li style=" margin:0px"> <span style="font-weight: bold; color: #3EBF30;" > Men </span>are represented in <span style="font-weight: bold; color: #3EBF30;"> Green </span> </li>
     <?php
     break;
     }
@@ -48,7 +47,6 @@
           }
 
       ?>
-      </p>    
   </div>
 
     <script type="text/javascript" src="./html/js/visualizations/visualizationGenderTest.js"></script>

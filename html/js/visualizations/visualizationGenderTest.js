@@ -4,7 +4,7 @@ var random = Math.seedrandom('0.45454');
 var random = new Math.seedrandom('0.45454');
 console.log('Hey I am here');
 const width = 800;
-const height = 500;
+const height = 400;
 const marginTop = 40;
 const marginRight = 40;
 const marginBottom = 40;
@@ -34,10 +34,10 @@ let PosXTraining = [
 ]
 // if(nbElem=="30"){
 //   var data= structuredClone(data30)/*
-/*createSteoreotypedVisualizationWomenLower()
+createSteoreotypedVisualizationWomenLower()
 createSteoreotypedVisualizationMenLower()
 createnonSteoreotypedVisualizationWomenLower()
-createnonSteoreotypedVisualizationMenLower()*/
+createnonSteoreotypedVisualizationMenLower()
 function createSteoreotypedVisualizationWomenLower(){
   d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
     const storedData = structuredClone(data);
@@ -415,9 +415,9 @@ function createnonSteoreotypedVisualizationMenLower() {
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#BFBD30');
-    svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
       .style('fill', '#3EBF30');
+    svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
+      .style('fill', '#BFBD30');
     svg.append('text').attr('x', width - 80).attr('y', 130).text('Men')
       .style('font-size', '15px')
       .attr('alignment-baseline', 'middle');
