@@ -116,7 +116,7 @@
             <div style="display: inline-block">
                 <div class="containerForSlider">
                     <div class="boxForSlider">
-                        <button id="wantToSeeTheFeatures"> Click here to see the new features</button>
+                        <button id="wantToSeeTheFeatures"> Add 1<sup>st</sup> feature: Possible impact on salaries</button>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
         The maximum limit of each employee’s line represents the maximum salary that this person can achieve among all the possible decisions.
         The grey lines will be visible <b> only when you will hover the sliders with the cursor of your mouse.</b>
  </span> <br>
-        <button id="forecastVisBtn"> Add the gray lines</button>
+        <button id="interactionVisBtn">Add 2<sup>nd</sup> feature: Interactivity </button>
         <br>
     </div>
     <div id="point2" hidden="true" style="max-width: 100%; height: auto;width: 100%;float: left;padding: 20px">
@@ -150,7 +150,7 @@
                 will move accordingly
             </li>
         </ul>
-        <button id="interactionVisBtn"> Add Interactivity</button>
+<!--        <button id="interactionVisBtn"> Add Interactivity</button>-->
         <br>
     </div>
 

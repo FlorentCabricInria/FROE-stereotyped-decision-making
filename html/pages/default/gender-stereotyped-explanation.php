@@ -16,8 +16,8 @@
     break;
     case 2: case 3:
     ?>
-    <li style=" margin:0px"> <span style="font-weight: bold; color: #BFBD30;" > Women </span>are represented in <span style="font-weight: bold; color: #BFBD30;"> Yellow </span> </li>
-    <li style=" margin:0px"> <span style="font-weight: bold; color: #3EBF30;" > Men </span>are represented in <span style="font-weight: bold; color: #3EBF30;"> Green </span> </li>
+    <li style=" margin:0px"> <span style="font-weight: bold; color: #ffd800;" > Women </span>are represented in <span style="font-weight: bold; color: #ffd800;"> Yellow </span> </li>
+    <li style=" margin:0px"> <span style="font-weight: bold; color: #00ff78;" > Men </span>are represented in <span style="font-weight: bold; color: #00ff78;"> Green </span> </li>
     <?php
     break;
     }
