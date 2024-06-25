@@ -15,40 +15,40 @@ let coefLowTraining;
 let coefMidTraining;
 let coefHighTraining;
 let dfPeople_3WLS = []
-const sliderEquity = document.getElementById('PayEquityTraining3');
-const sliderAlt = document.getElementById('NotEquityTraining3');
+const sliderEquityTraining3 = document.getElementById('PayEquityTraining3');
+const sliderAltTraining3 = document.getElementById('NotEquityTraining3');
 let plusBtnEquity3 = document.getElementById('PayEquityTraining3PlusBtn');
 let minusBtnEquity3= document.getElementById('PayEquityTraining3MinusBtn');
 let plusBtnNotEquity3= document.getElementById('NotEquityTraining3PlusBtn');
 let  minusBtnNotEquity3= document.getElementById('NotEquityTraining3MinusBtn');
-sliderEquity.addEventListener('input', maxReached, false);
-sliderEquity.addEventListener("mousedown", () => {
+sliderEquityTraining3.addEventListener('input', maxReached, false);
+sliderEquityTraining3.addEventListener("mousedown", () => {
 
 });
-sliderEquity.addEventListener("mousemove", () => {
+sliderEquityTraining3.addEventListener("mousemove", () => {
 });
-sliderEquity.addEventListener("mouseup", () => {
+sliderEquityTraining3.addEventListener("mouseup", () => {
   changeSalary3WLS()
   calculateNewPayGap()
 });
-sliderEquity.addEventListener("mouseover", () => {
+sliderEquityTraining3.addEventListener("mouseover", () => {
   d3.selectAll('.ghostTraining3').attr("hidden",null)
 });
-sliderEquity.addEventListener("mouseleave", () => {
+sliderEquityTraining3.addEventListener("mouseleave", () => {
   d3.selectAll('.ghostTraining3').attr("hidden","true")
 });
-sliderAlt.addEventListener('input', maxReached, false);
-sliderAlt.addEventListener("mousedown", () => {
+sliderAltTraining3.addEventListener('input', maxReached, false);
+sliderAltTraining3.addEventListener("mousedown", () => {
 });
-sliderAlt.addEventListener("mousemove", () => {
+sliderAltTraining3.addEventListener("mousemove", () => {
 });
-sliderAlt.addEventListener("mouseup", () => {
+sliderAltTraining3.addEventListener("mouseup", () => {
   changeSalaryV0()
 });
-sliderAlt.addEventListener("mouseover", () => {
+sliderAltTraining3.addEventListener("mouseover", () => {
   d3.selectAll('.ghostTraining3').attr("hidden",null)
 });
-sliderAlt.addEventListener("mouseleave", () => {
+sliderAltTraining3.addEventListener("mouseleave", () => {
   d3.selectAll('.ghostTraining3').attr("hidden","true")
 });
 plusBtnEquity3.addEventListener('mouseover', () => {
@@ -140,8 +140,7 @@ function createSteoreotypedVisualization3WLS(){
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', [0, 0, width, height])
-      .attr('style', 'max-width: 100%; height: auto;width: 70%;float: left;padding: 20px');
-
+      .attr('style', 'float: left;padding-right: 10px');
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)

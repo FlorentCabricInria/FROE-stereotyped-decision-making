@@ -15,40 +15,40 @@ let coefMidTraining;
 let coefHighTraining;
 let dfPeople3MLNS = []
 var random = new Math.seedrandom(seed);
-const sliderEquity = document.getElementById('PayEquityTraining3');
-const sliderAlt = document.getElementById('NotEquityTraining3');
+const sliderEquityTraining3 = document.getElementById('PayEquityTraining3');
+const sliderAltTraining3 = document.getElementById('NotEquityTraining3');
 let plusBtnEquity3 = document.getElementById('PayEquityTraining3PlusBtn');
 let minusBtnEquity3= document.getElementById('PayEquityTraining3MinusBtn');
 let plusBtnNotEquity3= document.getElementById('NotEquityTraining3PlusBtn');
 let  minusBtnNotEquity3= document.getElementById('NotEquityTraining3MinusBtn');
-sliderEquity.addEventListener('input', maxReached, false);
-sliderEquity.addEventListener("mousedown", () => {
+sliderEquityTraining3.addEventListener('input', maxReached, false);
+sliderEquityTraining3.addEventListener("mousedown", () => {
 
 });
-sliderEquity.addEventListener("mousemove", () => {
+sliderEquityTraining3.addEventListener("mousemove", () => {
 });
-sliderEquity.addEventListener("mouseup", () => {
+sliderEquityTraining3.addEventListener("mouseup", () => {
   changeSalary3MLNS()
 calculateNewPayGap()
 });
-sliderEquity.addEventListener("mouseover", () => {
+sliderEquityTraining3.addEventListener("mouseover", () => {
   d3.selectAll('.ghostTraining3').attr("hidden",null)
 });
-sliderEquity.addEventListener("mouseleave", () => {
+sliderEquityTraining3.addEventListener("mouseleave", () => {
   d3.selectAll('.ghostTraining3').attr("hidden","true")
 });
-sliderAlt.addEventListener('input', maxReached, false);
-sliderAlt.addEventListener("mousedown", () => {
+sliderAltTraining3.addEventListener('input', maxReached, false);
+sliderAltTraining3.addEventListener("mousedown", () => {
 });
-sliderAlt.addEventListener("mousemove", () => {
+sliderAltTraining3.addEventListener("mousemove", () => {
 });
-sliderAlt.addEventListener("mouseup", () => {
+sliderAltTraining3.addEventListener("mouseup", () => {
   changeSalaryV0()
 });
-sliderAlt.addEventListener("mouseover", () => {
+sliderAltTraining3.addEventListener("mouseover", () => {
   d3.selectAll('.ghostTraining3').attr("hidden",null)
 });
-sliderAlt.addEventListener("mouseleave", () => {
+sliderAltTraining3.addEventListener("mouseleave", () => {
   d3.selectAll('.ghostTraining3').attr("hidden","true")
 });
 plusBtnEquity3.addEventListener('mouseover', () => {
@@ -144,7 +144,7 @@ function createSteoreotypedVisualization3MLNS(){
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', [0, 0, width, height])
-      .attr('style', 'max-width: 100%; height: auto;width: 70%;float: left;padding: 20px');
+      .attr('style', 'float: left;padding-right: 10px');
 
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
@@ -213,7 +213,7 @@ function createSteoreotypedVisualization3MLNS(){
 
     const color = d3.scaleOrdinal()
       .domain(['1', '2'])
-      .range(['#3EBF30', '#BFBD30']);
+      .range(['#00ff78', '#ffd800']);
 
     const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
@@ -222,9 +222,9 @@ function createSteoreotypedVisualization3MLNS(){
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#3EBF30');
+      .style('fill', '#00ff78');
     svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
-      .style('fill', '#BFBD30');
+      .style('fill', '#ffd800');
     svg.append('text').attr('x', width - 80).attr('y', 135).text('Men')
       .style('font-size', '1em')
       .attr('alignment-baseline', 'middle');
