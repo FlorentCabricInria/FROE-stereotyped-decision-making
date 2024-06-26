@@ -65,7 +65,7 @@ d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
     .attr('width', width)
     .attr('height', height)
     .attr('viewBox', [0, 0, width, height])
-    .attr('style', 'max-width: 100%; height: auto;width: 70%;float: left;padding: 20px');
+    .attr('style', 'float: left;padding-right: 10px');
 
 
   //  var a = d3.group(data, d => d.gender)
