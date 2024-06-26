@@ -1,4 +1,4 @@
-<div id="row">
+<div id="row" xmlns="http://www.w3.org/1999/html">
     <body>
     <h2>Questions regarding your decision and your role in your company</h2>
     <div> With your decision, the final gender pay gap is <span id="taskCurrentPayGapStimuli">
@@ -17,26 +17,26 @@
           switch ($mod){
             case 0:
               ?> <span> </span>
-        <svg id="final-decision-feedback-chart-MenLowerStereotyped"></svg>
+        <svg id="final-decision-feedback-chart-MenLowerStereotyped" style="display:block; margin: auto;"></svg>
         <?php
               break;
             case 1:
             ?>
         <span></span>
-        <svg id="final-decision-feedback-chart-WomenLowerStereotyped"></svg>
+        <svg id="final-decision-feedback-chart-WomenLowerStereotyped"style="display:block; margin: auto;"></svg>
 
         <?php
               break;
             case 2:
             ?>
         <span> </span>
-        <svg id="final-decision-feedback-chart-MenLowerNonStereotyped"></svg>
+        <svg id="final-decision-feedback-chart-MenLowerNonStereotyped"style="display:block; margin: auto;"></svg>
 
         <?php
               break;
             case 3:
               ?> <span> </span>
-        <svg id="final-decision-feedback-chart-WomenLowerNonStereotyped"></svg>
+        <svg id="final-decision-feedback-chart-WomenLowerNonStereotyped"style="display:block; margin: auto;"></svg>
         <?php
               break;
           }
@@ -44,16 +44,16 @@
       ?>
         <div>
             <div>
-                <label> Please explain the criteria you used to decide on how to allocate the money. (100 characters minimum)
+                <label> <h5> Please explain the criteria you used to decide on how to allocate the money. (requires, 100 characters minimum) </h5>
                 </label>
-                <textarea onkeyup="countChar(this)" class="form-control" minlength="50" id="criteria" rows="4"
+                <textarea onkeyup="countChar(this)" class="form-control" minlength="50" id="criteria" rows="2"
                           cols="80" placeholder="Please explain the criteria you used to decide on how to allocate the money."></textarea>
                 <span id="charNumcriteria" style="color: darkred;">100 characters remaining</span>
             </div>
             <hr>
             <div>
-                <label>How satisfied are you with your final allocation? If you are not satisfied, please explain what your ideal result would look like.</label>
-                <textarea id="explanation" rows="4" class="form-control"
+                <label> <h5>How satisfied are you with your final allocation? If you are not satisfied, please explain what your ideal result would look like.</h5></label>
+                <textarea id="explanation" rows="2" class="form-control"
                           cols="80" placeholder=""></textarea>
 <!--                <span id="charNumexplanation" style="color: darkred;">100 characters remaining</span>-->
             </div>
@@ -67,9 +67,9 @@
 <!--            </div>-->
 
             <div>
-                <label> Are you involved in salary decisions in your current organization? If so, please describe your role in the decision-making.
+                <label> <h5> Are you involved in salary decisions in your current organization? If so, please describe your role in the decision-making.</h5>
                 </label>
-                <textarea rows="4" cols="80" id="roleInDecisions" class="form-control"
+                <textarea rows="2" cols="80" id="roleInDecisions" class="form-control"
                           placeholder="Are you involved in salary decisions in your current organization? If so, please describe your role in the decision-making."></textarea>
             </div>
         </div>
@@ -116,9 +116,10 @@
             if (len <= 99) {
               console.log(val.id)
               $('#charNum'+val.id).text(100 - len + '  characters remaining')
+              $('#charNum'+val.id).css('color', 'darkred')
               document.getElementById('btn_feedback-about-decision_9').hidden = true
             } else {
-              $('#charNum'+val.id).text(0 + '  character remaining')
+              $('#charNum'+val.id).text("Minimum number of characters reached!")
               $('#charNum'+val.id).css('color', '#378d02')
               document.getElementById('btn_feedback-about-decision_9').hidden = false
             }

@@ -88,7 +88,10 @@ noscript {
 
 
 
-
+.sorting_disabled{
+    min-width: 145px;
+    width: 7vw;
+}
 
 /* custom css for the image filter example */
 

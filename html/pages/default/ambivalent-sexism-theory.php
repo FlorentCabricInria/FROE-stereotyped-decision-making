@@ -11,7 +11,7 @@
         <thead>
 
         <tr role="row">
-            <th class="sorting_disabled" rowspan="1" style="text-align:center;" colspan="1"> </th>
+            <th class="" rowspan="1" style="text-align:center;" colspan="1"> </th>
             <th class="sorting_disabled" rowspan="1" style="text-align:center;" colspan="1">Strongly disagree</th>
             <th class="sorting_disabled" rowspan="1" style="text-align:center;" colspan="1">Somewhat disagree</th>
             <th class="sorting_disabled" rowspan="1" style="text-align:center;" colspan="1">Slightly disagree</th>

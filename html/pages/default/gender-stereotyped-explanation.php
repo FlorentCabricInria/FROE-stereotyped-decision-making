@@ -31,7 +31,7 @@
           $mod = $cond % 4;
           switch ($mod){
             case 0:
-              ?> <span> </span>  <svg id="chartStereotypedMenLower"> </svg> <?php
+              ?> <span> </span>  <svg id="chartStereotypedMenLower">  </svg> <?php
               break;
             case 1:
             ?>
@@ -39,10 +39,10 @@
               break;
             case 2:
             ?>
-            <span> </span> <svg id="chartNotStereotypedMenLower"> </svg> <?php
+            <span> </span> <svg id="chartNotStereotypedMenLower" > </svg> <?php
               break;
             case 3:
-              ?> <span> </span>  <svg id="chartNotStereotypedWomenLower"> </svg>  <?php
+              ?> <span> </span>  <svg id="chartNotStereotypedWomenLower" > </svg>  <?php
               break;
           }
 
