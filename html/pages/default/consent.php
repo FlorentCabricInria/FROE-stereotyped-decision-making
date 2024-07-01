@@ -9,7 +9,7 @@
             <p>Please find below legal information about our privacy policy and your participation to this study.</p>
 
             <p>After agreeing to the terms below, you will first answer a few demographic questions, then you will follow a training session that will teach you how to read the data visualizations we will show you.
-                This will require around nine (9) minutes to complete.</p>
+                This will require around twenty (20) minutes to complete.</p>
 
            <!-- <h2>1. Privacy policy</h2>
 
@@ -144,7 +144,7 @@
                 <br> I acknowledge having been informed about the purpose and conditions of the project, as well as the pros, risks and cons of the project.
                 <br> I acknowledge having received clear and precise answers to my questions.
                 <br> Finally, I recognize that I have the option of asking additional questions about the project or about my rights, at any time during the project, via the contact persons.
-                <br> <span dir="ltr"><b>Contact details </b><br />Please feel free to contact one of the four researchers below if you wish to know more about the study, or if you have any questions: </span></p>
+                <br> <span dir="ltr"><b>Contact details </b><br />Please feel free to contact one of the two researchers below if you wish to know more about the study, or if you have any questions: </span></p>
 
             <div align="justify" style="max-width: 100%; display: flex; margin-left: auto; margin-right: auto;">
                 <div align="left" style="max-width: 50%; display: block; margin-left: 0; margin-right: auto; padding-right: 10px">

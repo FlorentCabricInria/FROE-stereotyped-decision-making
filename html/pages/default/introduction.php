@@ -103,7 +103,7 @@
         <li><b>Gender</b>: employee's gender, either woman or man&#42; <br>
             <br>
             <br>
-            <span> &#42;: For simplicity we will focus on binary gender definitions while acknowledging that gender is far from binary. </span>
+            <span> &#42;: For simplicity we will focus on binary gender definitions while acknowledging that gender is not binary. </span>
 
     </ul>
     </p>
@@ -125,10 +125,13 @@
         <button id="sixthStageButton"> Add grade groups</button>
         <div>
             <div id="seventhStage" style="text-align: left" hidden="true">
-                As you can see <span style="font-weight: bold; color: #F2B93F;"> Sam </span> belongs to <span
-                    style="font-weight: bold; color: #7570b3;"> grade group B</span> and
-                <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to <span
-                    style="font-weight: bold; color: #1b9e77;">grade group C</span>.<br>
+                As you can see <span style="font-weight: bold; color: #F2B93F;"> Sam </span> belongs to
+<!--                <span style="font-weight: bold; color: #7570b3;"> grade group B</span> -->
+                grade group B
+                and
+                <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to
+<!--                <span style="font-weight: bold; color: #1b9e77;">grade group C</span>.<br>-->
+                grade group C. <br>
                 To be able to distinguish between employees with very similar salaries, we will add some "jitter". That
                 means that
                 the horizontal position of each employee will be moved slightly, to the left or to the right.
@@ -137,16 +140,17 @@
             <div class="breakForSlider"></div>
             <br>
             <div id="eighthStage" style="text-align: left" hidden="true">
+                <!-- OLD COLORS : #D95F02 #7570B3 #1B9E77 -->
                 The employees inside the <span
-                    style="font-weight: bold; color: #D95F02;">red rectangle </span>
+                    style="font-weight: bold; color: #000000;">left rectangle </span>
                 belong
-                to <span style="font-weight: bold; color: #D95F02;"> grade group A </span> <br>
+                to <span style="font-weight: bold; color: #000000;"> grade group A </span> <br>
                 The employees inside the <span
-                    style="font-weight: bold; color: #7570B3;">purple rectangle </span>
-                belong to <span style="font-weight: bold; color: #7570B3;"> grade group B</span> <br>
+                    style="font-weight: bold; color: #000000;">middle rectangle </span>
+                belong to <span style="font-weight: bold; color: #000000;"> grade group B</span> <br>
                 The employees inside the <span
-                    style="font-weight: bold; color: #1B9E77;">green rectangle </span>
-                belong to <span style="font-weight: bold; color: #1B9E77;"> grade group C</span> <br>
+                    style="font-weight: bold; color: #000000;">right rectangle </span>
+                belong to <span style="font-weight: bold; color: #000000;"> grade group C</span> <br>
                 <button id="eighthStageButton"> Next</button>
             </div>
 

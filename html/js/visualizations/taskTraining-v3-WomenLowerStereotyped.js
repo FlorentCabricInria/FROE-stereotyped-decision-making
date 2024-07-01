@@ -299,68 +299,6 @@ function maxReached(e) {
   return true;
 }
 
-function addForecast () {
-  document.getElementById("interactionVisBtn").hidden = false;
-  document.getElementById("forecastVisBtn").hidden = true;
-  document.getElementById("point2").hidden = false;
-  document.getElementById("point1").hidden = true;
-  document.getElementById("slidersForTest").hidden = false;
-  d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
-    const storedData = structuredClone(data);
-
-    const random = new Math.seedrandom(seed);
-    const random2 = new Math.seedrandom(seed);
-    const randomGhost = new Math.seedrandom(seed);
-
-    const randomLineTop = new Math.seedrandom(seed);
-    const randomLineBot = new Math.seedrandom(seed);
-    /**
-     #########################################################
-     CREAT GHOST DOTS
-     #########################################################
-     * */
-    let svg = d3.select('#TrainingTaskChart2WomenLowerStereotypedTraining1')
-    svg.insert('g', ":first-child")
-      .selectAll('circle')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('circle')
-          .attr('id', (d) => d.key)
-          //          .attr('cx', (d) => (x(d.grade_group - 2) + (random.double() * (100)) - 50))
-          .attr('cx', (d) => (x(d.grade_group - 2) + (randomGhost.double() * (100)) - 50))
-          .attr('cy', (d) => yTraining(d.total_comp)),
-      )
-      .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
-      .style('fill', '#AAAAAA88');
-
-    /**
-     * #########################################################
-     * CREATE GHOST LINE
-     * #########################################################         *
-     * * */
-    svg.insert('g', ":first-child")
-      .selectAll('line')
-      .data(data)
-      .join(
-        (enter) => enter
-          .append('line')
-          .attr('x1', (d) => (x(d.grade_group - 2) + (randomLineTop.double() * (100)) - 50))
-          .attr('x2', (d) => (x(d.grade_group - 2) + (randomLineBot.double() * (100)) - 50))
-          .attr('y1', (d) => yTraining(d.total_comp))
-          .attr('y2', (d) => {
-            const perf2 = parseFloat(d.total_comp) + parseFloat(d.sugg_raise_perf);
-            const gp = parseFloat(d.total_comp) + parseFloat(d.sugg_raise);
-            return yTraining(Math.max(perf2, gp));
-          }),
-      )
-      .style('stroke', '#AAAAAAAA')
-      .style('stroke-linecap', 'round')
-      .style('stroke-width', (d) => `${parseInt(3)}px`);
-  });
-}
-
-
 function displayCurrentGenderPayGap () {
   document.getElementById("divfordata").style.background = "#f9f9f9"
   document.getElementById("addCurrentGenderPayGap").hidden = true;

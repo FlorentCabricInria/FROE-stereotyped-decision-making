@@ -148,7 +148,7 @@
                         <br>
                     </div>
                     <br>
-                    <span id="sliderTrainingText" style="font-weight: bold; color: #0b9d0b;"></span>
+                    <span id="sliderTrainingText" style="font-weight: bold; color: #049f02;"></span>
                     <br>
                 </div>
 

@@ -6,9 +6,9 @@
       of visualizations that are better suited to help decision-makers. </p>
     <p>Please respond to this survey only if you:</p>
     <ul>
-      <li style="margin: 0px">are a fluent speaker of English,</li>
+      <li style="margin: 0px">are fluent in English,</li>
       <li style="margin: 0px">are of legal age (18 years in most countries),</li>
-      <li style="margin: 0px">don't have low vision or impaired vision, <b> including any form of color deficiency</b>, and</li>
+      <li style="margin: 0px">don't have low vision or impaired vision, <b> including any form of color vision deficiency</b>, and</li>
       <li style="margin: 0px">are currently viewing this survey from a computer screen.</li>
     </ul>
     <p><strong>You can only participate using a computer screen, as a mobile phone's screen is too small to display the visualizations correctly.</strong></p>

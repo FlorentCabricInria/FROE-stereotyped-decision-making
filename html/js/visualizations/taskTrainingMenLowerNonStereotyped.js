@@ -91,7 +91,7 @@ function createSteoreotypedVisualization(){
 
     const color = d3.scaleOrdinal()
       .domain(['1', '2'])
-      .range(['#3EBF30', '#BFBD30']);
+      .range(['#00ff78', '#ffd800']);
 
    // const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
@@ -100,9 +100,9 @@ function createSteoreotypedVisualization(){
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#3EBF30');
+      .style('fill', '#00ff78');
     svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
-      .style('fill', '#BFBD30');
+      .style('fill', '#ffd800');
     svg.append('text').attr('x', width - 80).attr('y', 135).text('Men')
       .style('font-size', '1em')
       .attr('alignment-baseline', 'middle');
@@ -203,7 +203,8 @@ function maxReached2(e) {
     return false;
   }
 
-  document.getElementById("sliderTrainingText").style.color = "#3ebf30";
+  document.getElementById("sliderTrainingText").style.color = "#049f02";
+;
   document.getElementById("sliderTrainingText").innerHTML = ""
   document.getElementById('PEoutputtraining').innerHTML = parseInt(PEslider.value);
   document.getElementById('ALToutputtraining').innerHTML = parseInt(ALTslider.value);

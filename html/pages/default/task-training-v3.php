@@ -201,47 +201,7 @@
         if (type === 'task-training-v3_7') {
 // The if clause below ensures that this specific instance of a next button press is only triggered when the id of the element corresponds to the one being defined above.
           changeSalaryTask()
-          let btntoValidate = document.getElementById('btn_test-decision-making-study_8')
-          btntoValidate.disabled = true
 
-          btntoValidate.innerHTML = 'You still have money to allocate!'
-          btntoValidate.style.backgroundColor = 'rgba(115,115,115,0.9)'
-          btntoValidate.style.color = 'rgba(255,255,255,0.9)'
-
-          var textTimerCountdown = document.createElement('span')
-          textTimerCountdown.id = 'textTimerCountdown'
-          var textTimer = document.createElement('span')
-          textTimer.style.float = 'right'
-          var node1 = document.createTextNode('Wait ')
-          var node2 = document.createTextNode(' seconds before validating your decision.')
-          textTimer.append(node1)
-          textTimer.append(textTimerCountdown)
-          textTimer.append(node2)
-          btntoValidate.parentElement.append(textTimer)
-          btntoValidate.parentElement.style.paddingLeft = '745px'
-          var start = Date.now()
-          setInterval(function () {
-            var delta = Date.now() - start // milliseconds elapsed since start
-            if (Math.floor(delta / 1000) > 30) {
-              textTimerCountdown.innerHTML = ''
-              textTimer.innerHTML = ''
-              btntoValidate.disabled = false
-              PEslider = document.getElementById('taskPayEquity')
-              ALTslider = document.getElementById('taskNotEquity')
-              let sum = parseInt(PEslider.value) + parseInt(ALTslider.value)
-              if (sum >= 15000) {
-                btntoValidate.disabled = false
-                btntoValidate.innerHTML = 'Click, when you want to validate the decision!'
-                btntoValidate.style.backgroundColor = 'rgba(69,241,69,0.34)'
-                btntoValidate.style.color = 'rgba(0,0,0,0.9)'
-
-              }
-            } else {
-              //document.getElementById('btn_test-decision-making-study_8').innerText = (30- Math.floor(delta / 1000)) + ""
-              textTimerCountdown.innerHTML = (30 - Math.floor(delta / 1000)) + ''
-              console.log((30 - Math.floor(delta / 1000)))
-            }
-          }, 1000)
         }
       })
     </script>
