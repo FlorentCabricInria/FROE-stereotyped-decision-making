@@ -399,6 +399,8 @@ function addTimerText(){
       textTimer.innerHTML = ""
       btntoValidate.disabled = false
       btntoValidate.innerHTML = "Go to the next training stage!"
+      btntoValidate.style.backgroundColor = "#EEEEEE"
+      btntoValidate.style.color = "#000000"
     }
     else {
       textTimerCountdown.innerHTML = (15- Math.floor(delta / 1000)) + ""

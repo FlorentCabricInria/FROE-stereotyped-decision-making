@@ -15,6 +15,9 @@ ticks = d3.selectAll('.tick').style("font-size","1.5em");
 let plusBtnEquity2 = document.getElementById("PayEquityTraining2PlusBtn")
 let minusBtnEquity2 = document.getElementById("PayEquityTraining2MinusBtn")
 
+sliderEquity.addEventListener('input', interactSliders, false);
+sliderAlt.addEventListener('input', interactSliders, false);
+
 function onPlusEquity2(e){
   document.getElementById("PayEquityTraining2").value = parseInt(document.getElementById("PayEquityTraining2").value) +100
   maxReachedV0(e)
@@ -156,12 +159,44 @@ function createSteoreotypedVisualization2MLNS(){
 
   });
 }
+
+function interactSliders(e){
+  PEslider = document.getElementById('PayEquityTraining2');
+  ALTslider = document.getElementById('NotEquityTraining2');
+  let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
+  // console.log(sum)
+  let max = 25000;
+  document.getElementById('PEoutputtraining2').innerHTML = parseInt(PEslider.value);
+  document.getElementById('ALToutputtraining2').innerHTML = parseInt(ALTslider.value);
+  if(sum>max && (e.currentTarget.id == "PayEquityTraining2PlusBtn" || e.currentTarget.id == "NotEquityTraining2PlusBtn")) {
+    if(e.currentTarget.id == "PayEquityTraining2PlusBtn") {document.getElementById("PayEquityTraining2").value = parseInt(document.getElementById("PayEquityTraining2").value) - 100}
+    else if (e.currentTarget.id =="NotEquityTraining2PlusBtn") {document.getElementById("NotEquityTraining2").value = parseInt(document.getElementById("NotEquityTraining2").value) -100 }
+  }
+  if (sum >= max) {
+    target = e.target;
+    target.value -= (sum - max);
+    document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
+    document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
+    // document.getElementById('textEquity').innerHTML = parseInt(PEslider.value);
+    PEslider.innerHTML = parseInt(PEslider.value);
+    ALTslider.innerHTML = parseInt(ALTslider);
+    e.preventDefault();
+    return false;
+  }
+  document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
+  document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
+  return true;
+}
+
+
 function maxReachedV0(e) {
   PEslider = document.getElementById('PayEquityTraining2');
   ALTslider = document.getElementById('NotEquityTraining2');
   let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
   // console.log(sum)
   let max = 25000;
+  document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
+  document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
  // e.currentTarget.innerHTML = e.currentTarget.value;
 
 
@@ -173,8 +208,8 @@ function maxReachedV0(e) {
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);
-    document.getElementById('PEoutputtraining2').innerHTML = parseInt(PEslider.value);
-    document.getElementById('ALToutputtraining2').innerHTML = parseInt(ALTslider.value);
+    document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
+    document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
    // document.getElementById('textEquity').innerHTML = parseInt(PEslider.value);
     PEslider.innerHTML = parseInt(PEslider.value);
     ALTslider.innerHTML = parseInt(ALTslider);
@@ -187,8 +222,8 @@ function maxReachedV0(e) {
 
   // next line is just for demonstrational purposes
   // document.getElementById('total').innerHTML = parseInt(PEslider.value) + parseInt(ALTslider.value);
-  document.getElementById('PEoutputtraining2').innerHTML = parseInt(PEslider.value);
-  document.getElementById('ALToutputtraining2').innerHTML = parseInt(ALTslider.value);
+  document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
+  document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
 //  document.getElementById('textEquity').innerHTML = parseInt(PEslider.value);
  // document.getElementById('textAlternative').innerHTML = parseInt(ALTslider.value);
  // document.getElementById('textRemaining').innerHTML = (max) - (parseInt(PEslider.value) + parseInt(ALTslider.value));
@@ -398,6 +433,8 @@ function addTimerText(){
         textTimer.innerHTML = ""
         btntoValidate.disabled = false
         btntoValidate.innerHTML = "Go to the next training stage!"
+        btntoValidate.style.backgroundColor = "#EEEEEE"
+        btntoValidate.style.color = "#000000"
 
         // PEslider = document.getElementById('taskPayEquity');
      //   ALTslider = document.getElementById('taskNotEquity');

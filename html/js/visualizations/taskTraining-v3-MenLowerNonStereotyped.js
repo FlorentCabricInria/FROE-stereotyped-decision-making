@@ -308,6 +308,7 @@ function displayCurrentGenderPayGap () {
   document.getElementById("addPerformance").hidden = false;
 
   document.getElementById("lineTo").hidden = false;
+  maxReached(null)
 }
 
 function displayPerformance(){
@@ -316,6 +317,7 @@ function displayPerformance(){
   document.getElementById("smallTextPayGap").hidden=true;
   document.getElementById("addPerformance").hidden = true;
    document.getElementById("btn_task-training-v3_7").hidden = false;
+  maxReached(null)
 
 }
 function changeSalary3MLNS() {
