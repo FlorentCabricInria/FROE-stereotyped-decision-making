@@ -268,22 +268,43 @@
     </div>
 </div>
 <div id="thirteenthStage" style="text-align: left" hidden="true">
-    <h2>Last questions regarding salary, grade group and performance!</h2>
-    After studying, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span
-        style="font-weight: bold; color: #F2B93F;">Sam</span> and <span
-        style="font-weight: bold; color: #98D462;">Robin</span>. Can you answer to the following questions for <span
-        style="font-weight: bold; color: #D95F02;">Jamie</span> ?
+    <h2>Comprehension check</h2>
+    This is the comprehension check. You will have two chances. If you failed twice, we will ask you to immediately return your submission by closing the survey and clicking 'Stop Without Completing' on Prolific.
+<!--    After studying, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span-->
+<!--        style="font-weight: bold; color: #F2B93F;">Sam</span> and <span-->
+<!--        style="font-weight: bold; color: #98D462;">Robin</span>. -->
     <br>
+    <b>Answer to the following questions regarding </b><span
+        style="font-weight: bold; color: #D95F02;">Jamie's salary, grade group and performance</span> ?
+    <br>
+    <h3 id="addCheck"> </h3>
     <svg id="chartFinalTest"></svg>
     <br>
 
     <div>
-        <p style="width: 15vw; min-width: 300px; float: left;padding: 20px"> Estimate <span
-                style="font-weight: bold; color: #D95F02;"> Jamie's</span> salary(&#177; 2.5k) <br> <input
-                id="inputJamieSalary" type="text"> <span id="checkingSalaryJamie"
-                                                         style="font-weight: bold; color: #f80b0b;"></span>
-        </p>
-        <fieldset style="width: 15vw; min-width: 300px;float: left;padding: 20px">
+<!--        <p style="width: 15vw; min-width: 300px; float: left;padding: 20px"> Estimate <span-->
+<!--                style="font-weight: bold; color: #D95F02;"> Jamie's</span> salary(&#177; 2.5k) <br> <input-->
+<!--                id="inputJamieSalary" type="text"> <span id="checkingSalaryJamie"-->
+<!--                                                         style="font-weight: bold; color: #f80b0b;"></span>-->
+<!--        </p>-->
+        <fieldset id="fieldset1" style="width: 15vw; min-width: 300px;float: left;padding: 20px">
+            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>salary?</legend>
+
+            <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
+            <div>
+                <input type="radio" id="salaryJamie3" name="salary-test-jamie" value="10000"/>
+                <label for="ggJamie3">10,000</label>
+            </div>
+            <div>
+                <input type="radio" id="salaryJamie4" name="salary-test-jamie" value="32500"/>
+                <label for="ggJamie4">32,500</label>
+            </div>
+            <div>
+                <input type="radio" id="salaryJamie5" name="salary-test-jamie" value="60000"/>
+                <label for="ggJamie5">60,000</label>
+            </div>
+        </fieldset>
+        <fieldset id="fieldset2" style="width: 15vw; min-width: 300px;float: left;padding: 20px">
             <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>grade
                 group ?
             </legend>
@@ -301,7 +322,7 @@
                 <label for="ggJamie5">C</label>
             </div>
         </fieldset>
-        <fieldset style="width: 15vw; min-width: 300px;float: left;padding: 20px">
+        <fieldset id="fieldset3" style="width: 15vw; min-width: 300px;float: left;padding: 20px">
             <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>performance
                 ?
             </legend>

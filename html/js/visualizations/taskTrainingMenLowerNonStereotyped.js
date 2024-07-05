@@ -181,7 +181,7 @@ function maxReached2(e) {
     else if(state =="second" && parseInt(ALTslider.value) == 25000) {
       state = "third"
       document.getElementById("slidersLabelsTask").innerHTML = "Task 3: Allocate,12,500 for \"Performance-based\" and " + '\n' + " 12,500 for \"addressing pay equity\""
-      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, please allocate 12,500 for \"Performance-based\" and 12,500 for \"Reducing gender pay inequity\""
+      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, complete task #3"
       document.getElementById("taskSlider2").style.display = "inline"
 
     }

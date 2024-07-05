@@ -69,14 +69,17 @@ function changeButton (e) {
       document.getElementById('fourthStage').hidden = false
       break
     case 'fourthStageButton':
-      var value = parseInt(document.getElementById('inputTestRobin').value)
+      var value = parseInt(document.getElementById('inputTestRobin').value.replaceAll("K","").replaceAll("k","").replaceAll(",","").replaceAll(" ",""))
       if ((58000 < value && value < 62000) || (58 < value && value < 62)) {
         e.target.parentElement.hidden = true
         document.getElementById('thirdStage').hidden = true
 
         document.getElementById('fifthStage').hidden = false
       } else {
-        document.getElementById('checkingValue').innerHTML = 'Try again, the value is incorrect. The format must be an integer'
+        document.getElementById('checkingValue').innerHTML = "This is not the correct answer. Please, try again. No letters or special characters are allowed in the answers," +
+          " therefore only digits are accepted. <br /> To find Robin's salary, you have to find the green circle" +
+          " representing Robin, follow the green line until it crosses the y-axis (representing salary), and approximate the value of the intersection of the y-axis and the green line <br />" +
+          " (hint: look at the two values near the intersection of the green line and the y-axis)."
       }
       break
     case 'fifthStageButton':
@@ -115,11 +118,11 @@ function changeButton (e) {
         console.log('good')
       } else {
         console.log('not good')
-        document.getElementById('checkingValueGradeGroup').innerHTML = 'You failed on the first attention test. Please, try again.'
-        var valueAttention = document.getElementById('attention-test-check').value
-        if (valueAttention == '0') {
+        document.getElementById('checkingValueGradeGroup').innerHTML = "This is not the correct answer. Please, try again. <br /> To find Robin's grade group, you have to find the green circle" +
+        " representing Robin, and look at the name below the rectangle where the green circle is."
+       /* if (valueAttention == '0') {
           document.getElementById('attention-test-check').value = '1'
-        }
+        }*/
       }
       break
     case 'tenthStageButton':
@@ -147,7 +150,7 @@ function changeButton (e) {
         console.log('good')
       } else {
         var valueAttention = document.getElementById('attention-test-check').value
-        if (valueAttention == '1') {
+     /*   if (valueAttention == '1') {
           document.getElementById('attention-test-check').value = '2'
           $('#endDisagreement_12').show()
           $('#introduction_3').hide()
@@ -164,7 +167,7 @@ function changeButton (e) {
             }
           })
 
-        }
+        }*/
         /*  if (type === '<?php echo $id;?>'){
             var att_answer = $('input[name=att]:checked').val();
             if(att_answer != "<?php echo $config["attention_question_correct_answer"]["key"] ?>"){
@@ -181,40 +184,95 @@ function changeButton (e) {
           }
         });*/
         console.log('not good')
-        document.getElementById('checkingValuePerf').innerHTML = 'Please, try again, the value is incorrect.'
+        document.getElementById('checkingValuePerf').innerHTML = "This is not the correct answer. Please, try again. To find Robin's performance, " +
+          "you have to find the green circle <br />" +
+          "and compare the size of the green circle with the three circles presented in the description."
       }
       break
     case 'thirteenthStageButton':
-
+      var valueAttention = document.getElementById('attention-test-check').value
       var perf = false
       var salary = false
       var gradegroup = false
-      var valueperf = document.querySelector('input[name="performance-test-jamie"]:checked').value
-      if (valueperf == 'lowperformers') {
+      var valueperf = document.querySelector('input[name="performance-test-jamie"]:checked')
+      var valuegg = document.querySelector('input[name="grade-group-test-jamie"]:checked')
+      var valuesalary = document.querySelector('input[name="salary-test-jamie"]:checked')
+
+      if (valueperf.value == 'lowperformers') {
+        document.getElementById('checkingPerfJamie').innerHTML = 'You answered correctly to this question. Congratulations!'
+        document.getElementById('checkingPerfJamie').style.color = '#1D911DFF'
         perf = true
+     //   document.querySelector('input[name="performance-test-jamie"]').disabled = true
+        document.getElementById("fieldset3").disabled = true;
+        document.getElementById("fieldset3").style.color = "lightgrey";
       } else {
-        document.getElementById('checkingPerfJamie').innerHTML = 'Please, try again, performance is incorrect.'
-      }
-      var valuegg = document.querySelector('input[name="grade-group-test-jamie"]:checked').value
+        document.getElementById('checkingPerfJamie').innerHTML  = 'You failed this question. Try again.'
+        document.getElementById('checkingPerfJamie').style.color = '#be0909';
 
-      if (valuegg == '3') {
+        valueperf.checked = false
+      }
+
+      if (valuegg.value == '3') {
         gradegroup = true
+        document.getElementById('checkingGGJamie').innerHTML = 'You answered correctly to this question. Congratulations!'
+        document.getElementById('checkingGGJamie').style.color = '#1D911DFF'
+      //  document.querySelector('input[name="grade-group-test-jamie"]').disabled = true
+
+        document.getElementById("fieldset2").disabled = true;
+        document.getElementById("fieldset2").style.color = "lightgrey";
       } else {
-        document.getElementById('checkingGGJamie').innerHTML = 'Please, try again, grade group is incorrect.'
+        document.getElementById('checkingGGJamie').innerHTML = 'You failed this question. Try again.'
+        document.getElementById('checkingGGJamie').style.color = '#be0909';
+        valuegg.checked = false
       }
-      var valuesalary = parseInt(document.getElementById('inputJamieSalary').value.replace('K', '').replace('k', ''))
 
-      if ((valuesalary >= 30000 && valuesalary <= 35000) || (valuesalary >= 30 && valuesalary <= 35)) {
+      // if ((valuesalary >= 30000 && valuesalary <= 35000) || (valuesalary >= 30 && valuesalary <= 35)) {
+      if (valuesalary.value == '32500') {
+        document.getElementById('checkingSalaryJamie').innerHTML = 'You answered correctly this question. Congratulations!'
+        document.getElementById('checkingSalaryJamie').style.color = '#1d911d';
+
+     //   document.querySelector('input[name="salary-test-jamie"]').prop('disabled', true)
         salary = true
+        document.getElementById("fieldset1").disabled = true;
+        document.getElementById("fieldset1").style.color = "lightgrey";
       } else {
-        document.getElementById('checkingSalaryJamie').innerHTML = 'Please, try again, salary is incorrect.'
+        document.getElementById('checkingSalaryJamie').innerHTML = 'You failed this question. Try again.'
+        document.getElementById('checkingSalaryJamie').style.color = '#be0909';
 
+        valuesalary.checked = false
       }
       if (perf && salary && gradegroup) {
         buttonThirteenth.hidden = true
         document.getElementById('btn_introduction_3').hidden = false
-      }
+      } else {
+        document.getElementById("addCheck").innerHTML ="This is your last chance to complete the comprehension check, " +
+          "if you failed again you will have to return the submission immediately."
+        // document.getElementById("addCheck").style.color = "#FFFFFf"
+        if (valueAttention == '0') {
+          valueAttention = '1'
+          document.getElementById("thirteenthStageButton").style.backgroundColor = "#f49b9b"
+          document.getElementById("thirteenthStageButton").innerHTML = "This is your last chance to complete the comprehension check, " +
+            "if you failed again you will have to return the submission immediately."
 
+        }
+       else if (valueAttention == '1') {
+          document.getElementById('attention-test-check').value = '2'
+          $('#endDisagreement_12').show()
+          $('#introduction_3').hide()
+
+          $.ajax({
+            url: 'html/ajax/log_exclusion.php',
+            type: 'POST',
+            data: JSON.stringify(measurements),
+            contentType: 'application/json',
+            success: function (data) {
+              console.log('Experiment finished due to exclusion.')
+              //$(':button').hide()
+              window.onbeforeunload = null
+            }
+          })
+        }
+      }
       //      thirteenthStage
       break
 
@@ -790,13 +848,14 @@ function visualizeFinalTest () {
           .attr('cy', (d, i) => y(d.total_comp))
           .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
           .attr('fill', function (d) {
-            if (d.key == '3') {
-              return '#F2B93F'
-            } else if (d.key == '9') {
-              return '#0096c9'
-            } else if (d.key == '15') {
-              return '#98D462'
-            } else if (d.key == '1') {
+            // if (d.key == '3') {
+            //   return '#F2B93F'
+            // } else if (d.key == '9') {
+            //   return '#0096c9'
+            // } else if (d.key == '15') {
+            //   return '#98D462'
+            // } else
+              if (d.key == '1') {
               return '#D95F02'
             }
           })

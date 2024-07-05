@@ -10,7 +10,7 @@
     </div>
     <i><strong> Be careful! You must spend the entire 25,000</strong> </i><br>
     <p> To assist you in your decisions you will see a data visualization similar to the one below (but the underlying
-        data will change) Employees are still represented according to their salary (vertical axis) and the 3 categories
+        data will change). Employees are still represented according to their salary (vertical axis) and the 3 categories
         : grade group (horizontal axis), gender (color) and performance level (size of dots) <br></p>
     <!--    <p> In this training part, we will ask you to perform 3 allocation tasks using  </p>-->
     In this training part, we will ask you to perform 3 allocation tasks using the two sliders you will find next to the
