@@ -213,7 +213,7 @@ function createSteoreotypedVisualization3MLNS(){
 
     const color = d3.scaleOrdinal()
       .domain(['1', '2'])
-      .range(['#00ff78', '#ffd800']);
+      .range(['#00AA5A', '#AA9000']);
 
     const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
@@ -222,9 +222,9 @@ function createSteoreotypedVisualization3MLNS(){
      *          #########################################################
      */
     svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
-      .style('fill', '#00ff78');
+      .style('fill', '#00AA5A');
     svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
-      .style('fill', '#ffd800');
+      .style('fill', '#AA9000');
     svg.append('text').attr('x', width - 80).attr('y', 135).text('Men')
       .style('font-size', '1em')
       .attr('alignment-baseline', 'middle');
@@ -304,6 +304,8 @@ function displayCurrentGenderPayGap () {
   document.getElementById("divfordata").style.background = "#f9f9f9"
   document.getElementById("addCurrentGenderPayGap").hidden = true;
   document.getElementById("LineGenderPG").hidden = false;
+  document.getElementById("infoBtnGender").hidden = false;
+
 //  document.getElementById("btn_task-training-v3_7").hidden = false;
   document.getElementById("addPerformance").hidden = false;
 
@@ -313,7 +315,7 @@ function displayCurrentGenderPayGap () {
 
 function displayPerformance(){
   document.getElementById("performanceText").hidden = false;
-//smallTextPerformance
+  document.getElementById("infoBtnPerformance").hidden = false;
   document.getElementById("smallTextPayGap").hidden=true;
   document.getElementById("addPerformance").hidden = true;
    document.getElementById("btn_task-training-v3_7").hidden = false;

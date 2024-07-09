@@ -318,6 +318,7 @@ function displayCurrentGenderPayGap () {
   document.getElementById("divfordata").style.background = "#f9f9f9"
   document.getElementById("addCurrentGenderPayGap").hidden = true;
   document.getElementById("LineGenderPG").hidden = false;
+  document.getElementById("infoBtnGender").hidden = false;
 
 //  document.getElementById("btn_task-training-v3_7").hidden = false;
   document.getElementById("addPerformance").hidden = false;
@@ -329,6 +330,7 @@ function displayCurrentGenderPayGap () {
 function displayPerformance(){
   document.getElementById("smallTextPayGap").hidden=true;
   document.getElementById("performanceText").hidden = false;
+  document.getElementById("infoBtnPerformance").hidden = false;
   document.getElementById("addPerformance").hidden = true;
   document.getElementById("btn_task-training-v3_7").hidden = false;
   maxReached(null)

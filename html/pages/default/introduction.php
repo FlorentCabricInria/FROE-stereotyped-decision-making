@@ -126,15 +126,16 @@
         <div>
             <div id="seventhStage" style="text-align: left" hidden="true">
                 As you can see <span style="font-weight: bold; color: #F2B93F;"> Sam </span> belongs to
-<!--                <span style="font-weight: bold; color: #7570b3;"> grade group B</span> -->
+                <!--                <span style="font-weight: bold; color: #7570b3;"> grade group B</span> -->
                 grade group B
                 and
                 <span style="font-weight: bold; color: #0096c9;">Charlie</span> belongs to
-<!--                <span style="font-weight: bold; color: #1b9e77;">grade group C</span>.<br>-->
+                <!--                <span style="font-weight: bold; color: #1b9e77;">grade group C</span>.<br>-->
                 grade group C. <br>
                 To be able to distinguish between employees with very similar salaries, we will add some "jitter". That
                 means that
                 the horizontal position of each employee will be moved slightly, to the left or to the right.
+                <br>
                 <button id="seventhStageButton">Add Jitter</button>
             </div>
             <div class="breakForSlider"></div>
@@ -269,26 +270,28 @@
 </div>
 <div id="thirteenthStage" style="text-align: left" hidden="true">
     <h2>Comprehension check</h2>
-    This is the comprehension check. You will have two chances. If you failed twice, we will ask you to immediately return your submission by closing the survey and clicking 'Stop Without Completing' on Prolific.
-<!--    After studying, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span-->
-<!--        style="font-weight: bold; color: #F2B93F;">Sam</span> and <span-->
-<!--        style="font-weight: bold; color: #98D462;">Robin</span>. -->
+    This is the comprehension test. You will get two chances. If you fail on the second attempt, you will be immediately
+    redirected to Prolific with a CODE indicating CC_failed and we will ask that you return your submission.
+    <!--    After studying, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span-->
+    <!--        style="font-weight: bold; color: #F2B93F;">Sam</span> and <span-->
+    <!--        style="font-weight: bold; color: #98D462;">Robin</span>. -->
     <br>
     <b>Answer to the following questions regarding </b><span
-        style="font-weight: bold; color: #D95F02;">Jamie's salary, grade group and performance</span> ?
+        style="font-weight: bold; color: #D95F02;">Jamie's salary, grade group and performance</span>?
     <br>
-    <h3 id="addCheck"> </h3>
+    <h5 id="addCheck" style="font-weight:bold"></h5>
     <svg id="chartFinalTest"></svg>
     <br>
 
     <div>
-<!--        <p style="width: 15vw; min-width: 300px; float: left;padding: 20px"> Estimate <span-->
-<!--                style="font-weight: bold; color: #D95F02;"> Jamie's</span> salary(&#177; 2.5k) <br> <input-->
-<!--                id="inputJamieSalary" type="text"> <span id="checkingSalaryJamie"-->
-<!--                                                         style="font-weight: bold; color: #f80b0b;"></span>-->
-<!--        </p>-->
-        <fieldset id="fieldset1" style="width: 15vw; min-width: 300px;float: left;padding: 20px">
-            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>salary?</legend>
+        <!--        <p style="width: 15vw; min-width: 300px; float: left;padding: 20px"> Estimate <span-->
+        <!--                style="font-weight: bold; color: #D95F02;"> Jamie's</span> salary(&#177; 2.5k) <br> <input-->
+        <!--                id="inputJamieSalary" type="text"> <span id="checkingSalaryJamie"-->
+        <!--                                                         style="font-weight: bold; color: #f80b0b;"></span>-->
+        <!--        </p>-->
+        <fieldset id="fieldset1" style="width: 15vw; min-width: 300px;float: left;padding: 6px 20px 20px 20px">
+            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>salary?
+            </legend>
 
             <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
             <div>
@@ -304,7 +307,7 @@
                 <label for="ggJamie5">60,000</label>
             </div>
         </fieldset>
-        <fieldset id="fieldset2" style="width: 15vw; min-width: 300px;float: left;padding: 20px">
+        <fieldset id="fieldset2" style="width: 15vw; min-width: 300px;float: left;padding: 6px 20px 20px 20px">
             <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>grade
                 group ?
             </legend>
@@ -322,39 +325,31 @@
                 <label for="ggJamie5">C</label>
             </div>
         </fieldset>
-        <fieldset id="fieldset3" style="width: 15vw; min-width: 300px;float: left;padding: 20px">
-            <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>performance
-                ?
-            </legend>
-            <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
-            <div>
-                <input type="radio" id="lowJamieP" name="performance-test-jamie" value="lowperformers"/>
-                <label for="lowJamieP">Low</label>
-            </div>
-            <div>
-                <input type="radio" id="medJamieP" name="performance-test-jamie" value="mediumperformers"/>
-                <label for="medJamieP">Medium</label>
-            </div>
-            <div>
-                <input type="radio" id="highJamieP" name="performance-test-jamie" value="highperformers"/>
-                <label for="highJamieP">High</label>
-            </div>
+        <fieldset id="fieldset3" style="width: 15vw; min-width: 300px;float: left;padding: 6px 20px 20px 20px"
+        ">
+        <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>performance
+            ?
+        </legend>
+        <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <div>
+            <input type="radio" id="lowJamieP" name="performance-test-jamie" value="lowperformers"/>
+            <label for="lowJamieP">Low</label>
+        </div>
+        <div>
+            <input type="radio" id="medJamieP" name="performance-test-jamie" value="mediumperformers"/>
+            <label for="medJamieP">Medium</label>
+        </div>
+        <div>
+            <input type="radio" id="highJamieP" name="performance-test-jamie" value="highperformers"/>
+            <label for="highJamieP">High</label>
+        </div>
         </fieldset>
 
     </div>
     <br>
     <button id="thirteenthStageButton"> Next</button>
 </div>
-<div id="fourteenthStage" style="text-align: center" hidden="true">
-    <br>
 
-    <button id="fourteenthStageButton"> Next</button>
-</div>
-<div id="fifteenthStage" style="text-align: center" hidden="true">
-    <br>
-
-    <button id="fifteenthStageButton"> Next</button>
-</div>
 <script type="text/javascript" src="./html/js/visualizations/buttonbehaviours.js"></script>
 
 <script type="text/javascript">

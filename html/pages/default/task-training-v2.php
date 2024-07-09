@@ -42,7 +42,7 @@
       ?>
     <div>
         <!-- <div id="slidersForTest" style="max-width: 100%; height: auto;width: 30%;float: right;padding: 0px"> -->
-        <div id="slidersForTest" style="display: inline-grid">
+        <div id="slidersForTest" style="display: inline-grid;border-radius: 9px; background-color: #f9f9f9; padding: 1rem" >
 
             <div style="display: inline-block">
                 <div class="input-group plus-minus-input">

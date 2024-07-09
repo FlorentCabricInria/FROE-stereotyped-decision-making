@@ -2,7 +2,7 @@
     <h1>Training part 3 (final).</h1>
     <p>We will now add two additional features to support your decision-making. These features will help you to explore
         the impact of the decisions you make.
-        <br> Click on the button to add the equal gender pay gap
+        <br> Click on the button to add the gender pay gap adjusted according to the grade group and performance.
     </p>
 
     <!--<br> <button id="addAllocation" hidden="true"> Add the next piece of information : the distribution of the allocations </button>
@@ -45,7 +45,7 @@
       ?>
     <br>
 
-    <div style=" display: inline-grid">
+    <div style=" display: inline-grid; border-radius: 9px; background-color: #f9f9f9; padding: 1rem" ">
 
         <div style="display: inline-block">
 
@@ -109,6 +109,7 @@
                         </div>
                         &nbsp;
                         <output id="ALToutputTraining3">0</output>
+
                         <br>
                     </div>
                 </div>
@@ -121,11 +122,35 @@
             <div class="containerForSlider">
                 <div class="boxForSlider">
                     <div id="divfordata"
-                         style="display: inline-block;background: #ffffff;border-radius: 9px;padding: 10px;">
+                         style="display: inline-block;background: #ffffff;border-radius: 9px;padding: 1rem;">
                         <button id="addCurrentGenderPayGap"> Add the equal gender pay gap</button>
+                      <div>
                         <span id="LineGenderPG" hidden="true">The current gender pay gap is: <br> <b><span
                                 id="TestGenderPG"> 5% </span></b>.
-            <span id="smallTextPayGap" style="color: darkred"> <br> Move the first slider and see what's happening! This value is updated in real time!</span> </span>
+            </span>
+<!--                        <div id="infoBtnGender" class="input-group-button hover-container"style="flex: auto;display: inline-flex" hidden>-->
+<!--                            <button type="button" class="hover-target button hollow circle" style="border-radius: 50%;">-->
+<!--                                <i class="fa fa-info"></i>-->
+<!--                            </button>-->
+<!--                            <aside class="hover-popup">-->
+<!--                                <h2>Additional info here</h2>-->
+<!--                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora similique <span>quia corporis</span> libero. In dolor qui repudiandae ullam! Corporis minus veritatis consequuntur natus. Neque, quidem?</p>-->
+<!--                            </aside>-->
+<!--                        </div>-->
+                          <div id="infoBtnGender" class="input-group-button hover-container"style="flex: auto;display: inline-flex" hidden>
+                              <span id="infoBtnGenderText" class="infoText hover-target button hollow circle" style="border-radius: 50%;" >
+<!--                                  min-width: 1.5rem;min-height: 1.5rem;max-width: 1.5rem;max-height: 1.5rem;width: 1.5rem;height: 1.5rem;/*! align-content: last baseline; *//*! align-items: unsafe; */display: flex;justify-content: center;-->
+                                  <i class="fa fa-info"></i>
+                              </span>
+                              <aside class="hover-popup">
+<!--                                  <h3>Gender Pay Gap — Explanation</h3>-->
+                                  <p>The percentage of the gender pay gap reflects the difference between one gender category and the other after accounting for factors that determine pay. In other words, after taking into account
+                                      the differences implied by other factors (in our case, grade group and performance), what is the gap that is due the gender factor alone?</p>
+                              </aside>
+                          </div>
+                          <span id="smallTextPayGap" style="color: darkred"> <br> Move the first slider and see what's happening! This value is updated in real time!</span>
+                      </div>
+
                         <hr id="lineTo" hidden="true">
                         <button id="addPerformance" hidden="true"> Add the merit-based raises</button>
                         <div id="performanceText" hidden="true"><span> Raises based on performance levels:</span>
@@ -151,6 +176,17 @@
                                 </tr>
                                 </tbody>
                             </table>
+                            <div id="infoBtnPerformance" class="input-group-button hover-container"style="flex: auto;display: inline-flex" hidden>
+                              <span id="infoBtnPerformanceText" class="infoText hover-target button hollow circle" style="border-radius: 50%;" >
+<!--                                  min-width: 1.5rem;min-height: 1.5rem;max-width: 1.5rem;max-height: 1.5rem;width: 1.5rem;height: 1.5rem;/*! align-content: last baseline; *//*! align-items: unsafe; */display: flex;justify-content: center;-->
+                                  <i class="fa fa-info"></i>
+                              </span>
+                                <aside class="hover-popup">
+                                    <!--                                  <h3>Gender Pay Gap — Explanation</h3>-->
+                                    <p>TThe percentages shown represent the salary increase (in %) over their initial salary that each employee in the three groups receives as a result of your decision.</p>
+                                </aside>
+                            </div>
+                            <br>
                             <!--  — Low performers <span id="taskLowPerfTraining" style="display: inline-block"> .... </span>% raise. <br>
                           — Medium performers got a <span id="taskMidPerfTraining" style="display: inline-block"> .... </span>% raise.<br>
                           got a <span id="taskHighPerfTraining" style="display: inline-block"> .... </span>% raise.<br> -->

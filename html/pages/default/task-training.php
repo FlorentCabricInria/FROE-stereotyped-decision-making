@@ -17,7 +17,7 @@
     visualization (framed in grey). You can increase or decrease the value using the - and + buttons next to the
     sliders. To move on to the next training's step, please complete the three tasks in the following order (a task
     already performed will be strikedthrough) :
-    <ol>
+    <ol id="taskList">
         <li style="margin: 0px 0px"><strike id="taskSlider1" style="display: contents;"> <span> Allocate 25,000 for 'Reducing gender pay inequity'</span>
         </strike></li>
         <li style="margin: 0px 0px"><strike id="taskSlider2" style="display: contents;"> <span> Allocate 25,000 for "Performance-based"</span>
@@ -66,11 +66,11 @@
       ?>
     <div>
         <strong> INSTRUCTIONS FOR THE TRAINING</strong>
-        <br><strong> <span
-            id="slidersLabelsTask"> Task 1: Please, allocate 25,000 for 'Reducing gender pay inequity'" </span></strong>
+        <br> <span
+            id="slidersLabelsTask"> Task 1: Please, allocate 25,000 for 'Reducing gender pay inequity'" </span>
         <br>
 
-        <div style="display: inline-block; border: 2px solid #5e5e5e;">
+        <div style="display: inline-block; border: 2px solid #5e5e5e;border-radius: 9px; background-color: #f9f9f9; padding: 1rem" >
             <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
 
 

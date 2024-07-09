@@ -12,8 +12,8 @@ let buttonTenth = document.getElementById('tenthStageButton')
 let buttonEleventh = document.getElementById('eleventhStageButton')
 let buttonTwelveth = document.getElementById('twelvethStageButton')
 let buttonThirteenth = document.getElementById('thirteenthStageButton')
-let buttonFourteenth = document.getElementById('fourteenthStageButton')
-let buttonFifteenth = document.getElementById('fifteenthStageButton')
+// let buttonFourteenth = document.getElementById('fourteenthStageButton')
+// let buttonFifteenth = document.getElementById('fifteenthStageButton')
 // buttonEighth = document.getElementById("eighthStageButton");
 buttonFirst.addEventListener('click', changeButton, false)
 buttonSecond.addEventListener('click', changeButton, false)
@@ -28,8 +28,8 @@ buttonTenth.addEventListener('click', changeButton, false)
 buttonEleventh.addEventListener('click', changeButton, false)
 buttonTwelveth.addEventListener('click', changeButton, false)
 buttonThirteenth.addEventListener('click', changeButton, false)
-buttonFourteenth.addEventListener('click', changeButton, false)
-buttonFifteenth.addEventListener('click', changeButton, false)
+// buttonFourteenth.addEventListener('click', changeButton, false)
+// buttonFifteenth.addEventListener('click', changeButton, false)
 //buttonEighth.addEventListener('click', changeButton, false);
 
 let posXForExplanation = [
@@ -275,9 +275,9 @@ function changeButton (e) {
       }
       //      thirteenthStage
       break
-
-    case 'fourteenthStageButton':
-      break
+    //
+    // case 'fourteenthStageButton':
+    //   break
   }
 }
 
@@ -318,6 +318,11 @@ function firstChartDesign () {
       .call(d3.axisLeft(y).tickArguments([15]).tickFormat((x) => {
         return x / 1000 + 'k'
       }))
+    // svgSecondChart.append("text")
+    //   .attr('class','axis-titles')
+    //   .attr("x", 20)
+    //   .attr("y", 25)
+    //   .text("Salary in StudyCoin");
 
     svgSecondChart.append('g')
       .attr('transform', `translate(0,${height - marginBottom})`)
@@ -503,7 +508,7 @@ function gradegroupCharts () {
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', [0, 0, width, height])
-      .attr('style', 'max-width: 100%; height: auto; min-width:800px')
+      .attr('style', 'max-width: 100%; min-width:800px')
 
     //  var a = d3.group(data, d => d.gender)
     svg.append('g')
@@ -664,7 +669,7 @@ function performanceCharts () {
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', [0, 0, width, height])
-      .attr('style', 'max-width: 100%; height: auto;min-width:800px')
+      .attr('style', 'max-width: 100%;min-width:800px')
 
     svg.append('g')
       .attr('transform', `translate(${marginLeft},0)`)
