@@ -67,7 +67,7 @@
     <div>
         <strong> INSTRUCTIONS FOR THE TRAINING</strong>
         <br> <span
-            id="slidersLabelsTask"> Task 1: Please, allocate 25,000 for 'Reducing gender pay inequity'" </span>
+            id="slidersLabelsTask"> Task 1: Allocate 25,000 for 'Reducing gender pay inequity'" </span>
         <br>
 
         <div style="display: inline-block; border: 2px solid #5e5e5e;border-radius: 9px; background-color: #f9f9f9; padding: 1rem" >

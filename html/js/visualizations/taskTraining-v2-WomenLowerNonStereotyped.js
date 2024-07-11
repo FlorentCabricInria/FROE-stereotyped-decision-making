@@ -381,7 +381,8 @@ function addTimerText(){
   btntoValidate.style.color = "rgba(255,255,255,0.9)"
 
   var textTimerCountdown = document.createElement("span");
-  textTimerCountdown.id = "textTimerCountdown";    textTimerCountdown.innerHTML = "15";
+  textTimerCountdown.id = "textTimerCountdown";
+  textTimerCountdown.innerHTML = "15";
 
   var textTimer = document.createElement("span");
   textTimer.style.float = "right";

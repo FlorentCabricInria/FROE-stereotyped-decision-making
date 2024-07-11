@@ -5,7 +5,7 @@
       class="btn btn-wider <?php echo $style;?>"
       id = "btn_<?php echo $id;?>"
 
-    <?php if ($id != 'test-decision-making-study_8') {?>
+    <?php if ($id != 'test-decision-making-study_8' && $id != 'welcome_1') {?>
     onclick="
         $('body').trigger('next', ['<?php echo $id;?>']); 
         $('body').trigger('show', ['<?php echo $next;?>']); 
@@ -28,4 +28,8 @@
 ?>
     </button>
   </div>
+<!--    If i don't place the script there the button is unfidnable to add a new event listener-->
+    <script type="text/javascript">
+      document.getElementById('btn_welcome_1').addEventListener('click', allowPopUp)
+    </script>
 </div>

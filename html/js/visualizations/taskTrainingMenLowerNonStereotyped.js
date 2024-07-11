@@ -5,7 +5,7 @@ let state = "first";
 var random = new Math.seedrandom(seed);
 const yTraining = d3.scaleLinear()
   // .domain(d3.extent(genderData, d => d.salary)).nice()
-  .domain([21000, 13000])
+  .domain([30000, 16000])
   .range([0 + marginBottom, height - marginTop]);
 
 createSteoreotypedVisualization()
@@ -42,7 +42,7 @@ function onMinusNotEquity(e){
 }
 function createSteoreotypedVisualization(){
 
-  d3.csv('./html/js/visualizations/b.csv').then((data) => {
+  d3.csv('./html/js/visualizations/men-lower-v2.csv').then((data) => {
     let storedData = structuredClone(data);
 
     let random2 = new Math.seedrandom(seed);
@@ -178,13 +178,13 @@ function maxReached2(e) {
     ALTslider.innerHTML = parseInt(ALTslider);
     if(state == "first" && parseInt(PEslider.value) == 25000) {
       state = "second"
-      document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Please, allocate 25,000 for 'Reducing gender pay inequity' </s> <br> <b>Task 2: Allocate 25,000 for \"Performance-based\" </b>"
+      document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Allocate 25,000 for 'Reducing gender pay inequity' </s> <br> <b>Task 2: Allocate 25,000 for \"Performance-based\" </b>"
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, complete task number 2"
       document.getElementById("taskSlider1").style.display = "inline"
     }
     else if(state =="second" && parseInt(ALTslider.value) == 25000) {
       state = "third"
-      document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Please, allocate 25,000 for 'Reducing gender pay inequity'<br>Task 2: Allocate 25,000 for \"Performance-based\" </s><br><b>Task 3: Allocate,12,500 for \"Performance-based\" and 12,500 for \"addressing pay equity\"</b>"
+      document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Allocate 25,000 for 'Reducing gender pay inequity'<br>Task 2: Allocate 25,000 for \"Performance-based\" </s><br><b>Task 3: Allocate,12,500 for \"Performance-based\" and 12,500 for \"addressing pay equity\"</b>"
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, complete task number 3"
       document.getElementById("taskSlider2").style.display = "inline"
 

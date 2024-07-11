@@ -8,7 +8,8 @@
         <div style="background-color: white;  color: black; padding: 15px; margin-bottom: 15px; text-align:left">
             <p>Please find below legal information about our privacy policy and your participation to this study.</p>
 
-            <p>After agreeing to the terms below, you will first answer a few demographic questions, then you will follow a training session that will teach you how to read the data visualizations we will show you.
+            <p>After agreeing to the terms below, you will first follow a training session that will teach you how to read the data visualizations we will use during this study. This training ends with a comprehension check for which you will have two chances.
+                Next, we will show you how to use the tools to make your final decision. Finally, you'll be asked to make one salary decision based on the visualization, and to explain this decision. The test ends with a questionnaire designed by social psychologists.
                 This will require around twenty (20) minutes to complete.</p>
 
            <!-- <h2>1. Privacy policy</h2>
@@ -47,12 +48,13 @@
 
            <strong>Project team and Inria Research Centre:</strong> Aviz Team - Inria Saclay<br /><strong>Project name:</strong> Comparison of visualization-aided decision-making processes</p>
 
-            You are invited to take part in this project, whose purpose is to understand how visualizations help people make decisions. The Aviz team conducts
+            You are invited to take part in this project, whose purpose is to understand how visualizations help people make decisions. The <a href="http://www.aviz.fr"> Aviz </a> team conducts
                 research in the field of visualization and the results of these experiments will help us to improve visualization design and research in this field more generally.</p>
 
             <p>This study will take place <strong>online</strong>. </p>
 
-            <p>This project has received a favorable opinion from Inria's Operational Committee for the Assessment of legal and ethical risks. For more information: <br /><a href="https://www.inria.fr/en/operational-committee-assesment-legal-and-ethical-risks" target="_blank" title="OCELER">https://www.inria.fr/en/operational-committee-assesment-legal-and-ethical-risks</a></p>
+            <p>This project has received a favorable opinion from Inria's Operational Committee for the Assessment of legal and ethical risks.
+                For more information: <br /><a href="https://www.inria.fr/en/operational-committee-assesment-legal-and-ethical-risks" target="_blank" title="OCELER">https://www.inria.fr/en/operational-committee-assesment-legal-and-ethical-risks</a></p>
 
             <h4>YOUR PARTICIPATION IN THE PROJECT</h4>
 
@@ -62,8 +64,9 @@
                 have normal or corrected-to-normal vision, and do not suffer from color blindness can participate in this study.</p>
 
             <p><strong>Procedure</strong><br />First, you will have to give your informed consent at the bottom of this page.
-                Then you can proceed to the study and  follow a training session that will teach you how to read the data visualizations we will show you.
-                During this training, you will have to answer two attention tests. If you fail both tests, the experiment will end.
+                Then you can proceed to the study and follow a training session that will teach you how to read the data visualizations we will show you.
+                <strong> During this training, you will have to answer one comprehension check. You will get two chances. If you fail on the second attempt, you will be immediately
+                    redirected to Prolific with a CODE indicating CC_failed and we will ask that you return your submission. </strong>
             </p>
 
             <p><strong>Benefits</strong><br />This research will contribute to research in visualization-aided decision-making process.</p>
@@ -72,7 +75,7 @@
 
             <h5><strong>Voluntary participation in the project</strong></h5>
 
-            <p style="color: darkred">Once you have read and understood the information contained in the "Project Presentation" section,
+            <p style="color: rgb(0,0,0)">Once you have read and understood the information contained in the "Project Presentation" section,
                 your signature on this form indicates that you agree to participate in the project, and this without any restrictions or external pressure.<br />
                 If you don't have the information that you need to make a decision, you should not hesitate to ask for more information from the contact persons (see below).</p>
 
@@ -105,7 +108,7 @@
 
             <p>Inria is very attentive and vigilant regarding personal data protection (DCP) issues. It has also appointed a Data Protection Officer (DPO) for ensuring that Inria complies with the European General Data Protection Regulation (GDPR).</p>
 
-            <p style="color: darkred">These data are as follows: Gender, Age, Work Role, Employment Role and prolific ID.</p>
+            <p style="color: #000000">These data are as follows: Gender, Age, Work Role, Employment Role and prolific ID.</p>
 
             <p><strong>These data will be processed in the following manner:</strong>
                 The study data will be logged in real time and will be stored on an encrypted server. Every day, the log files will be downloaded onto our Inria — thus, encrypted — computers.

@@ -2,7 +2,7 @@
     <h1>Training part 3 (final).</h1>
     <p>We will now add two additional features to support your decision-making. These features will help you to explore
         the impact of the decisions you make.
-        <br> Click on the button to add the gender pay gap adjusted according to the grade group and performance.
+        <br> Click on the button to add the adjusted gender pay gap (adjusted according to the grade group and performance).
     </p>
 
     <!--<br> <button id="addAllocation" hidden="true"> Add the next piece of information : the distribution of the allocations </button>
@@ -184,7 +184,7 @@
                               </span>
                                 <aside class="hover-popup">
                                     <!--                                  <h3>Gender Pay Gap — Explanation</h3>-->
-                                    <p>TThe percentages shown represent the salary increase (in %) over their initial salary that each employee in the three groups receives as a result of your decision.</p>
+                                    <p>The percentages shown represent the salary increase (in %) over their initial salary that each employee in the three groups receives as a result of your decision.</p>
                                 </aside>
                             </div>
                             <br>

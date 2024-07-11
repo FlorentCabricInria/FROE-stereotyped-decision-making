@@ -2,7 +2,7 @@
 var bowser = bowser.getParser(window.navigator.userAgent);
 
 // Testing browser compatibility
-var supportedBrowsers = ['Chrome', 'Firefox', 'Safari', 'Opera'];
+var supportedBrowsers = ['Chrome', 'Firefox', 'Safari', 'Opera', 'Microsoft Edge'];
 var isSupportedBrowser = false;
 for (var i = 0; i < supportedBrowsers.length; i++) {
   if (bowser.getBrowserName() === supportedBrowsers[i]) {
@@ -20,13 +20,14 @@ var isSupportedVersion =
   bowser.getBrowserName() === 'Chrome' && parseInt(bowser.getBrowserVersion()) >= MIN_CHROME ||
   bowser.getBrowserName() === 'Firefox' && parseInt(bowser.getBrowserVersion()) >= MIN_FIREFOX ||
   bowser.getBrowserName() === 'Safari' && parseInt(bowser.getBrowserVersion()) >= MIN_SAFARI ||
-  bowser.getBrowserName() === 'Opera' && parseInt(bowser.getBrowserVersion()) >= MIN_OPERA;
+  bowser.getBrowserName() === 'Opera' && parseInt(bowser.getBrowserVersion()) >= MIN_OPERA ||
+  bowser.getBrowserName() === 'Microsoft Edge' && parseInt(bowser.getBrowserVersion().split('.')[0]) >= MIN_EDGE;
 
 var warningMessage = '';
 if (!isSupportedBrowser) {
   warningMessage = 'You seem to be using ' + bowser.getBrowserName() + ' on ' + bowser.getOSName() + ', which is not compatible with this study. Please, use another browser.<br>We recommend the latest stable version of Chrome or Firefox.';
 } else if (!isSupportedVersion) {
-  warningMessage = 'You seem to be using an old version of ' + bowser.getBrowserName() + ' on ' + bowser.getOSName() + ', which is not compatible with this study.<br>Please, update your browser before continuing this study.<br>We recommend the latest stable version of Chrome or Firefox.<br>Click <a href="https://www.computerhope.com/issues/ch001388.htm" target="_blank">here</a> if you do not know how to update your browser.';
+  warningMessage = 'You seem to be using an old version of ' + bowser.getBrowserName() + ' on ' + bowser.getOSName() + ' (version ' + bowser.getBrowserVersion() + ') ,  which is not compatible with this study.<br>Please, update your browser before continuing this study.<br>We recommend the latest stable version of Chrome or Firefox.<br>Click <a href="https://www.computerhope.com/issues/ch001388.htm" target="_blank">here</a> if you do not know how to update your browser.';
 }
 
 $('#browser-warning-message').html(warningMessage);

@@ -6,3 +6,4 @@ const MIN_CHROME = 69;
 const MIN_FIREFOX = 60;
 const MIN_SAFARI = 11;
 const MIN_OPERA = 56;
+const MIN_EDGE = 124;

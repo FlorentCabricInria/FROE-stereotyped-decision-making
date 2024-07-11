@@ -136,7 +136,7 @@ function createSteoreotypedVisualizationWomenLower(){
             //
             // }
             // return PosXTraining[parseInt(d.key)-1]
-            return x(d.grade_group) + (random2.double()*100) -50
+            return  (PosXTraining[parseInt(d.key)-1])
           })
           .attr('cy', (d, i) => {
             return yGenderTestB(parseFloat(d.total_comp));
