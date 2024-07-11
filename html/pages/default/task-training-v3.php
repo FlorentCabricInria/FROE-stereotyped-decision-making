@@ -45,7 +45,7 @@
       ?>
     <br>
 
-    <div style=" display: inline-grid; border-radius: 9px; background-color: #f9f9f9; padding: 1rem" ">
+    <div style="border: 2px solid #5e5e5e; display: inline-grid; border-radius: 9px; background-color: #f9f9f9; padding: 1rem">
 
         <div style="display: inline-block">
 
@@ -118,11 +118,11 @@
             <!--            <button id="NotEquityTraining3MinusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 8px;padding-right: 8px;padding-bottom: 0px;padding-top: 0px;">-</button>    &nbsp;-->
             <!--            <button id="NotEquityTraining3PlusBtn" style="float : inherit;width : fit-content; height:fit-content;padding-left: 4px;padding-right: 4px;padding-bottom: 0px;padding-top: 0px;">+</button>    &nbsp;-->
         </div>
-        <div style="display: inline-block">
+        <div style="display: inline-block; ">
             <div class="containerForSlider">
                 <div class="boxForSlider">
                     <div id="divfordata"
-                         style="display: inline-block;background: #ffffff;border-radius: 9px;padding: 1rem;">
+                         style="display: inline-block;background: #f9f9f9;border-radius: 9px;padding-top: 1rem; ">
                         <button id="addCurrentGenderPayGap"> Add the equal gender pay gap</button>
                       <div>
                         <span id="LineGenderPG" hidden="true">The current gender pay gap is: <br> <b><span
@@ -145,10 +145,11 @@
                               <aside class="hover-popup">
 <!--                                  <h3>Gender Pay Gap — Explanation</h3>-->
                                   <p>The percentage of the gender pay gap reflects the difference between one gender category and the other after accounting for factors that determine pay. In other words, after taking into account
-                                      the differences implied by other factors (in our case, grade group and performance), what is the gap that is due the gender factor alone?</p>
+                                      the differences implied by other factors (in our case, grade group and performance), this percentage represents the pay gap that is solely due to the gender of the employees.</p>
                               </aside>
                           </div>
-                          <span id="smallTextPayGap" style="color: darkred"> <br> Move the first slider and see what's happening! This value is updated in real time!</span>
+                          <span id="smallTextPayGap" style="color: darkred" hidden> <br> Move the first slider and see what's happening! This value is updated in real time!</span>
+
                       </div>
 
                         <hr id="lineTo" hidden="true">

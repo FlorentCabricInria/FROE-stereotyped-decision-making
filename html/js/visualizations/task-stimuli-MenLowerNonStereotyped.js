@@ -5,13 +5,13 @@ let coefLow;
 let coefMid;
 let coefHigh;
 let y2 = d3.scaleLinear()
-  .domain([32000 , 15000])
+  .domain([21000 , 13000])
   .range([0 + marginBottom, height - marginTop]);
 let btnFinal =  document.getElementById('btn_test-decision-making-study_8')
 const dfPeopleTask = [];
+let valuemax = 10000;
 
-
-d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
+d3.csv('./html/js/visualizations/c.csv').then((data) => {
   const storedData = structuredClone(data);
 
   let random2 = new Math.seedrandom(seed);
@@ -46,11 +46,13 @@ d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
     }
   });
 
-  let posX = [568.6810569737894 , 268.1109477126755 , 391.6875405775466 , 288.61496459196434 , 460.812279705711 , 373.6216488795456 ,
-    451.58312561597336 , 610.1726486750082 , 203.85129796596527 , 550 , 236.98794871169048 , 261.7787621363155 , 547.516544665867 ,
-    574.9064553446289 , 600.267494978694 , 630.4580511400769 , 420 , 388.92436705065137 , 220 , 633.938791430464 , 622.6702740421755 ,
-    283.3699571533981 , 260.58899871113363 , 430.3455797341415 , 371.5902249580465 , 424.35747435630356 , 270.12082595392803 , 273.7790428043915 ,
-    570.5714540014341 , 538.7865735722019]
+  // let posX = [203.851298 , 220 , 236.9879487 , 260.5889987 , 261.7787621 , 268.1109477 , 270.120826 , 273.7790428 , 283.3699572 , 288.6149646 ,
+  //   371.590225 , 373.6216489 , 388.9243671 , 391.6875406 , 420 , 424.3574744 , 430.3455797 , 440 , 460.8122797 , 538.7865736 ,
+  //   547.5165447, 550 , 568.681057 , 570.571454 , 574.9064553 , 600.267495 , 610.1726487 , 622.670274 , 630.4580511 , 633.9387914 ]
+
+  let posX = [203.851298 , 220 , 236.9879487 , 210 , 261.7787621 , 255 , 290 , 200 , 230 , 288.6149646 ,
+    390 , 373.6216489 , 388.9243671 , 460 , 420 , 424.3574744 , 440 , 440 , 460.8122797 , 538.7865736 ,
+    640 , 550 , 568.681057 , 627 , 590 , 600.267495 , 610.1726487 , 575 , 630.4580511 , 633.9387914]
   // Create the container SVG.
   const svg = d3.select('#task-stimuli-men-lower-nonstereotyped')
     .attr('width', width)
@@ -62,7 +64,7 @@ d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
   //  var a = d3.group(data, d => d.gender)
   svg.append('g')
     .attr('transform', `translate(${marginLeft},0)`)
-    .call(d3.axisLeft(y2).tickArguments([15]).tickFormat((x) => { return x/1000 + "k";
+    .call(d3.axisLeft(y2).tickArguments([9]).tickFormat((x) => { return x/1000 + "k";
     }));
 
   svg.append('g')
@@ -87,7 +89,7 @@ d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
   svg.append('circle').attr('cx', width - 100).attr('cy', 130).attr('r', 6)
     .style('fill', '#00AA5A');
   svg.append('circle').attr('cx', width - 100).attr('cy', 160).attr('r', 6)
-    .style('fill', '#ffd800');
+    .style('fill', '#AA9000');
   svg.append('text').attr('x', width - 80).attr('y', 135).text('Men')
     .style('font-size', '1em')
     .attr('alignment-baseline', 'middle');
@@ -168,7 +170,7 @@ d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
         .attr('cy', (d, i) => {
           let valuePEtask = parseInt(d3.select('#taskPayEquity').node().value);
           let valueNEtask = parseInt(d3.select('#taskNotEquity ').node().value);
-          const new_salary = (((valuePEtask / 15000) * d.sugg_raise) + ((valueNEtask / 15000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
+          const new_salary = (((valuePEtask / valuemax) * d.sugg_raise) + ((valueNEtask / valuemax) * d.sugg_raise_perf) + parseFloat(d.total_comp));
           dfPeopleTask[parseInt(d.key) - 1].total_comp = new_salary;
           const ys = y2(new_salary);
           return y2(new_salary);
@@ -220,7 +222,7 @@ d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
   let minusBtnEquityTask= document.getElementById('PayEquityMinusBtn');
   let plusBtnNotEquityTask= document.getElementById('NotEquityPlusBtn');
   let minusBtnNotEquityTask= document.getElementById('NotEquityMinusBtn');
- 
+
   plusBtnEquityTask.addEventListener('mouseover', () => {
     d3.selectAll('.ghost ').attr("hidden", null)
   });
@@ -261,7 +263,7 @@ function maxReachedTask(e) {
   const sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let
     target;
   // console.log(sum)
-  const max = 15000;
+  const max = valuemax;
   //e.currentTarget.innerHTML = e.currentTarget.value;
   if(sum>max && (e.currentTarget.id == "PayEquityPlusBtn" || e.currentTarget.id == "NotEquityPlusBtn")) {
     if(e.currentTarget.id == "PayEquityPlusBtn") {document.getElementById("taskPayEquity").value = parseInt(document.getElementById("taskPayEquity").value) - 100}
@@ -291,9 +293,9 @@ function maxReachedTask(e) {
 
     }
 
-    document.getElementById('taskLowPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefLow).toFixed(2);
-    document.getElementById('taskMidPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefMid).toFixed(2);
-    document.getElementById('taskHighPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefHigh).toFixed(2);
+    document.getElementById('taskLowPerf').innerHTML = ((parseInt(ALTslider.value)/valuemax) * coefLow).toFixed(2);
+    document.getElementById('taskMidPerf').innerHTML = ((parseInt(ALTslider.value)/valuemax) * coefMid).toFixed(2);
+    document.getElementById('taskHighPerf').innerHTML = ((parseInt(ALTslider.value)/valuemax) * coefHigh).toFixed(2);
 
     e.preventDefault();
     return false;
@@ -309,9 +311,9 @@ function maxReachedTask(e) {
   // document.getElementById('total').innerHTML = parseInt(PEslider.value) + parseInt(ALTslider.value);
   document.getElementById('taskPEoutput').innerHTML = parseInt(PEslider.value);
   document.getElementById('taskALToutput').innerHTML = parseInt(ALTslider.value);
-  document.getElementById('taskLowPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefLow).toFixed(2);
-  document.getElementById('taskMidPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefMid).toFixed(2);
-  document.getElementById('taskHighPerf').innerHTML = ((parseInt(ALTslider.value)/15000) * coefHigh).toFixed(2);
+  document.getElementById('taskLowPerf').innerHTML = ((parseInt(ALTslider.value)/valuemax) * coefLow).toFixed(2);
+  document.getElementById('taskMidPerf').innerHTML = ((parseInt(ALTslider.value)/valuemax) * coefMid).toFixed(2);
+  document.getElementById('taskHighPerf').innerHTML = ((parseInt(ALTslider.value)/valuemax) * coefHigh).toFixed(2);
   //document.getElementById('taskTextEquity').innerHTML = parseInt(PEslider.value);
  // document.getElementById('taskTextAlternative').innerHTML = parseInt(ALTslider.value);
   //document.getElementById('taskTextRemaining').innerHTML = (max) - (parseInt(PEslider.value) + parseInt(ALTslider.value));
@@ -331,7 +333,7 @@ function changeSalaryTask() {
       //  console.log(taskNotEquityslider)
       const valuePE = parseInt(d3.select('#taskPayEquity').node().value);
       const valueNE = parseInt(d3.select('#taskNotEquity ').node().value);
-      const new_salary = (((valuePE / 15000) * d.sugg_raise) + ((valueNE / 15000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
+      const new_salary = (((valuePE / valuemax) * d.sugg_raise) + ((valueNE / valuemax) * d.sugg_raise_perf) + parseFloat(d.total_comp));
       dfPeopleTask[parseInt(d.key) - 1].total_comp = new_salary;
       //  totalGenderPayGap += (-1) * (parseFloat(d.raise_on_pay_gap_gender) * ((50000 - valuePE) / 50000))
       return y2(new_salary);

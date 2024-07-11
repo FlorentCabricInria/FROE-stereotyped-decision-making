@@ -43,7 +43,7 @@
 
             <p><strong>Project manager(s):</strong> <a href="http://petra.isenberg.cc/wiki/pmwiki.php" target="_blank">Dr. Petra Isenberg</a> (Senior Research Scientist, Aviz Team, Inria Saclay)<br />
                 <strong>Other scientists involved: </strong>
-<a href="https://florentcabric.com/" target="_blank">Florent Cabric</a> (Postdoctoral researcher, Aviz Team, Inria Saclay, Université Paris-Saclay)<br />
+<a href="https://florentcabric.com/" target="_blank">Dr. Florent Cabric</a> (Postdoctoral researcher, Aviz Team, Inria Saclay, Université Paris-Saclay)<br />
 
            <strong>Project team and Inria Research Centre:</strong> Aviz Team - Inria Saclay<br /><strong>Project name:</strong> Comparison of visualization-aided decision-making processes</p>
 
@@ -105,7 +105,7 @@
 
             <p>Inria is very attentive and vigilant regarding personal data protection (DCP) issues. It has also appointed a Data Protection Officer (DPO) for ensuring that Inria complies with the European General Data Protection Regulation (GDPR).</p>
 
-            <p style="color: darkred">These data are as follows: gender, age, education level, color vision deficiency, English fluency and prolific ID.</p>
+            <p style="color: darkred">These data are as follows: Gender, Age, Work Role, Employment Role and prolific ID.</p>
 
             <p><strong>These data will be processed in the following manner:</strong>
                 The study data will be logged in real time and will be stored on an encrypted server. Every day, the log files will be downloaded onto our Inria — thus, encrypted — computers.

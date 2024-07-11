@@ -1,9 +1,7 @@
-/* eslint-disable */let posX = [568.6810569737894 , 268.1109477126755 , 391.6875405775466 , 288.61496459196434 , 460.812279705711 , 373.6216488795456 ,
-  451.58312561597336 , 610.1726486750082 , 203.85129796596527 , 550 , 236.98794871169048 , 261.7787621363155 , 547.516544665867 ,
-  574.9064553446289 , 600.267494978694 , 630.4580511400769 , 420 , 388.92436705065137 , 220 , 633.938791430464 , 622.6702740421755 ,
-  283.3699571533981 , 260.58899871113363 , 430.3455797341415 , 371.5902249580465 , 424.35747435630356 , 270.12082595392803 , 273.7790428043915 ,
-  570.5714540014341 , 538.7865735722019]
-d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
+/* eslint-disable */  let posX = [203.851298 , 220 , 236.9879487 , 210 , 261.7787621 , 255 , 290 , 200 , 230 , 288.6149646 ,
+  390 , 373.6216489 , 388.9243671 , 460 , 420 , 424.3574744 , 440 , 440 , 460.8122797 , 538.7865736 ,
+  640 , 550 , 568.681057 , 627 , 590 , 600.267495 , 610.1726487 , 575 , 630.4580511 , 633.9387914]
+d3.csv('./html/js/visualizations/b.csv').then((data) => {
   const storedData = structuredClone(data);
 
   let random2 = new Math.seedrandom(seed);
@@ -48,7 +46,7 @@ d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
   //  var a = d3.group(data, d => d.gender)
   svg.append('g')
     .attr('transform', `translate(${marginLeft},0)`)
-    .call(d3.axisLeft(y2).tickArguments([15]).tickFormat((x) => { return x/1000 + "k";
+    .call(d3.axisLeft(y2).tickArguments([11]).tickFormat((x) => { return x/1000 + "k";
     }));
 
   svg.append('g')
@@ -103,7 +101,7 @@ d3.csv('./html/js/visualizations/women-lower-v4.csv').then((data) => {
         .attr('id', (d) => d.key)
         .attr('cx', (d) => (posX[parseInt(d.key)-1]))
         .attr('cy', (d, i) => {
-         const new_salary = (((parseInt( measurements['valueEquity']) / 15000) * d.sugg_raise) + ((measurements['valueNotEquity'] / 15000) * d.sugg_raise_perf) + parseFloat(d.total_comp));
+         const new_salary = (((parseInt( measurements['valueEquity']) / valuemax) * d.sugg_raise) + ((measurements['valueNotEquity'] / valuemax) * d.sugg_raise_perf) + parseFloat(d.total_comp));
           dfPeopleTask[parseInt(d.key) - 1].total_comp = new_salary;
           const ys = y2(new_salary);
           return y2(new_salary);

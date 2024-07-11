@@ -34,9 +34,9 @@
     "flu" : "People getting exposed to flu viruses"
   },
   "Prolific" : {
-    "prolific_completion_url" : "https://app.prolific.co/submissions/complete?cc=TOCHANGEFORTHEFINAL",
-    "experiment_duration" : 3,
-    "payment" : 0.45
+    "prolific_completion_url" : "https://app.prolific.com/submissions/complete?cc=CP1KE3KS",
+    "experiment_duration" : 0.21,
+    "payment" : 3.46
   },
   "attention_question_correct_answer" : {
     "key" : "cold",

@@ -70,7 +70,7 @@ export function checkWindowDimension() {
   $('#zoomValue').html(Math.trunc(zoom*100));
 
   $('#content').show();
-
+  console.log($(window).width())
   if ($(window).width() < MIN_WINDOW_WIDTH || $(window).height() < MIN_WINDOW_HEIGHT) {
     drawDimensionChart();
     $('#content').hide();

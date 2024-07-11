@@ -5,7 +5,8 @@
       class="btn btn-wider <?php echo $style;?>"
       id = "btn_<?php echo $id;?>"
 
-      onclick="
+    <?php if ($id != 'test-decision-making-study_8') {?>
+    onclick="
         $('body').trigger('next', ['<?php echo $id;?>']); 
         $('body').trigger('show', ['<?php echo $next;?>']); 
         <?php if ($save_page) {?>
@@ -13,6 +14,7 @@
         <?php
       }?>
         $('#<?php echo $hide ?>').hide().promise().done(() => {if (!excluded) $('#<?php echo $show ?>').show()});"
+    <?php } ?>
 
       <?php if ($id =='introduction_3' || $id =='task-training-v2_6' || $id =='task-training_5' || $id =='task-training-v3_7' || $id == 'feedback-about-decision_9' || $id == 'ambivalent-sexism-theory_10' || $id == 'endDisagreement_12' || $id == 'test-decision-making-study_8') {?>
         hidden

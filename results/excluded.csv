@@ -2,3 +2,7 @@ participant_id,condition,condition-for-this-participant,timestamp_0
 DEBUG,DEBUG,0,143.csv,true,1,WomenLower-NonStereotyped,0,1719567295747,Firefox,127.0,Windows,1719567297131,1719567299550
 DEBUG,DEBUG,0,228.csv,true,1,MenLower-Stereotyped,0,1720097805339,Firefox,127.0,Windows
 DEBUG,DEBUG,0,223.csv,true,1,WomenLower-NonStereotyped,0,1720171009844,Firefox,127.0,Windows
+DEBUG,DEBUG,0,2.csv,true,1,MenLower-NonStereotyped,0,1720613581098,Firefox,128.0,Windows
+DEBUG,DEBUG,0,2.csv,true,1,MenLower-NonStereotyped,0,1720614459750,Firefox,128.0,Windows
+DEBUG,DEBUG,0,2.csv,true,1,MenLower-NonStereotyped,0,1720614561418,Firefox,128.0,Windows
+DEBUG,DEBUG,0,2.csv,true,1,MenLower-NonStereotyped,0,1720614649504,Firefox,128.0,Windows

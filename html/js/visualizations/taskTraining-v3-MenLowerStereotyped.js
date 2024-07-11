@@ -319,6 +319,7 @@ function displayCurrentGenderPayGap () {
   document.getElementById("addCurrentGenderPayGap").hidden = true;
   document.getElementById("LineGenderPG").hidden = false;
   document.getElementById("infoBtnGender").hidden = false;
+  document.getElementById("smallTextPayGap").hidden = false;
 
 //  document.getElementById("btn_task-training-v3_7").hidden = false;
   document.getElementById("addPerformance").hidden = false;

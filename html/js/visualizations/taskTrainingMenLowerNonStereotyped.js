@@ -5,7 +5,7 @@ let state = "first";
 var random = new Math.seedrandom(seed);
 const yTraining = d3.scaleLinear()
   // .domain(d3.extent(genderData, d => d.salary)).nice()
-  .domain([30000, 16000])
+  .domain([21000, 13000])
   .range([0 + marginBottom, height - marginTop]);
 
 createSteoreotypedVisualization()
@@ -42,7 +42,7 @@ function onMinusNotEquity(e){
 }
 function createSteoreotypedVisualization(){
 
-  d3.csv('./html/js/visualizations/men-lower-v2.csv').then((data) => {
+  d3.csv('./html/js/visualizations/b.csv').then((data) => {
     let storedData = structuredClone(data);
 
     let random2 = new Math.seedrandom(seed);
@@ -132,8 +132,12 @@ function createSteoreotypedVisualization(){
       .join(
         (enter) => enter
           .append('circle')
-          .attr('id', (d) => d.key)
-          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
+          .attr('id', (d) => (d.key + d.grade_group))
+          .attr('cx', (d) => {
+            return x(d.grade_group) + (random2.double()*100) -400
+
+            //(PosXTraining[parseInt(d.key)-1])
+          })
           .attr('cy', (d, i) => {
             return yTraining(parseFloat(d.total_comp));
           })

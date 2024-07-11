@@ -1,19 +1,17 @@
 
 var random = Math.seedrandom('0.45454');
-// var random = seedrandom("0.45454");
-var random = new Math.seedrandom('0.45454');
 console.log('Hey I am here');
 let state = "first";
-
 var random = new Math.seedrandom(seed);
 const yTraining = d3.scaleLinear()
   // .domain(d3.extent(genderData, d => d.salary)).nice()
-  .domain([30000, 16000])
+  .domain([21000, 13000])
   .range([0 + marginBottom, height - marginTop]);
+
 createSteoreotypedVisualization()
+
+
 ticks = d3.selectAll('.tick').style("font-size","1.5em");
-
-
 let plusBtnEquity = document.getElementById("PayEquityTrainingPlusBtn")
 let minusBtnEquity = document.getElementById("PayEquityTrainingMinusBtn")
 plusBtnEquity.addEventListener('click', onPlusEquity);
@@ -27,6 +25,8 @@ function onMinusEquity(e){
   document.getElementById("PayEquityTraining").value = parseInt(document.getElementById("PayEquityTraining").value) -100
   maxReached2(e)
 }
+
+
 let plusBtnNotEquity = document.getElementById("NotEquityTrainingPlusBtn")
 let minusBtnNotEquity = document.getElementById("NotEquityTrainingMinusBtn")
 plusBtnNotEquity.addEventListener('click', onPlusNotEquity);
@@ -42,7 +42,7 @@ function onMinusNotEquity(e){
 }
 function createSteoreotypedVisualization(){
 
-  d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
+  d3.csv('./html/js/visualizations/b.csv').then((data) => {
     let storedData = structuredClone(data);
 
     let random2 = new Math.seedrandom(seed);
@@ -68,7 +68,7 @@ function createSteoreotypedVisualization(){
     });
 
     // Create the container SVG.
-    const svg = d3.select('#TrainingTaskChartWomenLowerNonStereotypedTraining1')
+    const svg = d3.select('#TrainingTaskChartMenLowerNonStereotypedTraining1')
       .attr('width', width)
       .attr('height', height)
       .attr('viewBox', [0, 0, width, height])
@@ -87,14 +87,13 @@ function createSteoreotypedVisualization(){
         else if (x == 2)return "grade group  B";
         else if (x == 3)return "grade group  C ";
       }));
-
     //
 
     const color = d3.scaleOrdinal()
       .domain(['1', '2'])
       .range(['#00AA5A', '#AA9000']);
 
-    const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
+   // const shape = d3.scaleOrdinal(data.map((d) => d.species), d3.symbols.map((s) => d3.symbol().type(s)()));
     /**
      *          #########################################################
      *          ########### LEGEND
@@ -122,14 +121,11 @@ function createSteoreotypedVisualization(){
     svg.append('text').attr('x', width - 80).attr('y', 255).text('High')
       .style('font-size', '1em')
       .attr('alignment-baseline', 'middle');
-
-    /*   let PosXTraining = [
-            377.43105697378934 , 610.6109477126755 , 220.4375405775466 , 631.1149645919644 , 289.562279705711 , 202.3716488795456 , 4401597336 ,
-            438.9226486750082 , 255 , 242 , 408.2379487116905 , 261.7787621363155 , 376.26654466586695 , 574.9064553446289 , 460.017494978694 ,
-            459.2080511400769 , 225 , 388.92436705065137 , 285.40892014970495 , 633.938791430464 , 622.6702740421755 , 600 , 228.58899871113363 ,
-            375 , 200.34022495804655 , 424.35747435630356 , 238.12082595392803 , 400 , 594.5714540014341 , 367.53657357220186
-          ]*/
-    //    .attr('cx', (d) => PosXTraining[parseInt(d.key)-1])
+    /**
+     #########################################################
+     CREAT GHOST DOTS
+     #########################################################
+     * */
     /** CREATE SALARIES MARK * */
     const theCircles = svg.append('g').selectAll('circle')
       .data(data)
@@ -137,16 +133,17 @@ function createSteoreotypedVisualization(){
         (enter) => enter
           .append('circle')
           .attr('id', (d) => d.key)
-          .attr('cx', (d) => (PosXTraining[parseInt(d.key)-1]))
+          .attr('cx', (d) => {
+            return x(d.grade_group) + (random2.double()*100) -400
+
+            //(PosXTraining[parseInt(d.key)-1])
+          })
           .attr('cy', (d, i) => {
             return yTraining(parseFloat(d.total_comp));
           })
           .style('fill', (d) => color(d.gender))
 
           .attr('r', (d) =>
-              /* if (radios == "size") {
-                                      return (d.performance + 2) * coefSize;
-                                  } else { */
               (parseInt(d.performance) + 1.75) * coefSize,
             // }
           )
@@ -158,19 +155,19 @@ function createSteoreotypedVisualization(){
     sliderEquityTraining.addEventListener('input', maxReached2, false);
 
     sliderAltTraining.addEventListener('input', maxReached2, false);
-  });
+ });
 }
-  function maxReached2(e) {
+function maxReached2(e) {
   PEslider = document.getElementById('PayEquityTraining');
   ALTslider = document.getElementById('NotEquityTraining');
   let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
   // console.log(sum)
   let max = 25000;
-  //e.currentTarget.innerHTML = e.currentTarget.value;
-    if(sum>max && (e.currentTarget.id == "PayEquityTrainingPlusBtn" || e.currentTarget.id == "NotEquityTrainingPlusBtn")) {
-      if(e.currentTarget.id == "PayEquityTrainingPlusBtn") {document.getElementById("PayEquityTraining").value = parseInt(document.getElementById("PayEquityTraining").value) - 100}
-      else if (e.currentTarget.id =="NotEquityTrainingPlusBtn") {document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) -100 }
-    }
+ // e.currentTarget.innerHTML = e.currentTarget.value;
+  if(sum>max && (e.currentTarget.id == "PayEquityTrainingPlusBtn" || e.currentTarget.id == "NotEquityTrainingPlusBtn")) {
+    if(e.currentTarget.id == "PayEquityTrainingPlusBtn") {document.getElementById("PayEquityTraining").value = parseInt(document.getElementById("PayEquityTraining").value) - 100}
+    else if (e.currentTarget.id =="NotEquityTrainingPlusBtn") {document.getElementById("NotEquityTraining").value = parseInt(document.getElementById("NotEquityTraining").value) -100 }
+  }
   if (sum >= max) {
     target = e.target;
     target.value -= (sum - max);
@@ -184,7 +181,6 @@ function createSteoreotypedVisualization(){
       document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Please, allocate 25,000 for 'Reducing gender pay inequity' </s> <br> <b>Task 2: Allocate 25,000 for \"Performance-based\" </b>"
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, complete task number 2"
       document.getElementById("taskSlider1").style.display = "inline"
-
     }
     else if(state =="second" && parseInt(ALTslider.value) == 25000) {
       state = "third"
@@ -198,8 +194,8 @@ function createSteoreotypedVisualization(){
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations!! You can move on to the next part"
       document.getElementById("btn_task-training_5").hidden=false;
       document.getElementById("taskSlider3").style.display = "inline"
-      // let nextBtn = document.getElementById("btn_task-training_5");
-      // document.getElementById("sliderTrainingText").parentElement.parentElement.parentElement.append(nextBtn);
+      let nextBtn = document.getElementById("btn_task-training_5");
+      document.getElementById("sliderTrainingText").parentElement.parentElement.parentElement.append(nextBtn);
     }
     else {
       document.getElementById("sliderTrainingText").style.color = "#f80b0b";
@@ -210,20 +206,11 @@ function createSteoreotypedVisualization(){
     e.preventDefault();
     return false;
   }
-    document.getElementById("sliderTrainingText").style.color = "#049f02";
 
+  document.getElementById("sliderTrainingText").style.color = "#049f02";
+;
   document.getElementById("sliderTrainingText").innerHTML = ""
-  // next line is just for demonstrational purposes
-  // document.getElementById('total').innerHTML = parseInt(PEslider.value) + parseInt(ALTslider.value);
   document.getElementById('PEoutputtraining').innerHTML = parseInt(PEslider.value);
   document.getElementById('ALToutputtraining').innerHTML = parseInt(ALTslider.value);
-//  document.getElementById('textEquity').innerHTML = parseInt(PEslider.value);
- // document.getElementById('textAlternative').innerHTML = parseInt(ALTslider.value);
- // document.getElementById('textRemaining').innerHTML = (max) - (parseInt(PEslider.value) + parseInt(ALTslider.value));
-/*
-  changeSalary();
-  calculateNewPayGap();*/
-
-  /*    document.getElementById('total').innerHTML = parseInt(document.getElementById("PayEquity").value) + parseInt(document.getElementById("NotEquity").value); */
   return true;
 }

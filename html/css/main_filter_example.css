@@ -14,6 +14,104 @@
   margin: auto;
   margin-top: auto;
 }
+#taskList{
+    /* delete default counter */
+    list-style-type: none;
+    /* create custom counter and set it to 0 */
+    counter-reset: elementcounter;
+}
+
+#taskList>li:before {
+    /* print out "Element " followed by the current counter value */
+    content: "Task " counter(elementcounter) ": ";
+    /* increment counter */
+    counter-increment: elementcounter;
+}
+
+.infoText{
+    border-radius: 50%;
+    min-width: 2rem;
+    min-height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-container {
+    position: relative;
+}
+
+.hover-target {
+    position: relative;
+    font-size: inherit;
+}
+
+.hover-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 70%;
+    left: 5%;
+    width: 75ch;
+    margin: min(1rem, 20px);
+    font-size: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(115, 115, 115, 0.9);
+    padding: 1.5em;
+    z-index: 42;
+    transform: scale(0);
+    transition: transform 200ms ease;
+    transform-origin: 8% -10px;
+}
+
+.hover-target:hover + .hover-popup,
+.hover-target:focus + .hover-popup,
+.hover-popup:hover{
+    transform: scale(1);
+}
+
+.hover-popup :not(:first-child) {
+    margin-top: 1rem;
+}
+
+.hover-popup span {
+    color: rgb(200, 20, 0);
+    font-weight: 700;
+}
+
+.hover-popup::before {
+    /* This is the triangle/arrow */
+    content: '';
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    top: -10px;
+}
+
+.hover-popup::after {
+    /* This is merely here to expand the hoverable area, as a buffer between the "Hover me" text and the popup. */
+    content: '';
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.info:hover {
+    background-color: white;
+    padding: 0 0 0 5px;
+    width: 315px;
+    text-align: left !important;
+}
 
 .container {
     max-width: 90vw;
@@ -198,8 +296,8 @@ figure figcaption {
 #slidersLabelsTask{
     max-width: calc(60vw - 800px);
     display: inline-block;
-    width: 500px;
-    min-width:500px;
+    width: 15vw;
+    min-width:300px;
 }
 .breakForSlider{
     flex-basis: 100%;
