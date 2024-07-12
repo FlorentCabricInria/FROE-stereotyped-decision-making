@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <?php 
+  <?php
   require_once "html/setup/functions.php";
   global $config, $condition, $factor1, $cond_factors;
   loadConfig();
@@ -200,8 +200,10 @@ if ($is_debug  || $is_pilot){
   echo '<input type="hidden" id="exclude_reloaders" value="' . "" . $config["exclude_reloaders"] .  '"</input>';
   echo '<input type="hidden" id="condition-for-this-participant" value="' . "" . $cond_factors .  '"</input>';
   echo '<input type="hidden" id="attention-test-check" value="0"</input>';
+  echo '<input type="hidden" id="currentpage" value="1"</input>';
 
-?>
+
+  ?>
 </div>
 <script type="text/javascript">
     var config = <?php echo json_encode($config);?>;
@@ -268,11 +270,11 @@ if ($is_debug  || $is_pilot){
     }
 
     $('<?php echo implode(',' , $page_ids);?>').hide();
-      
+
     // if (isset($start_page)){
     $('<?php echo $page_ids[$start_page];?>').show();
 
-    
+
     $(document).ready(function(){
       $('body').trigger('show', ['<?php echo $page_ids[$start_page];?>']);
     });
@@ -290,10 +292,11 @@ if ($is_debug  || $is_pilot){
     }
     ?>
   </script>
-  
+
   <?php
   require "html/setup/load_js.php";
   ?>
-  
+
+  <div id="arrowBottom" class="down-arrow" hidden></div>
 </body>
 </html>

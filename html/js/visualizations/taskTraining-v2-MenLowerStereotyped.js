@@ -369,7 +369,7 @@ function addInteraction () {
   plusBtnEquity2.addEventListener('click', onPlusEquity2);
   minusBtnEquity2.addEventListener('click', onMinusEquity2);
   addTimerText();
-
+  verifySize();
 }
 function addTimerText(){
   let btntoValidate = document.getElementById("btn_task-training-v2_6")
@@ -414,4 +414,5 @@ function displayFeatures () {
   document.getElementById("interactionVisBtn").hidden = false;
   document.getElementById("point1").hidden = false;
   addForecast();
+  verifySize();
 }

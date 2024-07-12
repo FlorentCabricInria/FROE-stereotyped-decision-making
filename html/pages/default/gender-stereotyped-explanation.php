@@ -1,6 +1,12 @@
 <div class="row">
   <div class="col">
     <h2>Gender</h2>
+    <div id="scroll-warning_4" class="alert alert-warning alert-dismissible" hidden>
+      <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
+    </div>
+<!--    <div id="scroll-warning2" class="alert alert-warning alert-dismissible" hidden>-->
+<!--      <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>-->
+<!--    </div>-->
       The last piece of data that distinguishes employees in your company is their gender:
       <ul>
     <?php
@@ -50,6 +56,16 @@
   </div>
 
     <script type="text/javascript" src="./html/js/visualizations/visualizationGenderTest.js"></script>
+  <script type="text/javascript">
+    $('body').on('next', function (e, type) {
+// The if clause below ensures that this specific instance of a next button press is only triggered when the id of the element corresponds to the one being defined above.
+      if (type === '<?php echo $id;?>'){
+        document.getElementById("currentpage").value = parseInt(document.getElementById("currentpage").value) +1
+
+      }
+
+    })
+  </script>
 </div>
 
 

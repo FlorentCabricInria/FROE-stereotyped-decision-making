@@ -1,6 +1,9 @@
 <div class="row">
   <div class="col">
     <h2>A study on visual decision-making for salary adjustments in a company</h2>
+<!--    <div id="scroll-warning2" class="alert alert-warning alert-dismissible" hidden>-->
+<!--      <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>-->
+<!--    </div>-->
     <p>You are invited to participate in our study called "<strong>A study on visual decision-making for salary adjustments in a company.</strong>"<br>The study will take around 20 minutes.</p>
     <p>Our goal is to understand how the use of interactive data visualization can impact the decisions in a context of salary adjustments. The results from this experiment will help inform the design
       of visualizations that are better suited to help decision-makers. </p>
@@ -37,9 +40,11 @@
     console.log(x)
     if (confirmWelcome) {
       // btn_welcome_1
+      document.getElementById("currentpage").value = parseInt(document.getElementById("currentpage").value) +1
       $('body').trigger('next', ['welcome_1'])
       $('body').trigger('show', ['consent_2'])
       $('#welcome_1').hide().promise().done(() => {if (!excluded) $('#consent_2').show()})
+      verifySize();
     }
   }
 

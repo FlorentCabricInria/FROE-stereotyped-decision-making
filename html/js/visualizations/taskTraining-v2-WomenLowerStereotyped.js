@@ -370,7 +370,7 @@ function addInteraction () {
   plusBtnEquity2.addEventListener('click', onPlusEquity2);
   minusBtnEquity2.addEventListener('click', onMinusEquity2);
   addTimerText();
-
+  verifySize();
 }
 function addTimerText(){
   let btntoValidate = document.getElementById("btn_task-training-v2_6")
@@ -382,7 +382,7 @@ function addTimerText(){
 
   var textTimerCountdown = document.createElement("span");
   textTimerCountdown.id = "textTimerCountdown";
-  textTimerCountdown.innerHTML = "15"
+  textTimerCountdown.innerHTML = "20"
   var textTimer = document.createElement("span");
   textTimer.style.float = "right";
   var node1 = document.createTextNode("Wait ");
@@ -395,7 +395,7 @@ function addTimerText(){
   var start = Date.now();
   setInterval(function() {
     var delta = Date.now() - start; // milliseconds elapsed since start
-    if (Math.floor(delta / 1000) > 15) {
+    if (Math.floor(delta / 1000) > 20) {
       textTimerCountdown.innerHTML = ""
       textTimer.innerHTML = ""
       btntoValidate.disabled = false
@@ -404,7 +404,7 @@ function addTimerText(){
       btntoValidate.style.color = "#000000"
     }
     else {
-      textTimerCountdown.innerHTML = (15- Math.floor(delta / 1000)) + ""
+      textTimerCountdown.innerHTML = (20- Math.floor(delta / 1000)) + ""
       console.log((15- Math.floor(delta / 1000)))
     }
   }, 1000)
@@ -414,4 +414,5 @@ function displayFeatures () {
   document.getElementById("interactionVisBtn").hidden = false;
   document.getElementById("point1").hidden = false;
   addForecast();
+  verifySize();
 }

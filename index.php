@@ -16,6 +16,7 @@
   <script src="html/js/lib/bowser-2.4.0-es5.js"></script>
   <script type="module" src="html/js/lib/zoom.js"></script>
   <script type="module" src="html/js/tools/sizecheck.js"></script>
+  <script type="text/javascript" src="html/js/tools/verifysize.js"></script>
   <script type="module" src="html/js/init-index.js"></script>
 </head>
 <body class="background">

@@ -1,5 +1,8 @@
 <div id="row">
     <h1>Training part 3 (final).</h1>
+    <div id="scroll-warning_7" class="alert alert-warning alert-dismissible" hidden>
+        <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
+    </div>
     <p>We will now add two additional features to support your decision-making. These features will help you to explore
         the impact of the decisions you make.
         <br> Click on the button to add the adjusted gender pay gap (adjusted according to the grade group and performance).
@@ -144,8 +147,9 @@
                               </span>
                               <aside class="hover-popup">
 <!--                                  <h3>Gender Pay Gap — Explanation</h3>-->
-                                  <p>The percentage of the gender pay gap reflects the difference between one gender category and the other after accounting for factors that determine pay. In other words, after taking into account
-                                      the differences implied by other factors (in our case, grade group and performance), this percentage represents the pay gap that is solely due to the gender of the employees.</p>
+                                  <p>
+                                      The gender pay gap reflects the percent difference in pay, after accounting for Grade Group and Performance.
+                                  </p>
                               </aside>
                           </div>
                           <span id="smallTextPayGap" style="color: darkred" hidden> <br> Move the first slider and see what's happening! This value is updated in real time!</span>
@@ -184,7 +188,7 @@
                               </span>
                                 <aside class="hover-popup">
                                     <!--                                  <h3>Gender Pay Gap — Explanation</h3>-->
-                                    <p>The percentages shown represent the salary increase (in %) over their initial salary that each employee in the three groups receives as a result of your decision.</p>
+                                    <p>The percentages reflect the merit increase (in %) that each employee receives as a result of the allocation of the budget.</p>
                                 </aside>
                             </div>
                             <br>
@@ -238,6 +242,7 @@
         if (type === 'task-training-v3_7') {
 // The if clause below ensures that this specific instance of a next button press is only triggered when the id of the element corresponds to the one being defined above.
           changeSalaryTask()
+          document.getElementById("currentpage").value = parseInt(document.getElementById("currentpage").value) +1
 
         }
       })

@@ -44,7 +44,7 @@
       ?>
         <div>
             <div>
-                <label> <h5> Please explain the criteria you used to decide on how to allocate the money. (requires, 100 characters minimum) </h5>
+                <label> <h5> Please explain the criteria you used to decide on how to allocate the money. (requires, 100 characters required) </h5>
                 </label>
                 <textarea onkeyup="countChar(this)" class="form-control" minlength="50" id="criteria" rows="2"
                           cols="80" placeholder="Please explain the criteria you used to decide on how to allocate the money."></textarea>

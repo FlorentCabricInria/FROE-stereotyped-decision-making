@@ -3,7 +3,10 @@
 
 <div id="row">
     <h1>Questionnaire</h1>
-    <p> To end this study, we will ask you to answer 12 questions. These 12 questions have been introduced by social psychologists and has been widely used by social psychologists since then. </p>
+    <div id="scroll-warning_9" class="alert alert-warning alert-dismissible" hidden>
+        <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
+    </div>
+    <p> To end this study, we will ask you to answer 12 questions. These 12 questions have been introduced by social psychologists and has been widely used by scientists. </p>
     <p style="font-size: 1em"><strong>Instructions:</strong>  To end this study, we will ask you to answer 12 questions. For each statement, indicate whether you "Strongly Disagree", "Somewhat Disagree", Slightly Disagree",
         "Slightly Agree", "Somewhat Agree", "Strongly Agree" </p>
     <hr style="height: 0.5em; background-color: lightgrey"/>

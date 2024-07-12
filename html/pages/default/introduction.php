@@ -11,7 +11,9 @@
 
 </head>
 <body>
+
 <script type="text/javascript">
+
 
   var parent = document.getElementById('btn_consent_2').parentElement
   var child = document.createElement('button')
@@ -23,11 +25,17 @@
   }
   parent.append(child)
 
+
+  verifySize()
   //child.innerHTML("BONJOURURURUR");
 </script>
+<h1 id="titleExplanation"> Background Explanation</h1>
+<div id="scroll-warning_3" class="alert alert-warning alert-dismissible" hidden>
+    <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
+</div>
 <div id="firstStage" style="text-align: left">
 
-    <h1> Background Explanation</h1>
+
     <p><b>Imagine the following scenario</b></p>
     You are the person in charge of your company's annual salary review. The CEO has allocated 25,000 StudyCoin (a
     fictitious currency) to increase the employees salaries — your colleagues.
@@ -53,7 +61,7 @@
     <button id="firstStageButton">Proceed if you have a clear understanding of the scenario.</button>
 </div>
 <div id="secondStage" style="text-align: left" hidden="true">
-    <h1> Background Explanation</h1>
+    <!--    <h1> Background Explanation</h1>-->
     To aid in your decisions you will see a visualization of your colleagues and their salaries.
     In the chart below, each circle represents a colleague. The y-axis represents their salaries.
     The higher a circle is in the visualization, the more the colleague is paid.
@@ -63,7 +71,7 @@
     <button id="secondStageButton"> Next</button>
 </div>
 <div id="thirdStage" style="text-align: left" hidden="true">
-    <h1> Background Explanation</h1>
+    <!--    <h1> Background Explanation</h1>-->
     <p>
         In the visualization below, we now highlighted <span style="font-weight: bold; color: #0096c9;">Charlie</span>
         in <span style="font-weight: bold; color: #0096c9;"> blue </span>
@@ -89,7 +97,7 @@
     <span id="checkingValue" style="font-weight: bold; color: #f80b0b;"></span>
 </div>
 <div id="fifthStage" style="text-align: left" hidden="true">
-    <h1> Excellent!</h1>
+    <!--    <h1> Excellent!</h1>-->
     <!--<p>To make good salary decisions you need more information. <br> -->
     In your company, the following information is available:
 
@@ -111,7 +119,7 @@
     <button id="fifthStageButton"> Next</button>
 </div>
 <div id="sixthStage" style="text-align: left" hidden="true">
-    <h1> Grade groups:</h1>
+    <!--    <h1> Grade groups:</h1>-->
     <p>
         Recall the chart below and your colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span>
         and <span style="font-weight: bold; color: #F2B93F;"> Sam</span>. <br>
@@ -185,7 +193,7 @@
 
 </div>
 <div id="tenthStage" style="text-align: left" hidden="true">
-    <h1>Excellent! Now the <b>performance</b></h1>
+    <!--    <h1>Excellent! Now the <b>performance</b></h1>-->
     <p> The company evaluates performance using rigorous and trustworthy methods. Each employee can have one of three
         performance levels: low performance, medium performance, or high performance.<br>
         Recall this chart and your colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and
@@ -362,6 +370,8 @@
       createSteoreotypedVisualizationMenLower()
       createnonSteoreotypedVisualizationWomenLower()
       createnonSteoreotypedVisualizationMenLower()
+      document.getElementById("currentpage").value = parseInt(document.getElementById("currentpage").value) +1
+
     }
 
   })

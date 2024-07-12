@@ -28,7 +28,20 @@ buttonTenth.addEventListener('click', changeButton, false)
 buttonEleventh.addEventListener('click', changeButton, false)
 buttonTwelveth.addEventListener('click', changeButton, false)
 buttonThirteenth.addEventListener('click', changeButton, false)
-// buttonFourteenth.addEventListener('click', changeButton, false)
+buttonFirst.addEventListener('click', verifySize, false)
+buttonSecond.addEventListener('click', verifySize, false)
+buttonThird.addEventListener('click', verifySize, false)
+buttonFourth.addEventListener('click', verifySize, false)
+buttonFifth.addEventListener('click', verifySize, false)
+buttonSixth.addEventListener('click', verifySize, false)
+buttonSeventh.addEventListener('click', verifySize, false)
+buttonEighth.addEventListener('click', verifySize, false)
+buttonNineth.addEventListener('click', verifySize, false)
+buttonTenth.addEventListener('click', verifySize, false)
+buttonEleventh.addEventListener('click', verifySize, false)
+buttonTwelveth.addEventListener('click', verifySize, false)
+buttonThirteenth.addEventListener('click', verifySize, false)
+// buttonFourteenth.addEventListener('click', verifySize, false)
 // buttonFifteenth.addEventListener('click', changeButton, false)
 //buttonEighth.addEventListener('click', changeButton, false);
 
@@ -54,12 +67,14 @@ function changeButton (e) {
       firstChartDesign()
       e.target.parentElement.hidden = true
       document.getElementById('secondStage').hidden = false
+      verifySize()
       break
     case 'secondStageButton':
 
       secondChartDesign()
       e.target.parentElement.hidden = true
       document.getElementById('thirdStage').hidden = false
+      verifySize()
       break
     case 'thirdStageButton':
       //e.target.parentElement.hidden = true;
@@ -67,6 +82,7 @@ function changeButton (e) {
 
       document.getElementById('thirdStageButton').hidden = true
       document.getElementById('fourthStage').hidden = false
+      verifySize()
       break
     case 'fourthStageButton':
       var value = parseInt(document.getElementById('inputTestRobin').value.replaceAll('K', '').replaceAll('k', '').replaceAll(',', '').replaceAll(' ', ''))
@@ -81,27 +97,34 @@ function changeButton (e) {
           ' representing Robin, follow the green line until it crosses the y-axis (representing salary), and approximate the value of the intersection of the y-axis and the green line <br />' +
           ' (hint: look at the two values near the intersection of the green line and the y-axis).'
       }
+      document.getElementById('titleExplanation').innerHTML = 'Excellent!'
+      verifySize()
       break
     case 'fifthStageButton':
+      document.getElementById('titleExplanation').innerHTML = 'Grade groups:'
       e.target.parentElement.hidden = true
       gradegroupCharts()
       document.getElementById('sixthStage').hidden = false
+      verifySize()
       break
     case 'sixthStageButton':
       animateGradeGroups()
       buttonSixth.hidden = true
       document.getElementById('seventhStage').hidden = false
+      verifySize()
       break
     case 'seventhStageButton':
       //  e.target.hidden = true
       animateGradeGroupsJitter()
       buttonSeventh.hidden = true
       document.getElementById('eighthStage').hidden = false
+      verifySize()
       break
     case 'eighthStageButton':
       buttonEighth.hidden = true
       visualizeRobinGradeGroup()
       document.getElementById('ninethStage').hidden = false
+      verifySize()
       break
     case 'ninethStageButton':
       // e.target.hidden = true;
@@ -124,12 +147,15 @@ function changeButton (e) {
            document.getElementById('attention-test-check').value = '1'
          }*/
       }
+      document.getElementById('titleExplanation').innerHTML = 'Excellent! Now the performance:'
+      verifySize()
       break
     case 'tenthStageButton':
       // e.target.hidden = true;
       animatePerformance()
       document.getElementById('eleventhStage').hidden = false
       document.getElementById('tenthStageButton').hidden = true
+      verifySize()
       break
     case 'eleventhStageButton':
       // e.target.hidden = true;
@@ -137,6 +163,7 @@ function changeButton (e) {
       visualizeRobinPerformance()
       document.getElementById('twelvethStage').hidden = false
       buttonEleventh.hidden = true
+      verifySize()
       break
     case 'twelvethStageButton':
       var valueperf = document.querySelector('input[name="performance-test"]:checked').value
@@ -156,6 +183,8 @@ function changeButton (e) {
           'you have to find the green circle <br />' +
           'and compare the size of the green circle with the three circles presented in the description.'
       }
+      verifySize()
+      window.scrollTo(0, 0);
       break
     case 'thirteenthStageButton':
       var valueAttention = document.getElementById('attention-test-check').value
@@ -238,7 +267,7 @@ function changeButton (e) {
           document.getElementById('attention-test-check').value = '2'
           $('#endAttentionFailure_13').show()
           $('#introduction_3').hide()
-          displayTimerEnd();
+          displayTimerEnd()
           $.ajax({
             url: 'html/ajax/log_exclusion.php',
             type: 'POST',
@@ -253,11 +282,14 @@ function changeButton (e) {
         }
       }
       //      thirteenthStage
+      verifySize()
       break
     //
     // case 'fourteenthStageButton':
     //   break
   }
+  verifySize()
+
 }
 
 function firstChartDesign () {
@@ -318,6 +350,7 @@ function firstChartDesign () {
           .attr('cy', (d, i) => y(d.total_comp))
           .attr('r', (d) => parseInt(5))
       )
+    verifySize()
 
   })
 }
@@ -429,6 +462,8 @@ function secondChartDesign () {
 
       .style('stroke-dasharray', ('3, 3'))
       .style('stroke-opacity', 0.9)
+    verifySize()
+
   })
 }
 
@@ -458,6 +493,8 @@ function thirdChartDesign () {
     .style('stroke', '#98D462')
     .style('stroke-dasharray', ('3, 3'))
     .style('stroke-opacity', 0.9)
+  verifySize()
+
 
 }
 
@@ -521,6 +558,8 @@ function gradegroupCharts () {
             }
           })
       )
+    verifySize()
+
   })
 
 }
@@ -563,6 +602,8 @@ function animateGradeGroups () {
     .attr('cx', function (d) {
       return x(d.grade_group - 2)
     })
+  verifySize()
+
 }
 
 function animateGradeGroupsJitter () {
@@ -615,6 +656,8 @@ function animateGradeGroupsJitter () {
     .attr('y', y(90000))
     .style('stroke', '#2d2d2d')
     .style('fill', 'none')
+  verifySize()
+
 }
 
 function performanceCharts () {
@@ -685,6 +728,8 @@ function performanceCharts () {
             }
           })
       )
+    verifySize()
+
   })
 
 }
@@ -705,6 +750,8 @@ function animatePerformance () {
     .transition()
     .duration(1000)
     .attr('r', (d) => (parseInt(d.performance) + 1.75) * coefSize)
+  verifySize()
+
 }
 
 function visualizeRobinGradeGroup () {
@@ -740,6 +787,7 @@ function visualizeRobinGradeGroup () {
     .attr('stroke', '#98D462')
     .attr('marker-start', 'url(#arrow2)')
     .attr('fill', '#98D462')
+  verifySize()
 
 }
 
@@ -777,6 +825,8 @@ function visualizeRobinPerformance () {
     .attr('stroke', '#98D462')
     .attr('marker-start', 'url(#arrow)')
     .attr('fill', '#98D462')
+  verifySize()
+
 }
 
 function visualizeFinalTest () {
@@ -844,6 +894,8 @@ function visualizeFinalTest () {
             }
           })
       )
+    verifySize()
+
   })
 
 }

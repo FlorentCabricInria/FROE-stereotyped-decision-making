@@ -1,5 +1,8 @@
 <div id="row">
     <h1>Training</h1>
+    <div id="scroll-warning_5" class="alert alert-warning alert-dismissible" hidden>
+        <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
+    </div>
     <div>You are the person in charge of the company&#39;s annual salary review. The CEO has budgeted 25,000 <em>StudyCoin</em>
         to increase employee salaries — your colleagues. <br>
         The CEO has tasked you with allocating the 25,000 as you want between two objectives:
@@ -196,3 +199,13 @@
       ?>
         </div>
     </div>
+<script type="text/javascript">
+  $('body').on('next', function (e, type) {
+// The if clause below ensures that this specific instance of a next button press is only triggered when the id of the element corresponds to the one being defined above.
+    if (type === '<?php echo $id;?>'){
+      document.getElementById("currentpage").value = parseInt(document.getElementById("currentpage").value) +1
+
+    }
+
+  })
+</script>

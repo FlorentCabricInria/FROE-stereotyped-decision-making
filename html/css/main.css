@@ -4,8 +4,8 @@
    Important!!
    Width and height here need to correspond to the values set in html/setup/constants.js 
    ****************************************************/
-  width: 900px;
-  height: 700px;
+  width: 1350px;
+  height: 600px;
   position: absolute;
   top:0;
   bottom: 0;

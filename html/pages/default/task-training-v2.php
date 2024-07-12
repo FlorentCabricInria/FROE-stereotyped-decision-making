@@ -1,5 +1,8 @@
 <div id="row">
     <h1>Training part 2.</h1>
+    <div id="scroll-warning_6" class="alert alert-warning alert-dismissible" hidden>
+        <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
+    </div>
     <p>We will now add two features to support your decision-making: a grey line to see potential evolution of the
         employee salaries and
         interactivity to be able to visualize the effects of your decision in real time. These features will help you
@@ -147,9 +150,10 @@
             <li> Pay equity: Pay equity raises allocate raises to reduce the equal gender pay gap (equal pay for
                 equal work), the dots representing the individuals from the underpaid group (either men or
                 women)
-                will move accordingly
+                will move accordingly.
             </li>
         </ul>
+        <strong > Give it a try by moving the sliders! </strong>
 <!--        <button id="interactionVisBtn"> Add Interactivity</button>-->
         <br>
     </div>
@@ -206,3 +210,13 @@
 
         ?>
 </div>
+<script type="text/javascript">
+  $('body').on('next', function (e, type) {
+// The if clause below ensures that this specific instance of a next button press is only triggered when the id of the element corresponds to the one being defined above.
+    if (type === '<?php echo $id;?>'){
+      document.getElementById("currentpage").value = parseInt(document.getElementById("currentpage").value) +1
+
+    }
+
+  })
+</script>
