@@ -1,5 +1,5 @@
 <div id="row">
-    <h1>Training part 3 (final).</h1>
+    <h1>Training part 3 (final): statistical information</h1>
     <div id="scroll-warning_7" class="alert alert-warning alert-dismissible" hidden>
         <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
     </div>
@@ -148,7 +148,7 @@
                               <aside class="hover-popup">
 <!--                                  <h3>Gender Pay Gap — Explanation</h3>-->
                                   <p>
-                                      The gender pay gap reflects the percent difference in pay, after accounting for Grade Group and Performance.
+                                      The gender pay gap reflects the percent difference in pay, after accounting for grade group and Performance.
                                   </p>
                               </aside>
                           </div>
@@ -157,7 +157,7 @@
                       </div>
 
                         <hr id="lineTo" hidden="true">
-                        <button id="addPerformance" hidden="true"> Add the merit-based raises</button>
+                        <button id="addPerformance" hidden="true">Add merit based information</button>
                         <div id="performanceText" hidden="true"><span> Raises based on performance levels:</span>
                             <table>
                                 <tbody>
@@ -188,7 +188,8 @@
                               </span>
                                 <aside class="hover-popup">
                                     <!--                                  <h3>Gender Pay Gap — Explanation</h3>-->
-                                    <p>The percentages reflect the merit increase (in %) that each employee receives as a result of the allocation of the budget.</p>
+                                    <p>The percentages reflect the merit increase (in %) that each employee receives as a result of the budget allocation.
+                                    </p>
                                 </aside>
                             </div>
                             <br>

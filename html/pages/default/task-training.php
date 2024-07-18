@@ -1,34 +1,41 @@
 <div id="row">
-    <h1>Training</h1>
+    <h1 id="titleTraining">Training's explanation</h1>
     <div id="scroll-warning_5" class="alert alert-warning alert-dismissible" hidden>
         <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
     </div>
-    <div>You are the person in charge of the company&#39;s annual salary review. The CEO has budgeted 25,000 <em>StudyCoin</em>
+    <div id="textTraining1">You are the person in charge of the company&#39;s annual salary review. The CEO has budgeted 25,000 <em>StudyCoin</em>
         to increase employee salaries — your colleagues. <br>
-        The CEO has tasked you with allocating the 25,000 as you want between two objectives:
-        <ul>
+        The CEO has tasked you with allocating the <strong>entire 25,000</strong><sup>*</sup> between two objectives:
+        <ul style="margin-bottom: 0px;">
             <li style="margin: 0px 0px">reducing pay inequity focusing on gender differences</li>
-            <li style="margin-top: 0px">allocating merit raises based on last year’s individual performance.</li>
+            <li style="margin-top: 0px; margin-bottom: 0px">allocating merit raises based on last year’s individual performance.</li>
         </ul>
-    </div>
-    <i><strong> Be careful! You must spend the entire 25,000</strong> </i><br>
-    <p> To assist you in your decisions you will see a data visualization similar to the one below (but the underlying
+        <span style="font-size: .75rem;"><sup>*</sup>: that means you cannot spend less than 25,000 euros</span><br />
+
+    <!--    <i><strong> Be careful! You must spend the entire 25,000</strong> </i><br>-->
+    <p style="margin-top: 1rem"> To assist you in your decisions you will see a data visualization similar to the one below (but the underlying
         data will change). Employees are still represented according to their salary (vertical axis) and the 3 categories
         : grade group (horizontal axis), gender (color) and performance level (size of dots) <br></p>
+    <p> This training will help you understand and manipulate the information and interactive features we provide to help you make the most informed decision possible.
+    To allocate the money, you will use two sliders (one for reducing gender inequity and the other one for rewarding the performance).</p>
+        <button onclick="seeSliders()">Add the sliders</button>
+    </div>
+    <div id="learnSlidersText" hidden>
     <!--    <p> In this training part, we will ask you to perform 3 allocation tasks using  </p>-->
     In this training part, we will ask you to perform 3 allocation tasks using the two sliders you will find next to the
     visualization (framed in grey). You can increase or decrease the value using the - and + buttons next to the
-    sliders. To move on to the next training's step, please complete the three tasks in the following order (a task
+    sliders.
+    <br> To move on to the next training's step, please complete the three tasks in the following order (a task
     already performed will be strikedthrough) :
     <ol id="taskList">
         <li style="margin: 0px 0px"><strike id="taskSlider1" style="display: contents;"> <span> Allocate 25,000 for 'Reducing gender pay inequity'</span>
         </strike></li>
-        <li style="margin: 0px 0px"><strike id="taskSlider2" style="display: contents;"> <span> Allocate 25,000 for "Performance-based"</span>
+        <li style="margin: 0px 0px"><strike id="taskSlider2" style="display: contents;"> <span> Allocate 25,000 for performance-based merit increases</span>
         </strike></li>
         <li style="margin: 0px 0px"><strike id="taskSlider3" style="display: contents;"> <span> Allocate 12,500 for "Performance-based" and 12,500 for "addressing pay equity" </span>
         </strike></li>
     </ol>
-
+    </div>
     <!--    The allocation must be indicated using the two sliders you will find next to the visualization (framed in grey). You can increase or decrease the value using the - and + buttons next to the sliders. <br>-->
     <!--    To move on to the next training's step, please follow the instructions written in bold above the sliders.-->
     <!--    We next ask you to complete three different allocations using the sliders.-->
@@ -67,7 +74,7 @@
           }
 
       ?>
-    <div>
+    <div id="learnSliders" hidden>
         <strong> INSTRUCTIONS FOR THE TRAINING</strong>
         <br> <span
             id="slidersLabelsTask"> Task 1: Allocate 25,000 for 'Reducing gender pay inequity'" </span>
@@ -208,4 +215,10 @@
     }
 
   })
+  function seeSliders(){
+    document.getElementById("textTraining1").hidden = true;
+    document.getElementById("learnSlidersText").hidden = false;
+    document.getElementById("learnSliders").hidden = false;
+    document.getElementById("titleTraining").innerText = "Training part1: the sliders."
+  }
 </script>

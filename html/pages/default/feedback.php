@@ -2,12 +2,12 @@
     <body>
     <h2>Questions regarding your decision and your role in your company</h2>
     <div> With your decision, the final gender pay gap is <span id="taskCurrentPayGapStimuli">
-         </span> and you allocated merit-based raises in the following manner: <br>
-        The low performers get a <span id="taskLowPerfStimuli" style="display: inline-block"> .... </span>% raise.
-        The medium performers get a <span id="taskMidPerfStimuli" style="display: inline-block"> .... </span>% raise.
-        The high performers get a <span id="taskHighPerfStimuli" style="display: inline-block"> .... </span>% raise. <br>
+         </span> and your merit-based raises resulted in employees with low, medium and high performance evaluation getting a
+        <span id="taskLowPerfStimuli" style="display: inline-block"> .... </span>% , a
+        <span id="taskMidPerfStimuli" style="display: inline-block"> .... </span>% , and a
+        <span id="taskHighPerfStimuli" style="display: inline-block"> .... </span>% respectively.
         The chart shows the salaries of the company's employees after applying the decision you have made.
-        <p style="font-weight: bold"> Please, answer to the three questions you will find the below the chart.</p>
+        <p style="font-weight: bold"> Please answer the three questions below the chart.</p>
         <!--  <svg id="final-decision-feedback-chart"> </svg> -->
         <?php
           $extension = array(".csv");
@@ -44,7 +44,7 @@
       ?>
         <div>
             <div>
-                <label> <h5> Please explain the criteria you used to decide on how to allocate the money. (requires, 100 characters required) </h5>
+                <label> <h5> Please explain the criteria you used to decide on how to allocate the money. (100 characters required) </h5>
                 </label>
                 <textarea onkeyup="countChar(this)" class="form-control" minlength="50" id="criteria" rows="2"
                           cols="80" placeholder="Please explain the criteria you used to decide on how to allocate the money."></textarea>

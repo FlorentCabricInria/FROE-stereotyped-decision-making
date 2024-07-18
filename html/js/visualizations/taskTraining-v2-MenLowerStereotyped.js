@@ -1,3 +1,7 @@
+var startInteractivity = false;
+
+var firstTimeTest = true;
+var everythingDisplayed = false;
 const sliderEquity = document.getElementById('PayEquityTraining2');
 const sliderAlt = document.getElementById('NotEquityTraining2');
 // let forecastBtn = document.getElementById("forecastVisBtn");
@@ -49,6 +53,21 @@ function changeSalaryV0() {
         return yTraining(new_salary);
       });
   }
+
+
+/****
+ *
+ * EVENT LISTENERS
+ */
+
+sliderEquity.addEventListener('input', maxReachedV0, false);
+sliderAlt.addEventListener('input', maxReachedV0, false);
+
+plusBtnNotEquity2.addEventListener('click', onPlusNotEquity2);
+minusBtnNotEquity2.addEventListener('click', onMinusNotEquity2);
+
+plusBtnEquity2.addEventListener('click', onPlusEquity2);
+minusBtnEquity2.addEventListener('click', onMinusEquity2);
 
 function calculateNewPayGap() {
   const GPG = ((Math.exp(lm('log(total_comp) ~ gender_f1 + performance_f1 + performance_f2 + performance_f3 + grade_group_f4 + grade_group_f5', dfPeople).coefficients[1]) - 1) * 100.0).toFixed(2);
@@ -167,6 +186,10 @@ function createSteoreotypedVisualization2MLS(){
   });
 }
 function maxReachedV0(e) {
+  if(firstTimeTest && everythingDisplayed) {
+    firstTimeTest = false;
+    addTimerText()
+  }
   PEslider = document.getElementById('PayEquityTraining2');
   ALTslider = document.getElementById('NotEquityTraining2');
   let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
@@ -200,7 +223,7 @@ function maxReachedV0(e) {
  // document.getElementById('textAlternative').innerHTML = parseInt(ALTslider.value);
  // document.getElementById('textRemaining').innerHTML = (max) - (parseInt(PEslider.value) + parseInt(ALTslider.value));
 
-  changeSalaryV0();
+  if(startInteractivity) changeSalaryV0();
   //calculateNewPayGap();
 
   /*    document.getElementById('total').innerHTML = parseInt(document.getElementById("PayEquity").value) + parseInt(document.getElementById("NotEquity").value); */
@@ -341,11 +364,15 @@ function addForecast () {
 
 function addInteraction () {
 
+  startInteractivity = true;
+  everythingDisplayed = true;
+  startInteractivity = true;
+
   document.getElementById("point2").hidden = false;
   document.getElementById("point1").hidden = true;
   document.getElementById("btn_task-training-v2_6").hidden= false;
-  sliderEquity.addEventListener('input', maxReachedV0, false);
-  sliderAlt.addEventListener('input', maxReachedV0, false);
+  // sliderEquity.addEventListener('input', maxReachedV0, false);
+  // sliderAlt.addEventListener('input', maxReachedV0, false);
 
   sliderEquity.addEventListener("mousedown", () => {
   });
@@ -363,53 +390,63 @@ function addInteraction () {
   sliderAlt.addEventListener("mouseup", () => {
     changeSalaryV0()
   });
-  plusBtnNotEquity2.addEventListener('click', onPlusNotEquity2);
-  minusBtnNotEquity2.addEventListener('click', onMinusNotEquity2);
-
-  plusBtnEquity2.addEventListener('click', onPlusEquity2);
-  minusBtnEquity2.addEventListener('click', onMinusEquity2);
-  addTimerText();
+  // plusBtnNotEquity2.addEventListener('click', onPlusNotEquity2);
+  // minusBtnNotEquity2.addEventListener('click', onMinusNotEquity2);
+  //
+  // plusBtnEquity2.addEventListener('click', onPlusEquity2);
+  // minusBtnEquity2.addEventListener('click', onMinusEquity2);
+  displayButton();
   verifySize();
 }
-function addTimerText(){
+
+function displayButton(){
   let btntoValidate = document.getElementById("btn_task-training-v2_6")
   btntoValidate.disabled = true;
 
-  btntoValidate.innerHTML = "Test the features before moving on to the next step!";
+  btntoValidate.innerHTML = "Test the features by moving on the sliders before moving on to the next step";
   btntoValidate.style.backgroundColor = "rgba(115,115,115,0.9)"
   btntoValidate.style.color = "rgba(255,255,255,0.9)"
 
+}
+function addTimerText(){
+  let btntoValidate = document.getElementById("btn_task-training-v2_6")
+
+  let slidersForTest = document.getElementById("slidersForTest")
   var textTimerCountdown = document.createElement("span");
   textTimerCountdown.id = "textTimerCountdown";
-  textTimerCountdown.innerHTML = "15";
-
+  textTimerCountdown.innerHTML = "10";
   var textTimer = document.createElement("span");
-  textTimer.style.float = "right";
-  var node1 = document.createTextNode("Wait ");
+  textTimer.style.display = "block";
+  var node1 = document.createTextNode("Please try the sliders for ");
   var node2 = document.createTextNode(" seconds before moving on to the next step.");
   textTimer.append(node1)
   textTimer.append(textTimerCountdown)
   textTimer.append(node2)
-  btntoValidate.parentElement.append(textTimer)
-  btntoValidate.parentElement.style.paddingLeft = "745px"
+  slidersForTest.parentElement.append(textTimer)
+  //  btntoValidate.parentElement.style.paddingLeft = "745px"
   var start = Date.now();
-  setInterval(function() {
+  var clearIntervalTraining = setInterval(function() {
     var delta = Date.now() - start; // milliseconds elapsed since start
-    if (Math.floor(delta / 1000) > 15) {
+    if (Math.floor(delta / 1000) > 10) {
       textTimerCountdown.innerHTML = ""
       textTimer.innerHTML = ""
       btntoValidate.disabled = false
-      btntoValidate.innerHTML = "Go to the next training stage!"
+      btntoValidate.innerHTML = "Go to the next training stage"
       btntoValidate.style.backgroundColor = "#EEEEEE"
       btntoValidate.style.color = "#000000"
+      clearInterval(clearIntervalTraining)
+
     }
     else {
-      textTimerCountdown.innerHTML = (15- Math.floor(delta / 1000)) + ""
+      //document.getElementById('btn_test-decision-making-study_8').innerText = (30- Math.floor(delta / 1000)) + ""
+      textTimerCountdown.innerHTML = (10- Math.floor(delta / 1000)) + ""
       console.log((15- Math.floor(delta / 1000)))
     }
   }, 1000)
 }
 function displayFeatures () {
+  document.getElementById("training2XP").hidden=true;
+
   document.getElementById("wantToSeeTheFeatures").hidden = true;
   document.getElementById("interactionVisBtn").hidden = false;
   document.getElementById("point1").hidden = false;

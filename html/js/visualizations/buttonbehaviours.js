@@ -91,13 +91,14 @@ function changeButton (e) {
         document.getElementById('thirdStage').hidden = true
 
         document.getElementById('fifthStage').hidden = false
+        document.getElementById('titleExplanation').innerHTML = 'Excellent!'
+
       } else {
         document.getElementById('checkingValue').innerHTML = 'This is not the correct answer. Please, try again. No letters or special characters are allowed in the answers,' +
           ' therefore only digits are accepted. <br /> To find Robin\'s salary, you have to find the green circle' +
-          ' representing Robin, follow the green line until it crosses the y-axis (representing salary), and approximate the value of the intersection of the y-axis and the green line <br />' +
+          ' representing Robin, follow the green line until it crosses the vertical axis (representing salary), and approximate the value of the intersection of the y-axis and the green line <br />' +
           ' (hint: look at the two values near the intersection of the green line and the y-axis).'
       }
-      document.getElementById('titleExplanation').innerHTML = 'Excellent!'
       verifySize()
       break
     case 'fifthStageButton':
@@ -139,6 +140,8 @@ function changeButton (e) {
         performanceCharts()
 
         console.log('good')
+        document.getElementById('titleExplanation').innerHTML = 'Excellent! Now the performance:'
+
       } else {
         console.log('not good')
         document.getElementById('checkingValueGradeGroup').innerHTML = 'This is not the correct answer. Please, try again. <br /> To find Robin\'s grade group, you have to find the green circle' +
@@ -147,7 +150,6 @@ function changeButton (e) {
            document.getElementById('attention-test-check').value = '1'
          }*/
       }
-      document.getElementById('titleExplanation').innerHTML = 'Excellent! Now the performance:'
       verifySize()
       break
     case 'tenthStageButton':
@@ -173,7 +175,7 @@ function changeButton (e) {
         document.getElementById('twelvethStage').hidden = true
         document.getElementById('thirteenthStage').hidden = false
         visualizeFinalTest()
-
+        document.getElementById('titleExplanation').innerHTML = 'Comprehension check. Read carefully the instructions'
         console.log('good')
       } else {
         var valueAttention = document.getElementById('attention-test-check').value

@@ -194,28 +194,28 @@ function maxReached2(e) {
     ALTslider.innerHTML = parseInt(ALTslider);
     if(state == "first" && parseInt(PEslider.value) == 25000) {
       state = "second"
-      document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Allocate 25,000 for 'Reducing gender pay inequity' </s> <br> <b>Task 2: Allocate 25,000 for \"Performance-based\" </b>"
+      document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Allocate 25,000 for 'Reducing gender pay inequity' </s> <br> <b>Task 2: Allocate 25,000 for performance-based merit increases </b>"
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, complete task number 2"
       document.getElementById("taskSlider1").style.display = "inline"
 
     }
     else if(state =="second" && parseInt(ALTslider.value) == 25000) {
       state = "third"
-      document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Allocate 25,000 for 'Reducing gender pay inequity'<br>Task 2: Allocate 25,000 for \"Performance-based\" </s><br><b>Task 3: Allocate,12,500 for \"Performance-based\" and 12,500 for \"addressing pay equity\"</b>"
+      document.getElementById("slidersLabelsTask").innerHTML = "<s>Task 1: Allocate 25,000 for 'Reducing gender pay inequity'<br>Task 2: Allocate 25,000 for performance-based merit increases </s><br><b>Task 3: Allocate,12,500 for \"Performance-based\" and 12,500 for \"addressing pay equity\"</b>"
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, complete task number 3"
       document.getElementById("taskSlider2").style.display = "inline"
 
     }
     else if(state == "third" && parseInt(ALTslider.value) == 12500 && parseInt(PEslider.value) == 12500){
-      document.getElementById("slidersLabelsTask").innerHTML = "Congratulations!! You can move on to the next part"
-      document.getElementById("sliderTrainingText").innerHTML = "Congratulations!! You can move on to the next part"
+      document.getElementById("slidersLabelsTask").innerHTML = "Congratulations! You can move on to the next part"
+      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! You can move on to the next part"
       document.getElementById("btn_task-training_5").hidden=false;
       document.getElementById("taskSlider3").style.display = "inline"
       let nextBtn = document.getElementById("btn_task-training_5");
       document.getElementById("sliderTrainingText").parentElement.parentElement.parentElement.append(nextBtn);
     }
     else {
-      document.getElementById("sliderTrainingText").style.color = "#f80b0b";
+      document.getElementById("sliderTrainingText").style.color = "#e30202";
       document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."
     }
     //document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."

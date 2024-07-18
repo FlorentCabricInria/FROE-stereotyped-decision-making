@@ -1,4 +1,6 @@
-
+var startInteractivity = false;
+var firstTimeTest = true;
+var everythingDisplayed = false;
 const sliderEquity = document.getElementById('PayEquityTraining2');
 const sliderAlt = document.getElementById('NotEquityTraining2');
 // let forecastBtn = document.getElementById("forecastVisBtn");
@@ -14,9 +16,9 @@ ticks = d3.selectAll('.tick').style("font-size","1.5em");
 
 let plusBtnEquity2 = document.getElementById("PayEquityTraining2PlusBtn")
 let minusBtnEquity2 = document.getElementById("PayEquityTraining2MinusBtn")
-
-sliderEquity.addEventListener('input', interactSliders, false);
-sliderAlt.addEventListener('input', interactSliders, false);
+//
+// sliderEquity.addEventListener('input', interactSliders, false);
+// sliderAlt.addEventListener('input', interactSliders, false);
 
 function onPlusEquity2(e){
   document.getElementById("PayEquityTraining2").value = parseInt(document.getElementById("PayEquityTraining2").value) +100
@@ -39,6 +41,21 @@ function onMinusNotEquity2(e){
   document.getElementById("NotEquityTraining2").value = parseInt(document.getElementById("NotEquityTraining2").value) -100
   maxReachedV0(e)
 }
+
+/****
+ *
+ * EVENT LISTENERS
+ */
+
+sliderEquity.addEventListener('input', maxReachedV0, false);
+sliderAlt.addEventListener('input', maxReachedV0, false);
+
+plusBtnNotEquity2.addEventListener('click', onPlusNotEquity2);
+minusBtnNotEquity2.addEventListener('click', onMinusNotEquity2);
+
+plusBtnEquity2.addEventListener('click', onPlusEquity2);
+minusBtnEquity2.addEventListener('click', onMinusEquity2);
+
 function changeSalaryV0() {
     const test = d3.selectAll('dot');
     d3.selectAll('.dot')
@@ -160,46 +177,17 @@ function createSteoreotypedVisualization2MLNS(){
   });
 }
 
-function interactSliders(e){
-  PEslider = document.getElementById('PayEquityTraining2');
-  ALTslider = document.getElementById('NotEquityTraining2');
-  let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
-  // console.log(sum)
-  let max = 25000;
-  document.getElementById('PEoutputtraining2').innerHTML = parseInt(PEslider.value);
-  document.getElementById('ALToutputtraining2').innerHTML = parseInt(ALTslider.value);
-  if(sum>max && (e.currentTarget.id == "PayEquityTraining2PlusBtn" || e.currentTarget.id == "NotEquityTraining2PlusBtn")) {
-    if(e.currentTarget.id == "PayEquityTraining2PlusBtn") {document.getElementById("PayEquityTraining2").value = parseInt(document.getElementById("PayEquityTraining2").value) - 100}
-    else if (e.currentTarget.id =="NotEquityTraining2PlusBtn") {document.getElementById("NotEquityTraining2").value = parseInt(document.getElementById("NotEquityTraining2").value) -100 }
-  }
-  if (sum >= max) {
-    target = e.target;
-    target.value -= (sum - max);
-    document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
-    document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
-    // document.getElementById('textEquity').innerHTML = parseInt(PEslider.value);
-    PEslider.innerHTML = parseInt(PEslider.value);
-    ALTslider.innerHTML = parseInt(ALTslider);
-    e.preventDefault();
-    return false;
-  }
-  document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
-  document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
-  return true;
-}
-
-
 function maxReachedV0(e) {
+  if(firstTimeTest && everythingDisplayed) {
+    firstTimeTest = false;
+    addTimerText()
+  }
   PEslider = document.getElementById('PayEquityTraining2');
   ALTslider = document.getElementById('NotEquityTraining2');
   let sum = parseInt(PEslider.value) + parseInt(ALTslider.value); let    target;
-  // console.log(sum)
   let max = 25000;
   document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
   document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
- // e.currentTarget.innerHTML = e.currentTarget.value;
-
-
 
   if(sum>max && (e.currentTarget.id == "PayEquityTraining2PlusBtn" || e.currentTarget.id == "NotEquityTraining2PlusBtn")) {
     if(e.currentTarget.id == "PayEquityTraining2PlusBtn") {document.getElementById("PayEquityTraining2").value = parseInt(document.getElementById("PayEquityTraining2").value) - 100}
@@ -214,33 +202,18 @@ function maxReachedV0(e) {
     PEslider.innerHTML = parseInt(PEslider.value);
     ALTslider.innerHTML = parseInt(ALTslider);
 
-    //document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."
 
     e.preventDefault();
     return false;
   }
 
-  // next line is just for demonstrational purposes
-  // document.getElementById('total').innerHTML = parseInt(PEslider.value) + parseInt(ALTslider.value);
   document.getElementById('PEoutputtraining2').innerHTML = PEslider.value;
   document.getElementById('ALToutputtraining2').innerHTML = ALTslider.value;
-//  document.getElementById('textEquity').innerHTML = parseInt(PEslider.value);
- // document.getElementById('textAlternative').innerHTML = parseInt(ALTslider.value);
- // document.getElementById('textRemaining').innerHTML = (max) - (parseInt(PEslider.value) + parseInt(ALTslider.value));
-
-  changeSalaryV0();
-  //calculateNewPayGap();
-
-  /*    document.getElementById('total').innerHTML = parseInt(document.getElementById("PayEquity").value) + parseInt(document.getElementById("NotEquity").value); */
-  return true;d
+  if(startInteractivity) changeSalaryV0();
+  return true;
 }
 
 function addForecast () {
-//  document.getElementById("interactionVisBtn").hidden = false;
-//  document.getElementById("forecastVisBtn").hidden = true;
-  // document.getElementById("point2").hidden = false;
-  // document.getElementById("point1").hidden = true;
- // document.getElementById("slidersForTest").hidden = true;
   d3.csv('./html/js/visualizations/women-lower-v2.csv').then((data) => {
     const storedData = structuredClone(data);
 
@@ -367,12 +340,12 @@ function addForecast () {
   ;}
 
 function addInteraction () {
-
+  startInteractivity = true;
+  everythingDisplayed = true;
   document.getElementById("point2").hidden = false;
   document.getElementById("point1").hidden = true;
   document.getElementById("btn_task-training-v2_6").hidden= false;
-  sliderEquity.addEventListener('input', maxReachedV0, false);
-  sliderAlt.addEventListener('input', maxReachedV0, false);
+
 
   sliderEquity.addEventListener("mousedown", () => {
   });
@@ -390,15 +363,12 @@ function addInteraction () {
   sliderAlt.addEventListener("mouseup", () => {
     changeSalaryV0()
   });
-  plusBtnNotEquity2.addEventListener('click', onPlusNotEquity2);
-  minusBtnNotEquity2.addEventListener('click', onMinusNotEquity2);
-
-  plusBtnEquity2.addEventListener('click', onPlusEquity2);
-  minusBtnEquity2.addEventListener('click', onMinusEquity2);
-  addTimerText();
+  // addTimerText();
+  displayButton();
   verifySize();
 }
 function displayFeatures () {
+  document.getElementById("training2XP").hidden=true;
   document.getElementById("wantToSeeTheFeatures").hidden = true;
  document.getElementById("interactionVisBtn").hidden = false;
   document.getElementById("point1").hidden = false;
@@ -406,52 +376,46 @@ function displayFeatures () {
   verifySize();
 }
 
-function addTimerText(){
+function displayButton(){
     let btntoValidate = document.getElementById("btn_task-training-v2_6")
     btntoValidate.disabled = true;
 
-    btntoValidate.innerHTML = "Test the features before moving on to the next step!";
+    btntoValidate.innerHTML = "Test the features by moving on the sliders before moving on to the next step";
     btntoValidate.style.backgroundColor = "rgba(115,115,115,0.9)"
     btntoValidate.style.color = "rgba(255,255,255,0.9)"
 
-    var textTimerCountdown = document.createElement("span");
-    textTimerCountdown.id = "textTimerCountdown";
-    textTimerCountdown.innerHTML = "15";
-    var textTimer = document.createElement("span");
-    textTimer.style.float = "right";
-    var node1 = document.createTextNode("Wait ");
-    var node2 = document.createTextNode(" seconds before moving on to the next step.");
-    textTimer.append(node1)
-    textTimer.append(textTimerCountdown)
-    textTimer.append(node2)
-    btntoValidate.parentElement.append(textTimer)
-    btntoValidate.parentElement.style.paddingLeft = "745px"
-    var start = Date.now();
-    setInterval(function() {
-      var delta = Date.now() - start; // milliseconds elapsed since start
-      if (Math.floor(delta / 1000) > 15) {
-        textTimerCountdown.innerHTML = ""
-        textTimer.innerHTML = ""
-        btntoValidate.disabled = false
-        btntoValidate.innerHTML = "Go to the next training stage!"
-        btntoValidate.style.backgroundColor = "#EEEEEE"
-        btntoValidate.style.color = "#000000"
+}
+function addTimerText(){
+  let btntoValidate = document.getElementById("btn_task-training-v2_6")
 
-        // PEslider = document.getElementById('taskPayEquity');
-     //   ALTslider = document.getElementById('taskNotEquity');
-      //  let sum = parseInt(PEslider.value) + parseInt(ALTslider.value);
-       /* if(sum >= 15000){
-          btntoValidate.disabled = false;
-          btntoValidate.innerHTML = "Go to the next training stage!";
-          btntoValidate.style.backgroundColor = "rgba(69,241,69,0.34)"
-          btntoValidate.style.color = "rgba(0,0,0,0.9)"
-
-        }*/
-      }
-      else {
-        //document.getElementById('btn_test-decision-making-study_8').innerText = (30- Math.floor(delta / 1000)) + ""
-        textTimerCountdown.innerHTML = (15- Math.floor(delta / 1000)) + ""
-        console.log((15- Math.floor(delta / 1000)))
-      }
-    }, 1000)
+  let slidersForTest = document.getElementById("slidersForTest")
+  var textTimerCountdown = document.createElement("span");
+  textTimerCountdown.id = "textTimerCountdown";
+  textTimerCountdown.innerHTML = "10";
+  var textTimer = document.createElement("span");
+  textTimer.style.display = "block";
+  var node1 = document.createTextNode("Please try the sliders for ");
+  var node2 = document.createTextNode(" seconds before moving on to the next step.");
+  textTimer.append(node1)
+  textTimer.append(textTimerCountdown)
+  textTimer.append(node2)
+  slidersForTest.parentElement.append(textTimer)
+  //  btntoValidate.parentElement.style.paddingLeft = "745px"
+  var start = Date.now();
+  setInterval(function() {
+    var delta = Date.now() - start; // milliseconds elapsed since start
+    if (Math.floor(delta / 1000) > 10) {
+      textTimerCountdown.innerHTML = ""
+      textTimer.innerHTML = ""
+      btntoValidate.disabled = false
+      btntoValidate.innerHTML = "Go to the next training stage"
+      btntoValidate.style.backgroundColor = "#EEEEEE"
+      btntoValidate.style.color = "#000000"
+    }
+    else {
+      //document.getElementById('btn_test-decision-making-study_8').innerText = (30- Math.floor(delta / 1000)) + ""
+      textTimerCountdown.innerHTML = (10- Math.floor(delta / 1000)) + ""
+      console.log((15- Math.floor(delta / 1000)))
+    }
+  }, 1000)
 }

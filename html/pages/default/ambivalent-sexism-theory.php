@@ -2,12 +2,12 @@
 -->
 
 <div id="row">
-    <h1>Questionnaire</h1>
+    <h1>Exit questionnaire</h1>
     <div id="scroll-warning_9" class="alert alert-warning alert-dismissible" hidden>
         <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
     </div>
-    <p> To end this study, we will ask you to answer 12 questions. These 12 questions have been introduced by social psychologists and has been widely used by scientists. </p>
-    <p style="font-size: 1em"><strong>Instructions:</strong>  To end this study, we will ask you to answer 12 questions. For each statement, indicate whether you "Strongly Disagree", "Somewhat Disagree", Slightly Disagree",
+    <p> To end this study, we will ask you to answer 12 questions. These 12 questions have been introduced by social psychologists and have been widely used by scientists. </p>
+    <p style="font-size: 1em"><strong>Instructions:</strong>  For each statement, indicate whether you "Strongly Disagree", "Somewhat Disagree", Slightly Disagree",
         "Slightly Agree", "Somewhat Agree", "Strongly Agree" </p>
     <hr style="height: 0.5em; background-color: lightgrey"/>
     <form action="javascript:processScaleResults()">
@@ -243,6 +243,23 @@
           measurements['hostileSexism'] = hostileSexism;
           measurements['benevolentSexism'] = benevolentSexism;
           measurements['lastClick'] = Date.now();
+          if (measurements['condition-for-this-participant'] == 'MenLower-NonStereotyped') {
+            measurements['color-used'] = 'non-stereotyped';
+            measurements['pay-gap-direction'] = 'men-lower';
+          }
+            else if (measurements['condition-for-this-participant'] ==  'WomenLower-NonStereotyped') {
+              measurements['color-used'] = 'non-stereotyped';
+              measurements['pay-gap-direction'] = 'women-lower';
+        }
+         else if (measurements['condition-for-this-participant'] ==  'MenLower-Stereotyped') {
+            measurements['color-used'] = 'stereotyped';
+            measurements['pay-gap-direction'] = 'men-lower';
+          }
+           else if (measurements['condition-for-this-participant'] ==  'WomenLower-Stereotyped'){
+              measurements['color-used'] = 'stereotyped';
+              measurements['pay-gap-direction'] = 'women-lower';
+          }
+          console.log("Color used: " + measurements['color-used'] + " and PG direction " + measurements['pay-gap-direction'])
           document.getElementById("ErrorMessageScale").innerHTML = "";
           document.getElementById("buttonForm").style.display ="none";
           document.getElementById("submitScaleButton").hidden = true;

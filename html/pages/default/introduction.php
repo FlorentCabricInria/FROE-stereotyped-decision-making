@@ -80,9 +80,9 @@
     </p>
     <ul>
         <li><span style="font-weight: bold; color: #0096c9;">Charlie</span> is paid <span
-                style="font-weight: bold; color: #0096c9;"> a little less than 75k</span></li>
+                style="font-weight: bold; color: #0096c9;"> just below than 75k</span></li>
         <li><span style="font-weight: bold; color: #F2B93F;"> Sam </span> is paid <span
-                style="font-weight: bold; color: #F2B93F;"> a little less than 40k </span></li>
+                style="font-weight: bold; color: #F2B93F;"> just below than 40k </span></li>
     </ul>
     <svg id="secondChart"></svg>
     <br>
@@ -94,7 +94,7 @@
     <input id="inputTestRobin" type="text" placeholder="digits only"/> </input>
     <button id="fourthStageButton"> Next</button>
     <br>
-    <span id="checkingValue" style="font-weight: bold; color: #f80b0b;"></span>
+    <span id="checkingValue" style="font-weight: bold; color: #e30202;"></span>
 </div>
 <div id="fifthStage" style="text-align: left" hidden="true">
     <!--    <h1> Excellent!</h1>-->
@@ -105,8 +105,8 @@
         <li><b>Performance </b>: each employee's performance over the past year is categorized as either high, medium,
             or low.
         </li>
-        <li><b>Grade groups</b>: employees are grouped together with other employees based on how similar their skills,
-            knowledge, job duties, and levels of authority are. The company has three grade groups named A, B and C.
+        <li><b>Grade groups</b>: jobs are grouped together based on how similar the skills and knowledge required,
+            the job duties, and the levels of authority are. The company has three grade groups named A, B and C.
         </li>
         <li><b>Gender</b>: employee's gender, either woman or man&#42; <br>
             <br>
@@ -144,7 +144,7 @@
                 means that
                 the horizontal position of each employee will be moved slightly, to the left or to the right.
                 <br>
-                <button id="seventhStageButton">Add Jitter</button>
+                <button id="seventhStageButton" style="margin-top: 1.5rem">Add Jitter</button>
             </div>
             <div class="breakForSlider"></div>
             <br>
@@ -185,7 +185,7 @@
                     </div>
                 </fieldset>
                 <br>
-                <span id="checkingValueGradeGroup" style="font-weight: bold; color: #f80b0b;"></span>
+                <span id="checkingValueGradeGroup" style="font-weight: bold; color: #e30202;"></span>
                 <button id="ninethStageButton"> Next</button>
             </div>
         </div>
@@ -196,22 +196,22 @@
     <!--    <h1>Excellent! Now the <b>performance</b></h1>-->
     <p> The company evaluates performance using rigorous and trustworthy methods. Each employee can have one of three
         performance levels: low performance, medium performance, or high performance.<br>
-        Recall this chart and your colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and
-        <span style="font-weight: bold; color: #F2B93F;"> Sam</span>.
-        <span style="font-weight: bold; color: #0096c9;">Charlie</span> earns a bit less than <span
-                style="font-weight: bold; color: #0096c9;">75k</span> and belongs to <span
-                style="font-weight: bold; color: #0096c9;">grade group C</span>.
-        <span style="font-weight: bold; color: #F2B93F;">Sam</span> earns between <span
-                style="font-weight: bold; color: #F2B93F;">35k and 40k</span> and belongs to <span
-                style="font-weight: bold; color: #F2B93F;">grade group B</span>.<br>
+<!--        Recall this chart and your colleagues <span style="font-weight: bold; color: #0096c9;">Charlie</span> and-->
+<!--        <span style="font-weight: bold; color: #F2B93F;"> Sam</span>.-->
+<!--        <span style="font-weight: bold; color: #0096c9;">Charlie</span> earns a just below <span-->
+<!--                style="font-weight: bold; color: #0096c9;">75k</span> and belongs to <span-->
+<!--                style="font-weight: bold; color: #0096c9;">grade group C</span>.-->
+<!--        <span style="font-weight: bold; color: #F2B93F;">Sam</span> earns between <span-->
+<!--                style="font-weight: bold; color: #F2B93F;">35k and 40k</span> and belongs to <span-->
+<!--                style="font-weight: bold; color: #F2B93F;">grade group B</span>.<br>-->
     </p>
     <p>In the visualization, performance is visualized by the size of dots.</p>
     <div style="display: flex;">
         <svg id="chartPerformance"></svg>
         <div>
             <div>
-                For each employee we will show their performance by the circle size. Employees with the same performance
-                will have a circle of the same size:<br>
+<!--                For each employee we will show their performance by the circle size. Employees with the same performance-->
+<!--                will have a circle of the same size:<br>-->
                 <div>
                     <svg style="max-width: 100%; height: auto;" width="20" viewBox="0,0,20,20" height="20">
                         <g>
@@ -270,14 +270,14 @@
                     </div>
                 </fieldset>
                 <br>
-                <span id="checkingValuePerf" style="font-weight: bold; color: #f80b0b;"></span>
-                <button id="twelvethStageButton"> Go to the next stage!</button>
+                <span id="checkingValuePerf" style="font-weight: bold; color: #e30202;"></span>
+                <button id="twelvethStageButton"> Go to the next stage</button>
             </div>
         </div>
     </div>
 </div>
 <div id="thirteenthStage" style="text-align: left" hidden="true">
-    <h2>Comprehension check</h2>
+<!--    <h2>Comprehension check</h2>-->
     This is the comprehension test. You will get two chances. If you fail on the second attempt, you will be immediately
     redirected to Prolific with a CODE indicating CC_failed and we will ask that you return your submission.
     <!--    After studying, <span style="font-weight: bold; color: #0096c9;">Charlie</span>, <span-->
@@ -301,7 +301,7 @@
             <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>salary?
             </legend>
 
-            <span id="checkingSalaryJamie" style="font-weight: bold; color: #f80b0b;"></span>
+            <span id="checkingSalaryJamie" style="font-weight: bold; color: #e30202;"></span>
             <div>
                 <input type="radio" id="salaryJamie3" name="salary-test-jamie" value="10000"/>
                 <label for="ggJamie3">10,000</label>
@@ -319,7 +319,7 @@
             <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>grade
                 group ?
             </legend>
-            <span id="checkingGGJamie" style="font-weight: bold; color: #f80b0b;"></span>
+            <span id="checkingGGJamie" style="font-weight: bold; color: #e30202;"></span>
             <div>
                 <input type="radio" id="ggJamie3" name="grade-group-test-jamie" value="3"/>
                 <label for="ggJamie3">A</label>
@@ -338,7 +338,7 @@
         <legend style="font-size: 1rem">What is <span style="font-weight: bold; color: #D95F02;">Jamie's </span>performance
             ?
         </legend>
-        <span id="checkingPerfJamie" style="font-weight: bold; color: #f80b0b;"></span>
+        <span id="checkingPerfJamie" style="font-weight: bold; color: #e30202;"></span>
         <div>
             <input type="radio" id="lowJamieP" name="performance-test-jamie" value="lowperformers"/>
             <label for="lowJamieP">Low</label>

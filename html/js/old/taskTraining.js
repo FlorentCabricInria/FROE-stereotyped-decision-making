@@ -250,7 +250,7 @@ function maxReached2(e) {
     ALTslider.innerHTML = parseInt(ALTslider);
     if(state == "first" && parseInt(PEslider.value) == 25000) {
       state = "second"
-      document.getElementById("slidersLabelsTask").innerHTML = "Task 2: Allocate 25,000 for \"Performance-based\""
+      document.getElementById("slidersLabelsTask").innerHTML = "Task 2: Allocate 25,000 for performance-based merit increases"
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, complete task #2"
 
     }
@@ -260,13 +260,13 @@ function maxReached2(e) {
       document.getElementById("sliderTrainingText").innerHTML = "Congratulations! Now, complete task #3"
     }
     else if(state == "third" && parseInt(ALTslider.value) == 12500 && parseInt(PEslider.value) == 12500){
-      document.getElementById("slidersLabelsTask").innerHTML = "Congratulations!! You can move on to the next part"
-      document.getElementById("sliderTrainingText").innerHTML = "Congratulations!! You can move on to the next part"
+      document.getElementById("slidersLabelsTask").innerHTML = "Congratulations! You can move on to the next part"
+      document.getElementById("sliderTrainingText").innerHTML = "Congratulations! You can move on to the next part"
       document.getElementById("btn_task-training_5").hidden=false;
     }
     else {
       document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."
-        document.getElementById("sliderTrainingText").style.color = "#f80b0b";
+        document.getElementById("sliderTrainingText").style.color = "#e30202";
     }
     //document.getElementById("sliderTrainingText").innerHTML = "You've reached the limit, if you want to increase one value, you must first decrease the other."
 

@@ -9,11 +9,7 @@
             <span>Some content may be off-screen. Please scroll down to see the rest of the content.</span>
         </div>
         <div style="background-color: white;  color: black; padding: 15px; margin-bottom: 15px; text-align:left">
-            <p>Please find below legal information about our privacy policy and your participation to this study.</p>
-
-            <p>After agreeing to the terms below, you will first follow a training session that will teach you how to read the data visualizations we will use during this study. This training ends with a comprehension check for which you will have two chances.
-                Next, we will show you how to use the tools to make your final decision. Finally, you'll be asked to make one salary decision based on the visualization, and to explain this decision. The test ends with a questionnaire designed by social psychologists.
-                This will require around twenty (20) minutes to complete.</p>
+            <p>Please find below legal information about our privacy policy and your participation in this study.</p>
 
            <!-- <h2>1. Privacy policy</h2>
 
@@ -40,7 +36,8 @@
 
             <p><em><strong>Acknowledgements: </strong></em></p>
 
-            <p><em>Your input is essential to our project and the researchers involved in this study would like to thank you for that.<br />Before giving your informed consent, it is important that you understand why the research is being done, what it involves and what your rights and obligations are.</em></p>
+            <p><em>Your input is essential to our project and the researchers involved in this study would like to thank you for
+                your participation.<br />Before giving your informed consent, it is important that you understand why the research is being conducted, what it involves and what your rights and obligations are.</em></p>
 
 
             <h4>IDENTIFICATION</h4>
@@ -51,8 +48,8 @@
 
            <strong>Project team and Inria Research Centre:</strong> Aviz Team - Inria Saclay<br /><strong>Project name:</strong> Comparison of visualization-aided decision-making processes</p>
 
-            You are invited to take part in this project, whose purpose is to understand how visualizations help people make decisions. The <a href="http://www.aviz.fr"> Aviz </a> team conducts
-                research in the field of visualization and the results of these experiments will help us to improve visualization design and research in this field more generally.</p>
+            YYou are invited to take part in this study, whose purpose is to understand how visualizations can support decision making.
+            The <a href="http://www.aviz.fr"> Aviz </a> team conducts research in the field of visualization and the results of this study will help us to improve visualization design.</p>
 
             <p>This study will take place <strong>online</strong>. </p>
 
@@ -67,57 +64,51 @@
                 have normal or corrected-to-normal vision, and do not suffer from color blindness can participate in this study.</p>
 
             <p><strong>Procedure</strong><br />First, you will have to give your informed consent at the bottom of this page.
-                Then you can proceed to the study and follow a training session that will teach you how to read the data visualizations we will show you.
-                <strong> During this training, you will have to answer one comprehension check. You will get two chances. If you fail on the second attempt, you will be immediately
-                    redirected to Prolific with a CODE indicating CC_failed and we will ask that you return your submission. </strong>
+                Then you can proceed to the study and follow a training session that will teach you how to read the data visualizations used in the study.
+                <strong> During this training, you will have to answer one comprehension check. You will get two opportunities to answer it correctly. If you fail on the second attempt, you will be immediately
+                    redirected to Prolific and we will ask that you return your submission. </strong>
             </p>
 
-            <p><strong>Benefits</strong><br />This research will contribute to research in visualization-aided decision-making process.</p>
+            <p><strong>Benefits</strong><br />This research will contribute to research in visualization-aided decision-making processes.</p>
 
             <p><strong>Risks and drawbacks</strong><br />There are no known risks or drawbacks associated with this research study.</p>
 
-            <h5><strong>Voluntary participation in the project</strong></h5>
+            <p><strong>Voluntary participation in the project</strong><br />
 
-            <p style="color: rgb(0,0,0)">Once you have read and understood the information contained in the "Project Presentation" section,
-                your signature on this form indicates that you agree to participate in the project, and this without any restrictions or external pressure.<br />
-                If you don't have the information that you need to make a decision, you should not hesitate to ask for more information from the contact persons (see below).</p>
+            Once you have read and understood the information contained in this webpage,
+                the click on the "I agree" button indicates that you agree to participate in the project — without any restrictions or external pressure.
+                If you do not have the information that you need to make a decision, you should not hesitate to ask for more information from the contact persons (see below).</p>
 
-            <h5><strong>Withdrawal from the project at any time</strong></h5>
+            <p><strong>Withdrawal from the project at any time</strong> <br/>
+                You are completely free to end your participation in the study at any time before its completion. You do not have to provide any reasons for your withdrawal.</p>
 
-            <p>You are completely free to end your participation in the project at any time before the completion of the study. You don’t have to provide any reasons for your withdrawal.</p>
+            <p><strong>Following your withdrawal from the project</strong><br />
+                The research team may continue to use the data which may have been collected from your participation before your withdrawal from the project during the time frame which the study data is kept.
+                In the case you have objections to the use of the data, please contact the contact persons and the data resulting from your participation will be destroyed.</p>
 
-            <h5><strong>Following your withdrawal from the project</strong></h5>
+            <p><strong>Request for information during the project</strong><br />
+                If you have any additional questions about the project, about your rights as a participant in this research or want a written summary
+                about the principal results of this research and their use, please do not hesitate to get in touch with the contact persons mentioned below.</p></p>
 
-            <p>Regarding the data concerning you which may have been collected before you withdraw from the project,
-                the research team may continue to use such data for the time during which the data mentioned below is kept,
-                unless you have objections which you should make known to the contact persons. In this case, the data concerning you will be destroyed.</p>
+            <p><strong>Publication on a public platform for Open Science of the principal results of the research</strong><br />
+            By participating in this experiment, you are informed that the principal results of the research will be published on a public platform for Open Science.</p>
 
-            <h5><strong>Request for information during the project</strong></h5>
+<!--            <p>This form for collecting informed consent is a confidential and sensitive document, and as such it must be given special treatment both in the way that it is kept and archived.</p>-->
 
-            <p>If you have any additional questions about the project, about your rights as a participant in this research or want a written summary about the principal results of this research and their use, please do not hesitate to get in touch with the contact persons mentioned below.</p></p>
-
-            <h5><strong>Publication on a public platform for Open Science of the principal results of the research</strong></h5>
-
-            <p>By participating in this experiment, you are informed that the principal results of the research will be published on a public platform for Open Science.</p>
-
-            <p>***</p>
-
-            <p>This form for requesting information and for collecting informed consent is a confidential and sensitive document, and as such it must be given special treatment both in the way that it is kept and archived.</p>
-
-            <p>A copy of the duly signed form intended for the project manager will be kept within the administrative and financial department of the Inria Research Centre concerned
-                for fifteen (15) years before being transferred to the archives department of the Inria Research Centre concerned.</p>
+<!--            <p>A copy of the duly signed form intended for the project manager will be kept within the administrative and financial department of the Inria Research Centre concerned-->
+<!--                for fifteen (15) years before being transferred to the archives department of the Inria Research Centre concerned.</p>-->
 
             <h4>PRIVACY AND DATA PROTECTION ACT</h4>
 
-            <p>Inria is very attentive and vigilant regarding personal data protection (DCP) issues. It has also appointed a Data Protection Officer (DPO) for ensuring that Inria complies with the European General Data Protection Regulation (GDPR).</p>
+            <p>Inria is very attentive and vigilant regarding personal data protection (DCP) issues. It has appointed a Data Protection Officer (DPO) for ensuring that Inria complies with the European General Data Protection Regulation (GDPR).</p>
 
-            <p style="color: #000000">These data are as follows: Gender, Age, Work Role, Employment Role and prolific ID.</p>
+            <p style="color: #000000">The data elements collected are as follows: Gender, Age, Work Role, Employment Role and prolific ID.</p>
 
             <p><strong>These data will be processed in the following manner:</strong>
-                The study data will be logged in real time and will be stored on an encrypted server. Every day, the log files will be downloaded onto our Inria — thus, encrypted — computers.
-                The dataset will automatically include Prolific identifiers for all participants.
-                This identifier being the only feature making identification of persons possible, we will remove it from the dataset before analysis, effectively anonymizing the data.
-               </p>
+                The study data will be logged in real time and will be stored on an encrypted server. Every day, the log files will be downloaded onto our Inria's 'encrypted computers.
+                The downloaded data will automatically include Prolific identifiers for all participants.
+                This identifier is the only feature making identification of persons possible, and will be removed from the data before analysis, effectively anonymizing the data.
+            </p>
 
             <p>In accordance with Article 13 of the Regulation (EU) 2016/679 of the European Parliament and of the council of
                 27 April 2016 on the protection of natural persons with regard to the processing of personal data and the free movement of such data, please find below some information about this data collection:</p>
@@ -126,7 +117,7 @@
                 <li>The controller's representative is the CEO of Inria. </li>
                 <li>The Data Protection Officer (DPO) appointed by Inria can be contacted via <a href="mailto:dpo@inria.fr?subject=Decision-making%20%20study%20for%20reducing%20gender%20pay%20gap—%20Aviz%20team">dpo@inria.fr</a>
                     or via her postal address: The Data Protection Officer, Inria, 2004 route des lucioles, BP 93, 06902 Sophia-Antipolis cedex. </li>
-                <li>The purpose of this study <b>is to understand the use of visualization in a salary adjustment decision. </b></li>
+                <li>The purpose of this study is to understand the use of visualization in a salary adjustment decision.</li>
                 <li>The legal basis of the processing is the execution of a public interest mission</li>
                 <li>The recipients of your data are the researchers listed in the consent form </li>
                 <li>Your data will be stored for a maximum period of three (3) years. </li>
@@ -137,14 +128,14 @@
                 <li>This data collection is done on a voluntary basis. Under no circumstances are you required by regulation, contract or other means to provide your data. </li>
             </ol>
 
-            <p>This form for requesting information and for collecting informed consent is a confidential and sensitive document, and as such it must be given special treatment both in the way that it is kept and archived.</p>
+<!--            <p>This webpage for collecting informed consent is a confidential and sensitive document, and as such it must be given special treatment both in the way that it is kept and archived.</p>-->
 
-            <p>A copy of the duly signed form intended for the project manager will be kept within the administrative and financial department of the Inria Research Centre concerned for fifteen (15) years before being transferred to the archives department of the Inria Research Centre concerned.</p>
+<!--            <p>A copy of the duly signed form intended for the project manager will be kept within the administrative and financial department of the Inria Research Centre concerned for fifteen (15) years before being transferred to the archives department of the Inria Research Centre concerned.</p>-->
 
             <h3>PART II/ COLLECTION OF INFORMED CONSENT</h3>
 
-            <p>I acknowledge that I have read and understood this form for requesting information concerning the project "Comparison of visualization-aided decision-making processes" of which the purpose
-                is to study how you will use visualisation to make decisions and that I voluntarily agree to participate in this research project in this context.
+            <p>I acknowledge that I have read and understood this form for requesting information concerning the project "Comparison of visualization-aided decision-making processes"
+                of which the purpose is to study how visualisations can support decision making and that I voluntarily agree to participate in this research project in this context.
                 <br>
                 I acknowledge that I have been informed that I can terminate my participation in the project at any time without having to give any reason, by simply contacting the contacts mentioned above.
                 <br> I acknowledge having been informed about the purpose and conditions of the project, as well as the pros, risks and cons of the project.

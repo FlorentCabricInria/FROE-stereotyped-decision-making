@@ -15,8 +15,13 @@
       <li style="margin: 0px">are currently viewing this survey from a computer screen.</li>
     </ul>
     <p><strong>You can only participate using a computer screen, as a mobile phone's screen is too small to display the visualizations correctly.</strong></p>
-    <p>During the study, you will have to complete a comprehension check. You will have two chances to succeed to this test. If you fail, according to <a href="https://researcher-help.prolific.com/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy#h_01FBPJ5DZJHYHB5D2QMAK2V1SQ" target="_blank">
-      Prolific's policy </a>, we will ask you to return your submission immediately and you will not receive the payment.</p>
+    <p>After agreeing to the terms (next page), you will first complete a training session that will teach you how to read the data visualizations
+      we will use in the study. <strong> This training ends with a comprehension check (you will have two chances to correctly answer the check).If you fail, according to <a href="https://researcher-help.prolific.com/hc/en-gb/articles/360009223553-Prolific-s-Attention-and-Comprehension-Check-Policy#h_01FBPJ5DZJHYHB5D2QMAK2V1SQ" target="_blank">
+    Prolific's policy </a>, we will ask you to return your submission immediately and you will not receive the payment. </strong>
+      Next, you will complete additional training steps that will introduce additional decision support options. Finally, you will be
+      asked to make one salary decision based on a visualization, and to explain your decision. The study ends with a questionnaire designed
+      by social psychologists. Completing the study from start to finish will require around twenty (20) minutes.</p>
+
     <p>This study is conducted by <a href="https://www.florentcabric.com"  target="_blank">Dr. Florent Cabric</a> (Postdoctoral researcher, Aviz Team, Inria Saclay) under the supervision of
       <a href="http://petra.isenberg.cc/wiki/pmwiki.php" target="_blank">Dr. Petra Isenberg</a> (Senior Research Scientist, Aviz Team, Inria Saclay).</p>
 
@@ -36,7 +41,7 @@
 <script type="text/javascript">
   function allowPopUp () {
 
-    var confirmWelcome = confirm('If you see this message that means your browser allows pop ups! Click on confirm to proceed to the consent form')
+    var confirmWelcome = confirm('If you see this message that means your browser allows pop ups! Click on "Ok" to proceed to the consent form')
     console.log(x)
     if (confirmWelcome) {
       // btn_welcome_1
